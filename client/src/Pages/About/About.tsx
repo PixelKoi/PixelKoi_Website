@@ -1,4 +1,3 @@
-import EmployeeCard from '../../components/EmployeeCard/EmployeeCard';
 import styles from './About.module.scss';
 import paper from '../../assets/images/paper.jpg';
 import team from '../../assets/images/team.jpg';
