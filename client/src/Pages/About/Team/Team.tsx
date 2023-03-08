@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import '../../../../styles/globalStyles.css';
+import '../../../styles/globalStyles.css';
 import styles from './TeamStyles.module.scss';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
-import carousel_images from './../../../../images';
+import carousel_images from '../../../images';
 
 interface ImageType {
 	src: string;

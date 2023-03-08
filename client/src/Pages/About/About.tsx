@@ -6,7 +6,8 @@ import hipsters from '../../assets/images/hipsters.jpg';
 import Nav from '../../components/Nav/Nav2';
 import garo from '../../assets/images/about_page/garo.jpeg';
 import jonny from '../../assets/images/about_page/jonny3.png';
-import Team from '../Landing Page/components/Team/Team';
+import Team from './Team/Team';
+import Footer from '../../components/Footer/Footer';
 
 const About = () => {
 	return (
@@ -48,7 +49,7 @@ const About = () => {
 							</p>
 						</div>
 					</div>
-					<Team />
+
 					{/* <div className={`${styles.subsection} ${styles.sections}`}>
 					<h2>Meet the team</h2>
 					<div className={styles.teamContent}>
@@ -58,6 +59,8 @@ const About = () => {
 				</div> */}
 				</div>
 			</div>
+			<Team />
+			<Footer />
 		</div>
 	);
 };

@@ -1,5 +1,4 @@
 import Header from './components/Header/Header';
-import Team from '../Landing Page/components/Team/Team';
 import Clients from '../Landing Page/components/Clients/Clients';
 import '../../styles/globalStyles.css';
 import styles from './Landing.module.css';
