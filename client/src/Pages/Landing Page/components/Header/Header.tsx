@@ -2,7 +2,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import '../../../../styles/globalStyles.css';
 import styles from './Header.module.scss';
-import RevealText4 from './components/RevealText4';
 import OurTech from '../OurTech/OurTech';
 import { motion } from 'framer-motion';
 import SpinningImage from './components/3Dsquare/SpinningImage';
@@ -10,22 +9,8 @@ import Cube from './components/Cube/Cube';
 import cube from '../../../../assets/Home/ph_cube.svg';
 
 const Header = (props: any) => {
-	//reveals caption text
-	const [ headerText, setHeaderText ] = useState();
-
 	const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
 	const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
-	const handleHeaderText = (component: any, delay: number) => {
-		return new Promise((resolve, reject) => {
-			setTimeout(() => {
-				resolve(setHeaderText(() => component));
-			}, delay);
-		});
-	};
-
-	useEffect(() => {
-		handleHeaderText(<RevealText4 />, 500);
-	}, []);
 
 	return (
 		<div className={styles.header} id="header">
@@ -44,7 +29,7 @@ const Header = (props: any) => {
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0 }}
-					animate={{ opacity: 1, transition: { delay: 0.5 } }}
+					animate={{ opacity: 1, transition: { delay: 0.7 } }}
 					className={styles.cubeIMG}
 				>
 					<img src={cube} className={styles.cubeSize} />
@@ -58,7 +43,7 @@ const Header = (props: any) => {
 				</motion.div> */}
 				<motion.div
 					initial={{ opacity: 0 }}
-					animate={{ opacity: 1, transition: { delay: 0.5 } }}
+					animate={{ opacity: 1, transition: { delay: 0.9 } }}
 					className={styles.buttonGroup}
 				>
 					<button className={styles.button}>Contact</button>
