@@ -43,11 +43,23 @@ const Offer = () => {
 						</p>
 						<button className={styles.button}>Learn More</button>
 					</div>
-					<img src={software} className={styles.cardIMG} />
+					<motion.img
+						initial={{ opacity: 0, x: 100 }}
+						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+						viewport={{ once: true }}
+						src={software}
+						className={styles.cardIMG}
+					/>
 				</div>
 
 				<div className={styles.uxGroup}>
-					<img src={uxdesign} className={styles.cardIMG} />
+					<motion.img
+						initial={{ opacity: 0, x: -100 }}
+						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+						viewport={{ once: true }}
+						src={uxdesign}
+						className={styles.cardIMG}
+					/>
 					<div className={styles.catDescription}>
 						<h3>UX Design</h3>
 						<p>
@@ -70,7 +82,13 @@ const Offer = () => {
 						</p>
 						<button className={styles.button}>Learn More</button>
 					</div>
-					<img src={software} className={styles.cardIMG} />
+					<motion.img
+						initial={{ opacity: 0, x: 100 }}
+						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+						viewport={{ once: true }}
+						src={software}
+						className={styles.cardIMG}
+					/>
 				</div>
 			</div>
 		</div>
