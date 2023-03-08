@@ -132,13 +132,13 @@ const Nav2 = () => {
 				</Link>
 
 				<Link id={styles.link1} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#team">
-					<motion.div>Team</motion.div>
+					<motion.div>About </motion.div>
 				</Link>
 				<Link id={styles.link2} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#work">
-					<motion.div>Work</motion.div>
+					<motion.div>Services</motion.div>
 				</Link>
 				<Link id={styles.link3} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#services">
-					<motion.div>Services</motion.div>
+					<motion.div>Clients</motion.div>
 				</Link>
 				<Link id={styles.link4} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/contact">
 					<motion.div>Contact</motion.div>
@@ -148,8 +148,8 @@ const Nav2 = () => {
 						whileHover={{ rotate: 90 }}
 						src={menu}
 						onClick={openMenu}
-						height={35}
-						width={35}
+						height={30}
+						width={30}
 						alt="menu"
 					/>
 				</button>

@@ -7,6 +7,8 @@ import OurTech from '../OurTech/OurTech';
 import { motion } from 'framer-motion';
 import SpinningImage from './components/3Dsquare/SpinningImage';
 import Cube from './components/Cube/Cube';
+import cube from '../../../../assets/Home/ph_cube.svg';
+
 const Header = (props: any) => {
 	//reveals caption text
 	const [ headerText, setHeaderText ] = useState();
@@ -29,28 +31,39 @@ const Header = (props: any) => {
 		<div className={styles.header} id="header">
 			<div className={styles.container}>
 				<motion.div initial={{ opacity: 0 }} animate="show" variants={list} className={styles.textContainer}>
-					<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
-						We
-					</motion.h1>
-					<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
-						Design
-					</motion.h1>
-					<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
-						Custom
-					</motion.h1>
-					<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
-						Software
-					</motion.h1>
+					<div className={styles.topText}>
+						<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
+							We
+						</motion.h1>
+						<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
+							Design
+						</motion.h1>
+					</div>
+					<div className={styles.topText}>
+						<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
+							Custom
+						</motion.h1>
+						<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
+							Software
+						</motion.h1>
+					</div>
 				</motion.div>
-
-				<motion.div
+				<div className={styles.cubeIMG}>
+					<img src={cube} width={100} />
+				</div>
+				{/* <motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1, transition: { delay: 0.8 } }}
 					className={styles.cube}
 				>
 					<Cube />
-				</motion.div>
+				</motion.div> */}
+				<div className={styles.buttonGroup}>
+					<button className={styles.button}>Contact</button>
+					<button className={styles.button}>Learn More</button>
+				</div>
 			</div>
+
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, transition: { delay: 0.5 } }}
