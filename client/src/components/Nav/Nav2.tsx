@@ -134,10 +134,10 @@ const Nav2 = () => {
 				<Link id={styles.link1} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#team">
 					<motion.div>About </motion.div>
 				</Link>
-				<Link id={styles.link2} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#work">
+				<Link id={styles.link2} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#services">
 					<motion.div>Services</motion.div>
 				</Link>
-				<Link id={styles.link3} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#services">
+				<Link id={styles.link3} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#work">
 					<motion.div>Clients</motion.div>
 				</Link>
 				<Link id={styles.link4} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/contact">

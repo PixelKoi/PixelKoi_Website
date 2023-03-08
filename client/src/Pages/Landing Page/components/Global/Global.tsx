@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './Global.module.scss';
 import earth from '../../../../assets/Home/earth.png';
 import checkmark from '../../../../assets/Home/checkmark.svg';
+import { motion, animate, useTransform, useMotionValue, useInView } from 'framer-motion';
 
 const Global = () => {
+	const ref = useRef(null);
+	const isInView = useInView(ref);
+	const count = useMotionValue(0);
+	const rounded = useTransform(count, (latest) => Math.round(latest));
+	const countUp = () => {
+		const controls = animate(count, 100, { duration: 2 });
+		return controls.stop;
+	};
+	const random = () => {
+		return;
+	};
+	useEffect(
+		() => {
+			isInView === true ? countUp() : random();
+		},
+		[ isInView ]
+	);
 	return (
-		<div className={styles.wrapper}>
+		<div ref={ref} className={styles.wrapper}>
 			<div className={styles.container}>
 				<div className={styles.cta}>
 					<div>
@@ -19,11 +37,17 @@ const Global = () => {
 			<div className={styles.listContainer}>
 				<div className={styles.itemGroup}>
 					<img src={checkmark} />
-					<p>100% Remote</p>
+					<div style={{ display: 'flex', flexDirection: 'row' }}>
+						<motion.p>{rounded}</motion.p>
+						<p style={{ alignSelf: 'center' }}>% Remote</p>
+					</div>
 				</div>
 				<div className={styles.itemGroup}>
 					<img src={checkmark} />
-					<p>100% Full-Stack</p>
+					<div style={{ display: 'flex', flexDirection: 'row' }}>
+						<motion.p>{rounded}</motion.p>
+						<p style={{ alignSelf: 'center' }}>% Full-Stack</p>
+					</div>
 				</div>
 				<div className={styles.itemGroup}>
 					<img src={checkmark} />
