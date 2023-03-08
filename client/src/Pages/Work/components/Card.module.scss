@@ -1,0 +1,102 @@
+.container {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+	// min-width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+
+	.outerCard {
+		width: 100%;
+		filter: grayscale(100%);
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		transition: background-size 24s ease-in-out;
+		overflow: hidden;
+
+		&:hover {
+			animation: grayscale-to-color 1s ease-in-out forwards;
+		}
+		.card {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+
+			.revealText {
+				// min-width: 100%;
+				display: flex;
+				justify-content: center;
+
+				h1 {
+					align-self: center;
+					margin-left: auto;
+					font-size: calc(70px + 80*(100vw - 320px)/1600);
+				}
+			}
+		}
+	}
+
+	.title {
+		color: orange;
+		margin-top: 2rem;
+		margin-bottom: -0.2rem;
+		font-size: 20px;
+		font-weight: 800;
+	}
+	.description {
+		margin-top: 0.5rem;
+		font-size: 16px;
+		color: #fff;
+	}
+	.technology {
+		color: #fff;
+	}
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+	.container {
+		display: block;
+	}
+	.outerCard {
+		height: 300px;
+	}
+	.card {
+		height: 300px;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 700px) {
+	.container {
+		display: block;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1024px) {
+	.container {
+		display: none;
+	}
+	.outerCard {
+		height: 600px;
+	}
+	.card {
+		height: 600px;
+	}
+}
+
+@keyframes grayscale-to-color {
+	0% {
+		filter: grayscale(100%);
+	}
+	100% {
+		filter: grayscale(0%);
+	}
+}

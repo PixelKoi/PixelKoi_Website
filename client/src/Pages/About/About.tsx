@@ -1,0 +1,73 @@
+import EmployeeCard from '../../components/EmployeeCard/EmployeeCard';
+import styles from './About.module.css';
+import guy from '../../assets/images/guy.png';
+import girl from '../../assets/images/girl.png';
+import paper from '../../assets/images/paper.jpg';
+import team from '../../assets/images/team.jpg';
+import hipsters from '../../assets/images/hipsters.jpg';
+import Nav from '../../components/Nav/Nav';
+import garo from '../../assets/images/about_page/garo.jpeg';
+import jonny from '../../assets/images/about_page/jonny3.png';
+
+const About = () => {
+	return (
+		<div>
+			<Nav />
+			<div className={styles.aboutContainer}>
+				<div className={`${styles.about} ${styles.sections}`}>
+					<div className={styles.slogan}>
+						<h1>
+							<span className={styles.italic}>About</span> <br />
+							our agency
+						</h1>
+						<p>
+							Pixel Koi is a creative software development agency dedicated to crafting meaningful
+							experiences through our web, mobile and shopify projects.
+						</p>
+					</div>
+					<div className={styles.slogan}>
+						<img loading="lazy" src={paper} alt="" className={styles.imgContainer} />
+						<img loading="lazy" src={team} alt="" className={styles.imgContainer} />
+					</div>
+					<p>
+						We are a highly <span className={styles.bold}>curious, creative</span> and{' '}
+						<span className={styles.bold}>meticulous</span> team who work closely with our clients during
+						each stage of the project to understand their unique needs and solve them in innovative ways -
+						delivering a well-designed product.
+					</p>
+				</div>
+
+				<div className={`${styles.subsection} ${styles.sections}`}>
+					<h2>Our Story</h2>
+					<div className={styles.slogan}>
+						<img loading="lazy" src={hipsters} alt="" className={styles.imgContainer} />
+						<p>
+							After a chance meeting in Vancouver, B.C. while working remote software jobs, we began
+							working on side projects for fun. It was soon obvious that we worked great as a team and
+							decided we wanted to combine our skills and began the journey into entrepreneurship.
+						</p>
+					</div>
+				</div>
+				<div className={`${styles.subsection} ${styles.sections}`}>
+					<h2>Meet the team</h2>
+					<div className={styles.teamContent}>
+						<EmployeeCard name="Jonathan Bajada" title="Co-Founder" img={jonny} />
+						<EmployeeCard name="Garo Nazarian" title="Co-Founder" img={garo} />
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default About;
+
+{
+	/* <div className={`${styles.subsection} ${styles.sections}`}>
+	<h2>Meet the team</h2>
+	<div className={styles.teamContent}>
+		<EmployeeCard name="Jonathan Bajada" title="Co-Founder" img={jonny} />
+		<EmployeeCard name="Kirsten Kai" title="Co-Founder" img={kc} />
+	</div>
+</div>; */
+}

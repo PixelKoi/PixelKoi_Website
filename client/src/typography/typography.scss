@@ -1,0 +1,23 @@
+/* Set the default font family and size for the entire website */
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	letter-spacing: normal;
+}
+
+/* Set the font weight and color for headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700; /* Use a heavier font weight for headings */
+	line-height: 1.2; /* Use a smaller line height for headings */
+}
+
+/* Set the font weight and color for links */
+a {
+	font-weight: 400; /* Use the default font weight for links */
+}

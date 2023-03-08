@@ -1,0 +1,56 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	color: #eff;
+	flex-wrap: nowrap;
+	white-space: nowrap;
+	overflow: hidden;
+	// margin: 0 3rem;
+}
+
+.iconContainer {
+	font-size: clamp(3rem, 10vw, 5rem);
+}
+.iconContainer > * :hover {
+	color: orange;
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width: 320px) {
+	.container {
+		// margin: 0 1rem;
+	}
+	// .iconContainer {
+	// 	font-size: 3rem;
+	// }
+
+	.iconContainer > * {
+		margin: 0 1rem;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 768px) {
+	// .iconContainer {
+	// 	font-size: 5rem;
+	// }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1024px) {
+	.container {
+		// margin: 0 3rem;
+	}
+	// .iconContainer {
+	// 	font-size: 6rem;
+	// }
+
+	.iconContainer > * {
+		margin: 0 2rem;
+	}
+}

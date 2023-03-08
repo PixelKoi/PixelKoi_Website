@@ -1,0 +1,320 @@
+$background: #191718;
+$primary: #fff;
+$secondary: #595959;
+
+@mixin centerDiv {
+	display: flex;
+	justify-content: center;
+	align-self: center;
+}
+
+@mixin inputBorderBottom {
+	border-bottom: 1px solid $secondary !important;
+}
+// ::selection {
+// 	background: #95ecc6;
+// }
+.buttonText:active {
+	color: #86d4b2;
+}
+
+.container {
+	background-color: #171717;
+	display: flex;
+	flex-direction: column;
+
+	h3,
+	h4 {
+		color: $primary;
+	}
+	label {
+		color: $primary;
+		font-size: 24px;
+	}
+	//TOP PART
+	.innerContainer {
+		@include centerDiv;
+		flex-direction: column;
+		.sectionHeader {
+			color: #999999;
+			display: flex;
+		}
+
+		.formSelection {
+			margin-top: 5rem;
+			ul {
+				display: flex;
+				padding: 0;
+			}
+		}
+	}
+
+	.buttonGroup {
+		list-style-type: none;
+		.buttonLink {
+			.navLink {
+				background-color: transparent !important;
+				&:before {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 6px;
+					left: -6px;
+					border: 1px solid;
+					border-top: none;
+					border-right: none;
+					border-color: #ffb26b;
+				}
+				&:hover:before {
+					border: 6px solid;
+					border-color: #ffb26b;
+					border-top: none;
+					border-right: none;
+				}
+				border: none;
+
+				font-size: 14px;
+				cursor: pointer;
+				position: relative;
+				display: inline-block;
+				font-weight: 700;
+				text-transform: uppercase;
+				white-space: nowrap;
+				text-decoration: none !important;
+				outline: none;
+				border: none;
+				padding: 0;
+				line-height: 1;
+				.buttonText {
+					color: #ffb26b;
+					text-align: center;
+					min-width: 200px;
+					position: relative;
+					display: inline-block;
+					padding: 0.8em 2em;
+					border: 1px solid;
+					border-color: #ffb26b;
+				}
+			}
+		}
+	}
+
+	.formSection {
+		@include centerDiv;
+		flex-direction: column;
+		margin-bottom: 8rem;
+		// bottom part
+		.formContainer {
+			display: grid;
+			margin-top: 4rem;
+			.formLabel {
+				margin: 0;
+				padding: 0;
+				font-size: 24px;
+			}
+			.formInput {
+				color: $secondary;
+				background-color: transparent;
+				font-size: 24px;
+				border-style: none;
+				outline: none;
+			}
+		}
+		.deadlineWrapper {
+			position: relative;
+			padding-bottom: 2rem;
+			display: flex;
+			@include inputBorderBottom;
+
+			.deadlineContainer {
+			}
+			.unitContainer {
+				color: $primary;
+				display: flex;
+				flex-direction: column;
+				cursor: pointer;
+				.circle {
+					cursor: pointer;
+					position: absolute;
+					bottom: -10px;
+					width: 20px;
+					height: 20px;
+					border-radius: 50%;
+					background-color: $primary;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (min-width: 320px) {
+	.container {
+		padding: 0 1rem;
+
+		.innerContainer {
+			.formSelection {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.formSection {
+		width: 100%;
+		.formContainer {
+			grid-template-columns: 1fr;
+
+			.formLabel {
+				border-style: none;
+			}
+			.formInput {
+				text-indent: 0;
+				margin-bottom: 2rem;
+				@include inputBorderBottom;
+			}
+		}
+	}
+	.sendButton {
+		margin-top: 4rem;
+		// margin-bottom: -2rem;
+		margin-left: auto;
+		margin-right: auto;
+		align-self: center;
+	}
+
+	.innerContainer {
+		margin-top: 10rem;
+	}
+
+	.sectionHeader {
+		flex-direction: column;
+		.location {
+			margin-top: 2rem;
+			margin-left: 0;
+		}
+	}
+	.formSelection ul {
+		flex-direction: column;
+	}
+	.buttonLink {
+		margin-bottom: 2rem;
+		align-self: center;
+	}
+	.selectorContainer {
+		display: block;
+	}
+	.sliderContainer {
+		display: none;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+	.selectorContainer {
+		display: block;
+	}
+	.sliderContainer {
+		display: none;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 768px) {
+	.container {
+		padding: 0 2rem;
+	}
+
+	.formSection {
+		width: 100%;
+		.formContainer {
+			grid-template-columns: 1fr 2fr;
+			row-gap: 4rem;
+			.formLabel {
+				@include inputBorderBottom;
+			}
+			.formInput {
+				text-indent: 2rem;
+				margin-bottom: 0;
+				@include inputBorderBottom;
+			}
+		}
+	}
+
+	.innerContainer {
+		margin-top: 15rem;
+	}
+	.sectionHeader {
+		flex-direction: row;
+
+		.location {
+			margin-left: auto;
+		}
+	}
+	.buttonLink {
+		margin-top: 0;
+		margin-right: 4rem;
+	}
+	.formSelection ul {
+		flex-direction: row;
+	}
+
+	.selectorContainer {
+		display: none;
+	}
+	.sliderContainer {
+		display: block;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1024px) {
+	.container {
+		padding: 0;
+	}
+
+	.formSection {
+		width: 50%;
+		.formContainer {
+			grid-template-columns: 1fr 2fr;
+			row-gap: 4rem;
+			.formLabel {
+				@include inputBorderBottom;
+			}
+			.formInput {
+				text-indent: 2rem;
+				margin-bottom: 0;
+				@include inputBorderBottom;
+			}
+		}
+	}
+
+	.innerContainer {
+		width: 50%;
+		// margin-left: 34.7rem;
+		// margin-right: auto;
+	}
+	.sectionHeader {
+		flex-direction: row;
+
+		.location {
+		}
+	}
+	.buttonLink {
+		margin-top: 0;
+		margin-right: 4rem;
+	}
+	.formSelection ul {
+		flex-direction: row;
+	}
+	.sendButton {
+		margin-top: 4rem;
+		margin-right: -4rem;
+		margin-left: auto;
+	}
+	.selectorContainer {
+		display: none;
+	}
+	.sliderContainer {
+		display: block;
+	}
+}

@@ -1,0 +1,10 @@
+/* Container for landing page content - nav excluded */
+.pageContainer {
+	margin: 0 auto;
+	width: 85vw;
+}
+
+.heroBanner {
+	width: 100vw;
+	background-color: #f7c0a1;
+}

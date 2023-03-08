@@ -1,0 +1,63 @@
+#text-box {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  //overflow: hidden;
+}
+
+#text {
+  font-family: 'Merienda', cursive;
+  font-size: 2rem;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  color: red;
+  animation: scroll 8s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(95%);
+  }
+  to {
+    transform: translateX(-90%);
+  }
+}
+
+.circle-container{
+}
+
+.circle{
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: mediumpurple;
+  margin: 50px;
+  visibility: hidden;
+}
+
+.circle.red{
+  background-color: red;
+}
+
+.circle.blue{
+  background-color: #51A0FD;
+}
+
+.services{
+  height: 50vh;
+  margin: 0 auto;
+  align-content: center;
+
+}
+
+
+
+

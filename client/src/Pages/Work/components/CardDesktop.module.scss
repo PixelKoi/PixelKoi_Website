@@ -1,0 +1,118 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	h3 {
+		color: orange;
+		line-height: 3rem;
+	}
+}
+.innerContainer {
+	display: flex;
+	flex-direction: row;
+}
+
+.outerCard {
+	box-shadow: 2px 3px 13px 5px rgba(0, 0, 0, 0.31);
+	z-index: 0;
+	background-color: yellow;
+	color: yellow;
+	height: 400px;
+	width: 600px;
+	border-radius: 5px;
+	opacity: 1;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: background-size 24s ease-in-out;
+	overflow: hidden;
+	filter: grayscale(100%);
+	&:hover {
+		animation: grayscale-to-color 1s ease-in-out forwards;
+	}
+}
+
+.innerTextCard {
+	margin-top: auto;
+	margin-bottom: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.textBox {
+	background-color: orange;
+	color: #fff;
+	height: 130px;
+	width: 500px;
+	display: flex;
+	padding: 0 1rem;
+	border-radius: 5px;
+	box-shadow: 0px 3px 13px 5px rgba(0, 0, 0, 0.31);
+}
+//Right Message
+.textCard {
+	position: relative;
+	align-self: center;
+	top: 0;
+	right: 4rem;
+	z-index: 1;
+	height: 400px;
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+}
+
+.descriptiveBox {
+	position: relative;
+	top: 10rem;
+	right: 4rem;
+	z-index: 1;
+	height: 400px;
+	width: 440px;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	background-color: red;
+	box-shadow: 0px 3px 13px 5px rgba(0, 0, 0, 0.31);
+}
+
+.link {
+	text-decoration: none !important;
+	margin-left: 5.5rem;
+}
+
+//Left Message
+
+.textCard2 {
+	position: relative;
+	align-self: center;
+	top: 0;
+	left: 4rem;
+	z-index: 1;
+	height: 400px;
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+}
+
+.link2 {
+	text-decoration: none !important;
+	margin-right: 5.5rem;
+	align-self: flex-end;
+}
+
+@keyframes grayscale-to-color {
+	0% {
+		filter: grayscale(100%);
+	}
+	100% {
+		filter: grayscale(0%);
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 700px) {
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1024px) {
+}

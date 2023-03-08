@@ -1,0 +1,113 @@
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	background-color: #171717;
+}
+
+.ourProjectsTitle {
+	margin-top: 5rem;
+	margin-left: 64px;
+	color: white;
+}
+
+.modalContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.lineBreak {
+	border: 0.1px solid #fff;
+}
+
+.modalTextGroup {
+	display: flex;
+	flex-direction: column;
+}
+
+.modalText {
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 20px;
+	line-height: 30px;
+	color: #33094d;
+	text-align: center;
+}
+
+.modalButton {
+	align-self: center;
+	width: 187px;
+	height: 56px;
+	color: white;
+	background: linear-gradient(180deg, #b78dd0 0%, #8513cb 100%);
+	box-shadow: 2px 4px 9px rgba(51, 9, 77, 0.2);
+	border-radius: 5px;
+	margin-top: 1rem;
+}
+
+.closeIcon {
+	margin-left: auto;
+	color: #979797;
+	cursor: pointer;
+}
+
+.serviceSection {
+	align-self: center;
+	display: flex;
+	background-color: transparent;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.serviceContainer {
+	background-color: transparent;
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+}
+
+.serviceTitle {
+	font-size: 40px;
+	letter-spacing: 0.1rem;
+	color: #33094d;
+	align-self: center;
+}
+
+@media only screen and (min-width: 320px) {
+	.mainContainer {
+		/* padding: 0 0; */
+	}
+	.ourProjectsTitle {
+		font-size: calc(80*(100vw - 320px)/1600);
+	}
+	.lineBreak {
+		margin: 0 1rem;
+	}
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width: 480px) {
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 820px) {
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width: 1024px) {
+	.lineBreak {
+		margin: 0 3rem;
+	}
+	.mainContainer {
+		/* padding: 0 2rem; */
+	}
+}
+
+@media only screen and (min-width: 1900px) {
+	/* .mainContainer {
+		padding: 0 15rem;
+	} */
+}

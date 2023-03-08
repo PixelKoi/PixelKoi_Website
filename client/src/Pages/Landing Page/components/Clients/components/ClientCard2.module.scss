@@ -1,0 +1,28 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 240px;
+	width: 100%;
+	background-color: rgb(36, 37, 37);
+	margin: 0;
+	h1 {
+		color: #fff;
+		font-weight: 500;
+		font-size: 1.5rem;
+	}
+}
+
+@media only screen and (min-width: 320px) {
+}
+
+@media only screen and (min-width: 720px) {
+}
+
+@media only screen and (min-width: 1024px) {
+}
+@media only screen and (min-width: 1536px) {
+}
+
+@media only screen and (min-width: 2024px) {
+}
