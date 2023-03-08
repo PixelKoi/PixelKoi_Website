@@ -33,7 +33,12 @@ const Offer = () => {
 				</motion.div>
 
 				<div className={styles.softwareGroup}>
-					<div className={styles.catDescription}>
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1, transition: { duration: 1 } }}
+						viewport={{ once: true }}
+						className={styles.catDescription}
+					>
 						<h3>Software Engineering</h3>
 						<p>
 							Our custom software development solutions meet your specific needs and goals, giving you an
@@ -42,7 +47,7 @@ const Offer = () => {
 							SDLCs.
 						</p>
 						<button className={styles.button}>Learn More</button>
-					</div>
+					</motion.div>
 					<motion.img
 						initial={{ opacity: 0, x: 100 }}
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
@@ -60,7 +65,12 @@ const Offer = () => {
 						src={uxdesign}
 						className={styles.cardIMG}
 					/>
-					<div className={styles.catDescription}>
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1, transition: { duration: 1 } }}
+						viewport={{ once: true }}
+						className={styles.catDescription}
+					>
 						<h3>UX Design</h3>
 						<p>
 							Are you looking to work with a team that puts forth a transparent design process and
@@ -68,11 +78,16 @@ const Offer = () => {
 							in responsive web and mboile solutions, and UX strategy and consulting.
 						</p>
 						<button className={styles.button}>Learn More</button>
-					</div>
+					</motion.div>
 				</div>
 
 				<div className={styles.softwareGroup}>
-					<div className={styles.catDescription}>
+					<motion.div
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1, transition: { duration: 1 } }}
+						viewport={{ once: true }}
+						className={styles.catDescription}
+					>
 						<h3>Website Development</h3>
 						<p>
 							At our company, we specialize in providing comprehensive website development and ecommerce
@@ -81,7 +96,7 @@ const Offer = () => {
 							client.
 						</p>
 						<button className={styles.button}>Learn More</button>
-					</div>
+					</motion.div>
 					<motion.img
 						initial={{ opacity: 0, x: 100 }}
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
