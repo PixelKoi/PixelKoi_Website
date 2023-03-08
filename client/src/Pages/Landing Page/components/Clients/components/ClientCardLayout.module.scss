@@ -5,7 +5,7 @@
 }
 .innerContainer {
 	padding: 4rem 1rem;
-	max-width: 1300px;
+	max-width: 1250px;
 	width: 90%;
 	margin: 0 auto;
 }
@@ -17,12 +17,13 @@
 }
 
 .clientTitle {
-	// font-size: 1rem;
+	font-size: 24px;
+	font-weight: bold;
 	margin-bottom: 1rem;
 }
 
 .textContainer {
-	max-width: 800px;
+	max-width: 600px;
 	margin-bottom: 4rem;
 }
 
@@ -33,7 +34,7 @@
 .cta {
 	font-family: "Newslab", serif;
 	color: #fff;
-	font-size: 2rem;
+	font-size: 20px;
 	line-height: 2.5rem;
 	margin-bottom: 0.5rem;
 }

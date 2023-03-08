@@ -6,6 +6,7 @@ import styles from './Landing.module.css';
 import Footer from '../../components/Footer/Footer';
 import Nav2 from '../../components/Nav/Nav2';
 import Offer from './components/Offer/Offer';
+import Global from './components/Global/Global';
 
 const Landing = (props: any) => {
 	return (
@@ -13,10 +14,12 @@ const Landing = (props: any) => {
 			<Nav2 />
 			<Header />
 			<Offer />
+			<Global />
 			{/*
 			<About />
 			<Team />
 			<Clients /> */}
+			<Clients />
 			<Footer />
 		</main>
 	);

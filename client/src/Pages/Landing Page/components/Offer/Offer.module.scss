@@ -2,7 +2,7 @@
 	background: #171717;
 	// border-bottom: 1px solid #fff;
 	color: white;
-	padding-top: 4rem;
+	padding: 4rem 0 4rem 0;
 	display: flex;
 
 	p {
@@ -15,7 +15,7 @@
 	// border: 1px solid green;
 	padding: 0 1rem;
 	width: 90%;
-	max-width: 1250px;
+	max-width: 1200px;
 	align-self: center;
 	margin: 6rem auto;
 	h1 {
@@ -79,10 +79,12 @@
 		width: 100px;
 	}
 	.cardIMG {
+		order: -1;
 		border-radius: 10px;
 		margin-left: auto;
 		width: 100%;
-		max-width: 550px;
+		max-width: 500px;
+		margin-bottom: 1rem;
 	}
 }
 
@@ -98,7 +100,7 @@
 		font-style: regular;
 	}
 	.catDescription {
-		// margin-left: 5rem;
+		margin-left: auto;
 		max-width: 500px;
 	}
 	.button {
@@ -112,11 +114,16 @@
 		border-radius: 10px;
 		margin-bottom: 1rem;
 		width: 100%;
-		max-width: 550px;
+		max-width: 500px;
 	}
 }
 
-@media only screen and (min-width: 300px) {
+@media only screen and (min-width: 725px) {
+	.softwareGroup {
+		.cardIMG {
+			order: 1;
+		}
+	}
 }
 
 // @media only screen and (min-width: 978px) {

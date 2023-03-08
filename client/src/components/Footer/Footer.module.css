@@ -1,12 +1,12 @@
 .footerContainer {
-	background-color: black;
+	background-color: #171717;
 	height: fit-content;
 	padding: 3rem 100px 0 100px;
 	scroll-snap-align: start;
 	overflow: hidden;
 }
 
-.linkStyles{
+.linkStyles {
 	text-underline: none;
 	text-decoration: none !important;
 }
