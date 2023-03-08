@@ -1,18 +1,31 @@
 .aboutContainer {
-	color: whitesmoke;
+	background-color: #171717;
+	border: 1px solid #171717;
+	h1,
+	h2 {
+		color: #fff;
+	}
+	p {
+		color: #ffff;
+	}
+}
 
+.contentContainer {
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 10rem 0;
 }
 
 .aboutContainer h1 {
-	font-size: 2.5rem;
 	text-transform: lowercase;
 	margin: 0;
 }
 
 .aboutContainer p {
 	font-weight: 500;
-	font-size: 16px;
-	line-height: 28px;
+	font-size: 1.125rem;
+	line-height: 1.875rem;
 	margin: 0;
 }
 
@@ -22,12 +35,12 @@
 }
 
 .bold {
-	color: #8513cb;
+	color: orange;
 	font-weight: 800;
 }
 
 .sections {
-	margin: 5rem 10%;
+	margin: 5rem 0;
 	display: flex;
 	flex-direction: column;
 }
@@ -46,7 +59,7 @@
 
 .subsection {
 	padding-top: 2rem;
-	border-top: 1px solid #33094d;
+	border-top: 1px solid #fff;
 	display: flex;
 	gap: 3em;
 }
@@ -59,22 +72,20 @@
 
 .imgContainer {
 	border-radius: 20px 0px;
-	height: 100%;
-	width: 100%;
-	max-width: 600px;
-	max-height: 400px;
+
+	max-width: 550px;
 }
 
-@media only screen and (min-width: 600px) {
-	.sections {
-		margin: 10rem 15%;
-	}
+// @media only screen and (min-width: 600px) {
+// 	.sections {
+// 		/* margin: 10rem 15%; */
+// 	}
 
-	.teamContent {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-}
+// 	.teamContent {
+// 		flex-direction: row;
+// 		justify-content: space-between;
+// 	}
+// }
 
 @media only screen and (min-width: 1024px) {
 	.aboutContainer h1 {
@@ -82,7 +93,7 @@
 	}
 
 	.sections {
-		margin: 10rem 15%;
+		/* margin: 10rem 15%; */
 	}
 
 	.slogan {
@@ -97,16 +108,16 @@
 	}
 }
 
-@media only screen and (min-width: 1440px) {
-	.aboutContainer p {
-		font-size: 18px;
-	}
+// @media only screen and (min-width: 1440px) {
+// 	.aboutContainer p {
+// 		font-size: 18px;
+// 	}
 
-	.about p {
-		font-size: 22px;
-		line-height: 30px;
-	}
-}
+// 	.about p {
+// 		font-size: 22px;
+// 		line-height: 30px;
+// 	}
+// }
 
 /* .aboutContainer {
 	color: #33094d;

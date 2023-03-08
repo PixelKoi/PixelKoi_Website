@@ -131,7 +131,7 @@ const Nav2 = () => {
 					Pixel Kōi
 				</Link>
 
-				<Link id={styles.link1} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#team">
+				<Link id={styles.link1} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/about">
 					<motion.div>About </motion.div>
 				</Link>
 				<Link id={styles.link2} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#services">
