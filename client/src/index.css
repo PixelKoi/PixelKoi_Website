@@ -10,6 +10,11 @@ body {
 	background-color: #171717;
 }
 
+p {
+	font-style: normal;
+	font-family: "Noto Sans Georgian";
+}
+
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

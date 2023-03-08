@@ -95,7 +95,7 @@ const Offer = () => {
 					>
 						<h3>Website Development</h3>
 						<p>
-							At our company, we specialize in providing comprehensive website development and ecommerce
+							At Pixel Koi, we specialize in providing comprehensive website development and ecommerce
 							solutions to businesses of all sizes. Our team of experienced developers, designers, and
 							project managers work together to create custom solutions that meet the unique needs of each
 							client.

@@ -5,6 +5,10 @@
 	"dependencies": {
 		"@emotion/react": "^11.9.3",
 		"@emotion/styled": "^11.9.3",
+		"@fontsource/merriweather": "^4.5.14",
+		"@fontsource/montserrat": "^4.5.14",
+		"@fontsource/noto-sans-georgian": "^4.5.12",
+		"@fontsource/open-sans": "^4.5.14",
 		"@mui/icons-material": "^5.8.4",
 		"@mui/material": "^5.9.0",
 		"@reduxjs/toolkit": "^1.9.2",

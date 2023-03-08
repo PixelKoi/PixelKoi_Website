@@ -30,11 +30,11 @@ const Team = (props: any) => {
 					<motion.h1 className={styles.teamTitle} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
 						<b>Our Team</b>
 					</motion.h1>
-					<motion.h2 className={styles.cta} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+					<motion.p className={styles.cta} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
 						Our team comprises of designers, developers, strategists, and problem-solvers united by a common
 						aspiration: utilizing the strength of creativity and imagination to craft digital experiences
 						that positively impact people's lives.
-					</motion.h2>
+					</motion.p>
 				</div>
 
 				<motion.div

@@ -53,9 +53,9 @@ const About = () => {
 				<div className={styles.section}>
 					<div className={styles.headerText}>
 						<h1>
-							About <br /> Our Agency
+							<i>About</i> <br /> our agency
 						</h1>
-						<p>
+						<p style={{ fontSize: '20px' }}>
 							Pixel Koi is a creative software development agency dedicated to crafting meaningful
 							experiences through Website and Mobile applications
 						</p>

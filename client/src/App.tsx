@@ -3,7 +3,10 @@ import AppRouter from './router/AppRouter';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from './components/helpers/ScrollToTop';
 import { CustomCursor } from './components/CustomCursor/CustomCursor';
-
+import '@fontsource/merriweather';
+import '@fontsource/open-sans';
+import '@fontsource/montserrat';
+import '@fontsource/noto-sans-georgian';
 function App() {
 	return (
 		<BrowserRouter>
