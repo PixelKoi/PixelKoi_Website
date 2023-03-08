@@ -27,7 +27,13 @@ const Global = () => {
 			<div className={styles.container}>
 				<div className={styles.cta}>
 					<div>
-						<img src={earth} width={100} style={{ color: 'black' }} />
+						<motion.img
+							animate={{ rotate: 360 }}
+							transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+							src={earth}
+							width={100}
+							style={{ color: 'black' }}
+						/>
 					</div>
 					<h1>Global Network</h1>
 					<p>We are a global team, with networks spanning North America and SEA</p>
