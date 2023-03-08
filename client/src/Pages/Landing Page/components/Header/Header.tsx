@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import SpinningImage from './components/3Dsquare/SpinningImage';
 import Cube from './components/Cube/Cube';
 import cube from '../../../../assets/Home/ph_cube.svg';
+import { Link, useLocation } from 'react-router-dom';
 
 const Header = (props: any) => {
 	const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
@@ -46,8 +47,12 @@ const Header = (props: any) => {
 					animate={{ opacity: 1, transition: { delay: 0.9 } }}
 					className={styles.buttonGroup}
 				>
-					<button className={styles.button}>Contact</button>
-					<button className={styles.button}>Learn More</button>
+					<Link to={'/contact'}>
+						<button className={styles.button}>Contact</button>
+					</Link>
+					<Link to={'#services'}>
+						<button className={styles.button}>Learn More</button>
+					</Link>
 				</motion.div>
 			</div>
 

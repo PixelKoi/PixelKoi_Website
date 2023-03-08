@@ -34,10 +34,14 @@
 		font-weight: 600;
 		border: none;
 		background-color: #fff;
+		outline: none;
 		height: 50px;
 		width: 140px;
 		border-radius: 5px;
 		font-weight: 600;
+		&:hover {
+			background-color: orange;
+		}
 	}
 }
 

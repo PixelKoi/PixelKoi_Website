@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import software from '../../../../assets/Home/software.png';
 import uxdesign from '../../../../assets/Home/uxdesign.png';
+import { Link } from 'react-router-dom';
 
 const Offer = () => {
 	return (
@@ -26,10 +27,10 @@ const Offer = () => {
 						Forward.
 					</p>
 
-					<a href="#contact" className={styles.link}>
+					<Link to={'/contact'} className={styles.link}>
 						<BsArrowRightCircle style={{ color: 'orange', alignSelf: 'center' }} size={30} />
 						<p style={{ margin: 'auto 0', color: '#fff' }}>Let's Talk</p>
-					</a>
+					</Link>
 				</motion.div>
 
 				<div className={styles.softwareGroup}>
@@ -46,7 +47,9 @@ const Offer = () => {
 							developing, and testing to launching, relieving you of the pressures of handling complex
 							SDLCs.
 						</p>
-						<button className={styles.button}>Learn More</button>
+						<Link to={'/contact'}>
+							<button className={styles.button}>Learn More</button>
+						</Link>
 					</motion.div>
 					<motion.img
 						initial={{ opacity: 0, x: 100 }}
@@ -77,7 +80,9 @@ const Offer = () => {
 							delivers spot-on results within budget? Turn to our long-standing design team specializing
 							in responsive web and mboile solutions, and UX strategy and consulting.
 						</p>
-						<button className={styles.button}>Learn More</button>
+						<Link to={'/contact'}>
+							<button className={styles.button}>Learn More</button>
+						</Link>
 					</motion.div>
 				</div>
 
@@ -95,7 +100,9 @@ const Offer = () => {
 							project managers work together to create custom solutions that meet the unique needs of each
 							client.
 						</p>
-						<button className={styles.button}>Learn More</button>
+						<Link to={'/contact'}>
+							<button className={styles.button}>Learn More</button>
+						</Link>
 					</motion.div>
 					<motion.img
 						initial={{ opacity: 0, x: 100 }}
