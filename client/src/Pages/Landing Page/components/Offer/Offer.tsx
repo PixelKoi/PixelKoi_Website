@@ -1,7 +1,9 @@
 import React from 'react';
 import styles from './Offer.module.scss';
-import Piller from './components/Piller';
 import { motion } from 'framer-motion';
+import { BsArrowRightCircle } from 'react-icons/bs';
+import software from '../../../../assets/Home/software.png';
+import uxdesign from '../../../../assets/Home/uxdesign.png';
 
 const Offer = () => {
 	return (
@@ -23,30 +25,52 @@ const Offer = () => {
 						and Project Managers Join Forces to Bring Your Vision to Life and Drive Your Business Goals
 						Forward.
 					</p>
+
+					<a href="#contact" className={styles.link}>
+						<BsArrowRightCircle style={{ color: 'orange', alignSelf: 'center' }} size={30} />
+						<p style={{ margin: 'auto 0', color: '#fff' }}>Let's Talk</p>
+					</a>
 				</motion.div>
-				<div className={styles.pillerContainer}>
-					<Piller
-						title={'Software Engineering'}
-						description={'Build cutting-edge software with our expert engineering solutions.'}
-						option={3}
-					/>
-					<Piller
-						title={'UX Design'}
-						description={'Transform user experiences with our expert UX design solutions.'}
-						option={2}
-					/>
-					<Piller
-						title={'Website Development'}
-						description={'Bring your website vision to life with our expert development solutions.'}
-						option={1}
-					/>
-					<Piller
-						title={'E-commerce'}
-						description={
-							'Create a seamless online shopping experience with our expert ecommerce development solutions.'
-						}
-						option={4}
-					/>
+
+				<div className={styles.softwareGroup}>
+					<div className={styles.catDescription}>
+						<h3>Software Engineering</h3>
+						<p>
+							Our custom software development solutions meet your specific needs and goals, giving you an
+							edge over others. Our end-to-end software development services include planning, designing,
+							developing, and testing to launching, relieving you of the pressures of handling complex
+							SDLCs.
+						</p>
+						<button className={styles.button}>Learn More</button>
+					</div>
+					<img src={software} className={styles.cardIMG} />
+				</div>
+
+				<div className={styles.uxGroup}>
+					<img src={uxdesign} className={styles.cardIMG} />
+					<div className={styles.catDescription}>
+						<h3>UX Design</h3>
+						<p>
+							Are you looking to work with a team that puts forth a transparent design process and
+							delivers spot-on results within budget? Turn to our long-standing design team specializing
+							in responsive web and mboile solutions, and UX strategy and consulting.
+						</p>
+						<button className={styles.button}>Learn More</button>
+					</div>
+				</div>
+
+				<div className={styles.softwareGroup}>
+					<div className={styles.catDescription}>
+						<h3>Website Development</h3>
+						<p>
+							At our company, we specialize in providing comprehensive website development and ecommerce
+							solutions to businesses of all sizes. Our team of experienced developers, designers, and
+							project managers work together to create custom solutions that meet the unique needs of each
+							client.
+						</p>
+						<button className={styles.button}>Learn More</button>
+					</div>
+					<img src={software} className={styles.cardIMG} />
 				</div>
 			</div>
 		</div>

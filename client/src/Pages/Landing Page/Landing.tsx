@@ -5,13 +5,15 @@ import '../../styles/globalStyles.css';
 import styles from './Landing.module.css';
 import Footer from '../../components/Footer/Footer';
 import Nav2 from '../../components/Nav/Nav2';
+import Offer from './components/Offer/Offer';
 
 const Landing = (props: any) => {
 	return (
 		<main className={styles.mainContainer}>
 			<Nav2 />
 			<Header />
-			{/* <Offer />
+			<Offer />
+			{/*
 			<About />
 			<Team />
 			<Clients /> */}

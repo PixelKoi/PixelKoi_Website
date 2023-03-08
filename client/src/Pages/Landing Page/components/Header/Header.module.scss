@@ -31,7 +31,6 @@
 	top: 4rem;
 	gap: 15px;
 	.button {
-		font-family: lato;
 		font-weight: 600;
 		border: none;
 		background-color: #fff;
@@ -82,62 +81,9 @@
 }
 
 .text {
-	font-family: lato;
 	font-weight: 900;
 	font-style: normal;
 	margin-bottom: 1rem;
 	font-size: clamp(30px, 4vw, 72px);
 	line-height: clamp(38px, 4vw, 77px);
 }
-
-// @media only screen and (min-width: 320px) {
-// 	.header {
-// 		padding: 0 1rem;
-// 	}
-// 	.container {
-// 		flex-direction: column;
-// 	}
-// 	.text {
-// 		font-size: 2rem;
-// 		line-height: 2rem;
-// 	}
-// 	.cube {
-// 		transform: scale(0.2);
-// 	}
-// }
-
-// /* Extra Small Devices, Phones */
-// @media only screen and (min-width: 480px) {
-// }
-
-// /* Medium Devices, Desktops */
-// @media only screen and (min-width: 700px) {
-// 	.cube {
-// 		transform: scale(0.5);
-// 	}
-// 	.text {
-// 		font-size: calc(40px + 80*(100vw - 320px)/1600);
-// 		line-height: calc(40px + 80*(100vw - 320px)/1600);
-// 	}
-// }
-
-// /* Large Devices, Wide Screens */
-// @media only screen and (min-width: 1024px) {
-// 	.cube {
-// 		transform: scale(0.8);
-// 	}
-// 	.header {
-// 		padding: 0 3rem;
-// 	}
-// 	.text {
-// 		font-size: calc(50px + 80*(100vw - 320px)/1600);
-// 		line-height: calc(50px + 80*(100vw - 320px)/1600);
-// 	}
-// }
-
-// /* Large Devices, Wide Screens */
-// @media only screen and (min-width: 1600px) {
-// 	.cube {
-// 		transform: scale(1);
-// 	}
-// }
