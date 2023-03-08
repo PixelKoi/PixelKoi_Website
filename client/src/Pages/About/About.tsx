@@ -10,10 +10,10 @@ import Footer from '../../components/Footer/Footer';
 
 const About = () => {
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<Nav />
-			<div className={styles.aboutContainer}>
-				<div className={styles.contentContainer}>
+
+			{/* <div className={styles.contentContainer}>
 					<div className={`${styles.about} ${styles.sections}`}>
 						<div className={styles.slogan}>
 							<h1>
@@ -48,16 +48,52 @@ const About = () => {
 							</p>
 						</div>
 					</div>
-
-					{/* <div className={`${styles.subsection} ${styles.sections}`}>
-					<h2>Meet the team</h2>
-					<div className={styles.teamContent}>
-						<EmployeeCard name="Jonathan Bajada" title="Co-Founder" img={jonny} />
-						<EmployeeCard name="Garo Nazarian" title="Co-Founder" img={garo} />
-					</div>
 				</div> */}
+			<div className={styles.container}>
+				<div className={styles.section}>
+					<div className={styles.headerText}>
+						<h1>
+							About <br /> Our Agency
+						</h1>
+						<p>
+							Pixel Koi is a creative software development agency dedicated to crafting meaningful
+							experiences through Website and Mobile applications
+						</p>
+					</div>
+					<div className={styles.imgContainer}>
+						<img loading="lazy" src={paper} alt="" className={styles.imgContainer} />
+						<img loading="lazy" src={paper} alt="" className={styles.imgContainer} />
+					</div>
+					<div className={styles.description}>
+						<p>
+							We are a highly{' '}
+							<span className={styles.hightlight}>
+								<b>curious</b>
+							</span>,{' '}
+							<span className={styles.hightlight}>
+								<b>creative</b>
+							</span>{' '}
+							and <span className={styles.hightlight}>meticulous</span> team who work closely with our
+							clients during each stage of the project to understand their unique needs and solve them in
+							innovative ways - delivering a well-designed product.
+						</p>
+					</div>
+				</div>
+
+				<div className={styles.section} id={styles.ourStory}>
+					<div className={styles.headerText}>
+						<h3>Our Story</h3>
+					</div>
+					<div className={styles.imgContainer}>
+						<img loading="lazy" src={hipsters} alt="" className={styles.imgContainer} />
+						<p>
+							Pixel Koi is a creative software development agency dedicated to crafting meaningful
+							experiences through Website and Mobile applications
+						</p>
+					</div>
 				</div>
 			</div>
+
 			<Team />
 			<Footer />
 		</div>

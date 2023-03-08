@@ -66,7 +66,7 @@ const ClientCardLayout = () => {
 						viewport={{ once: true }}
 						className={styles.gridItem}
 					>
-						<ClientCard title={'Random'} />
+						<ClientCard title={'Disaster Productions'} />
 					</motion.div>
 					<motion.div
 						initial={{ opacity: 0 }}

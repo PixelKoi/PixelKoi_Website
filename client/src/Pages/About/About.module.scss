@@ -1,263 +1,48 @@
-.aboutContainer {
-	background-color: #171717;
-	border: 1px solid #171717;
-	h1,
-	h2 {
-		color: #fff;
-	}
+.wrapper {
+	margin-top: 10rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+	line-height: 30px;
 	p {
-		color: #ffff;
-	}
-}
-
-.contentContainer {
-	width: 90%;
-	margin: 0 auto;
-	max-width: 1200px;
-	padding: 10rem 0;
-}
-
-.aboutContainer h1 {
-	text-transform: lowercase;
-	margin: 0;
-}
-
-.aboutContainer p {
-	font-weight: 500;
-	font-size: 1.125rem;
-	line-height: 1.875rem;
-	margin: 0;
-}
-
-.italic {
-	font-style: oblique;
-	font-weight: 500;
-}
-
-.bold {
-	color: orange;
-	font-weight: 800;
-}
-
-.sections {
-	margin: 5rem 0;
-	display: flex;
-	flex-direction: column;
-}
-
-.about {
-	display: flex;
-	flex-direction: column;
-	gap: 60px;
-}
-
-.slogan {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 30px;
-}
-
-.subsection {
-	padding-top: 2rem;
-	border-top: 1px solid #fff;
-	display: flex;
-	gap: 3em;
-}
-
-.teamContent {
-	display: flex;
-	flex-direction: column;
-	gap: 3em;
-}
-
-.imgContainer {
-	border-radius: 20px 0px;
-
-	max-width: 550px;
-}
-
-// @media only screen and (min-width: 600px) {
-// 	.sections {
-// 		/* margin: 10rem 15%; */
-// 	}
-
-// 	.teamContent {
-// 		flex-direction: row;
-// 		justify-content: space-between;
-// 	}
-// }
-
-@media only screen and (min-width: 1024px) {
-	.aboutContainer h1 {
-		font-size: 3.5rem;
-	}
-
-	.sections {
-		/* margin: 10rem 15%; */
-	}
-
-	.slogan {
-		grid-template-columns: 1fr 1fr;
-		align-items: flex-end;
-		gap: 2em;
-	}
-
-	.teamContent {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-}
-
-// @media only screen and (min-width: 1440px) {
-// 	.aboutContainer p {
-// 		font-size: 18px;
-// 	}
-
-// 	.about p {
-// 		font-size: 22px;
-// 		line-height: 30px;
-// 	}
-// }
-
-/* .aboutContainer {
-	color: #33094d;
-}
-
-.aboutContainer h1 {
-	font-size: 2.5rem;
-	text-transform: lowercase;
-	margin: 0;
-}
-
-.aboutContainer p {
-	font-weight: 500;
-	font-size: 16px;
-	line-height: 28px;
-	margin: 0;
-}
-
-.italic {
-	font-style: oblique;
-	font-weight: 500;
-}
-
-.bold {
-	color: #8513cb;
-	font-weight: 800;
-}
-
-.sections {
-	margin: 5rem 10%;
-	display: flex;
-	flex-direction: column;
-}
-
-.about {
-	display: flex;
-	flex-direction: column;
-	gap: 60px;
-}
-
-.slogan {
-	display: grid;
-	grid-template-columns: 1fr;
-	gap: 30px;
-}
-
-.subsection {
-	padding-top: 2rem;
-	border-top: 1px solid #33094d;
-	display: flex;
-	gap: 3em;
-}
-
-.teamContent {
-	display: flex;
-	flex-direction: column;
-	gap: 3em;
-}
-
-.imgContainer {
-	border-radius: 20px 0px;
-	height: 100%;
-	width: 100%;
-}
-
-.founderContainer {
-	display: grid;
-	margin: 5rem 15%;
-	padding-top: 2rem;
-	gap: 3em;
-	border-top: 1px solid #33094d;
-}
-
-.founderContent {
-	display: grid;
-	gap: 3em;
-}
-
-.founderJonny {
-	width: 100%;
-	height: 100%;
-}
-
-.founderKC {
-	width: 100%;
-	height: 100%;
-}
-
-@media only screen and (min-width: 320px) {
-	.founderKC {
-		grid-column: 1;
-	}
-}
-
-@media only screen and (min-width: 600px) {
-	.sections {
-		margin: 10rem 15%;
-	}
-
-	.teamContent {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-}
-
-@media only screen and (min-width: 1024px) {
-	.aboutContainer h1 {
-		font-size: 3.5rem;
-	}
-
-	.sections {
-		margin: 10rem 15%;
-	}
-
-	.slogan {
-		grid-template-columns: 1fr 1fr;
-		align-items: flex-end;
-		gap: 2em;
-	}
-
-	.teamContent {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-}
-
-@media only screen and (min-width: 1440px) {
-	.aboutContainer p {
 		font-size: 18px;
 	}
 
-	.about p {
-		font-size: 22px;
-		line-height: 30px;
-	}
-	.founderJonny {
-		grid-column: 1;
+	.section {
+		padding: 4rem 0;
 	}
 
-	.founderKC {
-		grid-column: 2;
+	#ourStory {
+		border-top: 1px solid #fff;
 	}
-} */
+
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		max-width: 1200px;
+
+		.headerText {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+			gap: 40px;
+			margin-bottom: 2em;
+		}
+	}
+
+	.imgContainer {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 40px;
+		img {
+			width: 100%;
+		}
+	}
+	.description {
+		margin-top: 4rem;
+
+		.hightlight {
+			color: orange;
+		}
+	}
+}
