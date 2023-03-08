@@ -75,9 +75,14 @@
 	align-self: center;
 }
 
+.cubeSize {
+	width: 100px;
+}
+
 .text {
-	font-size: 30px;
-	line-height: 3rem;
+	// margin-right: 1rem;
+	font-size: clamp(30px, 4vw, 72px);
+	line-height: clamp(38px, 4vw, 77px);
 }
 
 // @media only screen and (min-width: 320px) {
