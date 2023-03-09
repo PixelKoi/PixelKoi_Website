@@ -1,0 +1,42 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+
+	color: #efff;
+	padding: 4rem 0;
+
+	h3 {
+		font-size: 24px;
+	}
+	h4 {
+		font-size: 18px;
+	}
+
+	.consultation {
+		p {
+			font-size: 14px;
+		}
+		a {
+			cursor: pointer;
+			font-size: 1.125em;
+			color: orange;
+		}
+		margin-bottom: 2rem;
+	}
+	.container {
+		width: 90%;
+		margin: 0 auto;
+		max-width: 1200px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 8rem;
+		padding: 0 1rem;
+	}
+}
+
+.linksContainer {
+	.linksWrapper {
+		display: flex;
+		flex-direction: column;
+	}
+}
