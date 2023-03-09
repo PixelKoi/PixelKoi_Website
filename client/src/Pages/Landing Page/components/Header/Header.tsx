@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import SpinningImage from './components/3Dsquare/SpinningImage';
 import Cube from './components/Cube/Cube';
 import cube from '../../../../assets/Home/ph_cube.svg';
+import koi from '../../../../assets/Home/koi.svg';
 import { Link, useLocation } from 'react-router-dom';
 
 const Header = (props: any) => {

@@ -22,10 +22,10 @@ const ClientCardLayout = () => {
 						Our clients reside in various nations and use diverse languages, yet our shared aim unites us in
 						our efforts..
 					</motion.h2>
-					<motion.p className={styles.titleSection}>
+					{/* <motion.p className={styles.titleSection}>
 						We believe that cultural diversity presents a continuous chance for self-improvement and an
 						abundant source of inspiration for our endeavors.
-					</motion.p>
+					</motion.p> */}
 				</motion.div>
 				<div className={styles.cardContainer}>
 					<motion.div
