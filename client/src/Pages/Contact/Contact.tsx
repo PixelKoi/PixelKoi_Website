@@ -97,6 +97,7 @@ export const Contact = () => {
 		})
 			.then((response) => response.json())
 			.then((data) => console.log(data))
+			.then(() => setForm('submitted'))
 			.catch((error) => console.error(error));
 	};
 
@@ -324,11 +325,21 @@ export const Contact = () => {
 		);
 	};
 
+	const submittedForm = () => {
+		return(
+			<div>
+				<p>Form has been submitted</p>
+			</div>
+		)
+	}
+
 	//Show Contact form based on state
 	const showForm = (form: String) => {
 		switch (form) {
 			case 'hi':
 				return hiForm();
+			case 'submitted':
+				return submittedForm();
 			default:
 				return startForm();
 		}
