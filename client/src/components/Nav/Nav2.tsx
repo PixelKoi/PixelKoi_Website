@@ -50,8 +50,8 @@ const Nav2 = () => {
 								href=""
 								initial={{ y: 100, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
-								transition={{ delay: 0.5 }}
-								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.6 } }}
+								transition={{ delay: 0.3 }}
+								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.7 } }}
 								whileHover={{ scale: 1.3, textShadow: '0px 0px 2px rgb(255,255,255)' }}
 							>
 								<Link
@@ -68,8 +68,8 @@ const Nav2 = () => {
 								href=""
 								initial={{ y: 100, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
-								transition={{ delay: 0.3 }}
-								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.3 } }}
+								transition={{ delay: 0.4 }}
+								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.6 } }}
 								whileHover={{ scale: 1.3, textShadow: '0px 0px 2px rgb(255,255,255)' }}
 							>
 								<Link
@@ -86,8 +86,8 @@ const Nav2 = () => {
 								href=""
 								initial={{ y: 100, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
-								transition={{ delay: 0.4 }}
-								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.4 } }}
+								transition={{ delay: 0.7 }}
+								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.5 } }}
 								whileHover={{ scale: 1.3, textShadow: '0px 0px 2px rgb(255,255,255)' }}
 							>
 								<Link
@@ -105,8 +105,8 @@ const Nav2 = () => {
 								href=""
 								initial={{ y: 100, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
-								transition={{ delay: 0.2 }}
-								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.2 } }}
+								transition={{ delay: 0.9 }}
+								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.3 } }}
 								whileHover={{ scale: 1.3, textShadow: '0px 0px 2px rgb(255,255,255)' }}
 							>
 								<Link
