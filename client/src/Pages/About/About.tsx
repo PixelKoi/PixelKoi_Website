@@ -57,8 +57,14 @@ const About = () => {
 							<i>Our Agency</i>
 						</h1>
 						<p style={{ fontSize: '20px' }}>
-							Pixel Koi is a creative software development agency dedicated to crafting meaningful
-							experiences through Website and Mobile applications
+							As a team of experienced professional software engineers, we bring our passion for
+							problem-solving and ingenuity to each project we decide to undertake.
+							With a keen attention to detail, and insatiable curiosity, we work closely with our select
+							clients throughout the entire development process to gain a deep understanding of their
+							unique needs.
+							Our goal is to deliver a well-designed user experience, brands that not only meets but
+							exceeds users and clients expectations. We take great pride in our ability to tackle
+							complex challenges and provide customized solutions that drive our clients' success.
 						</p>
 					</div>
 					<div className={styles.imgContainer}>
@@ -88,8 +94,7 @@ const About = () => {
 					<div className={styles.imgContainer}>
 						<img loading="lazy" src={hipsters} alt="" className={styles.imgContainer} />
 						<p>
-							Pixel Koi is a creative software development agency dedicated to crafting meaningful
-							experiences through Website and Mobile applications
+
 						</p>
 					</div>
 				</div>
