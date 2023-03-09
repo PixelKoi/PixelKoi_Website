@@ -22,7 +22,7 @@ const Footer = () => {
 	const opacity = useTransform(y, [ 0, 300 ], [ 1, 0 ]);
 	return (
 		<div className={styles.footerContainer}>
-			<div className={styles.marquee}>
+			{/* <div className={styles.marquee}>
 				<motion.div
 					initial="hidden"
 					transition={{ duration: 20 }}
@@ -40,7 +40,7 @@ const Footer = () => {
 					</Link>
 
 				</motion.div>
-			</div>
+			</div> */}
 			<motion.div className={styles.footerMain} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} />
 			<div className="footer-links d-flex justify-content-center">
 				<div className="row no-gutters mx-auto">
@@ -79,11 +79,11 @@ const Footer = () => {
 
 			<motion.p
 				initial={{ opacity: 0 }}
-				style={{ color: '#fff', display: 'block', textAlign: 'center'}}
+				style={{ color: '#fff', display: 'block', textAlign: 'center' }}
 				className={styles.footerCopyright}
 				whileInView={{ opacity: 1 }}
 			>
-					Copyright © {currentYear} Pixel Koi - All rights reserved.
+				Copyright © {currentYear} Pixel Koi - All rights reserved.
 			</motion.p>
 		</div>
 	);

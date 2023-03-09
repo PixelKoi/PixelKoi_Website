@@ -21,7 +21,7 @@ const OurTech = () => {
     marqueeElement.innerHTML += marqueeContent;
 
     let currentX = 0;
-    let speed = 0.5;
+    let speed = 0.3;
 
     const move = (timestamp: number) => {
       if (marqueeElement.offsetWidth === 0) return;

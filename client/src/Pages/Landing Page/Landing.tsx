@@ -6,6 +6,7 @@ import Footer from '../../components/Footer/Footer';
 import Nav2 from '../../components/Nav/Nav2';
 import Offer from './components/Offer/Offer';
 import Global from './components/Global/Global';
+import OurTech from './components/OurTech/OurTech';
 
 const Landing = (props: any) => {
 	return (
@@ -19,6 +20,7 @@ const Landing = (props: any) => {
 			<Team />
 			<Clients /> */}
 			<Clients />
+			<OurTech />
 			<Footer />
 		</main>
 	);
