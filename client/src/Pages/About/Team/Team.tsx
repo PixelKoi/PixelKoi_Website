@@ -33,7 +33,7 @@ const Team = (props: any) => {
 					<motion.p className={styles.cta} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
 						At our core, we are a team of designers, developers, strategists, and problem-solvers
 						who share a collective passion for leveraging the power of technologies, creativity and
-						imagination to create digital experiences that make a positive difference in people's lives.
+						imagination in turn creating enthralling digital experiences that make a positive difference in people's lives.
 						Whether we're brainstorming ideas or putting them into action, we work together towards a common
 						goal of crafting impactful solutions that resonate with our clients and their users.
 						Our diverse skill sets and perspectives allow us to approach challenges
