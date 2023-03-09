@@ -22,11 +22,19 @@ const Footer2 = () => {
 				<div className={styles.linksContainer}>
 					<h4>Socials</h4>
 					<div className={styles.linksWrapper}>
-						<a>About</a>
-						<a>Services</a>
-						<a>Contact</a>
+						<a>LinkedIn</a>
 					</div>
 				</div>
+			</div>
+			<div className={styles.copyrightContainer}>
+				<motion.p
+					initial={{ opacity: 0 }}
+					style={{ color: '#fff', display: 'block', textAlign: 'center' }}
+					className={styles.footerCopyright}
+					whileInView={{ opacity: 1 }}
+				>
+					Copyright © {currentYear} Pixel Koi - All rights reserved.
+				</motion.p>
 			</div>
 		</div>
 	);
