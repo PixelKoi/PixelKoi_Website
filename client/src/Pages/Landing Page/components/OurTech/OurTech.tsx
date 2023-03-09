@@ -6,38 +6,42 @@ import { motion } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 
 const OurTech = () => {
-	const marqueeRef = useRef<HTMLDivElement>(null);
-	let requestRef = useRef<number>(0);
-  
-	useEffect(() => {
-	  const marqueeElement = marqueeRef.current;
-	  if (!marqueeElement) return;
-  
-	  const cloneNode = marqueeElement.cloneNode(true) as HTMLDivElement;
-	  marqueeElement.parentNode?.appendChild(cloneNode);
-  
-	  let currentX = 0;
-	  let speed = 0.5;
-  
-	  const move = (timestamp: number) => {
-		if (marqueeElement.offsetWidth === 0) return;
-  
-		currentX += speed;
-		if (currentX >= marqueeElement.offsetWidth) {
-		  currentX = 0;
-		}
-		marqueeElement.style.transform = `translateX(-${currentX}px)`;
-		cloneNode.style.transform = `translateX(-${currentX}px)`;
-  
-		requestRef.current = requestAnimationFrame(move);
-	  };
-  
-	  requestRef.current = requestAnimationFrame(move);
-  
-	  return () => {
-		cancelAnimationFrame(requestRef.current);
-	  };
-	}, []);
+  const marqueeRef = useRef<HTMLDivElement>(null);
+  let requestRef = useRef<number>(0);
+
+  useEffect(() => {
+    const marqueeElement = marqueeRef.current;
+    if (!marqueeElement) return;
+
+    const cloneNode = marqueeElement.cloneNode(true) as HTMLDivElement;
+    marqueeElement.parentNode?.appendChild(cloneNode);
+
+    // Clone the content of the marquee and append it to the end
+    const marqueeContent = marqueeElement.innerHTML;
+    marqueeElement.innerHTML += marqueeContent;
+
+    let currentX = 0;
+    let speed = 0.5;
+
+    const move = (timestamp: number) => {
+      if (marqueeElement.offsetWidth === 0) return;
+
+      currentX += speed;
+      if (currentX >= marqueeElement.offsetWidth / 2) {
+        currentX = 0;
+      }
+      marqueeElement.style.transform = `translateX(-${currentX}px)`;
+      cloneNode.style.transform = `translateX(-${currentX}px)`;
+
+      requestRef.current = requestAnimationFrame(move);
+    };
+
+    requestRef.current = requestAnimationFrame(move);
+
+    return () => {
+      cancelAnimationFrame(requestRef.current);
+    };
+  }, []);
 
 	const marqueeVariants = {
 		animate: {
@@ -57,24 +61,6 @@ const OurTech = () => {
 			{/* <h2 className={styles.title}>Technologies</h2> */}
 
 			<motion.div ref={marqueeRef} className={styles.iconContainer}>
-				<DiJavascript1 />
-				<SiTypescript />
-				<SiPostgresql />
-				<FaReact />
-				<FaNodeJs />
-				<DiJava />
-				<FaFigma />
-				<SiAdobexd />
-				<FaWordpress />
-				<DiJavascript1 />
-				<SiTypescript />
-				<SiPostgresql />
-				<FaReact />
-				<FaNodeJs />
-				<DiJava />
-				<FaFigma />
-				<SiAdobexd />
-				<FaWordpress />
 				<DiJavascript1 />
 				<SiTypescript />
 				<SiPostgresql />
