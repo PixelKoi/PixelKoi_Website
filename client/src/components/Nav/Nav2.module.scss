@@ -5,7 +5,7 @@
 	align-items: center;
 	color: #fff;
 	height: 6rem;
-	// border: 1px solid green;
+	width: 100%;
 	position: fixed;
 	z-index: 3;
 	top: 0;
@@ -19,7 +19,6 @@
 		padding: 0;
 	}
 	.logo {
-		// margin-left: 1rem;
 		color: #fff;
 		margin-right: auto;
 		font-size: 24px;
@@ -31,11 +30,9 @@
 		margin-right: 5rem;
 		text-decoration: none;
 	}
-	// #link1,
-	// #link2,
-	// #link3 {
-	// 	margin-right: 4rem;
-	// }
+	#link4 {
+		margin-right: 6rem;
+	}
 }
 
 .hoverUnderlineAnimation {
@@ -142,6 +139,9 @@
 	.container {
 		padding: 0 2rem;
 	}
+	.container2 {
+		padding: 0 2rem 0 0;
+	}
 	.link {
 		display: block;
 	}
@@ -151,11 +151,19 @@
 	}
 }
 
-// @media only screen and (min-width: 2000px) {
-// 	.container {
-// 		padding: 4rem 11rem;
-// 	}
-// 	.link {
-// 		display: block;
-// 	}
-// }
+.container2 {
+	color: #fff;
+	height: 6rem;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	z-index: 4;
+	right: 0;
+
+	.menuIMG {
+		background-color: transparent;
+		border-style: none;
+		outline: none;
+		align-self: center;
+	}
+}
