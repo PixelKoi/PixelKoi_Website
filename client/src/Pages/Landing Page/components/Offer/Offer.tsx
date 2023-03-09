@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import software from '../../../../assets/Home/software.png';
 import uxdesign from '../../../../assets/Home/uxdesign.png';
+import code from '../../../../assets/Home/code.jpg';
 import { Link } from 'react-router-dom';
 
 const Offer = () => {
@@ -22,9 +23,9 @@ const Offer = () => {
 					<br />
 					<br />
 					<p className={styles.paragraph}>
-						Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers,
-						and Project Managers collaborate seamlessly to transform your vision into reality and
-						propel your business objectives forward.
+						Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward.
 					</p>
 
 					<Link to={'/contact'} className={styles.link}>
@@ -44,8 +45,8 @@ const Offer = () => {
 						<p>
 							Our custom software development solutions meet your specific needs and goals, giving you a
 							competitive advantage. Our comprehensive end-to-end software development services cover
-							everything from planning, designing and developing to testing to launching,
-							relieving you from the burden of managing intricate SDLCs.
+							everything from planning, designing and developing to testing to launching, relieving you
+							from the burden of managing intricate SDLCs.
 						</p>
 						<Link to={'/contact'}>
 							<button className={styles.button}>Learn More</button>
@@ -55,7 +56,7 @@ const Offer = () => {
 						initial={{ opacity: 0, x: 100 }}
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
 						viewport={{ once: true }}
-						src={software}
+						src={code}
 						className={styles.cardIMG}
 					/>
 				</div>
@@ -76,9 +77,8 @@ const Offer = () => {
 					>
 						<h3>UX Design</h3>
 						<p>
-							If you seek a team that values transparent design processes and consistently
-							delivers exceptional results within your budget?
-							Turn to our long-standing design team specializing
+							If you seek a team that values transparent design processes and consistently delivers
+							exceptional results within your budget? Turn to our long-standing design team specializing
 							in responsive web and mobile solutions, and UX strategy and consulting.
 						</p>
 						<Link to={'/contact'}>
@@ -97,9 +97,9 @@ const Offer = () => {
 						<h3>Website Development</h3>
 						<p>
 							Pixel Koi is dedicated to offering all-encompassing website development and ecommerce
-							solutions to businesses of all sizes. Our professional team of developers,
-							designers, and project managers collaborate closely to design custom solutions
-							that cater to the unique needs of each client.
+							solutions to businesses of all sizes. Our professional team of developers, designers, and
+							project managers collaborate closely to design custom solutions that cater to the unique
+							needs of each client.
 						</p>
 						<Link to={'/contact'}>
 							<button className={styles.button}>Learn More</button>
