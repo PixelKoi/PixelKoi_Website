@@ -58,27 +58,9 @@ const Nav2 = () => {
 									onClick={closeMenu}
 									id={styles.link1}
 									className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-									to="/#team"
+									to="/about"
 								>
-									<motion.div>Team</motion.div>
-								</Link>
-							</motion.a>
-							<motion.a
-								className={styles.dropdownButtons}
-								href=""
-								initial={{ y: 100, opacity: 0 }}
-								animate={{ y: 0, opacity: 1 }}
-								transition={{ delay: 0.4 }}
-								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.4 } }}
-								whileHover={{ scale: 1.3, textShadow: '0px 0px 2px rgb(255,255,255)' }}
-							>
-								<Link
-									onClick={closeMenu}
-									id={styles.link2}
-									className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-									to="/#work"
-								>
-									<motion.div>Work</motion.div>
+									<motion.div>About</motion.div>
 								</Link>
 							</motion.a>
 							<motion.a
@@ -99,6 +81,25 @@ const Nav2 = () => {
 									<motion.div>Services</motion.div>
 								</Link>
 							</motion.a>
+							<motion.a
+								className={styles.dropdownButtons}
+								href=""
+								initial={{ y: 100, opacity: 0 }}
+								animate={{ y: 0, opacity: 1 }}
+								transition={{ delay: 0.4 }}
+								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.4 } }}
+								whileHover={{ scale: 1.3, textShadow: '0px 0px 2px rgb(255,255,255)' }}
+							>
+								<Link
+									onClick={closeMenu}
+									id={styles.link2}
+									className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
+									to="/#work"
+								>
+									<motion.div>Clients</motion.div>
+								</Link>
+							</motion.a>
+
 							<motion.a
 								className={styles.dropdownButtons}
 								href=""
