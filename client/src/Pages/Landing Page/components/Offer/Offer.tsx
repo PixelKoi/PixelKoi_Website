@@ -42,10 +42,10 @@ const Offer = () => {
 					>
 						<h3>Software Engineering</h3>
 						<p>
-							Our custom software development solutions meet your specific needs and goals, giving you an
-							edge over others. Our end-to-end software development services include planning, designing,
-							developing, and testing to launching, relieving you of the pressures of handling complex
-							SDLCs.
+							Our custom software development solutions meet your specific needs and goals, giving you a
+							competitive advantage. Our comprehensive end-to-end software development services cover
+							everything from planning, designing and developing to testing to launching,
+							relieving you from the burden of managing intricate SDLCs.
 						</p>
 						<Link to={'/contact'}>
 							<button className={styles.button}>Learn More</button>
