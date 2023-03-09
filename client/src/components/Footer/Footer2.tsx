@@ -15,7 +15,7 @@ const Footer2 = () => {
 				</div>
 				<div className={styles.linksContainer}>
 					<h4>Links</h4>
-					<div className={styles.linksWrapper}>
+					<div className={styles.linksWrapper} id={styles.links}>
 						<Link to="/about">About</Link>
 						<Link to="/#services">Services</Link>
 						<Link to="/contact">Contact</Link>
@@ -23,7 +23,7 @@ const Footer2 = () => {
 				</div>
 				<div className={styles.linksContainer}>
 					<h4>Socials</h4>
-					<div className={styles.linksWrapper}>
+					<div className={styles.linksWrapper} id={styles.socials}>
 						<a href="https://www.linkedin.com/company/pixelkoi/" target="_blank" rel="noopener noreferrer">
 							<AiFillLinkedin size={20} />
 						</a>
