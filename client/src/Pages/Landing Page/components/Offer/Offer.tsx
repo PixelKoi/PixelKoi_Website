@@ -3,7 +3,7 @@ import styles from './Offer.module.scss';
 import { motion } from 'framer-motion';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import software from '../../../../assets/Home/software.png';
-import uxdesign from '../../../../assets/Home/uxdesign.png';
+import uxdesign from '../../../../assets/Home/uxdesign.jpg';
 import code from '../../../../assets/Home/code.jpg';
 import web from '../../../../assets/Home/web.jpg';
 
