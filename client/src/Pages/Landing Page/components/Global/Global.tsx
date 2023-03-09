@@ -36,6 +36,7 @@ const Global = () => {
 						/>
 					</div>
 					<h1>Global Network</h1>
+					<hr style={{ borderColor: '#fff', width: '4rem' }} />
 					<p>We are a global team, with networks spanning North America and SEA</p>
 				</div>
 			</div>
