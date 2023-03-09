@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from './Footer2.module.scss';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Footer2 = () => {
 	let currentYear = new Date().getFullYear();
@@ -14,9 +15,9 @@ const Footer2 = () => {
 				<div className={styles.linksContainer}>
 					<h4>Links</h4>
 					<div className={styles.linksWrapper}>
-						<a>About</a>
-						<a>Services</a>
-						<a>Contact</a>
+						<Link to="/about">About</Link>
+						<Link to="/#services">Services</Link>
+						<Link to="/contact">Contact</Link>
 					</div>
 				</div>
 				<div className={styles.linksContainer}>
