@@ -60,7 +60,7 @@ interface FormData {
 	name: string;
 	company: string;
 	email: string;
-	phone: number;
+	phone: string;
 	deadline: number;
 	budget: number;
 }
@@ -79,7 +79,7 @@ export const Contact = () => {
 		name: '',
 		company: '',
 		email: '',
-		phone: 0,
+		phone: '',
 		deadline: deadline,
 		budget: amount
 	});
@@ -130,6 +130,7 @@ export const Contact = () => {
 						type="text"
 						name="name"
 						placeholder="Name Surname"
+						required
 					/>
 
 					<label className={styles.formLabel}>and I work for</label>
@@ -140,6 +141,7 @@ export const Contact = () => {
 						type="text"
 						name="company"
 						placeholder="Company name"
+						required
 					/>
 
 					<label className={styles.formLabel}>you can write me at*</label>
@@ -150,6 +152,7 @@ export const Contact = () => {
 						type="text"
 						name="email"
 						placeholder="my email address"
+						required
 					/>
 
 					<label className={styles.formLabel}>or call me at*</label>
@@ -160,6 +163,7 @@ export const Contact = () => {
 						type="text"
 						name="phone"
 						placeholder="my phone number"
+						required
 					/>
 				</div>
 
@@ -284,6 +288,7 @@ export const Contact = () => {
 						onChange={handleInputChangeSimple}
 						placeholder="Name Surname"
 						value={simpleValues.name}
+						required
 					/>
 
 					<label className={styles.formLabel}>you can write me at*</label>
@@ -294,6 +299,7 @@ export const Contact = () => {
 						onChange={handleInputChangeSimple}
 						placeholder="my email address"
 						value={simpleValues.email}
+						required
 					/>
 
 					<label className={styles.formLabel}>Dear Pixel Koi,*</label>
@@ -304,6 +310,7 @@ export const Contact = () => {
 						onChange={handleInputChangeSimple}
 						placeholder="I wanna say hi.."
 						value={simpleValues.message}
+						required
 					/>
 				</div>
 				<div className={`${styles.buttonGroup} ${styles.sendButton}`}>
