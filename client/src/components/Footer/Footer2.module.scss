@@ -35,16 +35,34 @@
 }
 
 .linksContainer {
+	h4 {
+		font-family: "Noto Sans Georgian";
+		font-size: 1rem;
+	}
 	.linksWrapper {
 		display: flex;
 		flex-direction: column;
+
 		a {
 			line-height: 30px;
+			color: inherit;
+			text-decoration: none;
+			cursor: pointer;
+			&:hover {
+				color: orange;
+			}
 		}
 	}
 }
 #links {
 	margin-bottom: 1rem;
+
+	a {
+		opacity: 0.6;
+		&:hover {
+			opacity: 1;
+		}
+	}
 }
 
 .copyrightContainer {

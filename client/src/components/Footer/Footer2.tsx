@@ -14,7 +14,7 @@ const Footer2 = () => {
 					<a>Book A Free Consultation</a>
 				</div>
 				<div className={styles.linksContainer}>
-					<h4>Links</h4>
+					<h4>INFORMATION</h4>
 					<div className={styles.linksWrapper} id={styles.links}>
 						<Link to="/about">About</Link>
 						<Link to="/#services">Services</Link>
@@ -22,10 +22,10 @@ const Footer2 = () => {
 					</div>
 				</div>
 				<div className={styles.linksContainer}>
-					<h4>Socials</h4>
+					<h4>SOCIALS</h4>
 					<div className={styles.linksWrapper} id={styles.socials}>
 						<a href="https://www.linkedin.com/company/pixelkoi/" target="_blank" rel="noopener noreferrer">
-							<AiFillLinkedin size={20} />
+							<AiFillLinkedin size={25} />
 						</a>
 					</div>
 				</div>
