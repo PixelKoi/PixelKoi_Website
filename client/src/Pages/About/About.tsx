@@ -57,7 +57,7 @@ const About = () => {
 							<i>Our Agency</i>
 						</h1>
 						<p style={{ fontSize: '20px' }}>
-							Pixel Koi is an innovative software development agency dedicated to crafting meaningful
+							Pixel Koi is an innovative software development agency dedicated to crafting impactful
 							experiences through Website and Mobile applications
 						</p>
 					</div>
