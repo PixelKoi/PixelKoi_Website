@@ -57,7 +57,7 @@ const About = () => {
 							<i>Our Agency</i>
 						</h1>
 						<p style={{ fontSize: '20px' }}>
-							Pixel Koi is a creative software development agency dedicated to crafting meaningful
+							Pixel Koi is an innovative software development agency dedicated to crafting meaningful
 							experiences through Website and Mobile applications
 						</p>
 					</div>
@@ -67,16 +67,23 @@ const About = () => {
 					</div>
 					<div className={styles.description}>
 						<p>
-							We are a highly{' '}
+							We are a{' '}
 							<span className={styles.hightlight}>
 								<b>curious</b>
-							</span>,{' '}
+							</span>{' '} and
 							<span className={styles.hightlight}>
-								<b>creative</b>
-							</span>{' '}
-							and <span className={styles.hightlight}>meticulous</span> team who work closely with our
-							clients during each stage of the project to understand their unique needs and solve them in
-							innovative ways - delivering a well-designed product.
+								<b> creative</b>
+							</span>{' '} team
+							of skilled professionals, each with our own unique niches of expertise, coming together to
+							deliver exceptional results through shared passion, curiosity and
+							<span className={styles.hightlight}> meticulous</span> planning, we work closely with our
+							clients during each stage of the project to comprehend their distinctive requirements and provide
+							excellent user experiences for their users. Through our expertise and inventive solutions,
+							we carve a path that leads to a product that exceeds expectations.
+							Our proven track record and unwavering commitment to improving our designs and ingenuity is
+							a testament to our dedication to deliver excellence in every project we choose to undertake.
+							When you work with us, you can be confident that you are partnering with a team of true
+							professionals who will help you achieve your goals and take your brand to the next level.
 						</p>
 					</div>
 				</div>
