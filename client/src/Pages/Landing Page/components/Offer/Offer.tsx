@@ -5,6 +5,8 @@ import { BsArrowRightCircle } from 'react-icons/bs';
 import software from '../../../../assets/Home/software.png';
 import uxdesign from '../../../../assets/Home/uxdesign.png';
 import code from '../../../../assets/Home/code.jpg';
+import web from '../../../../assets/Home/web.jpg';
+
 import { Link } from 'react-router-dom';
 
 const Offer = () => {
@@ -109,7 +111,7 @@ const Offer = () => {
 						initial={{ opacity: 0, x: 100 }}
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
 						viewport={{ once: true }}
-						src={software}
+						src={web}
 						className={styles.cardIMG}
 					/>
 				</div>
