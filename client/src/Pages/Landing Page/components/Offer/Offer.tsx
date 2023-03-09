@@ -76,9 +76,10 @@ const Offer = () => {
 					>
 						<h3>UX Design</h3>
 						<p>
-							Are you looking to work with a team that puts forth a transparent design process and
-							delivers spot-on results within budget? Turn to our long-standing design team specializing
-							in responsive web and mboile solutions, and UX strategy and consulting.
+							If you seek a team that values transparent design processes and consistently
+							delivers exceptional results within your budget?
+							Turn to our long-standing design team specializing
+							in responsive web and mobile solutions, and UX strategy and consulting.
 						</p>
 						<Link to={'/contact'}>
 							<button className={styles.button}>Learn More</button>
@@ -95,10 +96,10 @@ const Offer = () => {
 					>
 						<h3>Website Development</h3>
 						<p>
-							At Pixel Koi, we specialize in providing comprehensive website development and ecommerce
-							solutions to businesses of all sizes. Our team of experienced developers, designers, and
-							project managers work together to create custom solutions that meet the unique needs of each
-							client.
+							Pixel Koi is dedicated to offering all-encompassing website development and ecommerce
+							solutions to businesses of all sizes. Our professional team of developers,
+							designers, and project managers collaborate closely to design custom solutions
+							that cater to the unique needs of each client.
 						</p>
 						<Link to={'/contact'}>
 							<button className={styles.button}>Learn More</button>
