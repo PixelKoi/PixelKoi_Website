@@ -82,7 +82,7 @@ const About = () => {
 
 				<div className={styles.section} id={styles.ourStory}>
 					<div className={styles.headerText}>
-						<h3>Our Story</h3>
+						<h3 style={{ color: 'orange' }}>Our Story</h3>
 					</div>
 					<div className={styles.imgContainer}>
 						<img loading="lazy" src={hipsters} alt="" className={styles.imgContainer} />

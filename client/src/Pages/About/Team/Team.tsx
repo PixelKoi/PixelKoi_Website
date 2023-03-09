@@ -27,9 +27,9 @@ const Team = (props: any) => {
 		<div id="team" className={styles.container}>
 			<div className={styles.teamContainer}>
 				<div className={styles.teamText}>
-					<motion.h1 className={styles.teamTitle} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+					<motion.h3 className={styles.teamTitle} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
 						<b>Our Team</b>
-					</motion.h1>
+					</motion.h3>
 					<motion.p className={styles.cta} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
 						Our team comprises of designers, developers, strategists, and problem-solvers united by a common
 						aspiration: utilizing the strength of creativity and imagination to craft digital experiences
