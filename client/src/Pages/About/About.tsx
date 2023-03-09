@@ -1,5 +1,6 @@
 import styles from './About.module.scss';
-import paper from '../../assets/images/paper.jpg';
+import paper from '../../assets/images/paper1.png';
+import paper2 from '../../assets/images/paper2.png';
 import team from '../../assets/images/team.jpg';
 import hipsters from '../../assets/images/hipsters.jpg';
 import Nav from '../../components/Nav/Nav2';
@@ -53,7 +54,7 @@ const About = () => {
 				<div className={styles.section}>
 					<div className={styles.headerText}>
 						<h1>
-							<i>About</i> <br /> our agency
+							<i>Our Agency</i>
 						</h1>
 						<p style={{ fontSize: '20px' }}>
 							Pixel Koi is a creative software development agency dedicated to crafting meaningful
@@ -62,7 +63,7 @@ const About = () => {
 					</div>
 					<div className={styles.imgContainer}>
 						<img loading="lazy" src={paper} alt="" className={styles.imgContainer} />
-						<img loading="lazy" src={paper} alt="" className={styles.imgContainer} />
+						<img loading="lazy" src={paper2} alt="" className={styles.imgContainer} />
 					</div>
 					<div className={styles.description}>
 						<p>
