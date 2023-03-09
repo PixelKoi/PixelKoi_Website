@@ -7,7 +7,7 @@ import Nav from '../../components/Nav/Nav2';
 import garo from '../../assets/images/about_page/garo.jpeg';
 import jonny from '../../assets/images/about_page/jonny3.png';
 import Team from './Team/Team';
-import Footer from '../../components/Footer/Footer';
+import Footer2 from '../../components/Footer/Footer2';
 import about from '../../assets/About/creative.jpg';
 import dream from '../../assets/About/dream.jpg';
 import story from '../../assets/About/story.jpg';
@@ -112,7 +112,7 @@ const About = () => {
 			</div>
 
 			<Team />
-			<Footer />
+			<Footer2 />
 		</div>
 	);
 };
