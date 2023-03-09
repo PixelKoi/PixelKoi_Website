@@ -10,6 +10,7 @@ import Team from './Team/Team';
 import Footer from '../../components/Footer/Footer';
 import about from '../../assets/About/creative.jpg';
 import dream from '../../assets/About/dream.jpg';
+import story from '../../assets/About/story.jpg';
 const About = () => {
 	return (
 		<div className={styles.wrapper}>
@@ -95,7 +96,7 @@ const About = () => {
 						<h3 style={{ color: 'orange' }}>Our Story</h3>
 					</div>
 					<div className={styles.imgContainer}>
-						<img loading="lazy" src={hipsters} alt="" className={styles.imgContainer} />
+						<img loading="lazy" src={story} alt="" className={styles.imgContainer} />
 						<p>
 							As a team of experienced professional software engineers, we bring our passion for
 							problem-solving and ingenuity to each project we decide to undertake. With a keen attention
