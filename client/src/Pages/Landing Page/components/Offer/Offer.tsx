@@ -22,9 +22,9 @@ const Offer = () => {
 					<br />
 					<br />
 					<p className={styles.paragraph}>
-						Unlocking Your Business Potential: Our Multi-Talented Team of Software Developers, UX Designers,
-						and Project Managers Join Forces to Bring Your Vision to Life and Drive Your Business Goals
-						Forward.
+						Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers,
+						and Project Managers collaborate seamlessly to transform your vision into reality and
+						propel your business objectives forward.
 					</p>
 
 					<Link to={'/contact'} className={styles.link}>
