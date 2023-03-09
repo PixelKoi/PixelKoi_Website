@@ -263,7 +263,7 @@ export const Contact = () => {
 				</div>
 				<div className={`${styles.buttonGroup} ${styles.sendButton}`}>
 					<li className={styles.buttonLink}>
-						<button type="submit" onClick={() => {}} className={styles.navLink}>
+						<button type="submit" onClick={() => {setForm('submitted')}} className={styles.navLink}>
 							<span className={styles.buttonText}>SEND</span>
 						</button>
 					</li>
@@ -316,7 +316,7 @@ export const Contact = () => {
 				</div>
 				<div className={`${styles.buttonGroup} ${styles.sendButton}`}>
 					<li className={styles.buttonLink}>
-						<button type="submit" onClick={() => {}} className={styles.navLink}>
+						<button type="submit" onClick={() => {setForm('submitted')}} className={styles.navLink}>
 							<span className={styles.buttonText}>SEND</span>
 						</button>
 					</li>
@@ -328,7 +328,7 @@ export const Contact = () => {
 	const submittedForm = () => {
 		return(
 			<div>
-				<p>Form has been submitted</p>
+				<p style={{color: "white", textAlign: 'center'}}>Form has been submitted</p>
 			</div>
 		)
 	}
