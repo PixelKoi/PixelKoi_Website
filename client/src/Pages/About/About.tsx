@@ -11,9 +11,15 @@ import Footer2 from '../../components/Footer/Footer2';
 import about from '../../assets/About/creative.jpg';
 import dream from '../../assets/About/dream.jpg';
 import story from '../../assets/About/story.jpg';
+import { motion } from 'framer-motion';
 const About = () => {
 	return (
-		<div className={styles.wrapper}>
+		<motion.div
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1, transition: { duration: 1 } }}
+			viewport={{ once: true }}
+			className={styles.wrapper}
+		>
 			<Nav />
 
 			{/* <div className={styles.contentContainer}>
@@ -113,7 +119,7 @@ const About = () => {
 
 			<Team />
 			<Footer2 />
-		</div>
+		</motion.div>
 	);
 };
 
