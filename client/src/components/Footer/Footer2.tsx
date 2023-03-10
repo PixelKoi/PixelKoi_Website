@@ -15,8 +15,8 @@ const Footer2 = () => {
 		>
 			<div className={styles.container}>
 				<div className={styles.consultation}>
-					<h3>Got a project in mind?</h3>
-					<a>Book A Free Consultation</a>
+					<h4>GOT A PROJECT IN MIND?</h4>
+					<a>Book a consultation</a>
 				</div>
 				<div className={styles.linksContainer}>
 					<h4>INFORMATION</h4>
