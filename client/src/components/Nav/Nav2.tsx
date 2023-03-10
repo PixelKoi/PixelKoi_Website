@@ -42,9 +42,9 @@ const Nav2 = () => {
 							transition={{ duration: 0.5 }}
 							exit="exit"
 						>
-							<div className={styles.btn_close} onClick={closeMenu}>
+							{/* <div className={styles.btn_close} onClick={closeMenu}>
 								X
-							</div>
+							</div> */}
 							<motion.a
 								className={styles.dropdownButtons}
 								href=""
