@@ -71,7 +71,7 @@ const ClientCardLayout = () => {
 						</motion.div>
 					</a>
 				</motion.div>
-				<div className={styles.carousel} style={{ marginTop: '4rem' }}>
+				{/* <div className={styles.carousel} style={{ marginTop: '4rem' }}>
 					<BsFillArrowLeftCircleFill
 						className={styles.left}
 						size={40}
@@ -101,7 +101,7 @@ const ClientCardLayout = () => {
 							}
 						}}
 					/>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
