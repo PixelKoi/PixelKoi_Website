@@ -8,7 +8,24 @@ import hype from '../../../../../assets/Clients/hype.png';
 import goodcompany from '../../../../../assets/Clients/goodcompany.png';
 
 const ClientCardLayout = () => {
+	const images = [ hype, goodcompany ];
 	const [ isVisible, setIsVisible ] = useState(false);
+	const [ count, setCount ] = useState(0);
+
+	const handleIMG = () => {
+		switch (count) {
+			case 0:
+				return (
+					<a href="https://hypeovernight.com" target="_blank">
+						<img src={hype} className={styles.logoIMG} />
+					</a>
+				);
+			case 1:
+				return <img src={goodcompany} className={styles.logoIMG} id={styles.gc} />;
+			default:
+				return <img src={hype} className={styles.logoIMG} />;
+		}
+	};
 
 	return (
 		<div id="work" className={styles.mainContainer}>
@@ -87,17 +104,33 @@ const ClientCardLayout = () => {
 					</motion.div>
 				</motion.div>
 				<div className={styles.carousel} style={{ marginTop: '4rem' }}>
-					<BsFillArrowLeftCircleFill className={styles.left} size={40} />
-					<motion.div
-						// initial={{ opacity: 0 }}
-						// whileInView={{ opacity: 1, transition: { duration: 1.8 } }}
-						// viewport={{ once: true }}
-						className={styles.gridItem}
-					>
-						<img src={hype} className={styles.logoIMG} />
-						<img src={goodcompany} className={styles.logoIMG} id={styles.gc} />
-					</motion.div>
-					<BsFillArrowRightCircleFill className={styles.right} size={40} />
+					<BsFillArrowLeftCircleFill
+						className={styles.left}
+						size={40}
+						onClick={() => {
+							if (count === 0) {
+								setCount(1);
+							}
+							if (count === 1) {
+								setCount(0);
+							}
+						}}
+					/>
+					<div className={styles.iconContainer}>
+						<motion.div>{handleIMG()}</motion.div>
+					</div>
+					<BsFillArrowRightCircleFill
+						className={styles.right}
+						size={40}
+						onClick={() => {
+							if (count === 0) {
+								setCount(1);
+							}
+							if (count === 1) {
+								setCount(0);
+							}
+						}}
+					/>
 				</div>
 			</div>
 		</div>
