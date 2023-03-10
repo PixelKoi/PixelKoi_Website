@@ -9,8 +9,6 @@ import goodcompany from '../../../../../assets/Clients/goodcompany.png';
 import developpa from '../../../../../assets/Clients/developpa.png';
 
 const ClientCardLayout = () => {
-	const images = [ hype, goodcompany ];
-	const [ isVisible, setIsVisible ] = useState(false);
 	const [ count, setCount ] = useState(0);
 
 	const handleIMG = () => {
@@ -24,7 +22,11 @@ const ClientCardLayout = () => {
 			case 1:
 				return <img src={goodcompany} className={styles.logoIMG} id={styles.gc} />;
 			case 2:
-				return <img src={developpa} className={styles.logoIMG} id={styles.developpa} />;
+				return (
+					<a href="https://developpa.io/" target="_blank">
+						<img src={developpa} className={styles.logoIMG} id={styles.developpa} />
+					</a>
+				);
 			default:
 				return <img src={hype} className={styles.logoIMG} />;
 		}
@@ -46,10 +48,6 @@ const ClientCardLayout = () => {
 						Our clients reside in various nations and use diverse languages, yet our shared aim unites us in
 						our efforts..
 					</motion.h2>
-					{/* <motion.p className={styles.titleSection}>
-						We believe that cultural diversity presents a continuous chance for self-improvement and an
-						abundant source of inspiration for our endeavors.
-					</motion.p> */}
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0 }}
@@ -57,53 +55,14 @@ const ClientCardLayout = () => {
 					viewport={{ once: true }}
 					className={styles.cardContainer}
 				>
-					<motion.div
-						// initial={{ opacity: 0 }}
-						// whileInView={{ opacity: 1, transition: { duration: 0.3 } }}
-						// viewport={{ once: true }}
-						className={styles.gridItem}
-					>
-						<ClientCard title={'Hype Over Night'} />
+					<motion.div className={styles.gridItem}>
+						<ClientCard img={hype} style={{ maxWidth: '200px' }} />
 					</motion.div>
-					<motion.div
-						// initial={{ opacity: 0 }}
-						// whileInView={{ opacity: 1, transition: { duration: 0.6 } }}
-						// viewport={{ once: true }}
-						className={styles.gridItem}
-					>
-						<ClientCard title={'Goblin Digital'} />
+					<motion.div className={styles.gridItem}>
+						<ClientCard img={goodcompany} style={{ maxWidth: '100px' }} />
 					</motion.div>
-					<motion.div
-						// initial={{ opacity: 0 }}
-						// whileInView={{ opacity: 1, transition: { duration: 0.9 } }}
-						// viewport={{ once: true }}
-						className={styles.gridItem}
-					>
-						<ClientCard title={'Developpa'} />
-					</motion.div>
-					<motion.div
-						// initial={{ opacity: 0 }}
-						// whileInView={{ opacity: 1, transition: { duration: 1.2 } }}
-						// viewport={{ once: true }}
-						className={styles.gridItem}
-					>
-						<ClientCard title={'The Good Company'} />
-					</motion.div>
-					<motion.div
-						// initial={{ opacity: 0 }}
-						// whileInView={{ opacity: 1, transition: { duration: 1.5 } }}
-						// viewport={{ once: true }}
-						className={styles.gridItem}
-					>
-						<ClientCard title={'Disaster Productions'} />
-					</motion.div>
-					<motion.div
-						// initial={{ opacity: 0 }}
-						// whileInView={{ opacity: 1, transition: { duration: 1.8 } }}
-						// viewport={{ once: true }}
-						className={styles.gridItem}
-					>
-						<ClientCard title={'Coming soon...'} />
+					<motion.div className={styles.gridItem}>
+						<ClientCard img={developpa} style={{ maxWidth: '200px' }} />
 					</motion.div>
 				</motion.div>
 				<div className={styles.carousel} style={{ marginTop: '4rem' }}>
@@ -112,10 +71,10 @@ const ClientCardLayout = () => {
 						size={40}
 						onClick={() => {
 							if (count === 0) {
-								setCount(1);
-							} else if (count === 1) {
 								setCount(2);
 							} else if (count === 2) {
+								setCount(1);
+							} else if (count === 1) {
 								setCount(0);
 							}
 						}}
@@ -129,8 +88,9 @@ const ClientCardLayout = () => {
 						onClick={() => {
 							if (count === 0) {
 								setCount(1);
-							}
-							if (count === 1) {
+							} else if (count === 1) {
+								setCount(2);
+							} else if (count === 2) {
 								setCount(0);
 							}
 						}}

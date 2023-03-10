@@ -11,6 +11,10 @@
 		font-weight: 500;
 		font-size: 1.5rem;
 	}
+	img {
+		max-width: 200px;
+		filter: invert(82%) sepia(95%) saturate(0%) hue-rotate(87deg) brightness(115%) contrast(104%);
+	}
 }
 
 @media only screen and (min-width: 320px) {

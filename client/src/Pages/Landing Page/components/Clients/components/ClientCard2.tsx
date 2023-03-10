@@ -2,14 +2,14 @@ import React from 'react';
 import styles from './ClientCard2.module.scss';
 
 interface IProps {
-	title: string;
+	img: any;
+	style: any;
 }
 
 const ClientCard = (props: IProps) => {
 	return (
 		<div className={styles.container}>
-			{/* <img /> */}
-			<h1>{props.title}</h1>
+			<img src={props.img} style={props.style} />
 		</div>
 	);
 };

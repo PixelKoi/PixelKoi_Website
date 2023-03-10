@@ -20,12 +20,12 @@ const Header = (props: any) => {
 				<motion.div initial={{ opacity: 0 }} animate="show" variants={list} className={styles.textContainer}>
 					<div className={styles.topText}>
 						<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
-							We Design
+							We Create
 						</motion.h1>
 					</div>
 					<div className={styles.topText}>
 						<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
-							Custom Software
+							Software Solutions
 						</motion.h1>
 					</div>
 				</motion.div>
