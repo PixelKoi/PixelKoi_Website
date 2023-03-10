@@ -62,7 +62,7 @@ const About = () => {
 					<div className={styles.imgContainer}>
 						<motion.img
 							initial={{ x: -50, opacity: 0 }}
-							whileInView={{ x: 0, opacity: 1, transition: { duration: 0.7 } }}
+							whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
 							viewport={{ once: true }}
 							loading="lazy"
 							src={story}
