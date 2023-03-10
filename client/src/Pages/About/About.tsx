@@ -3,7 +3,7 @@ import Nav from '../../components/Nav/Nav2';
 import Team from './Team/Team';
 import Footer2 from '../../components/Footer/Footer2';
 import about from '../../assets/About/creative.jpg';
-import dream from '../../assets/About/dream.jpg';
+import dream from '../../assets/About/dream.png';
 import story from '../../assets/About/story.png';
 import { motion } from 'framer-motion';
 const About = () => {
@@ -28,8 +28,8 @@ const About = () => {
 						</p>
 					</div>
 					<div className={styles.imgContainer}>
-						<img loading="lazy" src={dream} alt="" className={styles.imgContainer} />
-						<img loading="lazy" src={about} alt="" className={styles.imgContainer} />
+						<img loading="lazy" src={dream} alt="" className={styles.imgContainer} id={styles.dream} />
+						<img loading="lazy" src={about} alt="" className={styles.imgContainer} id={styles.creative} />
 					</div>
 					<div className={styles.description}>
 						<p>
