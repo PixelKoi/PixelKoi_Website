@@ -4,7 +4,7 @@ import Team from './Team/Team';
 import Footer2 from '../../components/Footer/Footer2';
 import about from '../../assets/About/creative.jpg';
 import dream from '../../assets/About/dream.jpg';
-import story from '../../assets/About/story.jpg';
+import story from '../../assets/About/story.png';
 import { motion } from 'framer-motion';
 const About = () => {
 	return (
