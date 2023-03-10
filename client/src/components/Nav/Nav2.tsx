@@ -129,7 +129,7 @@ const Nav2 = () => {
 					animate={{ opacity: 1, transition: { duration: 1 } }}
 					className={styles.container}
 				>
-					<Link to="/" className={styles.logo}>
+					<Link to="/#header" className={styles.logo}>
 						Pixel Kōi
 					</Link>
 
