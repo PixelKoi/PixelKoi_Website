@@ -45,38 +45,6 @@
 	line-height: 2.3rem;
 }
 
-//carousel
-.carousel {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	margin: 0 auto;
-	// max-width: 400px;
-
-	.left {
-		color: #eff;
-		cursor: pointer;
-		margin-right: auto;
-		align-self: center;
-		&:hover {
-			color: orange;
-		}
-	}
-	.right {
-		color: #eff;
-		cursor: pointer;
-		margin-left: auto;
-		align-self: center;
-		&:hover {
-			color: orange;
-		}
-	}
-}
-
 .logoIMG {
-	max-width: 200px;
-	filter: invert(82%) sepia(95%) saturate(0%) hue-rotate(87deg) brightness(115%) contrast(104%);
-}
-#gc {
-	max-width: 100px;
+	max-width: 300px;
 }

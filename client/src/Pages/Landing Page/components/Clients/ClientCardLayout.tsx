@@ -1,11 +1,7 @@
 import React, { useState } from 'react';
-import ClientCard from './ClientCard2';
+import ClientCard from './components/ClientCard2';
 import styles from './ClientCardLayout.module.scss';
 import { motion } from 'framer-motion';
-import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
-import { BsFillArrowRightCircleFill } from 'react-icons/bs';
-import hype from '../../../../../assets/Clients/hype.png';
-import goodcompany from '../../../../../assets/Clients/goodcompany.png';
 
 const ClientCardLayout = () => {
 	const [ isVisible, setIsVisible ] = useState(false);
@@ -86,19 +82,6 @@ const ClientCardLayout = () => {
 						<ClientCard title={'Coming soon...'} />
 					</motion.div>
 				</motion.div>
-				<div className={styles.carousel} style={{ marginTop: '4rem' }}>
-					<BsFillArrowLeftCircleFill className={styles.left} size={40} />
-					<motion.div
-						// initial={{ opacity: 0 }}
-						// whileInView={{ opacity: 1, transition: { duration: 1.8 } }}
-						// viewport={{ once: true }}
-						className={styles.gridItem}
-					>
-						<img src={hype} className={styles.logoIMG} />
-						<img src={goodcompany} className={styles.logoIMG} id={styles.gc} />
-					</motion.div>
-					<BsFillArrowRightCircleFill className={styles.right} size={40} />
-				</div>
 			</div>
 		</div>
 	);
