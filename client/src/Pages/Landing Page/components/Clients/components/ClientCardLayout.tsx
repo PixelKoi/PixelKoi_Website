@@ -6,6 +6,7 @@ import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import hype from '../../../../../assets/Clients/hype.png';
 import goodcompany from '../../../../../assets/Clients/goodcompany.png';
+import developpa from '../../../../../assets/Clients/developpa.png';
 
 const ClientCardLayout = () => {
 	const images = [ hype, goodcompany ];
@@ -22,6 +23,8 @@ const ClientCardLayout = () => {
 				);
 			case 1:
 				return <img src={goodcompany} className={styles.logoIMG} id={styles.gc} />;
+			case 2:
+				return <img src={developpa} className={styles.logoIMG} id={styles.developpa} />;
 			default:
 				return <img src={hype} className={styles.logoIMG} />;
 		}
@@ -110,8 +113,9 @@ const ClientCardLayout = () => {
 						onClick={() => {
 							if (count === 0) {
 								setCount(1);
-							}
-							if (count === 1) {
+							} else if (count === 1) {
+								setCount(2);
+							} else if (count === 2) {
 								setCount(0);
 							}
 						}}
