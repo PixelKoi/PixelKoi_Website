@@ -1,14 +1,18 @@
 .container {
 	color: white;
 	background-color: #171717;
+
 	// border: 1px solid green;
 }
 
 .teamContainer {
 	padding: 0 1rem;
 	width: 90%;
-	margin: 5rem auto;
+	margin: 0 auto;
 	max-width: 1200px;
+	padding-bottom: 8em;
+	padding-top: 5rem;
+	border-bottom: 1px solid #fff;
 }
 
 .cta {
