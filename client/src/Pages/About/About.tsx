@@ -60,7 +60,15 @@ const About = () => {
 						<h3 style={{ color: 'orange' }}>Our Story</h3>
 					</div>
 					<div className={styles.imgContainer}>
-						<img loading="lazy" src={story} alt="" className={styles.imgContainer} />
+						<motion.img
+							initial={{ x: -50, opacity: 0 }}
+							whileInView={{ x: 0, opacity: 1, transition: { duration: 0.7 } }}
+							viewport={{ once: true }}
+							loading="lazy"
+							src={story}
+							alt=""
+							className={styles.imgContainer}
+						/>
 						<p>
 							As a team of experienced professional software engineers, we bring our passion for
 							problem-solving and ingenuity to each project we decide to undertake. With a keen attention

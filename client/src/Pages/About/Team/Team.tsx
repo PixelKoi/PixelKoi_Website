@@ -26,18 +26,23 @@ const Team = (props: any) => {
 	return (
 		<div id="team" className={styles.container}>
 			<div className={styles.teamContainer}>
-				<div className={styles.teamText}>
-					<motion.h3 className={styles.teamTitle} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, transition: { duration: 1 } }}
+					viewport={{ once: true }}
+					className={styles.teamText}
+				>
+					<motion.h3 className={styles.teamTitle}>
 						<b>Our Team</b>
 					</motion.h3>
-					<motion.p className={styles.cta} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }}>
+					<motion.p className={styles.cta}>
 						At our core, we are a team of designers, developers, strategists, and problem-solvers who share
 						a collective passion for leveraging the power of technologies, creativity and imagination in
 						turn creating enthralling digital experiences that make a positive difference in people's lives.
 						Whether we're brainstorming ideas or putting them into action, we work together towards a common
 						goal of crafting impactful solutions that resonate with our clients and their users.
 					</motion.p>
-				</div>
+				</motion.div>
 
 				<motion.div
 					ref={carousel}
