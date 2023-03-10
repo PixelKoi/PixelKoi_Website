@@ -16,7 +16,7 @@ const Footer2 = () => {
 			<div className={styles.container}>
 				<div className={styles.consultation}>
 					<h4>GOT A PROJECT IN MIND?</h4>
-					<a>Book a consultation</a>
+					<a href="mailto:jonathanbajada@pixelkoi.com?subject=Book%20a%20consultation">Book a consultation</a>
 				</div>
 				<div className={styles.linksContainer}>
 					<h4>INFORMATION</h4>
