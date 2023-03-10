@@ -27,56 +27,61 @@ const ClientCardLayout = () => {
 						abundant source of inspiration for our endeavors.
 					</motion.p> */}
 				</motion.div>
-				<div className={styles.cardContainer}>
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, transition: { duration: 1 } }}
+					viewport={{ once: true }}
+					className={styles.cardContainer}
+				>
 					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 0.3 } }}
-						viewport={{ once: true }}
+						// initial={{ opacity: 0 }}
+						// whileInView={{ opacity: 1, transition: { duration: 0.3 } }}
+						// viewport={{ once: true }}
 						className={styles.gridItem}
 					>
 						<ClientCard title={'Hype Over Night'} />
 					</motion.div>
 					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 0.6 } }}
-						viewport={{ once: true }}
+						// initial={{ opacity: 0 }}
+						// whileInView={{ opacity: 1, transition: { duration: 0.6 } }}
+						// viewport={{ once: true }}
 						className={styles.gridItem}
 					>
 						<ClientCard title={'Goblin Digital'} />
 					</motion.div>
 					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 0.9 } }}
-						viewport={{ once: true }}
+						// initial={{ opacity: 0 }}
+						// whileInView={{ opacity: 1, transition: { duration: 0.9 } }}
+						// viewport={{ once: true }}
 						className={styles.gridItem}
 					>
 						<ClientCard title={'Developpa'} />
 					</motion.div>
 					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1.2 } }}
-						viewport={{ once: true }}
+						// initial={{ opacity: 0 }}
+						// whileInView={{ opacity: 1, transition: { duration: 1.2 } }}
+						// viewport={{ once: true }}
 						className={styles.gridItem}
 					>
 						<ClientCard title={'The Good Company'} />
 					</motion.div>
 					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1.5 } }}
-						viewport={{ once: true }}
+						// initial={{ opacity: 0 }}
+						// whileInView={{ opacity: 1, transition: { duration: 1.5 } }}
+						// viewport={{ once: true }}
 						className={styles.gridItem}
 					>
 						<ClientCard title={'Disaster Productions'} />
 					</motion.div>
 					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1.8 } }}
-						viewport={{ once: true }}
+						// initial={{ opacity: 0 }}
+						// whileInView={{ opacity: 1, transition: { duration: 1.8 } }}
+						// viewport={{ once: true }}
 						className={styles.gridItem}
 					>
 						<ClientCard title={'Coming soon...'} />
 					</motion.div>
-				</div>
+				</motion.div>
 			</div>
 		</div>
 	);

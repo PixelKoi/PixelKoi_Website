@@ -7,7 +7,12 @@ import { AiFillLinkedin } from 'react-icons/ai';
 const Footer2 = () => {
 	let currentYear = new Date().getFullYear();
 	return (
-		<div className={styles.wrapper}>
+		<motion.div
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1, transition: { duration: 0.5 } }}
+			viewport={{ once: true }}
+			className={styles.wrapper}
+		>
 			<div className={styles.container}>
 				<div className={styles.consultation}>
 					<h3>Got a project in mind?</h3>
@@ -31,16 +36,11 @@ const Footer2 = () => {
 				</div>
 			</div>
 			<div className={styles.copyrightContainer}>
-				<motion.p
-					initial={{ opacity: 0 }}
-					style={{ color: '#fff', display: 'block', textAlign: 'center' }}
-					className={styles.footerCopyright}
-					whileInView={{ opacity: 1 }}
-				>
+				<motion.p className={styles.footerCopyright}>
 					Copyright © {currentYear} Pixel Koi - All rights reserved.
 				</motion.p>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
