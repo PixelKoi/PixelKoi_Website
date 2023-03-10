@@ -55,15 +55,21 @@ const ClientCardLayout = () => {
 					viewport={{ once: true }}
 					className={styles.cardContainer}
 				>
-					<motion.div className={styles.gridItem}>
-						<ClientCard img={hype} style={{ maxWidth: '200px' }} />
-					</motion.div>
-					<motion.div className={styles.gridItem}>
-						<ClientCard img={goodcompany} style={{ maxWidth: '100px' }} />
-					</motion.div>
-					<motion.div className={styles.gridItem}>
-						<ClientCard img={developpa} style={{ maxWidth: '200px' }} />
-					</motion.div>
+					<a href="https://hypeovernight.com" target="_blank">
+						<motion.div className={styles.gridItem}>
+							<ClientCard img={hype} style={{ maxWidth: '200px' }} />
+						</motion.div>
+					</a>
+					<a href="https://hypeovernight.com" target="_blank">
+						<motion.div className={styles.gridItem}>
+							<ClientCard img={goodcompany} style={{ maxWidth: '100px' }} />
+						</motion.div>
+					</a>
+					<a href="https://developpa.io" target="_blank">
+						<motion.div className={styles.gridItem}>
+							<ClientCard img={developpa} style={{ maxWidth: '200px' }} />
+						</motion.div>
+					</a>
 				</motion.div>
 				<div className={styles.carousel} style={{ marginTop: '4rem' }}>
 					<BsFillArrowLeftCircleFill
