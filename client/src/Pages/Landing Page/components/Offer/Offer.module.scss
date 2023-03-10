@@ -56,7 +56,9 @@
 	text-decoration: none !important;
 	border: none;
 	display: flex;
-	gap: 15px;
+	p {
+		padding-left: 1rem;
+	}
 }
 
 .softwareGroup {
@@ -78,7 +80,7 @@
 		background-color: #fff;
 		outline: none;
 		height: 30px;
-		width: 100px;
+		width: 7rem;
 		font-size: 14px;
 		font-weight: 600;
 		&:hover {
@@ -118,7 +120,7 @@
 		background-color: #fff;
 		outline: none;
 		height: 30px;
-		width: 100px;
+		width: 7rem;
 		font-size: 14px;
 		font-weight: 600;
 		&:hover {
