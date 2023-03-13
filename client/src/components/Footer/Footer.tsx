@@ -47,20 +47,20 @@ const Footer = () => {
 					<div className={styles.footerCircles}>
 						<i className="fa-solid fa-circle" />
 					</div>
-					<Link to="/#team" className={`${styles.footerLink} ${styles.rowAnchors}`}>
-						Team
-					</Link>
-					<div className={styles.footerCircles}>
-						<i className="fa-solid fa-circle" />
-					</div>
-					<Link to="/#work" className={`${styles.footerLink} ${styles.rowAnchors}`}>
-						Work
+					<Link to="/about" className={`${styles.footerLink} ${styles.rowAnchors}`}>
+						About
 					</Link>
 					<div className={styles.footerCircles}>
 						<i className="fa-solid fa-circle" />
 					</div>
 					<Link to="/#services" className={`${styles.footerLink} ${styles.rowAnchors}`}>
 						Services
+					</Link>
+					<div className={styles.footerCircles}>
+						<i className="fa-solid fa-circle" />
+					</div>
+					<Link to="/#work" className={`${styles.footerLink} ${styles.rowAnchors}`}>
+						Clients
 					</Link>
 					<div className={styles.footerCircles}>
 						<i className="fa-solid fa-circle" />
