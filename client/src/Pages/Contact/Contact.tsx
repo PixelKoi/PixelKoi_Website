@@ -263,7 +263,13 @@ export const Contact = () => {
 				</div>
 				<div className={`${styles.buttonGroup} ${styles.sendButton}`}>
 					<li className={styles.buttonLink}>
-						<button type="submit" onClick={() => {setForm('submitted')}} className={styles.navLink}>
+						<button
+							type="submit"
+							onClick={() => {
+								setForm('submitted');
+							}}
+							className={styles.navLink}
+						>
 							<span className={styles.buttonText}>SEND</span>
 						</button>
 					</li>
@@ -316,7 +322,13 @@ export const Contact = () => {
 				</div>
 				<div className={`${styles.buttonGroup} ${styles.sendButton}`}>
 					<li className={styles.buttonLink}>
-						<button type="submit" onClick={() => {setForm('submitted')}} className={styles.navLink}>
+						<button
+							type="submit"
+							onClick={() => {
+								setForm('submitted');
+							}}
+							className={styles.navLink}
+						>
 							<span className={styles.buttonText}>SEND</span>
 						</button>
 					</li>
@@ -326,12 +338,12 @@ export const Contact = () => {
 	};
 
 	const submittedForm = () => {
-		return(
+		return (
 			<div>
-				<p style={{color: "white", textAlign: 'center'}}>Form has been submitted</p>
+				<p style={{ color: 'white', textAlign: 'center' }}>Form has been submitted</p>
 			</div>
-		)
-	}
+		);
+	};
 
 	//Show Contact form based on state
 	const showForm = (form: String) => {
@@ -350,56 +362,60 @@ export const Contact = () => {
 			<Nav2 />
 			<div className={styles.container}>
 				<div className={styles.innerContainer}>
-					<div className={styles.sectionHeader}>
-						<div className={styles.pageHeader}>
-							<motion.h3
-								initial={{ x: 50, opacity: 0 }}
-								animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-								id="header-caption"
+					<div className={styles.topFormContainer}>
+						<div className={styles.sectionHeader}>
+							<div className={styles.pageHeader}>
+								<motion.h3
+									initial={{ x: 30, opacity: 0 }}
+									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+									id="header-caption"
+								>
+									GET IN TOUCH
+								</motion.h3>
+								<motion.h1
+									style={{ fontSize: '30px' }}
+									initial={{ x: -30, opacity: 0 }}
+									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+								>
+									Let's Create Something
+								</motion.h1>
+								<motion.h1
+									style={{ fontSize: '30px' }}
+									initial={{ x: 50, opacity: 0 }}
+									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+								>
+									Great Together
+								</motion.h1>
+							</div>
+							<motion.div
+								initial={{ opacity: 0 }}
+								animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}
+								className={styles.location}
 							>
-								GET IN TOUCH
-							</motion.h3>
-							<motion.h1
-								initial={{ x: -50, opacity: 0 }}
-								animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-							>
-								Let's Create Something
-							</motion.h1>
-							<motion.h1
-								initial={{ x: 50, opacity: 0 }}
-								animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-							>
-								Great Together
-							</motion.h1>
+								<h4>Office Locations</h4>
+								<h5>Chiang Mai</h5>
+								<h5>Toronto</h5>
+							</motion.div>
 						</div>
 						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}
-							className={styles.location}
+							initial={{ y: 5, opacity: 0 }}
+							animate={{ y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+							className={styles.formSelection}
 						>
-							<h4>Office Locations</h4>
-							<h5>Chiang Mai</h5>
-							<h5>Toronto</h5>
+							<ul className={styles.buttonGroup}>
+								<li className={styles.buttonLink}>
+									<a onClick={() => setForm('start')} className={styles.navLink}>
+										<span className={styles.buttonText}>Start A Project</span>
+									</a>
+								</li>
+								<li className={styles.buttonLink}>
+									<a onClick={() => setForm('hi')} className={styles.navLink}>
+										<span className={styles.buttonText}>Say Hello!</span>
+									</a>
+								</li>
+							</ul>
 						</motion.div>
 					</div>
-					<motion.div
-						initial={{ y: 5, opacity: 0 }}
-						animate={{ y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-						className={styles.formSelection}
-					>
-						<ul className={styles.buttonGroup}>
-							<li className={styles.buttonLink}>
-								<a onClick={() => setForm('start')} className={styles.navLink}>
-									<span className={styles.buttonText}>Start A Project</span>
-								</a>
-							</li>
-							<li className={styles.buttonLink}>
-								<a onClick={() => setForm('hi')} className={styles.navLink}>
-									<span className={styles.buttonText}>Say Hello!</span>
-								</a>
-							</li>
-						</ul>
-					</motion.div>
 				</div>
 				{showForm(show)}
 			</div>
