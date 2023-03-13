@@ -381,7 +381,7 @@ export const Contact = () => {
 								</motion.h1>
 								<motion.h1
 									style={{ fontSize: '30px' }}
-									initial={{ x: 50, opacity: 0 }}
+									initial={{ x: 30, opacity: 0 }}
 									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
 								>
 									Great Together
