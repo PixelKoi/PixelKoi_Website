@@ -56,7 +56,7 @@ const Offer = () => {
 						</Link>
 					</motion.div>
 					<motion.img
-						initial={{ opacity: 0, x: 100 }}
+						initial={{ opacity: 0, x: 70 }}
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
 						viewport={{ once: true }}
 						src={code}
@@ -66,7 +66,7 @@ const Offer = () => {
 
 				<div className={styles.uxGroup}>
 					<motion.img
-						initial={{ opacity: 0, x: -100 }}
+						initial={{ opacity: 0, x: -70 }}
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
 						viewport={{ once: true }}
 						src={uxdesign}
@@ -111,7 +111,7 @@ const Offer = () => {
 						</Link>
 					</motion.div>
 					<motion.img
-						initial={{ opacity: 0, x: 100 }}
+						initial={{ opacity: 0, x: 70 }}
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
 						viewport={{ once: true }}
 						src={web}
