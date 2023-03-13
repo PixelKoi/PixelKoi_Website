@@ -49,7 +49,9 @@ const Header = (props: any) => {
 					className={styles.buttonGroup}
 				>
 					<Link to={'/contact'}>
-						<button className={styles.button}>Contact</button>
+						<button className={styles.button} id={styles.buttonContact}>
+							Contact
+						</button>
 					</Link>
 					<Link to={'#services'}>
 						<button className={styles.button}>Learn More</button>

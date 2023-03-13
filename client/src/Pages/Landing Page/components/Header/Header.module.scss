@@ -28,7 +28,7 @@
 	justify-content: center;
 	position: relative;
 	top: 4rem;
-	gap: 15px;
+	// gap: 15px;
 	.button {
 		font-weight: 600;
 		border: none;
@@ -41,6 +41,9 @@
 		&:hover {
 			background-color: orange;
 		}
+	}
+	#buttonContact {
+		margin-right: 15px;
 	}
 }
 
