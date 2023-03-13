@@ -50,8 +50,9 @@ const Offer = () => {
 							everything from planning, designing and developing to testing to launching, relieving you
 							from the burden of managing intricate SDLCs.
 						</p>
-						<Link to={'/contact'}>
-							<button className={styles.button}>Learn More</button>
+						<Link to={'/contact'} className={styles.link}>
+							<BsArrowRightCircle style={{ color: 'orange', alignSelf: 'center' }} size={30} />
+							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
 					<motion.img
@@ -83,8 +84,9 @@ const Offer = () => {
 							exceptional results within your budget? Turn to our long-standing design team specializing
 							in responsive web and mobile solutions, and UX strategy and consulting.
 						</p>
-						<Link to={'/contact'}>
-							<button className={styles.button}>Learn More</button>
+						<Link to={'/contact'} className={styles.link}>
+							<BsArrowRightCircle style={{ color: 'orange', alignSelf: 'center' }} size={30} />
+							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
 				</div>
@@ -103,8 +105,9 @@ const Offer = () => {
 							project managers collaborate closely to design custom solutions that cater to the unique
 							needs of each client.
 						</p>
-						<Link to={'/contact'}>
-							<button className={styles.button}>Learn More</button>
+						<Link to={'/contact'} className={styles.link}>
+							<BsArrowRightCircle style={{ color: 'orange', alignSelf: 'center' }} size={30} />
+							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
 					<motion.img
