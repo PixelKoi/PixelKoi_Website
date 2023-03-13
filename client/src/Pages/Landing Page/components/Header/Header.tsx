@@ -29,20 +29,21 @@ const Header = (props: any) => {
 						</motion.h1>
 					</div>
 				</motion.div>
-				<motion.div
+				{/* <motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1, transition: { delay: 0.7 } }}
 					className={styles.cubeIMG}
 				>
 					<img src={cube} className={styles.cubeSize} />
-				</motion.div>
-				{/* <motion.div
+				</motion.div> */}
+				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1, transition: { delay: 0.8 } }}
 					className={styles.cube}
+					style={{ marginBottom: '5rem' }}
 				>
 					<Cube />
-				</motion.div> */}
+				</motion.div>
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1, transition: { delay: 0.9 } }}
