@@ -44,10 +44,10 @@ const ClientCardLayout = () => {
 					<motion.h1 className={styles.clientTitle} style={{ color: 'orange' }}>
 						<b>Our Clients</b>
 					</motion.h1>
-					<motion.h2 className={styles.cta}>
+					<motion.p className={styles.cta}>
 						Our clients reside in various nations and use diverse languages, yet our shared aim unites us in
 						our efforts..
-					</motion.h2>
+					</motion.p>
 				</motion.div>
 				<motion.div
 					initial={{ opacity: 0 }}
