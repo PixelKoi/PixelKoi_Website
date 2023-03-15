@@ -123,7 +123,7 @@ export const Contact = () => {
 				onSubmit={handleSubmit}
 			>
 				<div className={styles.formContainer}>
-					<label className={styles.formLabel}>My name is*</label>
+					<label className={styles.formLabel}>My name is</label>
 					<input
 						value={values.name}
 						onChange={handleInputChange}
@@ -134,7 +134,7 @@ export const Contact = () => {
 						required
 					/>
 
-					<label className={styles.formLabel}>and I work for</label>
+					<label className={styles.formLabel}>I work for</label>
 					<input
 						value={values.company}
 						onChange={handleInputChange}
@@ -145,7 +145,7 @@ export const Contact = () => {
 						required
 					/>
 
-					<label className={styles.formLabel}>you can write me at*</label>
+					<label className={styles.formLabel}>Write me at</label>
 					<input
 						value={values.email}
 						onChange={handleInputChange}
@@ -156,7 +156,7 @@ export const Contact = () => {
 						required
 					/>
 
-					<label className={styles.formLabel}>or call me at*</label>
+					<label className={styles.formLabel}>Call me at</label>
 					<input
 						value={values.phone}
 						onChange={handleInputChange}
@@ -173,7 +173,7 @@ export const Contact = () => {
 					<div className={styles.deadlineWrapper}>
 						<div className={styles.unitContainer} onClick={() => setDeadline(1)}>
 							<div>
-								<span>1month</span>
+								<span>1 Month</span>
 							</div>
 							{deadline === 1 ? <div className={styles.circle} /> : null}
 						</div>
@@ -184,7 +184,7 @@ export const Contact = () => {
 							onClick={() => setDeadline(3)}
 						>
 							<div>
-								<span>3months</span>
+								<span>3 Months</span>
 							</div>
 							{deadline === 3 ? <div className={styles.circle} style={{ alignSelf: 'center' }} /> : null}
 						</div>
@@ -194,7 +194,7 @@ export const Contact = () => {
 							onClick={() => setDeadline(6)}
 						>
 							<div>
-								<span>6months</span>
+								<span>6 Months</span>
 							</div>
 							{deadline === 6 ? <div className={styles.circle} style={{ alignSelf: 'center' }} /> : null}
 						</div>
@@ -204,7 +204,7 @@ export const Contact = () => {
 							onClick={() => setDeadline(12)}
 						>
 							<div>
-								<span>1year</span>
+								<span>1 Year</span>
 							</div>
 							{deadline === 12 ? <div className={styles.circle} style={{ marginLeft: '2rem' }} /> : null}
 						</div>
