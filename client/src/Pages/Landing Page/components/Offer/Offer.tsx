@@ -30,7 +30,7 @@ const Offer = () => {
 						business objectives forward.
 					</p>
 
-					<Link to={'/contact'} className={styles.link}>
+					<Link to={'/contact'} className={styles.link} title="Takes customer to the contact form allowing communication with Pixel Koi Company">
 						<BsArrowRightCircle style={{ color: 'orange', alignSelf: 'center' }} size={30} />
 						<p style={{ margin: 'auto 0', color: '#fff' }}>Let's Talk</p>
 					</Link>
@@ -50,7 +50,7 @@ const Offer = () => {
 							everything from planning, designing and developing to testing to launching, relieving you
 							from the burden of managing intricate SDLCs.
 						</p>
-						<Link to={'/contact'} className={styles.link}>
+						<Link to={'/contact'} className={styles.link} title="Takes customer to the contact form allowing communication with Pixel Koi Company">
 							<BsArrowRightCircle style={{ color: 'orange', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
@@ -84,7 +84,7 @@ const Offer = () => {
 							exceptional results within your budget? Turn to our long-standing design team specializing
 							in responsive web and mobile solutions, and UX strategy and consulting.
 						</p>
-						<Link to={'/contact'} className={styles.link}>
+						<Link to={'/contact'} className={styles.link} title="Takes customer to the contact form allowing communication with Pixel Koi Company">
 							<BsArrowRightCircle style={{ color: 'orange', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
@@ -105,7 +105,7 @@ const Offer = () => {
 							project managers collaborate closely to design custom solutions that cater to the unique
 							needs of each client.
 						</p>
-						<Link to={'/contact'} className={styles.link}>
+						<Link to={'/contact'} className={styles.link} title="Takes customer to the contact form allowing communication with Pixel Koi Company">
 							<BsArrowRightCircle style={{ color: 'orange', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>

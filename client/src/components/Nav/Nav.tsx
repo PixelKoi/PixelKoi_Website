@@ -255,7 +255,7 @@ const Nav = (props: any) => {
 						</div>
 					</div>
 
-					<RouterLink to="/contact" style={{ alignSelf: 'center', textDecoration: 'none' }}>
+					<RouterLink to="/contact" title="Routes customer to Pixel Koi Company contact form" style={{ alignSelf: 'center', textDecoration: 'none' }}>
 						<button
 							onMouseEnter={() => {
 								if (scrollActive === true) {

@@ -21,9 +21,9 @@ const Footer2 = () => {
 				<div className={styles.linksContainer}>
 					<h4>INFORMATION</h4>
 					<div className={styles.linksWrapper} id={styles.links}>
-						<Link to="/about">About</Link>
-						<Link to="/#services">Services</Link>
-						<Link to="/contact">Contact</Link>
+						<Link to="/about" title="Description page for Pixel Koi Company">About</Link>
+						<Link to="/#services" title="Shows services Pixel Koi Company Provides">Services</Link>
+						<Link to="/contact" title="Takes customer to the contact form allowing communication with Pixel Koi Company">Contact</Link>
 					</div>
 				</div>
 				<div className={styles.linksContainer}>

@@ -66,7 +66,7 @@ const Footer = () => {
 						<i className="fa-solid fa-circle" />
 					</div>
 
-					<Link to="/contact" className={`${styles.footerLink} ${styles.rowAnchors}`}>
+					<Link to="/contact" className={`${styles.footerLink} ${styles.rowAnchors}`} title="Takes customer to the contact form allowing communication with Pixel Koi Company">
 						Contact
 					</Link>
 				</div>

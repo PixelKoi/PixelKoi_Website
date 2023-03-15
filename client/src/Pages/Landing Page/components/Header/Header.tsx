@@ -49,7 +49,7 @@ const Header = (props: any) => {
 					animate={{ opacity: 1, transition: { delay: 0.9 } }}
 					className={styles.buttonGroup}
 				>
-					<Link to={'/contact'}>
+					<Link to={'/contact'} title="Takes customer to the contact form allowing communication with Pixel Koi Company">
 						<button className={styles.button} id={styles.buttonContact}>
 							Contact
 						</button>
