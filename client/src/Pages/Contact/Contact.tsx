@@ -287,7 +287,7 @@ export const Contact = () => {
 				onSubmit={handleSubmit}
 			>
 				<div className={styles.formContainer}>
-					<label className={styles.formLabel}>My name is*</label>
+					<label className={styles.formLabel}>My name is</label>
 					<input
 						className={styles.formInput}
 						type="text"
@@ -298,7 +298,7 @@ export const Contact = () => {
 						required
 					/>
 
-					<label className={styles.formLabel}>you can write me at*</label>
+					<label className={styles.formLabel}>Write me at</label>
 					<input
 						className={styles.formInput}
 						type="text"
@@ -309,7 +309,7 @@ export const Contact = () => {
 						required
 					/>
 
-					<label className={styles.formLabel}>Dear Pixel Koi,*</label>
+					<label className={styles.formLabel}>Dear Pixel Koi,</label>
 					<input
 						className={styles.formInput}
 						type="text"
