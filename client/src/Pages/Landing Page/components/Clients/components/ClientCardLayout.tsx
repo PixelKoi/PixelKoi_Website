@@ -16,19 +16,19 @@ const ClientCardLayout = () => {
 			case 0:
 				return (
 					<a href="https://hypeovernight.com" target="_blank">
-						<img src={hype} className={styles.logoIMG} />
+						<img src={hype} className={styles.logoIMG} alt="logoImg" />
 					</a>
 				);
 			case 1:
-				return <img src={goodcompany} className={styles.logoIMG} id={styles.gc} />;
+				return <img src={goodcompany} className={styles.logoIMG} id={styles.gc} alt="goodcompanyImage" />;
 			case 2:
 				return (
 					<a href="https://developpa.io/" target="_blank">
-						<img src={developpa} className={styles.logoIMG} id={styles.developpa} />
+						<img src={developpa} className={styles.logoIMG} id={styles.developpa} alt="developpaImage"/>
 					</a>
 				);
 			default:
-				return <img src={hype} className={styles.logoIMG} />;
+				return <img src={hype} className={styles.logoIMG} alt="HypeCompanyImage"/>;
 		}
 	};
 

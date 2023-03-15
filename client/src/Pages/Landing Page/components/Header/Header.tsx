@@ -34,7 +34,7 @@ const Header = (props: any) => {
 					animate={{ opacity: 1, transition: { delay: 0.7 } }}
 					className={styles.cubeIMG}
 				>
-					<img src={cube} className={styles.cubeSize} />
+					<img alt="cube" src={cube} className={styles.cubeSize} />
 				</motion.div>
 				{/* <motion.div
 					initial={{ opacity: 0 }}

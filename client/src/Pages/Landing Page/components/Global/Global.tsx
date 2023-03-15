@@ -43,21 +43,21 @@ const Global = () => {
 
 			<div className={styles.listContainer}>
 				<div className={styles.itemGroup}>
-					<img src={checkmark} />
+					<img src={checkmark} alt="checkMarkIcon"/>
 					<div style={{ display: 'flex', flexDirection: 'row' }}>
 						<motion.p>{rounded}</motion.p>
 						<p style={{ alignSelf: 'center' }}>% Remote</p>
 					</div>
 				</div>
 				<div className={styles.itemGroup}>
-					<img src={checkmark} />
+					<img src={checkmark} alt="checkMarkIcon"/>
 					<div style={{ display: 'flex', flexDirection: 'row' }}>
 						<motion.p>{rounded}</motion.p>
 						<p style={{ alignSelf: 'center' }}>% Full-Stack</p>
 					</div>
 				</div>
 				<div className={styles.itemGroup}>
-					<img src={checkmark} />
+					<img src={checkmark} alt="checkMarkIcon"/>
 					<p>24/7 Availability</p>
 				</div>
 			</div>

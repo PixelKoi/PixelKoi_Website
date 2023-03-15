@@ -9,7 +9,7 @@ interface IProps {
 const ClientCard = (props: IProps) => {
 	return (
 		<div className={styles.container}>
-			<img src={props.img} style={props.style} />
+			<img alt="clientImages" src={props.img} style={props.style} />
 		</div>
 	);
 };

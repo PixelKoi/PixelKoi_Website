@@ -28,8 +28,8 @@ const About = () => {
 						</p>
 					</div>
 					<div className={styles.imgContainer}>
-						<img loading="lazy" src={dream} alt="" className={styles.imgContainer} id={styles.dream} />
-						<img loading="lazy" src={about} alt="" className={styles.imgContainer} id={styles.creative} />
+						<img loading="lazy" src={dream} alt="inspirationalQuote" className={styles.imgContainer} id={styles.dream} />
+						<img loading="lazy" src={about} alt="inspirationalQuote" className={styles.imgContainer} id={styles.creative} />
 					</div>
 					<div className={styles.description}>
 						<p>

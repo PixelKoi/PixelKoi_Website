@@ -55,7 +55,7 @@ const Team = (props: any) => {
 						{carousel_images.map((image) => {
 							return (
 								<motion.div className={styles.item}>
-									<img className={styles.imageScale} src={image.src} alt="" />
+									<img className={styles.imageScale} src={image.src} alt="teamImages" />
 									<div className={styles.imageText}>
 										<h6>
 											<b>{image.name}</b>
