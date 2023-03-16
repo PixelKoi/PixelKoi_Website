@@ -11,6 +11,8 @@
 	top: 0;
 	left: 0;
 	right: 0;
+
+	background-color: #171717;
 	.menuIMG {
 		background-color: transparent;
 		border-style: none;
@@ -58,7 +60,6 @@
 		transform-origin: bottom left;
 	}
 }
-
 
 .menu_container {
 	position: fixed;

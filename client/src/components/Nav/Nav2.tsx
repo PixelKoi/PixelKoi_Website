@@ -3,9 +3,9 @@ import styles from './Nav2.module.scss';
 import { Link, useLocation } from 'react-router-dom';
 import menu from '../../assets/images/menu.svg';
 import { motion, useScroll, AnimatePresence } from 'framer-motion';
+import AnimateOnScroll from 'react-animate-on-scroll';
 
 const Nav2 = () => {
-	const { scrollYProgress } = useScroll();
 	const [ open, setOpen ] = useState(false);
 	const openMenu = () => {
 		setOpen(true);
@@ -14,8 +14,18 @@ const Nav2 = () => {
 		setOpen(false);
 	};
 
+	const { scrollYProgress } = useScroll();
+	const [ hookedYPostion, setHookedYPosition ] = React.useState(0);
 	//smooth transition for scrolling through divs on landing page
 	const location = useLocation();
+
+	useEffect(
+		() => {
+			// hook into the onChange, store the current value as state.
+			scrollYProgress.onChange((v) => setHookedYPosition(v));
+		},
+		[ scrollYProgress ]
+	); //make sure to re-subscriobe when scrollYProgress changes
 
 	useEffect(
 		() => {
@@ -125,8 +135,12 @@ const Nav2 = () => {
 
 			<div style={{ display: 'flex', flexDirection: 'row' }}>
 				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1, transition: { duration: 1 } }}
+					initial={{ opacity: 0, boxShadow: 'none' }}
+					animate={{
+						boxShadow: hookedYPostion > 0 ? '0px 0px 7px 0px rgba(255, 255, 255, 0.1)' : 'none',
+						opacity: 1,
+						transition: { duration: 1 }
+					}}
 					className={styles.container}
 				>
 					<Link to="/#header" className={styles.logo}>
