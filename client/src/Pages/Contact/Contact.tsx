@@ -7,10 +7,10 @@ import { motion } from 'framer-motion';
 import Select, { StylesConfig } from 'react-select';
 
 const deadlineOptions = [
-	{ value: '1month', label: '1month' },
-	{ value: '3month', label: '3month' },
-	{ value: '6month', label: '6month' },
-	{ value: '1year', label: '1year' }
+	{ value: '1 Month', label: '1 Month' },
+	{ value: '3 Month', label: '3 Month' },
+	{ value: '6 Month', label: '6 Month' },
+	{ value: '1 Year', label: '1 Year' }
 ];
 
 const costOptions = [
