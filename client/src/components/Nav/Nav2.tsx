@@ -135,9 +135,10 @@ const Nav2 = () => {
 
 			<div style={{ display: 'flex', flexDirection: 'row' }}>
 				<motion.div
-					initial={{ opacity: 0, boxShadow: 'none' }}
+					initial={{ opacity: 0, boxShadow: 'none', borderBottom: '1px solid transparent' }}
 					animate={{
-						boxShadow: hookedYPostion > 0 ? '0px 0px 7px 0px rgba(255, 255, 255, 0.1)' : 'none',
+						borderBottom: hookedYPostion > 0 ? '1px solid #efff' : '1px solid transparent',
+						// boxShadow: hookedYPostion > 0 ? '0px 0px 7px 0px rgba(255, 255, 255, 0.1)' : 'none',
 						opacity: 1,
 						transition: { duration: 1 }
 					}}
