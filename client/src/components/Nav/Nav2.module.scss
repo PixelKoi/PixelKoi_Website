@@ -11,7 +11,6 @@
 	top: 0;
 	left: 0;
 	right: 0;
-
 	background-color: #171717;
 	.menuIMG {
 		background-color: transparent;
@@ -33,7 +32,7 @@
 		text-decoration: none;
 	}
 	#link4 {
-		margin-right: 6rem;
+		margin-right: 8rem;
 	}
 }
 
@@ -121,10 +120,10 @@
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
 	.container {
-		padding: 0 1.5rem;
+		// padding: 0 1.5rem;
 	}
 	.container2 {
-		padding: 0 1rem 0 0;
+		// padding: 0 1rem 0 0;
 	}
 	.link {
 		display: none;
@@ -146,10 +145,12 @@
 /* Large Devices, Wide Screens */
 @media only screen and (min-width: 1024px) {
 	.container {
-		padding: 0 2rem;
+		// padding: 0 2rem;
+		padding-left: 1.5rem;
 	}
 	.container2 {
-		padding: 0 1.5rem 0 0;
+		padding-right: 1.5rem;
+		// padding: 0 1.5rem 0 0;
 	}
 	.link {
 		display: block;
