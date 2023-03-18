@@ -3,7 +3,7 @@ import styles from './Nav2.module.scss';
 import { Link, useLocation } from 'react-router-dom';
 import menu from '../../assets/images/menu.svg';
 import { motion, useScroll, AnimatePresence } from 'framer-motion';
-import AnimateOnScroll from 'react-animate-on-scroll';
+// import AnimateOnScroll from 'react-animate-on-scroll';
 
 const Nav2 = () => {
 	const [ open, setOpen ] = useState(false);
