@@ -31,6 +31,7 @@ const Global = () => {
 							animate={{ rotate: 360 }}
 							transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
 							src={earth}
+							alt="image of the globe"
 							width={100}
 							style={{ color: 'black' }}
 						/>
