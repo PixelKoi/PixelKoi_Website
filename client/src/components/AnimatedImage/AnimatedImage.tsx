@@ -1,4 +1,4 @@
-import beach from "../../assets/images/unsplash/thailandbeach.jpg";
+import beach from "../../assets/images/unsplash/thailandbeach.webp";
 import React, {useRef, useEffect} from "react";
 import './AnimatedImage.scss'
 import CSSRulePlugin from "gsap/CSSRulePlugin";
