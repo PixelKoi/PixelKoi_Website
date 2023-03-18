@@ -14,6 +14,7 @@ const Landing = (props: any) => {
 		<main className={styles.mainContainer}>
 			<Nav />
 			<Header />
+			<OurTech />
 			<Offer />
 			<Global />
 			{/*

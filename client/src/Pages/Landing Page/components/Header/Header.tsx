@@ -49,7 +49,10 @@ const Header = (props: any) => {
 					animate={{ opacity: 1, transition: { delay: 0.9 } }}
 					className={styles.buttonGroup}
 				>
-					<Link to={'/contact'} title="Takes customer to the contact form allowing communication with Pixel Koi Company">
+					<Link
+						to={'/contact'}
+						title="Takes customer to the contact form allowing communication with Pixel Koi Company"
+					>
 						<button className={styles.button} id={styles.buttonContact}>
 							Contact
 						</button>
@@ -60,13 +63,13 @@ const Header = (props: any) => {
 				</motion.div>
 			</div>
 
-			<motion.div
+			{/* <motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1, transition: { delay: 0.5 } }}
 				className={styles.techMarq}
 			>
 				<OurTech />
-			</motion.div>
+			</motion.div> */}
 		</div>
 	);
 };
