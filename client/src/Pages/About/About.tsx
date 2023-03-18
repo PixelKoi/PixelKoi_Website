@@ -2,9 +2,9 @@ import styles from './About.module.scss';
 import Nav from '../../components/Nav/Nav';
 import Team from './Team/Team';
 import Footer2 from '../../components/Footer/Footer2';
-import about from '../../assets/About/creative.jpg';
-import dream from '../../assets/About/dream.png';
-import story from '../../assets/About/story.png';
+import about from '../../assets/About/creative.webp';
+import dream from '../../assets/About/dream.webp';
+import story from '../../assets/About/story.webp';
 import { motion } from 'framer-motion';
 const About = () => {
 	return (
