@@ -1,9 +1,9 @@
-import image1 from './assets/images/slider/jonny.png'
-import image2 from './assets/images/slider/garo.jpeg'
-import image3 from './assets/images/slider/CopyWriterSwanson.jpeg'
-import image4 from './assets/images/slider/developerJames.jpeg'
-import image5 from './assets/images/slider/LeadDesignerCameron.jpeg'
-import image6 from './assets/images/slider/robothappy.jpeg'
+import image1 from './assets/images/slider/jonny.webp'
+import image2 from './assets/images/slider/garo.webp'
+import image3 from './assets/images/slider/CopyWriterSwanson.webp'
+import image4 from './assets/images/slider/developerJames.webp'
+import image5 from './assets/images/slider/LeadDesignerCameron.webp'
+import image6 from './assets/images/slider/robothappy.webp'
 const images = [
     {
         src: image1,
