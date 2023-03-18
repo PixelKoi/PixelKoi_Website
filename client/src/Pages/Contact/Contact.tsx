@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Nav2 from '../../components/Nav/Nav2';
+import Nav from '../../components/Nav/Nav';
 import styles from './Contact.module.scss';
 import Footer from '../../components/Footer/Footer';
 import { motion } from 'framer-motion';
@@ -359,7 +359,7 @@ export const Contact = () => {
 	const item = { show: { x: 0, opacity: 0, transition: { duration: 0.5 } } };
 	return (
 		<div>
-			<Nav2 />
+			<Nav />
 			<div className={styles.container}>
 				<div className={styles.innerContainer}>
 					<div className={styles.topFormContainer}>
