@@ -59,6 +59,7 @@ const Offer = () => {
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
 						viewport={{ once: true }}
 						src={code}
+						alt="Macbook Pro image with code"
 						className={styles.cardIMG}
 					/>
 				</div>
@@ -69,6 +70,8 @@ const Offer = () => {
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
 						viewport={{ once: true }}
 						src={uxdesign}
+						alt="Ipad image with website wireframe"
+
 						className={styles.cardIMG}
 					/>
 					<motion.div
@@ -114,6 +117,7 @@ const Offer = () => {
 						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
 						viewport={{ once: true }}
 						src={web}
+						alt="Showing the development of a website with a macbook pro and imac in the background"
 						className={styles.cardIMG}
 					/>
 				</div>
