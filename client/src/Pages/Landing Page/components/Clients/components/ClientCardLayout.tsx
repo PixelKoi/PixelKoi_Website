@@ -4,9 +4,10 @@ import styles from './ClientCardLayout.module.scss';
 import { motion } from 'framer-motion';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
-import hype from '../../../../../assets/Clients/hype.png';
-import goodcompany from '../../../../../assets/Clients/goodcompany.png';
-import developpa from '../../../../../assets/Clients/developpa.png';
+
+import hype from '../../../../../assets/Clients/hype.webp';
+import goodcompany from '../../../../../assets/Clients/goodcompany.webp';
+import developpa from '../../../../../assets/Clients/developpa.webp';
 
 const ClientCardLayout = () => {
 	const [ count, setCount ] = useState(0);

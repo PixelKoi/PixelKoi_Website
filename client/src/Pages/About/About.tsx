@@ -2,7 +2,8 @@ import styles from './About.module.scss';
 import Nav from '../../components/Nav/Nav';
 import Team from './Team/Team';
 import Footer2 from '../../components/Footer/Footer2';
-import about from '../../assets/About/creative.webp';
+
+import creative from './../../assets/About/creative.webp';
 import dream from '../../assets/About/dream.webp';
 import story from '../../assets/About/story.webp';
 import { motion } from 'framer-motion';
@@ -29,7 +30,7 @@ const About = () => {
 					</div>
 					<div className={styles.imgContainer}>
 						<img loading="lazy" src={dream} alt="inspirationalQuote" className={styles.imgContainer} id={styles.dream} />
-						<img loading="lazy" src={about} alt="inspirationalQuote" className={styles.imgContainer} id={styles.creative} />
+						<img loading="lazy" src={creative} alt="inspirationalQuote" className={styles.imgContainer} id={styles.creative} />
 					</div>
 					<div className={styles.description}>
 						<p>
