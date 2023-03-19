@@ -25,11 +25,11 @@ const ClientCardLayout = () => {
 			case 2:
 				return (
 					<a href="https://developpa.io/" target="_blank">
-						<img src={developpa} className={styles.logoIMG} id={styles.developpa} alt="developpaImage"/>
+						<img src={developpa} className={styles.logoIMG} id={styles.developpa} alt="developpaImage" />
 					</a>
 				);
 			default:
-				return <img src={hype} className={styles.logoIMG} alt="HypeCompanyImage"/>;
+				return <img src={hype} className={styles.logoIMG} alt="HypeCompanyImage" />;
 		}
 	};
 
@@ -42,7 +42,7 @@ const ClientCardLayout = () => {
 					viewport={{ once: true }}
 					className={styles.textContainer}
 				>
-					<motion.h1 className={styles.clientTitle} style={{ color: 'orange' }}>
+					<motion.h1 className={styles.clientTitle} style={{ color: '#e8985c' }}>
 						<b>Our Clients</b>
 					</motion.h1>
 					<motion.p className={styles.cta}>
