@@ -203,8 +203,8 @@ const Nav = () => {
 							whileHover={{ rotate: 90 }}
 							src={menu}
 							onClick={open === false ? openMenu : closeMenu}
-							height={30}
-							width={30}
+							height={25}
+							width={25}
 							alt="menu"
 						/>
 					</button>
