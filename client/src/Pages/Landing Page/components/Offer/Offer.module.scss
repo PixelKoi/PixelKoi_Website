@@ -142,11 +142,40 @@
 	}
 }
 
-@media only screen and (min-width: 725px) {
+// @media only screen and (min-width: 725px) {
+// 	.softwareGroup {
+// 		.cardIMG {
+// 			order: 1;
+// 		}
+// 	}
+// }
+
+@media only screen and (min-width: 320px) {
 	.softwareGroup {
+		padding: 0 1rem;
+	}
+	.cta {
+		padding: 0 1rem;
+	}
+	.uxGroup {
+		padding: 0 1rem;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 768px) {
+	.softwareGroup {
+		padding: 0 2rem;
 		.cardIMG {
 			order: 1;
 		}
+	}
+	.cta {
+		padding: 0 2rem;
+	}
+
+	.uxGroup {
+		padding: 0 2rem;
 	}
 }
 

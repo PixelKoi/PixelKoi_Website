@@ -91,3 +91,16 @@
 #gc {
 	max-width: 100px;
 }
+
+@media only screen and (min-width: 320px) {
+	.innerContainer {
+		padding: 4rem 1rem;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 768px) {
+	.innerContainer {
+		padding: 4rem 2rem;
+	}
+}
