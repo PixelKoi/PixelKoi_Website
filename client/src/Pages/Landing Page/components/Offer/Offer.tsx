@@ -7,7 +7,6 @@ import code from '../../../../assets/Home/code.jpg';
 import web from '../../../../assets/Home/web.jpg';
 
 import { Link } from 'react-router-dom';
-import OurTech from '../OurTech/OurTech';
 
 const Offer = () => {
 	return (
@@ -64,9 +63,9 @@ const Offer = () => {
 						</Link>
 					</motion.div>
 					<motion.img
-						initial={{ opacity: 0, x: 70 }}
-						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
-						viewport={{ once: true }}
+						// initial={{ opacity: 0, x: 70 }}
+						// whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+						// viewport={{ once: true }}
 						src={code}
 						alt="Macbook Pro image with code"
 						className={styles.cardIMG}

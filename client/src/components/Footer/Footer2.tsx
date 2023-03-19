@@ -16,22 +16,67 @@ const Footer2 = () => {
 			<div className={styles.container}>
 				<div className={styles.consultation}>
 					<h4>GOT A PROJECT IN MIND?</h4>
-					<a href="mailto:jonathanbajada@pixelkoi.com?subject=Book%20a%20consultation">Book a consultation</a>
+					<motion.div
+						initial={{ y: 20, opacity: 0 }}
+						whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+						viewport={{ once: true }}
+					>
+						<a href="mailto:jonathanbajada@pixelkoi.com?subject=Book%20a%20consultation">
+							Book a consultation
+						</a>
+					</motion.div>
 				</div>
 				<div className={styles.linksContainer}>
 					<h4>INFORMATION</h4>
 					<div className={styles.linksWrapper} id={styles.links}>
-						<Link to="/about" title="Description page for Pixel Koi Company">About</Link>
-						<Link to="/#services" title="Shows services Pixel Koi Company Provides">Services</Link>
-						<Link to="/contact" title="Takes customer to the contact form allowing communication with Pixel Koi Company">Contact</Link>
+						<motion.div
+							initial={{ y: 20, opacity: 0 }}
+							whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+							viewport={{ once: true }}
+						>
+							<Link to="/about" title="Description page for Pixel Koi Company">
+								About
+							</Link>
+						</motion.div>
+						<motion.div
+							initial={{ y: 20, opacity: 0 }}
+							whileInView={{ y: 0, opacity: 1, transition: { duration: 1.1 } }}
+							viewport={{ once: true }}
+						>
+							<Link to="/#services" title="Shows services Pixel Koi Company Provides">
+								Services
+							</Link>
+						</motion.div>
+						<motion.div
+							initial={{ y: 20, opacity: 0 }}
+							whileInView={{ y: 0, opacity: 1, transition: { duration: 1.2 } }}
+							viewport={{ once: true }}
+						>
+							<Link
+								to="/contact"
+								title="Takes customer to the contact form allowing communication with Pixel Koi Company"
+							>
+								Contact
+							</Link>
+						</motion.div>
 					</div>
 				</div>
 				<div className={styles.linksContainer}>
 					<h4>SOCIALS</h4>
 					<div className={styles.linksWrapper} id={styles.socials}>
-						<a href="https://www.linkedin.com/company/pixelkoi/" target="_blank" rel="noopener noreferrer">
-							<AiFillLinkedin size={25} />
-						</a>
+						<motion.div
+							initial={{ y: 20, opacity: 0 }}
+							whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+							viewport={{ once: true }}
+						>
+							<a
+								href="https://www.linkedin.com/company/pixelkoi/"
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<AiFillLinkedin size={25} />
+							</a>
+						</motion.div>
 					</div>
 				</div>
 			</div>

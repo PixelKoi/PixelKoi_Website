@@ -196,3 +196,30 @@
 // 		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 // 	}
 // }
+
+@keyframes slide-in-left {
+	from {
+		left: -100%;
+	}
+	to {
+		left: 0;
+	}
+}
+
+@keyframes slide-in-right {
+	from {
+		left: 100%;
+	}
+	to {
+		left: 0;
+	}
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
