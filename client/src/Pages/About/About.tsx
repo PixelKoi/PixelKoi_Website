@@ -29,8 +29,20 @@ const About = () => {
 						</p>
 					</div>
 					<div className={styles.imgContainer}>
-						<img loading="lazy" src={dream} alt="inspirationalQuote" className={styles.imgContainer} id={styles.dream} />
-						<img loading="lazy" src={creative} alt="inspirationalQuote" className={styles.imgContainer} id={styles.creative} />
+						<img
+							loading="lazy"
+							src={dream}
+							alt="inspirationalQuote"
+							className={styles.imgContainer}
+							id={styles.dream}
+						/>
+						<img
+							loading="lazy"
+							src={creative}
+							alt="inspirationalQuote"
+							className={styles.imgContainer}
+							id={styles.creative}
+						/>
 					</div>
 					<div className={styles.description}>
 						<p>
@@ -58,7 +70,7 @@ const About = () => {
 
 				<div className={styles.section} id={styles.ourStory}>
 					<div className={styles.headerText}>
-						<h3 style={{ color: 'orange' }}>Our Story</h3>
+						<h3 style={{ color: '#e8985c' }}>Our Story</h3>
 					</div>
 					<div className={styles.imgContainer}>
 						<motion.img loading="lazy" src={story} alt="" className={styles.imgContainer} />
