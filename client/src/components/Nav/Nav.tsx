@@ -134,43 +134,54 @@ const Nav = () => {
 			</AnimatePresence>
 
 			<div style={{ display: 'flex', flexDirection: 'row' }}>
-				<motion.div
-					initial={{ opacity: 0, boxShadow: 'none', borderBottom: '1px solid transparent' }}
-					animate={{
-						borderBottom:
-							hookedYPostion > 0 ? '1px solid hsla(0, 0%, 100%, 0.12)' : '1px solid transparent',
-						// boxShadow: hookedYPostion > 0 ? '0px 0px 7px 0px rgba(255, 255, 255, 0.1)' : 'none',
-						opacity: 1,
-						transition: { duration: 1 }
-					}}
-					className={styles.container}
-				>
-					<Link to="/#header" className={styles.logo}>
-						Pixel Kōi
-					</Link>
+				<div style={{ display: 'flex', flexDirection: 'row', marginRight: 'auto' }}>
+					<motion.div
+						initial={{ opacity: 0, boxShadow: 'none', borderBottom: '1px solid hsla(0, 0%, 100%, 0.12)' }}
+						animate={{
+							borderBottom:
+								hookedYPostion > 0
+									? '1px solid hsla(0, 0%, 100%, 0.12)'
+									: '1px solid hsla(0, 0%, 100%, 0.12)',
+							// boxShadow: hookedYPostion > 0 ? '0px 0px 7px 0px rgba(255, 255, 255, 0.1)' : 'none',
+							opacity: 1,
+							transition: { duration: 1 }
+						}}
+						className={styles.container}
+					>
+						<Link to="/#header" className={styles.logo}>
+							Pixel Kōi
+						</Link>
 
-					<Link id={styles.link1} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/about">
-						<motion.div>About </motion.div>
-					</Link>
-					<Link
-						id={styles.link2}
-						className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-						to="/#services"
-					>
-						<motion.div>Services</motion.div>
-					</Link>
-					<Link id={styles.link3} className={`${styles.link} ${styles.hoverUnderlineAnimation}`} to="/#work">
-						<motion.div>Clients</motion.div>
-					</Link>
-					<Link
-						id={styles.link4}
-						// style={{ marginRight: '110px' }}
-						className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-						to="/contact"
-					>
-						<motion.div>Contact</motion.div>
-					</Link>
-					{/* <button className={styles.menuIMG}>
+						<Link
+							id={styles.link1}
+							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
+							to="/about"
+						>
+							<motion.div>About </motion.div>
+						</Link>
+						<Link
+							id={styles.link2}
+							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
+							to="/#services"
+						>
+							<motion.div>Services</motion.div>
+						</Link>
+						<Link
+							id={styles.link3}
+							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
+							to="/#work"
+						>
+							<motion.div>Clients</motion.div>
+						</Link>
+						<Link
+							id={styles.link4}
+							// style={{ marginRight: '110px' }}
+							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
+							to="/contact"
+						>
+							<motion.div>Contact</motion.div>
+						</Link>
+						{/* <button className={styles.menuIMG}>
 						<motion.img
 							whileHover={{ rotate: 90 }}
 							src={menu}
@@ -180,8 +191,8 @@ const Nav = () => {
 							alt="menu"
 						/>
 					</button> */}
-				</motion.div>
-
+					</motion.div>
+				</div>
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1, transition: { duration: 1 } }}

@@ -7,6 +7,7 @@ import '@fontsource/merriweather';
 import '@fontsource/open-sans';
 import '@fontsource/montserrat';
 import '@fontsource/noto-sans-georgian';
+import '@fontsource/hind';
 // import '@fontsource/poppins';
 function App() {
 	return (

@@ -6,13 +6,13 @@ body {
 		'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale; */
-	font-family: lato;
+	font-family: Hind;
 	background-color: #1c1d22;
 }
 
 p {
 	font-style: normal;
-	font-family: "Noto Sans Georgian";
+	/* font-family: "Noto Sans Georgian"; */
 }
 button {
 	/* font-style: normal;
