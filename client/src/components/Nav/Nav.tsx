@@ -173,14 +173,7 @@ const Nav = () => {
 						>
 							<motion.div>Clients</motion.div>
 						</Link>
-						<Link
-							id={styles.link4}
-							// style={{ marginRight: '110px' }}
-							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-							to="/contact"
-						>
-							<motion.div>Contact</motion.div>
-						</Link>
+
 						{/* <button className={styles.menuIMG}>
 						<motion.img
 							whileHover={{ rotate: 90 }}
@@ -198,13 +191,21 @@ const Nav = () => {
 					animate={{ opacity: 1, transition: { duration: 1 } }}
 					className={styles.container2}
 				>
+					<Link
+						id={styles.link4}
+						// style={{ marginRight: '110px' }}
+						className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
+						to="/contact"
+					>
+						<motion.p>Hire Us</motion.p>
+					</Link>
 					<button className={styles.menuIMG}>
 						<motion.img
 							whileHover={{ rotate: 90 }}
 							src={menu}
 							onClick={open === false ? openMenu : closeMenu}
-							height={25}
-							width={25}
+							height={26}
+							width={26}
 							alt="menu"
 						/>
 					</button>
