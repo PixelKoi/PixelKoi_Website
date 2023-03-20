@@ -199,7 +199,7 @@ const Nav = () => {
 					<Link
 						id={styles.link4}
 						// style={{ marginRight: '110px' }}
-						className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
+						className={`${styles.link} `}
 						to="/contact"
 					>
 						<motion.p>Hire Us</motion.p>
