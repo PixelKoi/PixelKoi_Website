@@ -187,6 +187,16 @@
 	}
 }
 
+.contactInfo {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	margin-right: 2rem;
+	p {
+		margin: 0 auto;
+	}
+}
+
 .container2 {
 	color: #fff;
 	height: 5.5rem;

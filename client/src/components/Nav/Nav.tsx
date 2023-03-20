@@ -191,6 +191,11 @@ const Nav = () => {
 					animate={{ opacity: 1, transition: { duration: 1 } }}
 					className={styles.container2}
 				>
+					<div className={styles.contactInfo}>
+						<p>
+							Email: info@pixelkoi.com <br />Phone: (647)-838-1705
+						</p>
+					</div>
 					<Link
 						id={styles.link4}
 						// style={{ marginRight: '110px' }}
