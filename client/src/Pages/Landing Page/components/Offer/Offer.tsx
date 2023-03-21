@@ -47,7 +47,10 @@ const Offer = () => {
 						viewport={{ once: true }}
 						className={styles.catDescription}
 					>
-						<h3>Software Engineering</h3>
+						<h3 style={{ color: '#efff' }}>Software Engineering</h3>
+						<hr className={styles.break} />
+						<br />
+						<br />
 						<p>
 							Our custom software development solutions meet your specific needs and goals, giving you a
 							competitive advantage. Our comprehensive end-to-end software development services cover
@@ -88,7 +91,10 @@ const Offer = () => {
 						viewport={{ once: true }}
 						className={styles.catDescription}
 					>
-						<h3>UX Design</h3>
+						<h3 style={{ color: '#efff' }}>UX Design</h3>
+						<hr className={styles.break} />
+						<br />
+						<br />
 						<p>
 							If you seek a team that values transparent design processes and consistently delivers
 							exceptional results within your budget? Turn to our long-standing design team specializing
@@ -112,7 +118,10 @@ const Offer = () => {
 						viewport={{ once: true }}
 						className={styles.catDescription}
 					>
-						<h3>Website Development</h3>
+						<h3 style={{ color: '#efff' }}>Website Development</h3>
+						<hr className={styles.break} />
+						<br />
+						<br />
 						<p>
 							Pixel Koi is dedicated to offering all-encompassing website development and ecommerce
 							solutions to businesses of all sizes. Our professional team of developers, designers, and
