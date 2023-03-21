@@ -33,7 +33,7 @@
 
 .cta {
 	font-family: "Newslab", serif;
-	color: #fff;
+	color: hsla(0, 0%, 100%, 0.5);
 	// font-size: 20px;
 	opacity: 0.8;
 	line-height: 2.2rem;
@@ -45,7 +45,11 @@
 	font-size: 1rem;
 	line-height: 2.3rem;
 }
-
+.break {
+	border-top: 1px solid #e8985c;
+	width: 50px;
+	float: left;
+}
 //carousel
 .carousel {
 	display: flex;

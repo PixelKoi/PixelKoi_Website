@@ -42,9 +42,12 @@ const ClientCardLayout = () => {
 					viewport={{ once: true }}
 					className={styles.textContainer}
 				>
-					<motion.h1 className={styles.clientTitle} style={{ color: '#e8985c' }}>
+					<motion.h1 className={styles.clientTitle} style={{ color: '#efff' }}>
 						<b>Our Clients</b>
 					</motion.h1>
+					<hr className={styles.break} />
+					<br />
+					<br />
 					<motion.p className={styles.cta}>
 						Our clients reside in various nations and use diverse languages, yet our shared aim unites us in
 						our efforts..
