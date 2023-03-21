@@ -8,11 +8,12 @@ import Offer from './components/Offer/Offer';
 import Global from './components/Global/Global';
 import OurTech from './components/OurTech/OurTech';
 import Footer2 from '../../components/Footer/Footer2';
+import NavGroup from '../../components/Nav/NavGroup';
 
 const Landing = (props: any) => {
 	return (
 		<main className={styles.mainContainer}>
-			<Nav />
+			<NavGroup />
 			<Header />
 			<OurTech />
 			<Offer />

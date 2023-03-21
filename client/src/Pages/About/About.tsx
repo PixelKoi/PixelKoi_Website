@@ -1,5 +1,5 @@
 import styles from './About.module.scss';
-import Nav from '../../components/Nav/Nav';
+import NavGroup from '../../components/Nav/NavGroup';
 import Team from './Team/Team';
 import Footer2 from '../../components/Footer/Footer2';
 
@@ -15,7 +15,7 @@ const About = () => {
 			viewport={{ once: true }}
 			className={styles.wrapper}
 		>
-			<Nav />
+			<NavGroup />
 
 			<div className={styles.container}>
 				<div className={styles.section}>

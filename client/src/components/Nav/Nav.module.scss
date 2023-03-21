@@ -59,6 +59,17 @@
 		margin: 0 auto;
 	}
 }
+
+.break {
+	border-top: 1px solid #e8985c;
+	position: fixed;
+	z-index: 3;
+	margin-top: 5.5rem;
+	width: 100%;
+	transform-origin: left;
+	transform: scaleX(0);
+}
+
 @media only screen and (min-width: 780px) {
 	.hoverUnderlineAnimation {
 		position: relative;
