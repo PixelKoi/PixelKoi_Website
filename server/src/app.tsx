@@ -3,6 +3,7 @@ import express from 'express';
 const app = express();
 const cors = require('cors');
 const nodemailer = require('nodemailer');
+const path = require('path');
 
 app.use(express.json());
 
@@ -18,25 +19,28 @@ app.get('/', (req, res) => {
 	res.send('Hello World!');
 });
 
+app.use(express.static(path.join(__dirname, 'build')));
 
-
-app.post("/send-email", (req, res) => {
+app.get('/*', (req, res) => {
+	res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+app.post('/send-email', (req, res) => {
 	const { name, company, email, phone } = req.body;
 
 	const transporter = nodemailer.createTransport({
-		host: "smtp.gmail.com",
+		host: 'smtp.gmail.com',
 		port: 465,
 		secure: true,
 		auth: {
-			user: "gmoneydoespython@gmail.com",
-			pass: "qbqjjywxcdtigbzu"
+			user: 'gmoneydoespython@gmail.com',
+			pass: 'qbqjjywxcdtigbzu'
 		}
 	});
 
 	const mailOptions = {
 		from: email,
-		to: "garonazarian09@gmail.com",
-		subject: "Contact Form Submission",
+		to: 'garonazarian09@gmail.com',
+		subject: 'Contact Form Submission',
 		html: `
       <h2>Contact Form Submission</h2>
       <p><strong>Name:</strong> ${name}</p>
@@ -49,10 +53,10 @@ app.post("/send-email", (req, res) => {
 	transporter.sendMail(mailOptions, (error, info) => {
 		if (error) {
 			console.error(error);
-			res.status(500).send("Internal server error");
+			res.status(500).send('Internal server error');
 		} else {
 			console.log(`Email sent: ${info.response}`);
-			res.status(200).send("Email sent successfully");
+			res.status(200).send('Email sent successfully');
 		}
 	});
 });
@@ -60,5 +64,3 @@ app.post("/send-email", (req, res) => {
 app.listen(port, () => {
 	return console.log(`Server running on port ${port}`);
 });
-
-
