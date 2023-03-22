@@ -98,9 +98,10 @@ export const Contact = () => {
 			.then((response) => response.json())
 			.then((data) => console.log(data))
 			.then(() => setForm('submitted'))
-			.catch(
-				(error) => console.error('whats going on dawg',error),
-				// setForm('')
+			.catch((error) => {
+					console.error("We've run into an error: ",error);
+					setForm('error');
+			}
 			);
 	};
 
@@ -327,9 +328,6 @@ export const Contact = () => {
 					<li className={styles.buttonLink}>
 						<button
 							type="submit"
-							onClick={() => {
-								setForm('submitted');
-							}}
 							className={styles.navLink}
 						>
 							<span className={styles.buttonText}>SEND</span>
@@ -370,6 +368,8 @@ export const Contact = () => {
 				return hiForm();
 			case 'submitted':
 				return submittedForm();
+			case 'error':
+				return errorForm();
 			default:
 				return startForm();
 		}
