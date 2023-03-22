@@ -98,7 +98,10 @@ export const Contact = () => {
 			.then((response) => response.json())
 			.then((data) => console.log(data))
 			.then(() => setForm('submitted'))
-			.catch((error) => console.error(error));
+			.catch(
+				(error) => console.error('whats going on dawg',error),
+				// setForm('')
+			);
 	};
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -265,9 +268,9 @@ export const Contact = () => {
 					<li className={styles.buttonLink}>
 						<button
 							type="submit"
-							onClick={() => {
-								setForm('submitted');
-							}}
+							// onClick={() => {
+							// 	setForm('submitted');
+							// }}
 							className={styles.navLink}
 						>
 							<span className={styles.buttonText}>SEND</span>
@@ -340,10 +343,20 @@ export const Contact = () => {
 	const submittedForm = () => {
 		return (
 			<div>
-				<p style={{ color: 'white', textAlign: 'center' }}>Form has been submitted</p>
+				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>Thank you for submitting your proposal to us.
+					We appreciate your interest in our company and the opportunity to review your ideas. We will carefully evaluate your submission
+					and get back to you as soon as possible.</p>
 			</div>
 		);
 	};
+
+	const errorForm = () => {
+		return (
+			<div>
+				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>There was an error submitting your proposal, please try again later.</p>
+			</div>
+		)
+	}
 
 	//Show Contact form based on state
 	const showForm = (form: String) => {
