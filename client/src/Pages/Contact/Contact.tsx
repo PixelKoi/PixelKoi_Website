@@ -345,7 +345,8 @@ export const Contact = () => {
 			<div>
 				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>Thank you for submitting your proposal to us.
 					We appreciate your interest in our company and the opportunity to review your ideas. We will carefully evaluate your submission
-					and get back to you as soon as possible.</p>
+					and get back to you as soon as possible.
+				</p>
 			</div>
 		);
 	};
@@ -353,7 +354,11 @@ export const Contact = () => {
 	const errorForm = () => {
 		return (
 			<div>
-				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>There was an error submitting your proposal, please try again later.</p>
+				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
+					We're sorry, but there was an error submitting your proposal.
+					Please try again later or contact our
+					support team for assistance. Thank you for your patience and understanding.
+				</p>
 			</div>
 		)
 	}
