@@ -55,8 +55,13 @@ app.post('/send-email', (req, res) => {
 			console.error(error);
 			res.status(500).send('Internal server error');
 		} else {
+<<<<<<< HEAD
 			console.log(`Email sent: ${info.response}`);
 			res.status(200).send('Email sent successfully');
+=======
+			console.log(`Email sent: ${info.response.json}`);
+			res.status(200).json({message: "Email sent successfully"});
+>>>>>>> 2b0f71e7e7edac65a7355b6442ae4d13160d8c6d
 		}
 	});
 });

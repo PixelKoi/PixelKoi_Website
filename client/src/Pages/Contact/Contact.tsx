@@ -98,7 +98,11 @@ export const Contact = () => {
 			.then((response) => response.json())
 			.then((data) => console.log(data))
 			.then(() => setForm('submitted'))
-			.catch((error) => console.error(error));
+			.catch((error) => {
+					console.error("We've run into an error: ",error);
+					setForm('error');
+			}
+			);
 	};
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -265,9 +269,9 @@ export const Contact = () => {
 					<li className={styles.buttonLink}>
 						<button
 							type="submit"
-							onClick={() => {
-								setForm('submitted');
-							}}
+							// onClick={() => {
+							// 	setForm('submitted');
+							// }}
 							className={styles.navLink}
 						>
 							<span className={styles.buttonText}>SEND</span>
@@ -324,9 +328,6 @@ export const Contact = () => {
 					<li className={styles.buttonLink}>
 						<button
 							type="submit"
-							onClick={() => {
-								setForm('submitted');
-							}}
 							className={styles.navLink}
 						>
 							<span className={styles.buttonText}>SEND</span>
@@ -340,10 +341,25 @@ export const Contact = () => {
 	const submittedForm = () => {
 		return (
 			<div>
-				<p style={{ color: 'white', textAlign: 'center' }}>Form has been submitted</p>
+				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>Thank you for submitting your proposal to us.
+					We appreciate your interest in our company and the opportunity to review your ideas. We will carefully evaluate your submission
+					and get back to you as soon as possible.
+				</p>
 			</div>
 		);
 	};
+
+	const errorForm = () => {
+		return (
+			<div>
+				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
+					We're sorry, but there was an error submitting your proposal.
+					Please try again later or contact our
+					support team for assistance. Thank you for your patience and understanding.
+				</p>
+			</div>
+		)
+	}
 
 	//Show Contact form based on state
 	const showForm = (form: String) => {
@@ -352,6 +368,8 @@ export const Contact = () => {
 				return hiForm();
 			case 'submitted':
 				return submittedForm();
+			case 'error':
+				return errorForm();
 			default:
 				return startForm();
 		}
