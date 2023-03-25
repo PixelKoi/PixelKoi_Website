@@ -42,9 +42,13 @@
 		flex-wrap: nowrap; /* prevent the items from wrapping onto multiple lines */
 		/* add any other styles you need */
 		background-color: #232429;
-		width: 300px;
-		height: 250px;
-		padding: 4rem 2rem;
+		width: 350px;
+		height: 300px;
+		padding: 3rem 2rem;
+	}
+	.textContainer {
+		padding-bottom: 1rem;
+		padding-top: 2rem;
 	}
 	.buttonGroup {
 		display: flex;
@@ -53,7 +57,7 @@
 		align-items: center;
 		position: relative;
 		padding: 2rem;
-		border-left: 1px solid white; /* add a vertical line to the right div */
+		border-top: 1px solid white; /* add a vertical line to the right div */
 
 		// gap: 15px;
 		.button {
@@ -62,7 +66,7 @@
 			background-color: #FFA500;
 			outline: none;
 			height: 50px;
-			width: 90px;
+			width: 100px;
 			font-weight: 600;
 			color: white;
 			&:hover {
