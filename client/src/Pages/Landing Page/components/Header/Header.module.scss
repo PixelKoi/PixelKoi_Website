@@ -56,19 +56,16 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-
 	.textContainer {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
 		color: #FFA500;
 		padding-right: 2rem;
 		text-transform: uppercase;
+		text-align: left;
 		.headerText {
 			font-size: 10rem;
-			display: flex;
-			gap: 10px;
 		}
 	}
 	.cube {
@@ -86,6 +83,7 @@
 	background-color: #1c1d22;
 	width: 750px;
 	height: 300px;
+	padding: 2rem;
 }
 .mainContainer {
 }
@@ -102,8 +100,7 @@
 .text {
 	font-weight: 900;
 	font-style: normal;
-	margin-bottom: 1rem;
 	letter-spacing: 2px;
-	font-size: clamp(30px, 4vw, 72px);
+	font-size: clamp(30px, 4vw, 60px);
 	line-height: clamp(38px, 4vw, 77px);
 }
