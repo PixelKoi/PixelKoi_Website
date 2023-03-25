@@ -40,7 +40,7 @@
 		height: 50px;
 		width: 140px;
 		font-weight: 600;
-		color: black;
+		color: white;
 		&:hover {
 			background-color: #FFA500;
 		}
@@ -68,12 +68,6 @@
 			font-size: 10rem;
 		}
 	}
-	.cube {
-		align-self: center;
-		margin-right: 5rem;
-		margin-top: 4rem;
-		scale: 0.3;
-	}
 }
 .modalContainer{
 	display: flex;
@@ -81,16 +75,11 @@
 	flex-wrap: nowrap; /* prevent the items from wrapping onto multiple lines */
 	/* add any other styles you need */
 	background-color: #1c1d22;
-	width: 750px;
-	height: 300px;
+	width: 650px;
+	height: 250px;
 	padding: 2rem;
 }
 .mainContainer {
-}
-
-.cubeIMG {
-	margin-top: 2rem;
-	align-self: center;
 }
 
 .cubeSize {
@@ -98,9 +87,9 @@
 }
 
 .text {
-	font-weight: 900;
-	font-style: normal;
+	font-weight: bolder;
 	letter-spacing: 2px;
-	font-size: clamp(30px, 4vw, 60px);
-	line-height: clamp(38px, 4vw, 77px);
+	font-size: clamp(30px, 4vw, 40px);
+	line-height: clamp(35px, 4vw, 45px);
+	margin-bottom: 0 !important;
 }
