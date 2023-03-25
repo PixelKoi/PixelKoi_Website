@@ -53,7 +53,7 @@ export const ContactForm = () => {
 	};
 
 	return (
-		<div className={styles.mainContainer} id="contact">
+		<div className={styles.mainContainer} id="contact" >
 			<div className={styles.contactBoard}>
 				<div className={styles.formBoard}>
 					{showForm === true ? (

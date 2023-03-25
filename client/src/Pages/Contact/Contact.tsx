@@ -5,6 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import { motion } from 'framer-motion';
 
 import Select, { StylesConfig } from 'react-select';
+import mailboxImg from "../../assets/Home/mailbox.webp";
 
 const deadlineOptions = [
 	{ value: '1 Month', label: '1 Month' },
@@ -378,64 +379,67 @@ export const Contact = () => {
 	return (
 		<div>
 			<Nav />
-			<div className={styles.container}>
-				<div className={styles.innerContainer}>
-					<div className={styles.topFormContainer}>
-						<div className={styles.sectionHeader}>
-							<div className={styles.pageHeader}>
-								<motion.h3
-									initial={{ x: 30, opacity: 0 }}
-									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-									id="header-caption"
+			<div className={styles.container} style={{backgroundImage: `url(${mailboxImg})`}}>
+				<div className={styles.imRetarded}>
+					<div className={styles.innerContainer}>
+						<div className={styles.topFormContainer}>
+							<div className={styles.sectionHeader}>
+								<div className={styles.pageHeader}>
+									<motion.h3
+										initial={{ x: 30, opacity: 0 }}
+										animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+										id="header-caption"
+									>
+										GET IN TOUCH
+									</motion.h3>
+									<motion.h1
+										style={{ fontSize: '30px' }}
+										initial={{ x: -30, opacity: 0 }}
+										animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+									>
+										Let's Create Something
+									</motion.h1>
+									<motion.h1
+										style={{ fontSize: '30px' }}
+										initial={{ x: 30, opacity: 0 }}
+										animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+									>
+										Great Together
+									</motion.h1>
+								</div>
+								<motion.div
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}
+									className={styles.location}
 								>
-									GET IN TOUCH
-								</motion.h3>
-								<motion.h1
-									style={{ fontSize: '30px' }}
-									initial={{ x: -30, opacity: 0 }}
-									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-								>
-									Let's Create Something
-								</motion.h1>
-								<motion.h1
-									style={{ fontSize: '30px' }}
-									initial={{ x: 30, opacity: 0 }}
-									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-								>
-									Great Together
-								</motion.h1>
+									<h4>Office Locations</h4>
+									<h5>Chiang Mai</h5>
+									<h5>Toronto</h5>
+								</motion.div>
 							</div>
 							<motion.div
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}
-								className={styles.location}
+								initial={{ y: 5, opacity: 0 }}
+								animate={{ y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+								className={styles.formSelection}
 							>
-								<h4>Office Locations</h4>
-								<h5>Chiang Mai</h5>
-								<h5>Toronto</h5>
+								<ul className={styles.buttonGroup}>
+									<li className={styles.buttonLink}>
+										<a onClick={() => setForm('start')} className={styles.navLink}>
+											<span className={styles.buttonText}>Start A Project</span>
+										</a>
+									</li>
+									<li className={styles.buttonLink}>
+										<a onClick={() => setForm('hi')} className={styles.navLink}>
+											<span className={styles.buttonText}>Say Hello!</span>
+										</a>
+									</li>
+								</ul>
 							</motion.div>
 						</div>
-						<motion.div
-							initial={{ y: 5, opacity: 0 }}
-							animate={{ y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-							className={styles.formSelection}
-						>
-							<ul className={styles.buttonGroup}>
-								<li className={styles.buttonLink}>
-									<a onClick={() => setForm('start')} className={styles.navLink}>
-										<span className={styles.buttonText}>Start A Project</span>
-									</a>
-								</li>
-								<li className={styles.buttonLink}>
-									<a onClick={() => setForm('hi')} className={styles.navLink}>
-										<span className={styles.buttonText}>Say Hello!</span>
-									</a>
-								</li>
-							</ul>
-						</motion.div>
 					</div>
+					{showForm(show)}
 				</div>
-				{showForm(show)}
+
 			</div>
 			<Footer />
 		</div>

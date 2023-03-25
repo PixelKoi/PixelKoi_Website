@@ -19,7 +19,6 @@ $secondary: #595959;
 }
 
 .container {
-	background-color: #1c1d22;
 	display: flex;
 	flex-direction: column;
 	overflow-x: hidden;
@@ -188,6 +187,8 @@ $secondary: #595959;
 	}
 
 	.sectionHeader {
+		//background-color: #1c1d22;
+		border: 1px solid orange;
 		flex-direction: column;
 		.location {
 			margin-top: 2rem;
@@ -254,6 +255,8 @@ $secondary: #595959;
 	}
 	.topFormContainer {
 		float: left;
+		border: 1px solid orange;
+
 	}
 
 	.buttonLink {
@@ -279,6 +282,8 @@ $secondary: #595959;
 	}
 
 	.formSection {
+		border: 1px solid orange;
+
 		width: 50%;
 		.formContainer {
 			grid-template-columns: 1fr 2fr;
@@ -295,10 +300,20 @@ $secondary: #595959;
 	}
 
 	.innerContainer {
+		border: 10px solid green;
+
 		width: 50%;
 		// margin-left: 34.7rem;
 		// margin-right: auto;
 	}
+
+	.imRetarded{
+		display: flex;
+		flex-direction: column;
+		align-content: center;
+		align-items: center;
+	}
+
 	.sectionHeader {
 		flex-direction: row;
 
