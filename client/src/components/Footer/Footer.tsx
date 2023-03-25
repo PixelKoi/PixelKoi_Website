@@ -42,39 +42,42 @@ const Footer = () => {
 				</motion.div>
 			</div> */}
 			<motion.div className={styles.footerMain} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} />
-			<div className="footer-links d-flex justify-content-center">
-				<div className="row no-gutters mx-auto">
-					<div className={styles.footerCircles}>
-						<i className="fa-solid fa-circle" />
-					</div>
-					<Link to="/about" className={`${styles.footerLink} ${styles.rowAnchors}`}>
-						About
-					</Link>
-					<div className={styles.footerCircles}>
-						<i className="fa-solid fa-circle" />
-					</div>
-					<Link to="/#services" className={`${styles.footerLink} ${styles.rowAnchors}`}>
-						Services
-					</Link>
-					<div className={styles.footerCircles}>
-						<i className="fa-solid fa-circle" />
-					</div>
-					<Link to="/#work" className={`${styles.footerLink} ${styles.rowAnchors}`}>
-						Clients
-					</Link>
-					<div className={styles.footerCircles}>
-						<i className="fa-solid fa-circle" />
-					</div>
+			<div className={styles.linkColumn}>
+				<div className="footer-links ">
+					<div className="row no-gutters mx-auto">
+						<div className={`${styles.footerStyle} ${styles.footerStyle}`}>
+							<i className="fa-solid fa-circle" />
+						</div>
+						<Link to="/about" className={`${styles.footerLink} ${styles.rowAnchors}`}>
+							About
+						</Link>
+						<div className={styles.footerStyle}>
+							<i className="fa-solid fa-circle" />
+						</div>
+						<Link to="/#services" className={`${styles.footerLink} ${styles.rowAnchors}`}>
+							Services
+						</Link>
+						<div className={styles.footerStyle}>
+							<i className="fa-solid fa-circle" />
+						</div>
+						<Link to="/#work" className={`${styles.footerLink} ${styles.rowAnchors}`}>
+							Clients
+						</Link>
+						<div className={styles.footerStyle}>
+							<i className="fa-solid fa-circle" />
+						</div>
 
-					<Link to="/contact" className={`${styles.footerLink} ${styles.rowAnchors}`} title="Takes customer to the contact form allowing communication with Pixel Koi Company">
-						Contact
-					</Link>
+						<Link to="/contact" className={`${styles.footerLink} ${styles.rowAnchors}`}
+							  title="Takes customer to the contact form allowing communication with Pixel Koi Company">
+							Contact
+						</Link>
+					</div>
 				</div>
-			</div>
-			<div className={styles.instagramDiv}>
-				<a className={styles.instagramIcon} href="https://www.linkedin.com/company/pixelkoi/" target="_blank">
-					<i className="fab fa-linkedin" />
-				</a>
+				<div className={`${styles.footerRow} ${styles.instagramDiv}`}>
+					<a className={styles.instagramIcon} href="https://www.linkedin.com/company/pixelkoi/" target="_blank">
+						<i className="fab fa-linkedin" />
+					</a>
+				</div>
 			</div>
 
 			<motion.p
@@ -85,6 +88,22 @@ const Footer = () => {
 			>
 				Copyright © {currentYear} Pixel Koi - All rights reserved.
 			</motion.p>
+
+
+			<div className={`${styles.footerRow} ${styles.locationLink}`}>
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}
+					className={styles.location}
+				>
+					<h4>Office Locations</h4>
+					<h5>Chiang Mai</h5>
+					<h5>Toronto</h5>
+				</motion.div>
+			</div>
+
+
+
 		</div>
 	);
 };
