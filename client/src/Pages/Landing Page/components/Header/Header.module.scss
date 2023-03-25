@@ -15,7 +15,6 @@
 	z-index: 1;
 }
 
-
 .container {
 	margin-top: 10rem;
 	height: 100%;
@@ -27,14 +26,13 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		color: #FFA500;
+		color: #e8985c;
 		text-transform: uppercase;
 		.headerText {
 			font-size: 10rem;
 		}
 	}
 }
-
 
 .text {
 	font-weight: bolder;
@@ -45,8 +43,12 @@
 	text-align: center;
 }
 
+.modalContainer {
+	box-shadow: 0px 12px 36px rgba(0, 0, 0, 0.25);
+}
+
 @media only screen and (min-width: 320px) {
-	.modalContainer{
+	.modalContainer {
 		display: flex;
 		flex-direction: column; /* set the flex direction to row */
 		flex-wrap: nowrap; /* prevent the items from wrapping onto multiple lines */
@@ -73,34 +75,34 @@
 		.button {
 			font-weight: 600;
 			border: none;
-			background-color: #FFA500;
+			background-color: #ffa500;
 			outline: none;
 			height: 50px;
 			width: 110px;
 			font-weight: 600;
 			color: white;
 			&:hover {
-				background-color: #FFA500;
+				background-color: #ffa500;
 			}
 		}
 		#buttonContact {
 			margin-right: 15px;
 		}
 	}
-	.text{
+	.text {
 		line-height: clamp(30px, 4vw, 50px);
 	}
 }
 
-
 @media only screen and (min-width: 720px) {
-	.modalContainer{
+	.modalContainer {
 		display: flex;
 		flex-direction: row; /* set the flex direction to row */
 		background-color: #232429;
 		width: 700px;
 		height: 250px;
 		padding: 4rem 2rem;
+		box-shadow: 0px 12px 36px rgba(0, 0, 0, 0.25);
 	}
 	.buttonGroup {
 		display: flex;
@@ -116,14 +118,14 @@
 		.button {
 			font-weight: 600;
 			border: none;
-			background-color: #FFA500;
+			background-color: #e8985c;
 			outline: none;
 			height: 55px;
 			width: 150px;
 			font-weight: 600;
 			color: white;
 			&:hover {
-				background-color: #FFA500;
+				background-color: #e8985c;
 			}
 		}
 		#buttonContact {
@@ -138,11 +140,4 @@
 		margin-bottom: 0 !important;
 		text-align: center;
 	}
-
 }
-
-
-
-
-
-
