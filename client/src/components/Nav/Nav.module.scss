@@ -37,6 +37,21 @@
 		text-decoration: none;
 	}
 }
+
+.contactInfo {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	margin-right: 2rem;
+	padding: 14px 10px 10px;
+	height: 55px;
+	width: 165px;
+	background-color: #FFA500;
+	p {
+		margin: 0 auto;
+	}
+}
+
 #link4 {
 	display: flex;
 	line-height: 20px;
@@ -45,16 +60,14 @@
 	justify-content: center;
 	align-items: center;
 	text-decoration: none;
-	height: 48px;
-	padding: 14px 20px 10px;
-	background-color: #23242a;
+	height: 55px;
+	width: 165px;
+	padding: 14px 10px 10px;
+	background-color: #FFA500;
 	box-shadow: inset 0 0 0 1px hsl(0deg 0% 100% / 12%);
 	color: #fff;
 	margin-right: 2rem;
 	transition: background-color 0.5s ease;
-	&:hover {
-		background-color: #e8985c;
-	}
 	p {
 		margin: 0 auto;
 	}
@@ -151,15 +164,6 @@
 	z-index: 4;
 }
 
-.contactInfo {
-	display: flex;
-	align-items: center;
-	font-size: 12px;
-	margin-right: 2rem;
-	p {
-		margin: 0 auto;
-	}
-}
 
 .container2 {
 	color: #fff;
