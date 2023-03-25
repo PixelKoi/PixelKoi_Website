@@ -32,15 +32,14 @@
 	.button {
 		font-weight: 600;
 		border: none;
-		background-color: #fff;
+		background-color: #FFA500;
 		outline: none;
 		height: 50px;
 		width: 140px;
-		border-radius: 5px;
 		font-weight: 600;
 		color: black;
 		&:hover {
-			background-color: #e8985c;
+			background-color: #FFA500;
 		}
 	}
 	#buttonContact {
@@ -60,7 +59,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		color: #fff;
+		color: #FFA500;
 		text-transform: uppercase;
 		.topText {
 			font-size: 10rem;
