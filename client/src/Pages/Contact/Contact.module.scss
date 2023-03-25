@@ -35,14 +35,13 @@ $secondary: #595959;
 	//TOP PART
 	.innerContainer {
 		@include centerDiv;
-		flex-direction: column;
 		.sectionHeader {
 			color: #999999;
-			display: flex;
-		}
+			margin-top: 2rem;
 
+		}
 		.formSelection {
-			margin-top: 5rem;
+			margin-top: 2rem;
 			ul {
 				display: flex;
 				padding: 0;
@@ -191,10 +190,7 @@ $secondary: #595959;
 	.sectionHeader {
 		//background-color: #1c1d22;
 		flex-direction: column;
-		.location {
-			margin-top: 2rem;
-			margin-left: 0;
-		}
+
 	}
 	.formSelection ul {
 		flex-direction: column;
@@ -246,13 +242,6 @@ $secondary: #595959;
 	.innerContainer {
 		width: 100%;
 		margin-top: 15rem;
-	}
-	.sectionHeader {
-		flex-direction: row;
-
-		.location {
-			margin-left: auto;
-		}
 	}
 	.topFormContainer {
 		float: left;

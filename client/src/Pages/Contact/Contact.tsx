@@ -341,7 +341,7 @@ export const Contact = () => {
 
 	const submittedForm = () => {
 		return (
-			<div>
+			<div className={styles.formSection}>
 				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>Thank you for submitting your proposal to us.
 					We appreciate your interest in our company and the opportunity to review your ideas. We will carefully evaluate your submission
 					and get back to you as soon as possible.
@@ -352,7 +352,7 @@ export const Contact = () => {
 
 	const errorForm = () => {
 		return (
-			<div>
+			<div className={styles.formSection}>
 				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
 					We're sorry, but there was an error submitting your proposal.
 					Please try again later or contact our
@@ -406,15 +406,15 @@ export const Contact = () => {
 										Great Together
 									</motion.h1>
 								</div>
-								<motion.div
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}
-									className={styles.location}
-								>
-									<h4>Office Locations</h4>
-									<h5>Chiang Mai</h5>
-									<h5>Toronto</h5>
-								</motion.div>
+								{/*<motion.div*/}
+								{/*	initial={{ opacity: 0 }}*/}
+								{/*	animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}*/}
+								{/*	className={styles.location}*/}
+								{/*>*/}
+								{/*	<h4>Office Locations</h4>*/}
+								{/*	<h5>Chiang Mai</h5>*/}
+								{/*	<h5>Toronto</h5>*/}
+								{/*</motion.div>*/}
 							</div>
 							<motion.div
 								initial={{ y: 5, opacity: 0 }}
