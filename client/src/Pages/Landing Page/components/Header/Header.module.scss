@@ -61,7 +61,7 @@
 		align-items: center;
 		color: #FFA500;
 		text-transform: uppercase;
-		.topText {
+		.headerText {
 			font-size: 10rem;
 			display: flex;
 			gap: 10px;
@@ -73,6 +73,15 @@
 		margin-top: 4rem;
 		scale: 0.3;
 	}
+}
+.modalContainer{
+	display: flex;
+	flex-direction: row; /* set the flex direction to row */
+	flex-wrap: nowrap; /* prevent the items from wrapping onto multiple lines */
+	/* add any other styles you need */
+	background-color: #1c1d22;
+	width: 750px;
+	height: 300px;
 }
 .mainContainer {
 }
