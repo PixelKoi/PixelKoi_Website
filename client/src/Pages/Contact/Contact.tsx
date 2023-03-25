@@ -5,7 +5,7 @@ import Footer from '../../components/Footer/Footer';
 import { motion } from 'framer-motion';
 
 import Select, { StylesConfig } from 'react-select';
-import mailboxImg from "../../assets/Home/mailbox.webp";
+import mailboxImg from "../../assets/Home/mailbox.jpg";
 
 const deadlineOptions = [
 	{ value: '1 Month', label: '1 Month' },
@@ -380,7 +380,6 @@ export const Contact = () => {
 		<div>
 			<Nav />
 			<div className={styles.container} style={{backgroundImage: `url(${mailboxImg})`}}>
-				<div className={styles.imRetarded}>
 					<div className={styles.innerContainer}>
 						<div className={styles.topFormContainer}>
 							<div className={styles.sectionHeader}>
@@ -438,7 +437,6 @@ export const Contact = () => {
 						</div>
 					</div>
 					{showForm(show)}
-				</div>
 
 			</div>
 			<Footer />

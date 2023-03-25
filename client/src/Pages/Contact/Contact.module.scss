@@ -18,6 +18,7 @@ $secondary: #595959;
 	color: #86d4b2;
 }
 
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -101,6 +102,7 @@ $secondary: #595959;
 	}
 
 	.formSection {
+		background-color: #212529 !important;
 		@include centerDiv;
 		flex-direction: column;
 		margin-bottom: 8rem;
@@ -188,7 +190,6 @@ $secondary: #595959;
 
 	.sectionHeader {
 		//background-color: #1c1d22;
-		border: 1px solid orange;
 		flex-direction: column;
 		.location {
 			margin-top: 2rem;
@@ -255,7 +256,6 @@ $secondary: #595959;
 	}
 	.topFormContainer {
 		float: left;
-		border: 1px solid orange;
 
 	}
 
@@ -282,8 +282,6 @@ $secondary: #595959;
 	}
 
 	.formSection {
-		border: 1px solid orange;
-
 		width: 50%;
 		.formContainer {
 			grid-template-columns: 1fr 2fr;
@@ -300,9 +298,9 @@ $secondary: #595959;
 	}
 
 	.innerContainer {
-		border: 10px solid green;
-
+		padding: 1rem;
 		width: 50%;
+		background-color: #232429;
 		// margin-left: 34.7rem;
 		// margin-right: auto;
 	}
@@ -312,6 +310,7 @@ $secondary: #595959;
 		flex-direction: column;
 		align-content: center;
 		align-items: center;
+		border: 10px solid green;
 	}
 
 	.sectionHeader {
