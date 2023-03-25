@@ -52,6 +52,16 @@
 	}
 }
 
+.contactAnchor{
+	color: white;
+	text-decoration: none;
+	&:hover{
+		color:white;
+		text-decoration:none;
+		cursor:pointer;
+	}
+}
+
 #link4 {
 	display: flex;
 	line-height: 20px;

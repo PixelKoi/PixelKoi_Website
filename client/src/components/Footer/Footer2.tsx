@@ -17,7 +17,7 @@ const Footer2 = () => {
 				>
 					<h4>GOT A PROJECT IN MIND?</h4>
 					<motion.div>
-						<a href="mailto:jonathanbajada@pixelkoi.com?subject=Book%20a%20consultation">
+						<a target="_blank" href="mailto:jonathanbajada@pixelkoi.com?subject=Book%20a%20consultation">
 							Book a consultation
 						</a>
 					</motion.div>

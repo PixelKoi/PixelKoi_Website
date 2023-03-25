@@ -192,9 +192,13 @@ const Nav = () => {
 					className={styles.container2}
 				>
 					<div className={styles.contactInfo}>
-						<p>
-							Email: info@pixelkoi.com <br />Phone: (647)-838-1705
-						</p>
+						<a className={styles.contactAnchor} target="_blank" href="mailto:jonathanbajada@pixelkoi.com?subject=Book%20a%20consultation">
+
+							<p>
+								Email: info@pixelkoi.com <br />Phone: (647)-838-1705
+							</p>
+						</a>
+
 					</div>
 					<Link
 						id={styles.link4}
