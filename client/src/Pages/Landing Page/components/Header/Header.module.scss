@@ -54,9 +54,7 @@
 		flex-direction: column;
 		justify-content: center;
 		color: #FFA500;
-		padding-right: 2rem;
 		text-transform: uppercase;
-		text-align: left;
 		.headerText {
 			font-size: 10rem;
 		}
@@ -67,7 +65,7 @@
 	flex-direction: row; /* set the flex direction to row */
 	flex-wrap: nowrap; /* prevent the items from wrapping onto multiple lines */
 	/* add any other styles you need */
-	background-color: #1c1d22;
+	background-color: #232429;
 	width: 650px;
 	height: 250px;
 	padding: 4rem 2rem;
@@ -75,7 +73,9 @@
 .text {
 	font-weight: bolder;
 	letter-spacing: 1px;
-	font-size: clamp(30px, 4vw, 40px);
-	line-height: clamp(35px, 4vw, 45px);
+	font-size: clamp(15px, 4vw, 30px);
+	line-height: clamp(15px, 4vw, 30px);
 	margin-bottom: 0 !important;
+	text-align: center;
+
 }
