@@ -9,13 +9,14 @@ import Cube from './components/Cube/Cube';
 import cube from '../../../../assets/Home/ph_cube.svg';
 import koi from '../../../../assets/Home/koi.svg';
 import { Link, useLocation } from 'react-router-dom';
+import headerImg from '../../../../assets/Home/dnaHeader.webp'
 
 const Header = (props: any) => {
 	const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
 	const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
 
 	return (
-		<div className={styles.header} id="header">
+		<div className={styles.header} id="header" style={{backgroundImage: `url(${headerImg})`}}>
 			<div className={styles.container}>
 				<motion.div initial={{ opacity: 0 }} animate="show" variants={list} className={styles.textContainer}>
 					<div className={styles.topText}>
