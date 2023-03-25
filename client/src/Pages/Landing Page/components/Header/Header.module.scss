@@ -15,33 +15,6 @@
 	z-index: 1;
 }
 
-.buttonGroup {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	padding-left: 2rem;
-	border-left: 1px solid white; /* add a vertical line to the right div */
-
-	// gap: 15px;
-	.button {
-		font-weight: 600;
-		border: none;
-		background-color: #FFA500;
-		outline: none;
-		height: 55px;
-		width: 150px;
-		font-weight: 600;
-		color: white;
-		&:hover {
-			background-color: #FFA500;
-		}
-	}
-	#buttonContact {
-		margin-right: 15px;
-	}
-}
 
 .container {
 	margin-top: 10rem;
@@ -61,16 +34,89 @@
 		}
 	}
 }
-.modalContainer{
-	display: flex;
-	flex-direction: row; /* set the flex direction to row */
-	flex-wrap: nowrap; /* prevent the items from wrapping onto multiple lines */
-	/* add any other styles you need */
-	background-color: #232429;
-	width: 650px;
-	height: 250px;
-	padding: 4rem 2rem;
+
+@media only screen and (min-width: 320px) {
+	.modalContainer{
+		display: flex;
+		flex-direction: column; /* set the flex direction to row */
+		flex-wrap: nowrap; /* prevent the items from wrapping onto multiple lines */
+		/* add any other styles you need */
+		background-color: #232429;
+		width: 300px;
+		height: 250px;
+		padding: 4rem 2rem;
+	}
+	.buttonGroup {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		padding: 2rem;
+		border-left: 1px solid white; /* add a vertical line to the right div */
+
+		// gap: 15px;
+		.button {
+			font-weight: 600;
+			border: none;
+			background-color: #FFA500;
+			outline: none;
+			height: 50px;
+			width: 90px;
+			font-weight: 600;
+			color: white;
+			&:hover {
+				background-color: #FFA500;
+			}
+		}
+		#buttonContact {
+			margin-right: 15px;
+		}
+	}
 }
+@media only screen and (min-width: 720px) {
+	.modalContainer{
+		display: flex;
+		flex-direction: row; /* set the flex direction to row */
+		background-color: #232429;
+		width: 700px;
+		height: 250px;
+		padding: 4rem 2rem;
+	}
+	.buttonGroup {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		padding-left: 2rem;
+		border-left: 1px solid white; /* add a vertical line to the right div */
+
+		// gap: 15px;
+		.button {
+			font-weight: 600;
+			border: none;
+			background-color: #FFA500;
+			outline: none;
+			height: 55px;
+			width: 150px;
+			font-weight: 600;
+			color: white;
+			&:hover {
+				background-color: #FFA500;
+			}
+		}
+		#buttonContact {
+			margin-right: 15px;
+		}
+	}
+
+}
+
+
+
+
+
 .text {
 	font-weight: bolder;
 	letter-spacing: 1px;
