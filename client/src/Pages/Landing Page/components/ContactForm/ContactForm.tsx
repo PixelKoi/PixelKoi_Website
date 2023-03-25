@@ -59,7 +59,7 @@ export const ContactForm = () => {
 					{showForm === true ? (
 						<form className={styles.innerForm}>
 							<h2 className={styles.contactCTA}>Get in touch</h2>
-							<p className={styles.greeting}>Our team would love to hear from you!</p>
+							<p className={styles.greeting}>#FFA500 would love to hear from you!</p>
 							<label>
 								<span className={styles.textLabel}>FULL NAME</span>
 								{showNameError === false ? (

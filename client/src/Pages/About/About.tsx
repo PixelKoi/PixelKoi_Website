@@ -70,7 +70,7 @@ const About = () => {
 
 				<div className={styles.section} id={styles.ourStory}>
 					<div className={styles.headerText}>
-						<h3 style={{ color: '#e8985c' }}>Our Story</h3>
+						<h3 style={{ color: '#FFA500' }}>Our Story</h3>
 					</div>
 					<div className={styles.imgContainer}>
 						<motion.img loading="lazy" src={story} alt="" className={styles.imgContainer} />
