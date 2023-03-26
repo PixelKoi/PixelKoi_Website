@@ -56,7 +56,7 @@ const Footer = () => {
             }}
             className={styles.location}
           >
-            <div className={styles.row}>
+            <div className={`${styles.row} ${styles.headerRow}`}>
               {" "}
               <h3>Office Locations</h3>
             </div>
