@@ -96,7 +96,7 @@
 }
 
 .footerLinks a:hover {
-	color: #8513cb;
+	color: rgb(211, 127, 59);
 }
 
 .textHighlight {
@@ -145,11 +145,11 @@
 }
 
 .instagramIcon:hover {
-	color: orange;
+	color: rgb(211, 127, 59);
 }
 
 .fa-circle {
-	color: orange;
+	color: rgb(211, 127, 59);
 }
 
 .rowAnchors {
@@ -160,11 +160,11 @@
 
 .rowAnchors:hover {
 	cursor: pointer;
-	color: orange;
+	color: rgb(211, 127, 59);
 }
 
 .footerStyle {
-	color: orange;
+	color: rgb(211, 127, 59);
 	font-size: 0.5rem;
 	padding-left: 0.5rem;
 	display: inline-flex;
