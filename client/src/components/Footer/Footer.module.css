@@ -49,6 +49,7 @@
 	box-sizing: border-box;
 	flex-direction: column;
 	color: #eee5f3;
+
 }
 
 
@@ -145,6 +146,7 @@
 	font-size: 2rem;
 }
 .instagramDiv {
+	justify-content: center;
 }
 
 .instagramIcon:hover {

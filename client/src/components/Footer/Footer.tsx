@@ -80,9 +80,6 @@ const Footer = () => {
           <div className="footer-links">
             <h4 className={styles.row}>INFORMATION</h4>
             <div className={styles.row}>
-              <div className={`${styles.footerStyle} ${styles.footerStyle}`}>
-                <i className="fa-solid fa-circle" />
-              </div>
               <Link
                 to="/about"
                 className={`${styles.footerLink} ${styles.rowAnchors}`}
@@ -91,9 +88,6 @@ const Footer = () => {
               </Link>
             </div>
             <div className={styles.row}>
-              <div className={styles.footerStyle}>
-                <i className="fa-solid fa-circle" />
-              </div>
               <Link
                 to="/#services"
                 className={`${styles.footerLink} ${styles.rowAnchors}`}
@@ -102,9 +96,6 @@ const Footer = () => {
               </Link>
             </div>
             <div className={styles.row}>
-              <div className={styles.footerStyle}>
-                <i className="fa-solid fa-circle" />
-              </div>
               <Link
                 to="/#work"
                 className={`${styles.footerLink} ${styles.rowAnchors}`}
@@ -113,10 +104,6 @@ const Footer = () => {
               </Link>
             </div>
             <div className={styles.row}>
-              <div className={styles.footerStyle}>
-                <i className="fa-solid fa-circle" />
-              </div>
-
               <Link
                 to="/contact"
                 className={`${styles.footerLink} ${styles.rowAnchors}`}
@@ -144,7 +131,12 @@ const Footer = () => {
 
       <motion.p
         initial={{ opacity: 0 }}
-        style={{ color: "#fff", display: "block", textAlign: "center" }}
+        style={{
+          color: "#fff",
+          display: "block",
+          textAlign: "center",
+          paddingTop: "1rem",
+        }}
         className={styles.footerCopyright}
         whileInView={{ opacity: 1 }}
       >
