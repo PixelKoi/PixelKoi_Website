@@ -46,7 +46,22 @@ const Footer = () => {
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
       />
-      <div className={styles.row}>
+      <div className={`${styles.row} ${styles.outerRow}`}>
+        <div className={`${styles.linkColumn} ${styles.locationLink}`}>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { duration: 1, ease: "easeIn" },
+            }}
+            className={styles.location}
+          >
+            <h3>Office Locations</h3>
+            <h4>Chiang Mai</h4>
+            <h4>Toronto</h4>
+          </motion.div>
+        </div>
+
         <div className={styles.linkColumn}>
           <div className="footer-links">
             <div className={styles.row}>
@@ -96,21 +111,6 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-        </div>
-
-        <div className={`${styles.linkColumn} ${styles.locationLink}`}>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: 1,
-              transition: { duration: 1, ease: "easeIn" },
-            }}
-            className={styles.location}
-          >
-            <h3>Office Locations</h3>
-            <h4>Chiang Mai</h4>
-            <h4>Toronto</h4>
-          </motion.div>
         </div>
       </div>
 
