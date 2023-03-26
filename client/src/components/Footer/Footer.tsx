@@ -60,18 +60,18 @@ const Footer = () => {
               {" "}
               <h3>Office Locations</h3>
             </div>
-            <div className={styles.row}>
+            <div className={`${styles.row} ${styles.headerRow}`}>
               <div className={styles.footerStyleText}>
                 <i className="fa-solid fa-location-dot fa-xl" />
               </div>{" "}
-              <h4>Chiang Mai</h4>
+              <h4 className={styles.footerHeader}>Chiang Mai</h4>
             </div>
-            <div className={styles.row}>
+            <div className={`${styles.row} ${styles.headerRow}`}>
               {" "}
               <div className={styles.footerStyleText}>
                 <i className="fa-solid fa-location-dot fa-xl" />
               </div>
-              <h4>Toronto</h4>
+              <h4 className={styles.footerHeader}>Toronto</h4>
             </div>
           </motion.div>
         </div>

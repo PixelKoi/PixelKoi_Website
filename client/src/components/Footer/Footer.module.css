@@ -18,6 +18,9 @@
 	flex-wrap: wrap;
 	width: 100%;
 }
+.headerRow{
+	margin-bottom: 1rem;;
+}
 
 .outerRow{
 	justify-content: center;
@@ -176,6 +179,12 @@
 	padding-right: 0.5rem;
 
 	align-items: center;
+}
+
+.footerHeader{
+	display: inline-block;
+	vertical-align: baseline;
+	margin-bottom: 0rem;
 }
 
 .rowAnchors,
