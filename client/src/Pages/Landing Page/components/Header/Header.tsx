@@ -27,7 +27,7 @@ const Header = (props: any) => {
 					>
 						<div className={styles.headerText}>
 							<motion.h1 initial={{ y: 100, opacity: 0 }} variants={item} className={styles.text}>
-								We Creates
+								We Create
 							</motion.h1>
 						</div>
 						<div className={styles.headerText}>
