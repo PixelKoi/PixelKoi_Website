@@ -11,7 +11,7 @@
 	top: 0;
 	left: 0;
 	right: 0;
-	background-color: transparent !important;
+	background-color: transparent;
 	.menuIMG {
 		background-color: transparent;
 		border-style: none;
@@ -20,7 +20,7 @@
 		padding: 0;
 	}
 	.logo {
-		color: #005AFF;
+		color: #fff;
 		margin-right: 5rem;
 		font-size: 24px;
 		text-decoration: none;
@@ -28,8 +28,8 @@
 		letter-spacing: 2px;
 	}
 	.link {
-		color: #005AFF;
-		font-size: 16px;
+		color: #fff;
+		font-size: 12px;
 		font-weight: bold;
 		letter-spacing: 2px;
 		margin-right: 2rem;
@@ -37,32 +37,6 @@
 		text-decoration: none;
 	}
 }
-
-.contactInfo {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 12px;
-	margin-right: 2rem;
-	padding: 14px 10px 10px;
-	height: 55px;
-	width: 165px;
-	background-color: #ffa500;
-	p {
-		margin: 0 auto;
-	}
-}
-
-.contactAnchor {
-	color: white;
-	text-decoration: none;
-	&:hover {
-		color: white;
-		text-decoration: none;
-		cursor: pointer;
-	}
-}
-
 #link4 {
 	display: flex;
 	line-height: 20px;
@@ -70,30 +44,16 @@
 	font-size: 18px !important;
 	justify-content: center;
 	align-items: center;
-	text-decoration: none;
-	height: 55px;
-	width: 165px;
-	padding: 14px 10px 10px;
-	background-color: rgb(193, 108, 41);
+	height: 48px;
+	padding: 14px 20px 10px;
+	background-color: #16212d;
 	box-shadow: inset 0 0 0 1px hsl(0deg 0% 100% / 12%);
-	color: white;
+	color: #fff;
 	margin-right: 2rem;
-	transition: background-color 0.5s ease;
 	p {
 		margin: 0 auto;
 	}
 }
-
-.break {
-	border-top: 1px solid #e8985c;
-	position: fixed;
-	z-index: 3;
-	margin-top: 5.5rem;
-	width: 100%;
-	transform-origin: left;
-	transform: scaleX(0);
-}
-
 @media only screen and (min-width: 780px) {
 	.hoverUnderlineAnimation {
 		position: relative;
@@ -125,8 +85,9 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+
 	z-index: 4;
-	background-color: #232429;
+	background-color: #171717;
 	color: #fff;
 	@extend .dflex;
 
@@ -172,6 +133,16 @@
 
 .dropdownButtons {
 	z-index: 4;
+}
+
+.contactInfo {
+	display: flex;
+	align-items: center;
+	font-size: 12px;
+	margin-right: 2rem;
+	p {
+		margin: 0 auto;
+	}
 }
 
 .container2 {

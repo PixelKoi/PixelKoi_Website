@@ -35,7 +35,7 @@ const Offer = () => {
 						className={styles.link}
 						title="Takes customer to the contact form allowing communication with Pixel Koi Company"
 					>
-						<BsArrowRightCircle style={{ color: '#FFA500', alignSelf: 'center' }} size={30} />
+						<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 						<p style={{ margin: 'auto 0', color: '#fff' }}>Let's Talk</p>
 					</Link>
 				</motion.div>
@@ -62,7 +62,7 @@ const Offer = () => {
 							className={styles.link}
 							title="Takes customer to the contact form allowing communication with Pixel Koi Company"
 						>
-							<BsArrowRightCircle style={{ color: '#FFA500', alignSelf: 'center' }} size={30} />
+							<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
@@ -105,7 +105,7 @@ const Offer = () => {
 							className={styles.link}
 							title="Takes customer to the contact form allowing communication with Pixel Koi Company"
 						>
-							<BsArrowRightCircle style={{ color: '#FFA500', alignSelf: 'center' }} size={30} />
+							<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
@@ -133,7 +133,7 @@ const Offer = () => {
 							className={styles.link}
 							title="Takes customer to the contact form allowing communication with Pixel Koi Company"
 						>
-							<BsArrowRightCircle style={{ color: '#FFA500', alignSelf: 'center' }} size={30} />
+							<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>

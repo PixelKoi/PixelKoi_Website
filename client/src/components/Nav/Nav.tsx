@@ -136,12 +136,8 @@ const Nav = () => {
 			<div style={{ display: 'flex', flexDirection: 'row' }}>
 				<div style={{ display: 'flex', flexDirection: 'row', marginRight: 'auto' }}>
 					<motion.div
-						initial={{ opacity: 0, boxShadow: 'none', borderBottom: '1px solid hsla(0, 0%, 100%, 0.12)' }}
+						initial={{ opacity: 0, boxShadow: 'none' }}
 						animate={{
-							borderBottom:
-								hookedYPostion > 0
-									? '1px solid hsla(0, 0%, 100%, 0.12)'
-									: '1px solid hsla(0, 0%, 100%, 0.12)',
 							// boxShadow: hookedYPostion > 0 ? '0px 0px 7px 0px rgba(255, 255, 255, 0.1)' : 'none',
 							opacity: 1,
 							transition: { duration: 1 }
@@ -192,13 +188,13 @@ const Nav = () => {
 					className={styles.container2}
 				>
 					<div className={styles.contactInfo}>
-						<a className={styles.contactAnchor} target="_blank" href="mailto:jonathanbajada@pixelkoi.com?subject=Book%20a%20consultation">
-
-							<p>
-								Direct Message
-							</p>
+						<a
+							className={styles.contactAnchor}
+							target="_blank"
+							href="mailto:jonathanbajada@pixelkoi.com?subject=Book%20a%20consultation"
+						>
+							<p>Direct Message</p>
 						</a>
-
 					</div>
 					<Link
 						id={styles.link4}
@@ -213,8 +209,8 @@ const Nav = () => {
 							whileHover={{ rotate: 90 }}
 							src={menu}
 							onClick={open === false ? openMenu : closeMenu}
-							height={36}
-							width={36}
+							height={30}
+							width={30}
 							alt="menu"
 						/>
 					</button>
