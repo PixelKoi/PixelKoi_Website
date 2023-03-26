@@ -78,6 +78,7 @@ const Footer = () => {
 
         <div className={styles.linkColumn}>
           <div className="footer-links">
+            <h4 className={styles.row}>INFORMATION</h4>
             <div className={styles.row}>
               <div className={`${styles.footerStyle} ${styles.footerStyle}`}>
                 <i className="fa-solid fa-circle" />
@@ -126,6 +127,19 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className={styles.linkColumn}>
+          <h3 className={styles.row}>SOCIALS</h3>
+          <div className={`${styles.row} ${styles.instagramDiv}`}>
+            <a
+              className={styles.instagramIcon}
+              href="https://www.linkedin.com/company/pixelkoi/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="fab fa-linkedin" />
+            </a>
+          </div>
+        </div>
       </div>
 
       <motion.p
@@ -134,16 +148,6 @@ const Footer = () => {
         className={styles.footerCopyright}
         whileInView={{ opacity: 1 }}
       >
-        <div className={`${styles.footerRow} ${styles.instagramDiv}`}>
-          <a
-            className={styles.instagramIcon}
-            href="https://www.linkedin.com/company/pixelkoi/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <i className="fab fa-linkedin" />
-          </a>
-        </div>
         Copyright © {currentYear} Pixel Koi - All rights reserved.
       </motion.p>
     </div>
