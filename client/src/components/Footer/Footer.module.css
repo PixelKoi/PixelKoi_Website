@@ -170,6 +170,13 @@
 	display: inline-flex;
 	align-items: center;
 }
+.footerStyleText{
+	color: rgb(211, 127, 59);
+	display: inline-flex;
+	padding-right: 0.5rem;
+
+	align-items: center;
+}
 
 .rowAnchors,
 .footerStyle {
