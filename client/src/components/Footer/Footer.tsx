@@ -80,14 +80,6 @@ const Footer = () => {
 				</div>
 			</div>
 
-			<motion.p
-				initial={{ opacity: 0 }}
-				style={{ color: '#fff', display: 'block', textAlign: 'center' }}
-				className={styles.footerCopyright}
-				whileInView={{ opacity: 1 }}
-			>
-				Copyright © {currentYear} Pixel Koi - All rights reserved.
-			</motion.p>
 
 
 			<div className={`${styles.footerRow} ${styles.locationLink}`}>
@@ -102,6 +94,14 @@ const Footer = () => {
 				</motion.div>
 			</div>
 
+			<motion.p
+				initial={{ opacity: 0 }}
+				style={{ color: '#fff', display: 'block', textAlign: 'center' }}
+				className={styles.footerCopyright}
+				whileInView={{ opacity: 1 }}
+			>
+				Copyright © {currentYear} Pixel Koi - All rights reserved.
+			</motion.p>
 
 
 		</div>

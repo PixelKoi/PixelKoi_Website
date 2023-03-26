@@ -15,7 +15,7 @@
 .footerMain {
 	display: flex;
 	justify-content: space-between;
-	flex-direction: row;
+	flex-direction: column;
 }
 .linkColumn{
 	box-sizing: border-box;
@@ -125,11 +125,9 @@
 .instagramIcon {
 	color: whitesmoke;
 	display: inline-block;
-	font-size: 4rem;
+	font-size: 2rem;
 }
 .instagramDiv {
-	text-align: center;
-	margin-bottom: 0.5rem;
 }
 
 .instagramIcon:hover {
