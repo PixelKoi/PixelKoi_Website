@@ -56,9 +56,18 @@ const Footer = () => {
             }}
             className={styles.location}
           >
-            <h3>Office Locations</h3>
-            <h4>Chiang Mai</h4>
-            <h4>Toronto</h4>
+            <div className={styles.row}>
+              {" "}
+              <h3>Office Locations</h3>
+            </div>
+            <div className={styles.row}>
+              {" "}
+              <h4>Chiang Mai</h4>
+            </div>
+            <div className={styles.row}>
+              {" "}
+              <h4>Toronto</h4>
+            </div>
           </motion.div>
         </div>
 

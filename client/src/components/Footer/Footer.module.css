@@ -1,7 +1,7 @@
 .footerContainer {
 	background-color: #1c1d22;
 	height: fit-content;
-	padding: 3rem 100px 0 100px;
+	padding: 4rem 100px 1rem 100px;
 	scroll-snap-align: start;
 	overflow: hidden;
 }
@@ -34,7 +34,7 @@
 	box-sizing: border-box;
 	justify-content: space-between;
 	flex-direction: column;
-	margin: 0 5rem;
+	margin: 0 4rem;
 }
 .locationLink{
 	box-sizing: border-box;
