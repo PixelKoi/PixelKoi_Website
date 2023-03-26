@@ -103,15 +103,6 @@ const Footer = () => {
                 Clients
               </Link>
             </div>
-            <div className={styles.row}>
-              <Link
-                to="/contact"
-                className={`${styles.footerLink} ${styles.rowAnchors}`}
-                title="Takes customer to the contact form allowing communication with Pixel Koi Company"
-              >
-                Contact
-              </Link>
-            </div>
           </div>
         </div>
         <div className={styles.linkColumn}>

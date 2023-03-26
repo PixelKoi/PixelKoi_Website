@@ -19,6 +19,7 @@ $secondary: #595959;
 }
 
 
+
 .container {
 	display: flex;
 	flex-direction: column;
@@ -221,6 +222,12 @@ $secondary: #595959;
 @media only screen and (min-width: 768px) {
 	.container {
 		padding: 0 2rem;
+	}
+	.sendButton{
+		padding-right: 4rem;
+	}
+	.sliderContainer{
+		margin: 4rem;
 	}
 
 	.formSection {
