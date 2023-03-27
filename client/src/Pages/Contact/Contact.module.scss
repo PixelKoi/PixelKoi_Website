@@ -48,6 +48,9 @@ $secondary: #595959;
 				padding: 0;
 			}
 		}
+		background-color: rgb(29, 37, 48);
+
+
 	}
 
 	.buttonGroup {
@@ -102,7 +105,7 @@ $secondary: #595959;
 	}
 
 	.formSection {
-		background-color: #212529 !important;
+		background-color: rgb(29, 37, 48);
 		@include centerDiv;
 		flex-direction: column;
 		margin-bottom: 8rem;
@@ -228,7 +231,7 @@ $secondary: #595959;
 		padding-right: 4rem;
 	}
 	.sliderContainer{
-		margin: 4rem;
+		margin: 2rem 4rem;
 	}
 
 	.formSection {
@@ -297,7 +300,6 @@ $secondary: #595959;
 	.innerContainer {
 		padding: 1rem;
 		width: 50%;
-		background-color: #232429;
 		// margin-left: 34.7rem;
 		// margin-right: auto;
 	}
