@@ -146,8 +146,19 @@ export const Contact = () => {
 			<Nav />
 			<div className={styles.headerWrapper}>
 				<div className={styles.header}>
-					<h1>Get In Touch</h1>
-					<div className={styles.backgroundText}>CONTACTS</div>
+					<motion.h1
+						initial={{ opacity: 0, y: 80 }}
+						animate={{ opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.5 } }}
+					>
+						Get In Touch
+					</motion.h1>
+					<motion.div
+						initial={{ scale: 0 }}
+						animate={{ scale: 1, transition: { duration: 0.5 } }}
+						className={styles.backgroundText}
+					>
+						CONTACTS
+					</motion.div>
 				</div>
 			</div>
 			<div className={styles.formSection}>
