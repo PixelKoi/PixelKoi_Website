@@ -23,7 +23,7 @@
 			font-family: "Noto Sans Georgian";
 			cursor: pointer;
 			font-size: 14px;
-			color: #FFA500;
+			color: #ffa500;
 		}
 		margin-bottom: 2rem;
 	}
@@ -79,6 +79,20 @@
 		font-size: 12px;
 	}
 }
+
+.location {
+	margin-top: 1rem;
+	.locationGroup {
+		display: flex;
+		margin-bottom: 0.4rem;
+	}
+	.locationText {
+		align-items: center;
+		opacity: 0.6;
+		margin-left: 1rem;
+	}
+}
+
 @media only screen and (min-width: 320px) {
 	.container {
 		padding: 0 1rem;

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Nav from '../../components/Nav/Nav';
 import styles from './Contact.module.scss';
-import Footer from '../../components/Footer/Footer';
+import Footer from '../../components/Footer/Footer3';
 import { motion } from 'framer-motion';
 
 import Select, { StylesConfig } from 'react-select';
-import mailboxImg from "../../assets/Home/mailbox.jpg";
+import mailboxImg from '../../assets/Home/mailbox.jpg';
 
 const deadlineOptions = [
 	{ value: '1 Month', label: '1 Month' },
@@ -100,10 +100,9 @@ export const Contact = () => {
 			.then((data) => console.log(data))
 			.then(() => setForm('submitted'))
 			.catch((error) => {
-					console.error("We've run into an error: ",error);
-					setForm('error');
-			}
-			);
+				console.error("We've run into an error: ", error);
+				setForm('error');
+			});
 	};
 
 	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -327,10 +326,7 @@ export const Contact = () => {
 				</div>
 				<div className={`${styles.buttonGroup} ${styles.sendButton}`}>
 					<li className={styles.buttonLink}>
-						<button
-							type="submit"
-							className={styles.navLink}
-						>
+						<button type="submit" className={styles.navLink}>
 							<span className={styles.buttonText}>SEND</span>
 						</button>
 					</li>
@@ -342,9 +338,10 @@ export const Contact = () => {
 	const submittedForm = () => {
 		return (
 			<div className={styles.formSection}>
-				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>Thank you for submitting your proposal to us.
-					We appreciate your interest in our company and the opportunity to review your ideas. We will carefully evaluate your submission
-					and get back to you as soon as possible.
+				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
+					Thank you for submitting your proposal to us. We appreciate your interest in our company and the
+					opportunity to review your ideas. We will carefully evaluate your submission and get back to you as
+					soon as possible.
 				</p>
 			</div>
 		);
@@ -354,13 +351,12 @@ export const Contact = () => {
 		return (
 			<div className={styles.formSection}>
 				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
-					We're sorry, but there was an error submitting your proposal.
-					Please try again later or contact our
+					We're sorry, but there was an error submitting your proposal. Please try again later or contact our
 					support team for assistance. Thank you for your patience and understanding.
 				</p>
 			</div>
-		)
-	}
+		);
+	};
 
 	//Show Contact form based on state
 	const showForm = (form: String) => {
@@ -379,65 +375,64 @@ export const Contact = () => {
 	return (
 		<div>
 			<Nav />
-			<div className={styles.container} style={{backgroundImage: `url(${mailboxImg})`}}>
-					<div className={styles.innerContainer}>
-						<div className={styles.topFormContainer}>
-							<div className={styles.sectionHeader}>
-								<div className={styles.pageHeader}>
-									<motion.h3
-										initial={{ x: 30, opacity: 0 }}
-										animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-										id="header-caption"
-									>
-										GET IN TOUCH
-									</motion.h3>
-									<motion.h1
-										style={{ fontSize: '30px' }}
-										initial={{ x: -30, opacity: 0 }}
-										animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-									>
-										Let's Create Something
-									</motion.h1>
-									<motion.h1
-										style={{ fontSize: '30px' }}
-										initial={{ x: 30, opacity: 0 }}
-										animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-									>
-										Great Together
-									</motion.h1>
-								</div>
-								{/*<motion.div*/}
-								{/*	initial={{ opacity: 0 }}*/}
-								{/*	animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}*/}
-								{/*	className={styles.location}*/}
-								{/*>*/}
-								{/*	<h4>Office Locations</h4>*/}
-								{/*	<h5>Chiang Mai</h5>*/}
-								{/*	<h5>Toronto</h5>*/}
-								{/*</motion.div>*/}
+			<div className={styles.container} style={{ backgroundImage: `url(${mailboxImg})` }}>
+				<div className={styles.innerContainer}>
+					<div className={styles.topFormContainer}>
+						<div className={styles.sectionHeader}>
+							<div className={styles.pageHeader}>
+								<motion.h3
+									initial={{ x: 30, opacity: 0 }}
+									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+									id="header-caption"
+								>
+									GET IN TOUCH
+								</motion.h3>
+								<motion.h1
+									style={{ fontSize: '30px' }}
+									initial={{ x: -30, opacity: 0 }}
+									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+								>
+									Let's Create Something
+								</motion.h1>
+								<motion.h1
+									style={{ fontSize: '30px' }}
+									initial={{ x: 30, opacity: 0 }}
+									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+								>
+									Great Together
+								</motion.h1>
 							</div>
-							<motion.div
-								initial={{ y: 5, opacity: 0 }}
-								animate={{ y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
-								className={styles.formSelection}
-							>
-								<ul className={styles.buttonGroup}>
-									<li className={styles.buttonLink}>
-										<a onClick={() => setForm('start')} className={styles.navLink}>
-											<span className={styles.buttonText}>Start A Project</span>
-										</a>
-									</li>
-									<li className={styles.buttonLink}>
-										<a onClick={() => setForm('hi')} className={styles.navLink}>
-											<span className={styles.buttonText}>Say Hello!</span>
-										</a>
-									</li>
-								</ul>
-							</motion.div>
+							{/*<motion.div*/}
+							{/*	initial={{ opacity: 0 }}*/}
+							{/*	animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}*/}
+							{/*	className={styles.location}*/}
+							{/*>*/}
+							{/*	<h4>Office Locations</h4>*/}
+							{/*	<h5>Chiang Mai</h5>*/}
+							{/*	<h5>Toronto</h5>*/}
+							{/*</motion.div>*/}
 						</div>
+						<motion.div
+							initial={{ y: 5, opacity: 0 }}
+							animate={{ y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+							className={styles.formSelection}
+						>
+							<ul className={styles.buttonGroup}>
+								<li className={styles.buttonLink}>
+									<a onClick={() => setForm('start')} className={styles.navLink}>
+										<span className={styles.buttonText}>Start A Project</span>
+									</a>
+								</li>
+								<li className={styles.buttonLink}>
+									<a onClick={() => setForm('hi')} className={styles.navLink}>
+										<span className={styles.buttonText}>Say Hello!</span>
+									</a>
+								</li>
+							</ul>
+						</motion.div>
 					</div>
-					{showForm(show)}
-
+				</div>
+				{showForm(show)}
 			</div>
 			<Footer />
 		</div>
