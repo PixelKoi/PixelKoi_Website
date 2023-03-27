@@ -1,0 +1,96 @@
+//new contact
+.header {
+	top: 6rem;
+	position: relative;
+	z-index: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	max-width: 800px;
+	min-height: 240px;
+	margin: 0px auto;
+	padding-right: 15px;
+	padding-left: 15px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: center;
+	.backgroundText {
+		position: absolute;
+		top: 21%;
+		padding-left: 16px;
+		color: #23242a;
+		font-size: 200px;
+		line-height: 170px;
+		font-weight: 700;
+		text-align: center;
+		letter-spacing: 18px;
+		text-transform: uppercase;
+	}
+	h1 {
+		color: #efff;
+		position: relative;
+		z-index: 2;
+		margin-top: 0px;
+		margin-bottom: 0px;
+		font-size: 64px;
+		line-height: 72px;
+		text-transform: capitalize;
+	}
+}
+
+.formSection {
+	position: relative;
+	z-index: 1;
+	padding-top: 128px;
+	padding-bottom: 128px;
+
+	.wrapper {
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		max-width: 1200px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 40px;
+		padding-left: 40px;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background-color: transparent;
+
+		.contact {
+			max-width: 970px;
+			margin: 12vw auto 0px;
+			padding: 104px 12%;
+			-webkit-box-flex: 1;
+			-webkit-flex: 1;
+			-ms-flex: 1;
+			flex: 1;
+			background-color: #23242a;
+			box-shadow: 0 8px 24px 0 rgb(0 0 0 / 20%);
+		}
+	}
+}

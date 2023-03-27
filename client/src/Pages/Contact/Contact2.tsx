@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Nav from '../../components/Nav/Nav';
-import styles from './Contact.module.scss';
+import styles from './Contact2.module.scss';
 import Footer from '../../components/Footer/Footer3';
 import { motion } from 'framer-motion';
 
@@ -387,71 +387,25 @@ export const Contact = () => {
 	return (
 		<div>
 			<Nav />
-			<div className={styles.container} style={{ backgroundImage: `url(${mailboxImg})` }}>
-				<div className={styles.innerContainer}>
-					<div className={styles.topFormContainer}>
-						<div className={styles.sectionHeader}>
-							<div className={styles.pageHeader}>
-								<motion.h3
-									initial={{ x: 30, opacity: 0 }}
-									animate={{
-										x: 0,
-										opacity: 1,
-										transition: { duration: 0.8, ease: 'easeIn' }
-									}}
-									id="header-caption"
-								>
-									GET IN TOUCH
-								</motion.h3>
-								<motion.h1
-									style={{ fontSize: '30px' }}
-									initial={{ x: -30, opacity: 0 }}
-									animate={{
-										x: 0,
-										opacity: 1,
-										transition: { duration: 0.8, ease: 'easeIn' }
-									}}
-								>
-									Let's Create Something
-								</motion.h1>
-								<motion.h1
-									style={{ fontSize: '30px' }}
-									initial={{ x: 30, opacity: 0 }}
-									animate={{
-										x: 0,
-										opacity: 1,
-										transition: { duration: 0.8, ease: 'easeIn' }
-									}}
-								>
-									Great Together
-								</motion.h1>
-							</div>
+			<div className={styles.header}>
+				<h1>Get In Touch</h1>
+				<div className={styles.backgroundText}>CONTACTS</div>
+			</div>
+			<div className={styles.formSection}>
+				<div className={styles.wrapper}>
+					<div className={styles.contact}>
+						<div className={styles.intro}>
+							<strong>
+								<em />
+							</strong>
+							<strong>
+								<em />
+							</strong>
+							<h2>Let's Work Together</h2>
+							<div className={styles.divider} />
 						</div>
-						<motion.div
-							initial={{ y: 5, opacity: 0 }}
-							animate={{
-								y: 0,
-								opacity: 1,
-								transition: { duration: 0.8, ease: 'easeIn' }
-							}}
-							className={styles.formSelection}
-						>
-							<ul className={styles.buttonGroup}>
-								<li className={styles.buttonLink}>
-									<a onClick={() => setForm('start')} className={styles.navLink}>
-										<span className={styles.buttonText}>Start A Project</span>
-									</a>
-								</li>
-								<li className={styles.buttonLink}>
-									<a onClick={() => setForm('hi')} className={styles.navLink}>
-										<span className={styles.buttonText}>Say Hello!</span>
-									</a>
-								</li>
-							</ul>
-						</motion.div>
 					</div>
 				</div>
-				{showForm(show)}
 			</div>
 			<Footer />
 		</div>
