@@ -409,9 +409,9 @@ export const Contact = () => {
 							</div>
 						</div>
 					</div>
-					<div className={styles.contact2}>
-						<img className={styles.bgIMG} src={mailboxImg} alt="" />
-					</div>
+				</div>
+				<div className={styles.contact2}>
+					<img className={styles.bgIMG} src={mailboxImg} alt="" />
 				</div>
 			</div>
 			<Footer />
