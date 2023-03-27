@@ -403,6 +403,10 @@ export const Contact = () => {
 							</strong>
 							<h2>Let's Work Together</h2>
 							<div className={styles.divider} />
+							<div>
+								Certe, inquam, pertinax non emolumento aliquo, sed quia dolor sit, aspernatur aut
+								fugiat. Ut placet, inquam tum dicere exorsus est primum.
+							</div>
 						</div>
 					</div>
 				</div>
