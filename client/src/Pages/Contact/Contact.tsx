@@ -85,7 +85,11 @@ export const Contact = () => {
 		budget: amount
 	});
 
-	const [ simpleValues, setSimpleValues ] = useState<SimpleForm>({ name: '', email: '', message: '' });
+	const [ simpleValues, setSimpleValues ] = useState<SimpleForm>({
+		name: '',
+		email: '',
+		message: ''
+	});
 
 	//Show form
 	const [ show, setForm ] = useState('');
@@ -122,7 +126,11 @@ export const Contact = () => {
 		return (
 			<motion.form
 				initial={{ y: 5, opacity: 0 }}
-				animate={{ y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+				animate={{
+					y: 0,
+					opacity: 1,
+					transition: { duration: 0.8, ease: 'easeIn' }
+				}}
 				className={styles.formSection}
 				onSubmit={handleSubmit}
 			>
@@ -287,7 +295,11 @@ export const Contact = () => {
 			<motion.form
 				className={styles.formSection}
 				initial={{ y: 5, opacity: 0 }}
-				animate={{ y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+				animate={{
+					y: 0,
+					opacity: 1,
+					transition: { duration: 0.8, ease: 'easeIn' }
+				}}
 				onSubmit={handleSubmit}
 			>
 				<div className={styles.formContainer}>
@@ -382,7 +394,11 @@ export const Contact = () => {
 							<div className={styles.pageHeader}>
 								<motion.h3
 									initial={{ x: 30, opacity: 0 }}
-									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+									animate={{
+										x: 0,
+										opacity: 1,
+										transition: { duration: 0.8, ease: 'easeIn' }
+									}}
 									id="header-caption"
 								>
 									GET IN TOUCH
@@ -390,31 +406,34 @@ export const Contact = () => {
 								<motion.h1
 									style={{ fontSize: '30px' }}
 									initial={{ x: -30, opacity: 0 }}
-									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+									animate={{
+										x: 0,
+										opacity: 1,
+										transition: { duration: 0.8, ease: 'easeIn' }
+									}}
 								>
 									Let's Create Something
 								</motion.h1>
 								<motion.h1
 									style={{ fontSize: '30px' }}
 									initial={{ x: 30, opacity: 0 }}
-									animate={{ x: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+									animate={{
+										x: 0,
+										opacity: 1,
+										transition: { duration: 0.8, ease: 'easeIn' }
+									}}
 								>
 									Great Together
 								</motion.h1>
 							</div>
-							{/*<motion.div*/}
-							{/*	initial={{ opacity: 0 }}*/}
-							{/*	animate={{ opacity: 1, transition: { duration: 1, ease: 'easeIn' } }}*/}
-							{/*	className={styles.location}*/}
-							{/*>*/}
-							{/*	<h4>Office Locations</h4>*/}
-							{/*	<h5>Chiang Mai</h5>*/}
-							{/*	<h5>Toronto</h5>*/}
-							{/*</motion.div>*/}
 						</div>
 						<motion.div
 							initial={{ y: 5, opacity: 0 }}
-							animate={{ y: 0, opacity: 1, transition: { duration: 0.8, ease: 'easeIn' } }}
+							animate={{
+								y: 0,
+								opacity: 1,
+								transition: { duration: 0.8, ease: 'easeIn' }
+							}}
 							className={styles.formSelection}
 						>
 							<ul className={styles.buttonGroup}>
