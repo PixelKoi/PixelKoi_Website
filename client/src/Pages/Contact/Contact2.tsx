@@ -169,8 +169,14 @@ export const Contact = () => {
 						</div>
 					</div>
 				</div>
-				<motion.div ref={ref} style={{ willChange: 'transform' }} className={styles.contact2}>
-					<img className={styles.bgIMG} src={mailboxImg} alt="" />
+				<motion.div className={styles.contact2}>
+					<img
+						ref={ref}
+						style={{ willChange: 'transform' }}
+						className={styles.bgIMG}
+						src={mailboxImg}
+						alt=""
+					/>
 				</motion.div>
 			</div>
 			<Footer />
