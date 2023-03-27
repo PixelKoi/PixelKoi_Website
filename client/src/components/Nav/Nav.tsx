@@ -136,8 +136,15 @@ const Nav = () => {
 			<div style={{ display: 'flex', flexDirection: 'row' }}>
 				<div style={{ display: 'flex', flexDirection: 'row', marginRight: 'auto' }}>
 					<motion.div
-						initial={{ opacity: 0, boxShadow: 'none' }}
+						initial={{
+							opacity: 0,
+							boxShadow: 'none',
+							borderBottom: '1px solid hsla(0, 0%, 100%, 0.12)',
+							backgroundColor: 'transparent'
+						}}
 						animate={{
+							backgroundColor: hookedYPostion > 0 ? '#17212d' : 'transparent',
+							borderBottom: hookedYPostion > 0 ? '1px solid hsla(0, 0%, 100%, 0.12)' : 'none',
 							// boxShadow: hookedYPostion > 0 ? '0px 0px 7px 0px rgba(255, 255, 255, 0.1)' : 'none',
 							opacity: 1,
 							transition: { duration: 1 }
