@@ -37,7 +37,7 @@
 	box-sizing: border-box;
 	justify-content: space-between;
 	flex-direction: column;
-	margin: 0 4rem;
+	margin: 0 8rem;
 }
 .locationLink{
 	box-sizing: border-box;
@@ -49,6 +49,8 @@
 	box-sizing: border-box;
 	flex-direction: column;
 	color: #eee5f3;
+	padding-top: 2rem !important;
+	padding-bottom: 0 !important;
 
 }
 
@@ -201,7 +203,7 @@
 
 @media only screen and (min-width: 320px) {
 	.footerContainer {
-		margin: 0 0;
+		margin: 1rem 0;
 	}
 	.copyright {
 		font-size: 1rem;
@@ -215,6 +217,8 @@
 	}
 	.footerCopyright {
 		font-size: 0.5rem;
+		padding-top: 2rem !important;
+		padding-bottom: 0 !important;
 	}
 }
 
@@ -254,5 +258,8 @@
 	}
 	.footerCopyright {
 		font-size: 1rem;
+		padding-top: 2rem !important;
+		padding-bottom: 0 !important;
+
 	}
 }
