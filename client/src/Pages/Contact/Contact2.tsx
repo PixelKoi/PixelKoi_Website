@@ -153,7 +153,7 @@ export const Contact = () => {
 						Get In Touch
 					</motion.h1>
 					<motion.div
-						initial={{ scale: 0 }}
+						initial={{ scale: 1.2 }}
 						animate={{ scale: 1, transition: { duration: 0.5 } }}
 						className={styles.backgroundText}
 					>
