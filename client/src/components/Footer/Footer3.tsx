@@ -26,13 +26,13 @@ const Footer2 = () => {
 					>
 						<div className={styles.locationGroup}>
 							<div>
-								<i style={{ color: 'orange' }} className="fa-solid fa-location-dot fa-xl" />
+								<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
 							</div>
 							<h4 className={styles.locationText}>Chiang Mai</h4>
 						</div>
 						<div className={styles.locationGroup}>
 							<div>
-								<i style={{ color: 'orange' }} className="fa-solid fa-location-dot fa-xl" />
+								<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
 							</div>
 							<h4 className={styles.locationText}>Toronto</h4>
 						</div>
