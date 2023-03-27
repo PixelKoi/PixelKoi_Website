@@ -1,6 +1,14 @@
 //new contact
+.headerWrapper {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	padding-top: 100px;
+	padding-bottom: 80px;
+	background-color: #17212d;
+	color: #fff;
+}
 .header {
-	top: 6rem;
 	position: relative;
 	z-index: 1;
 	display: -webkit-box;
@@ -12,6 +20,7 @@
 	margin: 0px auto;
 	padding-right: 15px;
 	padding-left: 15px;
+
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
@@ -142,8 +151,6 @@
 }
 
 .contact2 {
-	z-index: 1;
-	width: 100%;
 	display: block;
 	position: absolute;
 	left: 0%;

@@ -387,9 +387,11 @@ export const Contact = () => {
 	return (
 		<div>
 			<Nav />
-			<div className={styles.header}>
-				<h1>Get In Touch</h1>
-				<div className={styles.backgroundText}>CONTACTS</div>
+			<div className={styles.headerWrapper}>
+				<div className={styles.header}>
+					<h1>Get In Touch</h1>
+					<div className={styles.backgroundText}>CONTACTS</div>
+				</div>
 			</div>
 			<div className={styles.formSection}>
 				<div className={styles.wrapper}>
