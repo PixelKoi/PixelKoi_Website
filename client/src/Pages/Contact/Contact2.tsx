@@ -148,13 +148,13 @@ export const Contact = () => {
 				<div className={styles.header}>
 					<motion.h1
 						initial={{ opacity: 0, y: 80 }}
-						animate={{ opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.5 } }}
+						animate={{ opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.4 } }}
 					>
 						Get In Touch
 					</motion.h1>
 					<motion.div
 						initial={{ scale: 1.2 }}
-						animate={{ scale: 1, transition: { duration: 0.5 } }}
+						animate={{ scale: 1, transition: { ease: 'easeIn', duration: 0.4 } }}
 						className={styles.backgroundText}
 					>
 						CONTACTS
