@@ -80,7 +80,7 @@ export const Contact = () => {
 			if (ref.current) {
 				const { top, height } = ref.current.getBoundingClientRect();
 				const percentVisible = (window.innerHeight - top) / height;
-				const translateY = (1 - percentVisible) * -50;
+				const translateY = (1 - percentVisible) * -20;
 				ref.current.style.transform = `translateY(${translateY}%)`;
 			}
 		}
@@ -169,14 +169,8 @@ export const Contact = () => {
 						</div>
 					</div>
 				</div>
-				<motion.div className={styles.contact2}>
-					<img
-						ref={ref}
-						style={{ willChange: 'transform' }}
-						className={styles.bgIMG}
-						src={mailboxImg}
-						alt=""
-					/>
+				<motion.div ref={ref} style={{ willChange: 'transform' }} className={styles.contact2}>
+					<img className={styles.bgIMG} src={mailboxImg} alt="" />
 				</motion.div>
 			</div>
 			<Footer />
