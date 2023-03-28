@@ -3,6 +3,8 @@ import styles from './Footer3.module.scss';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { AiFillLinkedin } from 'react-icons/ai';
+import { FaPlus } from 'react-icons/fa';
+import { FaMinus } from 'react-icons/fa';
 
 const Footer2 = () => {
 	const [ showLocation, setShowLocation ] = useState(false);
@@ -19,29 +21,38 @@ const Footer2 = () => {
 					viewport={{ once: true }}
 					className={styles.consultation}
 				>
-					<h4>OFFICE LOCATIONS</h4>
+					<div style={{ display: 'flex' }}>
+						<h4>OFFICE LOCATIONS</h4>
+						{showLocation === false ? (
+							<FaPlus style={{ marginLeft: 'auto' }} onClick={() => setShowLocation(true)} />
+						) : (
+							<FaMinus style={{ marginLeft: 'auto' }} onClick={() => setShowLocation(false)} />
+						)}
+					</div>
 					<hr className={styles.break} />
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{
-							opacity: 1,
-							transition: { duration: 1, ease: 'easeIn' }
-						}}
-						className={styles.location}
-					>
-						<div className={styles.locationGroup}>
-							<div>
-								<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
+					{showLocation === true ? (
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{
+								opacity: 1,
+								transition: { duration: 1, ease: 'easeIn' }
+							}}
+							className={styles.location}
+						>
+							<div className={styles.locationGroup}>
+								<div>
+									<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
+								</div>
+								<h4 className={styles.locationText}>Chiang Mai</h4>
 							</div>
-							<h4 className={styles.locationText}>Chiang Mai</h4>
-						</div>
-						<div className={styles.locationGroup}>
-							<div>
-								<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
+							<div className={styles.locationGroup}>
+								<div>
+									<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
+								</div>
+								<h4 className={styles.locationText}>Toronto</h4>
 							</div>
-							<h4 className={styles.locationText}>Toronto</h4>
-						</div>
-					</motion.div>
+						</motion.div>
+					) : null}
 				</motion.div>
 				<motion.div
 					initial={{ y: 20, opacity: 0 }}
@@ -50,6 +61,7 @@ const Footer2 = () => {
 					className={styles.linksContainer}
 				>
 					<h4>INFORMATION</h4>
+					<FaPlus />
 					<hr className={styles.break} />
 					<div className={styles.linksWrapper} id={styles.links}>
 						<motion.div>
@@ -79,6 +91,7 @@ const Footer2 = () => {
 					className={styles.linksContainer}
 				>
 					<h4>SOCIALS</h4>
+					<FaPlus />
 					<hr className={styles.break} />
 					<div className={styles.linksWrapper} id={styles.socials}>
 						<motion.div>
