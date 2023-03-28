@@ -215,6 +215,21 @@ export const Contact = () => {
 								placeholder="Budget"
 								id="Contact-v2-Budget-2"
 							/>
+							<textarea
+								id="Contact-v2-Info"
+								name="Contact-v2-Info"
+								placeholder="Describe your project..."
+								maxLength={5000}
+								data-name="Contact v2 Info"
+								className={`${styles.input2} ${styles.textArea} `}
+							/>
+							<input
+								type="submit"
+								value="Submit Message"
+								data-wait="Please wait..."
+								id="w-node-_6ff1d45d-b2d3-3275-5478-e8f208e3f136-19bbfe11"
+								className={styles.button}
+							/>
 						</form>
 					</div>
 				</div>

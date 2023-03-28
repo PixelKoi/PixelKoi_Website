@@ -218,6 +218,35 @@ img {
 	font-size: 15px;
 	line-height: 24px;
 }
+.input2 {
+	-ms-grid-column: span 2;
+	grid-column-start: span 2;
+	-ms-grid-column-span: 2;
+	grid-column-end: span 2;
+	-ms-grid-row: span 1;
+	grid-row-start: span 1;
+	-ms-grid-row-span: 1;
+	grid-row-end: span 1;
+	overflow: hidden;
+	height: 48px;
+	margin-bottom: 0px;
+	padding: 0px;
+	border-style: none none solid;
+	border-width: 1px;
+	border-color: #000 #000 hsla(0, 0%, 100%, 0.3);
+	border-radius: 0px;
+	background-color: transparent;
+	-webkit-transition: border-color 600ms ease, background-color 600ms ease;
+	transition: border-color 600ms ease, background-color 600ms ease;
+	color: #fff;
+	font-size: 15px;
+	line-height: 24px;
+}
+.textArea {
+	min-height: 200px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
 
 .wInput {
 	display: block;
