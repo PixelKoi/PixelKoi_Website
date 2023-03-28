@@ -13,14 +13,14 @@ const FooterMobileContact = () => {
 
 	let currentYear = new Date().getFullYear();
 	return (
-		<motion.div className={styles.wrapper}>
+		<motion.div
+			initial={{ y: 20, opacity: 0 }}
+			whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+			viewport={{ once: true }}
+			className={styles.wrapper}
+		>
 			<div className={styles.container}>
-				<motion.div
-					initial={{ y: 20, opacity: 0 }}
-					whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
-					viewport={{ once: true }}
-					className={styles.consultation}
-				>
+				<motion.div className={styles.consultation}>
 					<div style={{ display: 'flex' }}>
 						<h4>OFFICE LOCATIONS</h4>
 						{showLocation === false ? (
@@ -56,12 +56,7 @@ const FooterMobileContact = () => {
 					) : null}
 				</motion.div>
 				<br />
-				<motion.div
-					initial={{ y: 20, opacity: 0 }}
-					whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
-					viewport={{ once: true }}
-					className={styles.linksContainer}
-				>
+				<motion.div className={styles.linksContainer}>
 					<div style={{ display: 'flex' }}>
 						<h4>INFORMATION</h4>
 						{showInfo === false ? (
@@ -103,12 +98,7 @@ const FooterMobileContact = () => {
 					) : null}
 				</motion.div>
 				<br />
-				<motion.div
-					initial={{ y: 20, opacity: 0 }}
-					whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
-					viewport={{ once: true }}
-					className={styles.linksContainer}
-				>
+				<motion.div className={styles.linksContainer}>
 					<div style={{ display: 'flex' }}>
 						<h4>SOCIALS</h4>
 						{showSocial === false ? (
@@ -141,12 +131,7 @@ const FooterMobileContact = () => {
 					) : null}
 				</motion.div>
 			</div>
-			<motion.div
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1, transition: { duration: 1 } }}
-				viewport={{ once: true }}
-				className={styles.copyrightContainer}
-			>
+			<motion.div className={styles.copyrightContainer}>
 				<motion.p className={styles.footerCopyright}>
 					Copyright © {currentYear} Pixel Koi - All Rights Reserved.
 				</motion.p>
