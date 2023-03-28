@@ -92,6 +92,18 @@ export const Contact = () => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
+	const { scrollYProgress } = useScroll();
+	const [ hookedYPostion, setHookedYPosition ] = React.useState(0);
+	//smooth transition for scrolling through divs on landing page
+	const location = useLocation();
+
+	useEffect(
+		() => {
+			// hook into the onChange, store the current value as state.
+			scrollYProgress.onChange((v) => setHookedYPosition(v));
+		},
+		[ scrollYProgress ]
+	); //make sure to re-subscriobe when scrollYProgress changes
 	const [ deadline, setDeadline ] = useState(1);
 	const [ amount, setAmount ] = useState(20);
 
@@ -141,6 +153,7 @@ export const Contact = () => {
 		setSimpleValues({ ...simpleValues, [name]: value });
 		console.log(simpleValues);
 	};
+	const item = { hidden: { scale: 1, opacity: 1, tansition: { duration: 2, ease: 'easeIn' } } };
 
 	return (
 		<div>
@@ -170,10 +183,12 @@ export const Contact = () => {
 					</motion.div>
 				</div>
 			</div>
+
 			<motion.div className={styles.formSection}>
 				<motion.div
+					variants={item}
 					initial={{ scale: 0, opacity: 0 }}
-					whileInView={{ scale: 1, opacity: 1, transition: { duration: 0.5, ease: 'easeIn' } }}
+					animate={hookedYPostion > 0 ? 'hidden' : 'show'}
 					className={styles.wrapper}
 				>
 					<motion.div className={styles.contact}>
