@@ -61,6 +61,28 @@ const Footer2 = () => {
 							</div>
 						</motion.div>
 					) : null}
+
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{
+							opacity: 1,
+							transition: { duration: 1, ease: 'easeIn' }
+						}}
+						className={styles.location2}
+					>
+						<div className={styles.locationGroup}>
+							<div>
+								<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
+							</div>
+							<h4 className={styles.locationText}>Chiang Mai</h4>
+						</div>
+						<div className={styles.locationGroup}>
+							<div>
+								<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
+							</div>
+							<h4 className={styles.locationText}>Toronto</h4>
+						</div>
+					</motion.div>
 				</motion.div>
 				<motion.div
 					initial={{ y: 20, opacity: 0 }}
@@ -85,7 +107,29 @@ const Footer2 = () => {
 						)}
 					</div>
 					<hr className={styles.break} />
-					<div className={styles.linksWrapper} id={styles.links}>
+					{showInfo === true ? (
+						<div className={styles.linksWrapper} id={styles.links}>
+							<motion.div>
+								<Link to="/about" title="Description page for Pixel Koi Company">
+									About
+								</Link>
+							</motion.div>
+							<motion.div>
+								<Link to="/#services" title="Shows services Pixel Koi Company Provides">
+									Services
+								</Link>
+							</motion.div>
+							<motion.div>
+								<Link
+									to="/contact"
+									title="Takes customer to the contact form allowing communication with Pixel Koi Company"
+								>
+									Contact
+								</Link>
+							</motion.div>
+						</div>
+					) : null}
+					<div className={styles.linksWrapper2} id={styles.links}>
 						<motion.div>
 							<Link to="/about" title="Description page for Pixel Koi Company">
 								About
