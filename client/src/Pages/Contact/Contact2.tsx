@@ -3,6 +3,7 @@ import Nav from '../../components/Nav/Nav';
 import styles from './Contact2.module.scss';
 import Footer from '../../components/Footer/Footer3';
 import { motion, useScroll } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 import Select, { StylesConfig } from 'react-select';
 import mailboxImg from '../../assets/Home/mailbox.jpg';
@@ -157,8 +158,8 @@ export const Contact = () => {
 						animate={{ opacity: 1, y: 0, transition: { delay: 0.4, duration: 0.4 } }}
 						className={styles.links}
 					>
-						<a>Home</a>
-						<a>Services</a>
+						<Link to="/">Home</Link>
+						<Link to="/#services">Services</Link>
 					</motion.div>
 					<motion.div
 						initial={{ scale: 1.2 }}
@@ -194,7 +195,6 @@ export const Contact = () => {
 								name="Contact-v2-Name"
 								data-name="Contact v2 Name"
 								placeholder="Your name"
-								id="Contact-v2-Name"
 							/>
 							<input
 								type="email"
@@ -203,7 +203,6 @@ export const Contact = () => {
 								name="Contact-v2-Email"
 								data-name="Contact v2 Email"
 								placeholder="Email address"
-								id="Contact-v2-Email"
 							/>
 							<input
 								type="tel"
@@ -212,7 +211,6 @@ export const Contact = () => {
 								name="Contact-v2-Phone"
 								data-name="Contact v2 Phone"
 								placeholder="Contact Phone"
-								id="Contact-v2-Phone"
 							/>
 							<input
 								type="text"
@@ -221,10 +219,8 @@ export const Contact = () => {
 								name="Contact-v2-Budget"
 								data-name="Contact v2 Budget"
 								placeholder="Budget"
-								id="Contact-v2-Budget-2"
 							/>
 							<textarea
-								id="Contact-v2-Info"
 								name="Contact-v2-Info"
 								placeholder="Describe your project..."
 								maxLength={5000}
@@ -235,7 +231,6 @@ export const Contact = () => {
 								type="submit"
 								value="Submit Message"
 								data-wait="Please wait..."
-								id="w-node-_6ff1d45d-b2d3-3275-5478-e8f208e3f136-19bbfe11"
 								className={styles.button}
 							/>
 						</form>

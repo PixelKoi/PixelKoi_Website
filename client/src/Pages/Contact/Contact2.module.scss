@@ -63,8 +63,13 @@
 		display: flex;
 		margin: 0 auto;
 		a {
+			color: #efff;
 			padding: 0 10px;
 			opacity: 0.5;
+			text-decoration: none;
+			&:hover {
+				opacity: 1;
+			}
 		}
 	}
 }
