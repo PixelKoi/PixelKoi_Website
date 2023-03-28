@@ -170,9 +170,13 @@ export const Contact = () => {
 					</motion.div>
 				</div>
 			</div>
-			<div className={styles.formSection}>
-				<div className={styles.wrapper}>
-					<div className={styles.contact}>
+			<motion.div className={styles.formSection}>
+				<motion.div
+					initial={{ scale: 0, opacity: 0 }}
+					whileInView={{ scale: 1, opacity: 1, transition: { duration: 0.5, ease: 'easeIn' } }}
+					className={styles.wrapper}
+				>
+					<motion.div className={styles.contact}>
 						<div className={styles.intro}>
 							<strong>
 								<em />
@@ -187,7 +191,7 @@ export const Contact = () => {
 								fugiat. Ut placet, inquam tum dicere exorsus est primum.
 							</div>
 						</div>
-						<form className={styles.form}>
+						<motion.form className={styles.form}>
 							<input
 								type="text"
 								className={`${styles.input} `}
@@ -233,13 +237,13 @@ export const Contact = () => {
 								data-wait="Please wait..."
 								className={styles.button}
 							/>
-						</form>
-					</div>
-				</div>
+						</motion.form>
+					</motion.div>
+				</motion.div>
 				<motion.div ref={ref} style={{ willChange: 'transform' }} className={styles.contact2}>
 					<img className={styles.bgIMG} src={mailboxImg} alt="" />
 				</motion.div>
-			</div>
+			</motion.div>
 			<Footer />
 		</div>
 	);
