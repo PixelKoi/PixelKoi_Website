@@ -57,6 +57,12 @@
 		line-height: 72px;
 		text-transform: capitalize;
 	}
+	.links {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		margin: 0 auto;
+	}
 }
 
 .formSection {
