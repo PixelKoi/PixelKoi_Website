@@ -178,6 +178,44 @@ export const Contact = () => {
 								fugiat. Ut placet, inquam tum dicere exorsus est primum.
 							</div>
 						</div>
+						<form className={styles.form}>
+							<input
+								type="text"
+								className={`${styles.input} `}
+								maxLength={256}
+								name="Contact-v2-Name"
+								data-name="Contact v2 Name"
+								placeholder="Your name"
+								id="Contact-v2-Name"
+							/>
+							<input
+								type="email"
+								className={styles.input}
+								maxLength={256}
+								name="Contact-v2-Email"
+								data-name="Contact v2 Email"
+								placeholder="Email address"
+								id="Contact-v2-Email"
+							/>
+							<input
+								type="tel"
+								className={styles.input}
+								maxLength={256}
+								name="Contact-v2-Phone"
+								data-name="Contact v2 Phone"
+								placeholder="Contact Phone"
+								id="Contact-v2-Phone"
+							/>
+							<input
+								type="text"
+								className={styles.input}
+								maxLength={256}
+								name="Contact-v2-Budget"
+								data-name="Contact v2 Budget"
+								placeholder="Budget"
+								id="Contact-v2-Budget-2"
+							/>
+						</form>
 					</div>
 				</div>
 				<motion.div ref={ref} style={{ willChange: 'transform' }} className={styles.contact2}>
