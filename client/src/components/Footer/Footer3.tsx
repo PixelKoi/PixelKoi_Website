@@ -24,9 +24,17 @@ const Footer2 = () => {
 					<div style={{ display: 'flex' }}>
 						<h4>OFFICE LOCATIONS</h4>
 						{showLocation === false ? (
-							<FaPlus style={{ marginLeft: 'auto' }} onClick={() => setShowLocation(true)} />
+							<FaPlus
+								className={styles.icon}
+								style={{ marginLeft: 'auto' }}
+								onClick={() => setShowLocation(true)}
+							/>
 						) : (
-							<FaMinus style={{ marginLeft: 'auto' }} onClick={() => setShowLocation(false)} />
+							<FaMinus
+								className={styles.icon}
+								style={{ marginLeft: 'auto' }}
+								onClick={() => setShowLocation(false)}
+							/>
 						)}
 					</div>
 					<hr className={styles.break} />
@@ -60,8 +68,22 @@ const Footer2 = () => {
 					viewport={{ once: true }}
 					className={styles.linksContainer}
 				>
-					<h4>INFORMATION</h4>
-					<FaPlus />
+					<div style={{ display: 'flex' }}>
+						<h4>INFORMATION</h4>
+						{showInfo === false ? (
+							<FaPlus
+								className={styles.icon}
+								style={{ marginLeft: 'auto' }}
+								onClick={() => setShowInfo(true)}
+							/>
+						) : (
+							<FaMinus
+								className={styles.icon}
+								style={{ marginLeft: 'auto' }}
+								onClick={() => setShowInfo(false)}
+							/>
+						)}
+					</div>
 					<hr className={styles.break} />
 					<div className={styles.linksWrapper} id={styles.links}>
 						<motion.div>
@@ -90,8 +112,22 @@ const Footer2 = () => {
 					viewport={{ once: true }}
 					className={styles.linksContainer}
 				>
-					<h4>SOCIALS</h4>
-					<FaPlus />
+					<div style={{ display: 'flex' }}>
+						<h4>SOCIALS</h4>
+						{showSocial === false ? (
+							<FaPlus
+								className={styles.icon}
+								style={{ marginLeft: 'auto' }}
+								onClick={() => setShowSocial(true)}
+							/>
+						) : (
+							<FaMinus
+								className={styles.icon}
+								style={{ marginLeft: 'auto' }}
+								onClick={() => setShowSocial(false)}
+							/>
+						)}
+					</div>
 					<hr className={styles.break} />
 					<div className={styles.linksWrapper} id={styles.socials}>
 						<motion.div>
@@ -113,7 +149,7 @@ const Footer2 = () => {
 				className={styles.copyrightContainer}
 			>
 				<motion.p className={styles.footerCopyright}>
-					Copyright © {currentYear} Pixel Koi - All rights reserved.
+					Copyright © {currentYear} Pixel Koi - All Rights Reserved.
 				</motion.p>
 			</motion.div>
 		</motion.div>

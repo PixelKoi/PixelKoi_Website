@@ -97,7 +97,11 @@
 
 @media only screen and (min-width: 320px) {
 	.break {
+		display: block;
 		border: 1px solid #efff;
+	}
+	.icon {
+		display: block;
 	}
 	.container {
 		padding: 0 1rem;
@@ -109,6 +113,12 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 768px) {
+	.break {
+		display: none;
+	}
+	.icon {
+		display: none;
+	}
 	.container {
 		padding: 0 2rem;
 	}
