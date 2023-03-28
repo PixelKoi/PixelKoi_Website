@@ -158,7 +158,7 @@ export const Contact = () => {
 						className={styles.links}
 					>
 						<a>Home</a>
-						<a>Home</a>
+						<a>Services</a>
 					</motion.div>
 					<motion.div
 						initial={{ scale: 1.2 }}
