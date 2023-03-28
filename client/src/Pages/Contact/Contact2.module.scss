@@ -217,7 +217,15 @@ img {
 	color: #fff;
 	font-size: 15px;
 	line-height: 24px;
+	outline: none;
+	&:hover {
+		border-color: #000 #000 #e8985c;
+	}
 }
+.input:focus {
+	border-color: #000 #000 #e8985c;
+}
+
 .input2 {
 	-ms-grid-column: span 2;
 	grid-column-start: span 2;
@@ -241,6 +249,14 @@ img {
 	color: #fff;
 	font-size: 15px;
 	line-height: 24px;
+	outline: none;
+	&:hover {
+		border-color: #000 #000 #e8985c;
+	}
+}
+
+.input2:focus {
+	border-color: #000 #000 #e8985c;
 }
 .textArea {
 	min-height: 200px;
