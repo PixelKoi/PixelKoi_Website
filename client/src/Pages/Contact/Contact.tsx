@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Nav from '../../components/Nav/Nav';
 import styles from './Contact.module.scss';
-import Footer from '../../components/Footer/ContactPage/Footer3';
+import Footer from '../../components/Footer/ContactPage/FooterContactPage';
 import { motion } from 'framer-motion';
 
 import Select, { StylesConfig } from 'react-select';

@@ -39,14 +39,7 @@ const FooterMobileContact = () => {
 					</div>
 					<hr className={styles.break} />
 					{showLocation === true ? (
-						<motion.div
-							initial={{ opacity: 0 }}
-							animate={{
-								opacity: 1,
-								transition: { duration: 1, ease: 'easeIn' }
-							}}
-							className={styles.location}
-						>
+						<div className={styles.location}>
 							<div className={styles.locationGroup}>
 								<div>
 									<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
@@ -59,7 +52,7 @@ const FooterMobileContact = () => {
 								</div>
 								<h4 className={styles.locationText}>Toronto</h4>
 							</div>
-						</motion.div>
+						</div>
 					) : null}
 				</motion.div>
 				<motion.div
