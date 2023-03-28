@@ -34,7 +34,7 @@
 		margin: 0 auto;
 		max-width: 1200px;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		// grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}
 }
 
@@ -134,6 +134,7 @@
 	}
 	.container {
 		padding: 0 1rem;
+		grid-template-columns: 1fr;
 	}
 	.footerCopyright {
 		margin: 0 auto;
@@ -174,6 +175,7 @@
 	}
 	.container {
 		padding: 0 2rem;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	}
 	.copyrightContainer {
 		padding: 0 2rem;
