@@ -1,10 +1,14 @@
-import React from 'react';
-import styles from './Footer2.module.scss';
+import React, { useState } from 'react';
+import styles from './Footer3.module.scss';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { AiFillLinkedin } from 'react-icons/ai';
 
 const Footer2 = () => {
+	const [ showLocation, setShowLocation ] = useState(false);
+	const [ showInfo, setShowInfo ] = useState(false);
+	const [ showSocial, setShowSocial ] = useState(false);
+
 	let currentYear = new Date().getFullYear();
 	return (
 		<motion.div className={styles.wrapper}>
@@ -16,6 +20,7 @@ const Footer2 = () => {
 					className={styles.consultation}
 				>
 					<h4>OFFICE LOCATIONS</h4>
+					<hr className={styles.break} />
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{
@@ -45,6 +50,7 @@ const Footer2 = () => {
 					className={styles.linksContainer}
 				>
 					<h4>INFORMATION</h4>
+					<hr className={styles.break} />
 					<div className={styles.linksWrapper} id={styles.links}>
 						<motion.div>
 							<Link to="/about" title="Description page for Pixel Koi Company">
@@ -73,6 +79,7 @@ const Footer2 = () => {
 					className={styles.linksContainer}
 				>
 					<h4>SOCIALS</h4>
+					<hr className={styles.break} />
 					<div className={styles.linksWrapper} id={styles.socials}>
 						<motion.div>
 							<a
