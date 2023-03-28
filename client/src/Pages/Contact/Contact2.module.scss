@@ -261,6 +261,44 @@ img {
 	background-color: #ffffff;
 	border: 1px solid #cccccc;
 }
+
+.button {
+	display: flex;
+	margin-top: 2rem;
+	height: 48px;
+	padding: 14px 20px 10px;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border-style: none;
+	border-radius: 0px;
+	background-color: #e8985c;
+	background-image: none;
+	-webkit-transition: box-shadow 600ms ease, border-color 600ms ease, color 600ms ease, background-color 600ms ease;
+	transition: box-shadow 600ms ease, border-color 600ms ease, color 600ms ease, background-color 600ms ease;
+	color: #fff;
+	font-size: 17px;
+	line-height: 20px;
+	font-weight: 600;
+	text-align: center;
+	text-decoration: none;
+
+	grid-column-start: span 2;
+	-ms-grid-column-span: 2;
+	grid-column-end: span 2;
+	-ms-grid-row: span 1;
+	grid-row-start: span 1;
+	-ms-grid-row-span: 1;
+	grid-row-end: span 1;
+	-ms-grid-column-align: center;
+	justify-self: center;
+}
+
 @media screen and (max-width: 479px) {
 	.contact {
 		padding: 8vw 8vw 10vw;
