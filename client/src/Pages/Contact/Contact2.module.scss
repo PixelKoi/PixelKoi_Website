@@ -36,16 +36,6 @@
 	align-items: center;
 	text-align: center;
 
-	h1 {
-		color: #efff;
-		position: relative;
-		z-index: 2;
-		margin-top: 0px;
-		margin-bottom: 0px;
-		font-size: 64px;
-		line-height: 72px;
-		text-transform: capitalize;
-	}
 	.links {
 		position: relative;
 		z-index: 2;
@@ -61,6 +51,16 @@
 			}
 		}
 	}
+}
+.headerText {
+	color: #efff;
+	position: relative;
+	z-index: 2;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 64px;
+	line-height: 72px;
+	text-transform: capitalize;
 }
 .backgroundText {
 	position: absolute;
@@ -213,9 +213,7 @@ img {
 	grid-auto-columns: 1fr;
 	grid-column-gap: 32px;
 	grid-row-gap: 40px;
-	-ms-grid-columns: 1fr 1fr;
 	grid-template-columns: 1fr 1fr;
-	-ms-grid-rows: auto auto;
 	grid-template-rows: auto auto;
 }
 .input {
@@ -228,7 +226,6 @@ img {
 	border-color: #000 #000 hsla(0, 0%, 100%, 0.3);
 	border-radius: 0px;
 	background-color: transparent;
-	-webkit-transition: border-color 600ms ease, background-color 600ms ease;
 	transition: border-color 600ms ease, background-color 600ms ease;
 	color: #fff;
 	font-size: 15px;
@@ -243,13 +240,8 @@ img {
 }
 
 .input2 {
-	-ms-grid-column: span 2;
 	grid-column-start: span 2;
-	-ms-grid-column-span: 2;
-	grid-column-end: span 2;
-	-ms-grid-row: span 1;
 	grid-row-start: span 1;
-	-ms-grid-row-span: 1;
 	grid-row-end: span 1;
 	overflow: hidden;
 	height: 48px;
@@ -335,6 +327,10 @@ img {
 	.contact {
 		padding: 8vw 8vw 10vw;
 	}
+	.form {
+		width: 100%;
+		max-width: none;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -342,10 +338,31 @@ img {
 		padding: 10vw 12vw;
 	}
 	.formSection {
+		.wrapper {
+			padding-right: 8px;
+			padding-left: 8px;
+		}
 		h2 {
 			font-size: 24px;
 			line-height: 32px;
 		}
+	}
+	.form {
+		grid-row-gap: 32px;
+
+		grid-template-columns: 1fr;
+	}
+	.headerText {
+		font-size: 40px;
+		line-height: 48px;
+	}
+	.input2 {
+		grid-column-start: span 1;
+	}
+	.button {
+		grid-column-start: span 1;
+
+		grid-column-end: span 1;
 	}
 }
 
@@ -361,6 +378,10 @@ img {
 	}
 
 	.formSection {
+		.wrapper {
+			padding-right: 8px;
+			padding-left: 8px;
+		}
 		h2 {
 			font-size: 28px;
 			line-height: 36px;
@@ -372,5 +393,8 @@ img {
 		line-height: 20vw;
 		letter-spacing: 1.5vw;
 	}
-	
+	.headerText {
+		font-size: 48px;
+		line-height: 56px;
+	}
 }
