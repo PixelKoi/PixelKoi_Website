@@ -153,7 +153,7 @@ export const Contact = () => {
 		setSimpleValues({ ...simpleValues, [name]: value });
 		console.log(simpleValues);
 	};
-	const item = { hidden: { scale: 1, opacity: 1, tansition: { duration: 2, ease: 'easeIn' } } };
+	const item = { hidden: { scale: 1, opacity: 1, tansition: { duration: 1, ease: 'easeIn' } } };
 
 	return (
 		<div>
