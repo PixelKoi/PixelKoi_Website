@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, CSSProperties } from 'react';
 import Nav from '../../components/Nav/Nav';
 import styles from './Contact2.module.scss';
-import Footer from '../../components/Footer/Footer3';
+import Footer from '../../components/Footer/ContactPage/FooterContactPage';
 import { motion, useScroll } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 
