@@ -188,8 +188,8 @@ export const Contact = () => {
 			<motion.div className={styles.formSection}>
 				<motion.div
 					variants={item}
-					initial={{ scale: 0, opacity: 0 }}
-					animate={hookedYPostion > 0 ? 'hidden' : 'show'}
+					// initial={{ scale: 0, opacity: 0 }}
+					// animate={hookedYPostion > 0 ? 'hidden' : 'show'}
 					className={styles.wrapper}
 				>
 					<motion.div className={styles.contact}>
