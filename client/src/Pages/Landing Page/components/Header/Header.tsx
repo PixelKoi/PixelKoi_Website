@@ -1,5 +1,5 @@
 // import './Header.css';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import '../../../../styles/globalStyles.css';
 import styles from './Header.module.scss';
 import OurTech from '../OurTech/OurTech';
@@ -10,6 +10,8 @@ import cube from '../../../../assets/Home/ph_cube.svg';
 import koi from '../../../../assets/Home/koi.svg';
 import { Link, useLocation } from 'react-router-dom';
 import headerImg from '../../../../assets/Home/box.jpg';
+import ParticlesBackground from '../../../../components/Particles/ParticlesBackground';
+import Particles from 'react-tsparticles';
 
 const Header = (props: any) => {
 	const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
@@ -17,6 +19,7 @@ const Header = (props: any) => {
 
 	return (
 		<div className={styles.header} id="header" style={{ backgroundImage: `url(${headerImg})` }}>
+			{/* <ParticlesBackground /> */}
 			<div className={styles.container}>
 				<div className={styles.modalContainer}>
 					<motion.div

@@ -13,6 +13,7 @@ import NavGroup from '../../components/Nav/NavGroup';
 const Landing = (props: any) => {
 	return (
 		<main className={styles.mainContainer}>
+			{' '}
 			<NavGroup />
 			<Header />
 			<OurTech />

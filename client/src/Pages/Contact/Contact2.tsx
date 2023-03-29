@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 
 import Select, { StylesConfig } from 'react-select';
 import mailboxImg from '../../assets/Home/mailbox.jpg';
-
+import ParticleBackground from '../../components/Particles/ParticlesBackground';
 const deadlineOptions = [
 	{ value: '1 Month', label: '1 Month' },
 	{ value: '3 Month', label: '3 Month' },
