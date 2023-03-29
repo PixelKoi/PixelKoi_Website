@@ -2,7 +2,7 @@
 	background: #17212d;
 	// border-bottom: 1px solid #fff;
 	color: white;
-	padding: 2rem 0 2rem 0;
+
 	display: flex;
 
 	p {
@@ -151,6 +151,9 @@
 // }
 
 @media only screen and (min-width: 320px) {
+	.mainContainer {
+		padding: 0;
+	}
 	.softwareGroup {
 		padding: 0 1rem;
 	}
@@ -164,6 +167,9 @@
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 768px) {
+	.mainContainer {
+		padding: 2rem 0 2rem 0;
+	}
 	.softwareGroup {
 		padding: 0 2rem;
 		.cardIMG {
