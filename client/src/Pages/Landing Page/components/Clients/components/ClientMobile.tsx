@@ -41,7 +41,7 @@ const ClientMobile = () => {
 	};
 	return (
 		<div>
-			<div className={styles.carousel} style={{ marginTop: '4rem' }}>
+			<div className={styles.carousel}>
 				<BsFillArrowLeftCircleFill
 					className={styles.left}
 					size={35}

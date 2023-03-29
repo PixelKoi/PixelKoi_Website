@@ -209,7 +209,6 @@ const Nav = () => {
 					</Link>
 					<button className={styles.menuIMG}>
 						<motion.img
-							whileHover={{ rotate: 90 }}
 							src={menu}
 							onClick={open === false ? openMenu : closeMenu}
 							height={28}
