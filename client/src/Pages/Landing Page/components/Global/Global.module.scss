@@ -46,27 +46,30 @@
 .listContainer {
 	width: 100%;
 	margin: 0 auto;
+	height: 100px;
 	max-width: 1300px;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	text-align: center;
+	// grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+	grid-template-columns: 1fr;
+
 	.itemGroup {
 		display: flex;
 		flex-direction: row;
-		// margin-right: auto;
+		margin-right: auto;
 		margin: 0 auto;
 		gap: 20px;
+		min-width: 200px;
+		border: 1px solid transparent;
 		margin-bottom: 1rem;
 		img {
 			align-self: center;
-			display: none;
+			// display: none;
 		}
 		p {
 			color: #fff;
-			font-size: 1.5rem;
+			font-size: 18px;
 			font-weight: bold;
 			margin: auto 0;
-			align-self: center;
 		}
 	}
 }

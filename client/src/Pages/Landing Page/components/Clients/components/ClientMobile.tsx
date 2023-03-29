@@ -16,25 +16,25 @@ const ClientMobile = () => {
 			case 0:
 				return (
 					<motion.div className={styles.gridItem}>
-						<ClientCard img={hype} style={{ maxWidth: '200px' }} />
+						<ClientCard img={developpa} style={{ maxWidth: '120px' }} />
 					</motion.div>
 				);
 			case 1:
 				return (
 					<motion.div className={styles.gridItem}>
-						<ClientCard img={goodcompany} style={{ maxWidth: '100px' }} />
+						<ClientCard img={goodcompany} style={{ maxWidth: '70px' }} />
 					</motion.div>
 				);
 			case 2:
 				return (
 					<motion.div className={styles.gridItem}>
-						<ClientCard img={developpa} style={{ maxWidth: '200px' }} />
+						<ClientCard img={hype} style={{ maxWidth: '150px' }} />
 					</motion.div>
 				);
 			default:
 				return (
 					<motion.div className={styles.gridItem}>
-						<ClientCard img={hype} style={{ maxWidth: '200px' }} />
+						<ClientCard img={developpa} style={{ maxWidth: '200px' }} />
 					</motion.div>
 				);
 		}
