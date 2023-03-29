@@ -3,6 +3,7 @@ import styles from './ClientMobile.module.scss';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import { motion } from 'framer-motion';
+import ClientCard from './ClientCard';
 import hype from '../../../../../assets/Clients/hype.webp';
 import goodcompany from '../../../../../assets/Clients/goodcompany.webp';
 import developpa from '../../../../../assets/Clients/developpa.webp';
@@ -14,23 +15,27 @@ const ClientMobile = () => {
 		switch (count) {
 			case 0:
 				return (
-					<a href="https://developpa.io/" target="_blank">
-						<img src={developpa} className={styles.logoIMG} alt="developpaImage" />
-					</a>
+					<motion.div className={styles.gridItem}>
+						<ClientCard img={hype} style={{ maxWidth: '200px' }} />
+					</motion.div>
 				);
 			case 1:
-				return <img src={goodcompany} className={styles.logoIMG} id={styles.gc} alt="goodcompanyImage" />;
+				return (
+					<motion.div className={styles.gridItem}>
+						<ClientCard img={goodcompany} style={{ maxWidth: '100px' }} />
+					</motion.div>
+				);
 			case 2:
 				return (
-					<a href="https://www.hypeovernight.com/" target="_blank">
-						<img src={hype} className={styles.logoIMG} id={styles.developpa} alt="hypeovernightImage" />
-					</a>
+					<motion.div className={styles.gridItem}>
+						<ClientCard img={developpa} style={{ maxWidth: '200px' }} />
+					</motion.div>
 				);
 			default:
 				return (
-					<a href="https://developpa.io/" target="_blank">
-						<img src={developpa} className={styles.logoIMG} alt="developpaImage" />
-					</a>
+					<motion.div className={styles.gridItem}>
+						<ClientCard img={hype} style={{ maxWidth: '200px' }} />
+					</motion.div>
 				);
 		}
 	};

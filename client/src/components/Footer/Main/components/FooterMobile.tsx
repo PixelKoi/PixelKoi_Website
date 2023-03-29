@@ -12,12 +12,7 @@ const FooterMobileContact = () => {
 
 	let currentYear = new Date().getFullYear();
 	return (
-		<motion.div
-			initial={{ y: 20, opacity: 0 }}
-			whileInView={{ y: 0, opacity: 1, transition: { duration: 1 } }}
-			viewport={{ once: true }}
-			className={styles.wrapper}
-		>
+		<div className={styles.wrapper}>
 			<div className={styles.container}>
 				<div className={styles.consultation}>
 					<h4>GOT A PROJECT IN MIND?</h4>
@@ -106,7 +101,7 @@ const FooterMobileContact = () => {
 			<div className={styles.copyrightContainer}>
 				<p className={styles.footerCopyright}>Copyright © {currentYear} Pixel Koi - All Rights Reserved.</p>
 			</div>
-		</motion.div>
+		</div>
 	);
 };
 
