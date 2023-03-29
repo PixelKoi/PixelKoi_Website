@@ -44,7 +44,7 @@ const ClientMobile = () => {
 			<div className={styles.carousel} style={{ marginTop: '4rem' }}>
 				<BsFillArrowLeftCircleFill
 					className={styles.left}
-					size={40}
+					size={35}
 					onClick={() => {
 						if (count === 0) {
 							setCount(2);
@@ -60,7 +60,7 @@ const ClientMobile = () => {
 				</div>
 				<BsFillArrowRightCircleFill
 					className={styles.right}
-					size={40}
+					size={35}
 					onClick={() => {
 						if (count === 0) {
 							setCount(1);
