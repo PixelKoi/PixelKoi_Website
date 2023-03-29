@@ -7,7 +7,7 @@ import Nav from '../../components/Nav/Nav';
 import Offer from './components/Offer/Offer';
 import Global from './components/Global/Global';
 import OurTech from './components/OurTech/OurTech';
-import Footer2 from '../../components/Footer/Footer2';
+import Footer from '../../components/Footer/Main/Footer';
 import NavGroup from '../../components/Nav/NavGroup';
 
 const Landing = (props: any) => {
@@ -24,7 +24,7 @@ const Landing = (props: any) => {
 			<Clients /> */}
 			<Clients />
 			<OurTech />
-			<Footer2 />
+			<Footer />
 		</main>
 	);
 };
