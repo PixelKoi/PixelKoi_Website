@@ -75,37 +75,6 @@ const ClientCardLayout = () => {
 						</motion.div>
 					</a>
 				</motion.div>
-				{/* <div className={styles.carousel} style={{ marginTop: '4rem' }}>
-					<BsFillArrowLeftCircleFill
-						className={styles.left}
-						size={40}
-						onClick={() => {
-							if (count === 0) {
-								setCount(2);
-							} else if (count === 2) {
-								setCount(1);
-							} else if (count === 1) {
-								setCount(0);
-							}
-						}}
-					/>
-					<div className={styles.iconContainer}>
-						<motion.div>{handleIMG()}</motion.div>
-					</div>
-					<BsFillArrowRightCircleFill
-						className={styles.right}
-						size={40}
-						onClick={() => {
-							if (count === 0) {
-								setCount(1);
-							} else if (count === 1) {
-								setCount(2);
-							} else if (count === 2) {
-								setCount(0);
-							}
-						}}
-					/>
-				</div> */}
 			</div>
 		</div>
 	);

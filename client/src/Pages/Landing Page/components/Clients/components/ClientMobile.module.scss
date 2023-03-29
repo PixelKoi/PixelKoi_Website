@@ -1,0 +1,41 @@
+//carousel
+.carousel {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 300px;
+	margin: 0 auto;
+	padding: 0 2rem;
+
+	.left {
+		color: #eff;
+		cursor: pointer;
+		margin-right: auto;
+		align-self: center;
+		&:hover {
+			color: #e8985c;
+		}
+	}
+	.right {
+		color: #eff;
+		cursor: pointer;
+		margin-left: auto;
+		align-self: center;
+		&:hover {
+			color: #e8985c;
+		}
+	}
+}
+.iconContainer {
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.logoIMG {
+		margin-top: auto;
+		align-self: center;
+
+		max-width: 200px;
+		filter: invert(82%) sepia(95%) saturate(0%) hue-rotate(87deg) brightness(115%) contrast(104%);
+	}
+}
