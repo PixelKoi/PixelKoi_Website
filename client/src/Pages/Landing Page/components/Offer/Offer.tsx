@@ -67,8 +67,8 @@ const Offer = () => {
 						</Link>
 					</motion.div>
 					<motion.img
-						initial={{ opacity: 0, x: 70 }}
-						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1, transition: { duration: 1 } }}
 						viewport={{ once: true }}
 						src={code}
 						alt="Macbook Pro image with code"
@@ -78,8 +78,8 @@ const Offer = () => {
 
 				<div className={styles.uxGroup}>
 					<motion.img
-						initial={{ opacity: 0, x: -70 }}
-						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1, transition: { duration: 1 } }}
 						viewport={{ once: true }}
 						src={uxdesign}
 						alt="Ipad image with website wireframe"
@@ -138,8 +138,8 @@ const Offer = () => {
 						</Link>
 					</motion.div>
 					<motion.img
-						initial={{ opacity: 0, x: 70 }}
-						whileInView={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1, transition: { duration: 1 } }}
 						viewport={{ once: true }}
 						src={web}
 						alt="Showing the development of a website with a macbook pro and imac in the background"
