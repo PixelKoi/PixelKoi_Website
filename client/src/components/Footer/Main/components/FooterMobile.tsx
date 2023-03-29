@@ -24,23 +24,17 @@ const FooterMobileContact = () => {
 				</div>
 				<br />
 				<div className={styles.linksContainer}>
-					<div style={{ display: 'flex' }}>
-						<h4>INFORMATION</h4>
-						{showInfo === false ? (
-							<FaPlus
-								className={styles.icon}
-								style={{ marginLeft: 'auto' }}
-								onClick={() => setShowInfo(true)}
-							/>
-						) : (
-							<FaMinus
-								className={styles.icon}
-								style={{ marginLeft: 'auto' }}
-								onClick={() => setShowInfo(false)}
-							/>
-						)}
+					<div onClick={() => (showInfo === false ? setShowInfo(true) : setShowInfo(false))}>
+						<div style={{ display: 'flex' }}>
+							<h4>INFORMATION</h4>
+							{showInfo === false ? (
+								<FaPlus className={styles.icon} style={{ marginLeft: 'auto' }} />
+							) : (
+								<FaMinus className={styles.icon} style={{ marginLeft: 'auto' }} />
+							)}
+						</div>
+						<hr className={styles.break} />
 					</div>
-					<hr className={styles.break} />
 					{showInfo === true ? (
 						<div className={styles.linksWrapper} id={styles.links}>
 							<div>
@@ -66,23 +60,17 @@ const FooterMobileContact = () => {
 				</div>
 				<br />
 				<div className={styles.linksContainer}>
-					<div style={{ display: 'flex' }}>
-						<h4>SOCIALS</h4>
-						{showSocial === false ? (
-							<FaPlus
-								className={styles.icon}
-								style={{ marginLeft: 'auto' }}
-								onClick={() => setShowSocial(true)}
-							/>
-						) : (
-							<FaMinus
-								className={styles.icon}
-								style={{ marginLeft: 'auto' }}
-								onClick={() => setShowSocial(false)}
-							/>
-						)}
+					<div onClick={() => (showSocial === false ? setShowSocial(true) : setShowSocial(false))}>
+						<div style={{ display: 'flex' }}>
+							<h4>SOCIALS</h4>
+							{showSocial === false ? (
+								<FaPlus className={styles.icon} style={{ marginLeft: 'auto' }} />
+							) : (
+								<FaMinus className={styles.icon} style={{ marginLeft: 'auto' }} />
+							)}
+						</div>
+						<hr className={styles.break} />
 					</div>
-					<hr className={styles.break} />
 					{showSocial === true ? (
 						<div className={styles.linksWrapper} id={styles.socials}>
 							<div>
