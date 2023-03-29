@@ -20,7 +20,7 @@ const FooterMobileContact = () => {
 			className={styles.wrapper}
 		>
 			<div className={styles.container}>
-				<motion.div className={styles.consultation}>
+				<div className={styles.consultation}>
 					<div style={{ display: 'flex' }}>
 						<h4>OFFICE LOCATIONS</h4>
 						{showLocation === false ? (
@@ -54,9 +54,9 @@ const FooterMobileContact = () => {
 							</div>
 						</div>
 					) : null}
-				</motion.div>
+				</div>
 				<br />
-				<motion.div className={styles.linksContainer}>
+				<div className={styles.linksContainer}>
 					<div style={{ display: 'flex' }}>
 						<h4>INFORMATION</h4>
 						{showInfo === false ? (
@@ -76,29 +76,29 @@ const FooterMobileContact = () => {
 					<hr className={styles.break} />
 					{showInfo === true ? (
 						<div className={styles.linksWrapper} id={styles.links}>
-							<motion.div>
+							<div>
 								<Link to="/about" title="Description page for Pixel Koi Company">
 									About
 								</Link>
-							</motion.div>
-							<motion.div>
+							</div>
+							<div>
 								<Link to="/#services" title="Shows services Pixel Koi Company Provides">
 									Services
 								</Link>
-							</motion.div>
-							<motion.div>
+							</div>
+							<div>
 								<Link
 									to="/contact"
 									title="Takes customer to the contact form allowing communication with Pixel Koi Company"
 								>
 									Contact
 								</Link>
-							</motion.div>
+							</div>
 						</div>
 					) : null}
-				</motion.div>
+				</div>
 				<br />
-				<motion.div className={styles.linksContainer}>
+				<div className={styles.linksContainer}>
 					<div style={{ display: 'flex' }}>
 						<h4>SOCIALS</h4>
 						{showSocial === false ? (
@@ -118,7 +118,7 @@ const FooterMobileContact = () => {
 					<hr className={styles.break} />
 					{showSocial === true ? (
 						<div className={styles.linksWrapper} id={styles.socials}>
-							<motion.div>
+							<div>
 								<a
 									href="https://www.linkedin.com/company/pixelkoi/"
 									target="_blank"
@@ -126,16 +126,14 @@ const FooterMobileContact = () => {
 								>
 									<AiFillLinkedin size={25} />
 								</a>
-							</motion.div>
+							</div>
 						</div>
 					) : null}
-				</motion.div>
+				</div>
 			</div>
-			<motion.div className={styles.copyrightContainer}>
-				<motion.p className={styles.footerCopyright}>
-					Copyright © {currentYear} Pixel Koi - All Rights Reserved.
-				</motion.p>
-			</motion.div>
+			<div className={styles.copyrightContainer}>
+				<p className={styles.footerCopyright}>Copyright © {currentYear} Pixel Koi - All Rights Reserved.</p>
+			</div>
 		</motion.div>
 	);
 };
