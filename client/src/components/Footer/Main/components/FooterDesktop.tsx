@@ -7,10 +7,6 @@ import { FaPlus } from 'react-icons/fa';
 import { FaMinus } from 'react-icons/fa';
 
 const FooterDesktop = () => {
-	const [ showLocation, setShowLocation ] = useState(false);
-	const [ showInfo, setShowInfo ] = useState(false);
-	const [ showSocial, setShowSocial ] = useState(false);
-
 	let currentYear = new Date().getFullYear();
 	return (
 		<motion.div className={styles.wrapper}>
@@ -21,28 +17,11 @@ const FooterDesktop = () => {
 					viewport={{ once: true }}
 					className={styles.consultation}
 				>
-					<h4>OFFICE LOCATIONS</h4>
-
-					<motion.div
-						initial={{ opacity: 0 }}
-						animate={{
-							opacity: 1,
-							transition: { duration: 1, ease: 'easeIn' }
-						}}
-						className={styles.location}
-					>
-						<div className={styles.locationGroup}>
-							<div>
-								<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
-							</div>
-							<h4 className={styles.locationText}>Chiang Mai</h4>
-						</div>
-						<div className={styles.locationGroup}>
-							<div>
-								<i style={{ color: '#e8985c' }} className="fa-solid fa-location-dot fa-xl" />
-							</div>
-							<h4 className={styles.locationText}>Toronto</h4>
-						</div>
+					<h4>GOT A PROJECT IN MIND?</h4>
+					<motion.div>
+						<a target="_blank" href="mailto:jonathanbajada@pixelkoi.com?subject=Book%20a%20consultation">
+							Book a consultation
+						</a>
 					</motion.div>
 				</motion.div>
 				<motion.div
@@ -52,7 +31,6 @@ const FooterDesktop = () => {
 					className={styles.linksContainer}
 				>
 					<h4>INFORMATION</h4>
-
 					<div className={styles.linksWrapper} id={styles.links}>
 						<motion.div>
 							<Link to="/about" title="Description page for Pixel Koi Company">
@@ -81,7 +59,6 @@ const FooterDesktop = () => {
 					className={styles.linksContainer}
 				>
 					<h4>SOCIALS</h4>
-
 					<div className={styles.linksWrapper} id={styles.socials}>
 						<motion.div>
 							<a
@@ -102,7 +79,7 @@ const FooterDesktop = () => {
 				className={styles.copyrightContainer}
 			>
 				<motion.p className={styles.footerCopyright}>
-					Copyright © {currentYear} Pixel Koi - All Rights Reserved.
+					Copyright © {currentYear} Pixel Koi - All rights reserved.
 				</motion.p>
 			</motion.div>
 		</motion.div>

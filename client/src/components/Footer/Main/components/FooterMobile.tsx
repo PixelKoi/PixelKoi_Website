@@ -7,7 +7,6 @@ import { FaPlus } from 'react-icons/fa';
 import { FaMinus } from 'react-icons/fa';
 
 const FooterMobileContact = () => {
-	const [ showLocation, setShowLocation ] = useState(false);
 	const [ showInfo, setShowInfo ] = useState(false);
 	const [ showSocial, setShowSocial ] = useState(false);
 
