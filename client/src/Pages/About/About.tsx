@@ -1,7 +1,7 @@
 import styles from './About.module.scss';
 import NavGroup from '../../components/Nav/NavGroup';
 import Team from './Team/Team';
-import Footer2 from '../../components/Footer/Footer2';
+import Footer from '../../components/Footer/Main/Footer';
 
 import creative from './../../assets/About/creative.webp';
 import dream from '../../assets/About/dream.webp';
@@ -89,7 +89,7 @@ const About = () => {
 			</div>
 
 			<Team />
-			<Footer2 />
+			<Footer />
 		</motion.div>
 	);
 };

@@ -1,4 +1,3 @@
-import Footer from './components/Footer/Footer';
 import AppRouter from './router/AppRouter';
 import { BrowserRouter } from 'react-router-dom';
 import ScrollToTop from './components/helpers/ScrollToTop';
