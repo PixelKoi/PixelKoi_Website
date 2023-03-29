@@ -9,7 +9,7 @@ const NavGroup = () => {
 	return (
 		<div className={styles.wrapper}>
 			<Nav />
-			<motion.div style={{ scaleX: scrollYProgress }} className={styles.break} />
+			{/* <motion.div style={{ scaleX: scrollYProgress }} className={styles.break} /> */}
 		</div>
 	);
 };
