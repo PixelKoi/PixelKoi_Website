@@ -162,7 +162,17 @@
 		align-self: center;
 	}
 }
-
+.container3 {
+	color: #fff;
+	height: 5.5rem;
+	position: fixed;
+	display: flex;
+	align-items: center;
+	top: 0;
+	z-index: 3;
+	right: 0;
+	margin-right: 4rem;
+}
 /* Custom, iPhone Retina */
 @media only screen and (min-width: 320px) {
 	.container {

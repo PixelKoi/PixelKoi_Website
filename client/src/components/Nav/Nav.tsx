@@ -192,7 +192,7 @@ const Nav = () => {
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1, transition: { duration: 1 } }}
-					className={styles.container2}
+					className={styles.container3}
 				>
 					<div className={styles.contactInfo}>
 						<p>
@@ -207,6 +207,25 @@ const Nav = () => {
 					>
 						<motion.p>Hire Us</motion.p>
 					</Link>
+				</motion.div>
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1, transition: { duration: 1 } }}
+					className={styles.container2}
+				>
+					{/* <div className={styles.contactInfo}>
+						<p>
+							Email: info@pixelkoi.com <br />Phone: (647)-838-1705
+						</p>
+					</div>
+					<Link
+						id={styles.link4}
+						// style={{ marginRight: '110px' }}
+						className={`${styles.link} `}
+						to="/contact"
+					>
+						<motion.p>Hire Us</motion.p>
+					</Link> */}
 					<button className={styles.menuIMG}>
 						<motion.img
 							src={menu}
