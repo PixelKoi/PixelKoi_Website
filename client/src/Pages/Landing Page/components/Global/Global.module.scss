@@ -57,12 +57,12 @@
 		flex-direction: row;
 		margin-right: auto;
 		margin: 0 auto;
-		gap: 20px;
 		min-width: 200px;
 		border: 1px solid transparent;
 		margin-bottom: 1rem;
 		img {
 			align-self: center;
+			margin-right: 10px;
 			// display: none;
 		}
 		p {
