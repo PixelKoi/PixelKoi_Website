@@ -19,10 +19,10 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use(express.static(path.join(__dirname, "build")));
+app.use(express.static("/home/almorsbd/public_html/build"));
 
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "build", "index.html"));
+app.get("/contact", (req, res) => {
+  res.sendFile("/home/almorsbd/public_html/build/index.html");
 });
 app.post("/send-email", (req, res) => {
   const { name, company, email, phone } = req.body;
