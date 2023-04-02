@@ -145,6 +145,16 @@ export const Contact = () => {
     console.log(values);
   };
 
+  const handleInputChangeArea = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    values.budget = amount;
+    values.deadline = deadline;
+    const { name, value } = event.target;
+    setValues({ ...values, [name]: value });
+    console.log(values);
+  };
+
   const handleInputChangeSimple = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -231,6 +241,7 @@ export const Contact = () => {
                 name="Contact-v2-Name"
                 data-name="Contact v2 Name"
                 placeholder="Your name"
+                onChange={handleInputChange}
               />
               <input
                 type="email"
@@ -239,6 +250,7 @@ export const Contact = () => {
                 name="Contact-v2-Email"
                 data-name="Contact v2 Email"
                 placeholder="Email address"
+                onChange={handleInputChange}
               />
               <input
                 type="tel"
@@ -247,6 +259,7 @@ export const Contact = () => {
                 name="Contact-v2-Phone"
                 data-name="Contact v2 Phone"
                 placeholder="Contact Phone"
+                onChange={handleInputChange}
               />
               <input
                 type="text"
@@ -255,6 +268,7 @@ export const Contact = () => {
                 name="Contact-v2-Budget"
                 data-name="Contact v2 Budget"
                 placeholder="Budget"
+                onChange={handleInputChange}
               />
               <textarea
                 name="Contact-v2-Info"
@@ -262,6 +276,7 @@ export const Contact = () => {
                 maxLength={5000}
                 data-name="Contact v2 Info"
                 className={`${styles.input2} ${styles.textArea} `}
+                onChange={handleInputChangeArea}
               />
               <input
                 type="submit"
