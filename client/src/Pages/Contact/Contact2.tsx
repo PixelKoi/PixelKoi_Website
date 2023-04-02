@@ -233,7 +233,7 @@ export const Contact = () => {
                 innovative software solutions.
               </div>
             </div>
-            <motion.form className={styles.form}>
+            <motion.form className={styles.form} onSubmit={handleSubmit}>
               <input
                 type="text"
                 className={`${styles.input} `}
