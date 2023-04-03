@@ -23,42 +23,6 @@ const costOptions = [
 	{ value: 'infinite', label: 'infinite' }
 ];
 
-// TODO: Add email and name checks / make sure the information is filled out.
-// TODO: Add Submission check, display and Animate,
-// TODO: Add functionality for
-const customStyles = {
-	control: (baseStyles: any, state: any) => ({
-		...baseStyles,
-		backgroundColor: 'transparent',
-		borderColor: state.isFocused ? '#fff' : '#595959',
-		height: '60px',
-		boxShadow: 'none',
-		'&:hover': {
-			boxShadow: '#fff'
-		}
-	}),
-	option: (styles: any, state: any) => {
-		return {
-			...styles
-			// borderColor: state.isSelected ? '#fff' : '#595959'
-		};
-	},
-	singleValue: (base: any) => ({ ...base, color: '#fff' }),
-	menu: (base: any) => ({
-		...base,
-		// override border radius to match the box
-		backgroundColor: '#fff',
-		// kill the gap
-		marginTop: 0
-	}),
-	menuList: (base: any) => ({
-		...base,
-		// kill the white space on first and last option
-		padding: 0,
-		color: '#595959'
-	})
-};
-
 interface FormData {
 	name: string;
 	company: string;
@@ -80,7 +44,7 @@ export const Contact = () => {
 	const [ warningEmail, setWarningEmail ] = useState(false);
 	const [ phone, setPhone ] = useState('');
 	const [ budget, setBudget ] = useState(0);
-	const [ description, setDescription ] = useState('0');
+	const [ description, setDescription ] = useState('');
 
 	const [ complete, setComplete ] = useState(false);
 	const [ error, setError ] = useState(false);
@@ -175,58 +139,6 @@ export const Contact = () => {
 		}
 	};
 
-	const submittedForm = () => {
-		return (
-			<div className={styles.formSection}>
-				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
-					Thank you for submitting your proposal to us. We appreciate your interest in our company and the
-					opportunity to review your ideas. We will carefully evaluate your submission and get back to you as
-					soon as possible.
-				</p>
-			</div>
-		);
-	};
-
-	const errorForm = () => {
-		return (
-			<div className={styles.formSection}>
-				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
-					We're sorry, but there was an error submitting your proposal. Please try again later or contact our
-					support team for assistance. Thank you for your patience and understanding.
-				</p>
-			</div>
-		);
-	};
-
-	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		values.budget = amount;
-		values.deadline = deadline;
-		const { name, value } = event.target;
-		setValues({ ...values, [name]: value });
-		console.log(values);
-	};
-
-	const handleInputChangeArea = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-		values.budget = amount;
-		values.deadline = deadline;
-		const { name, value } = event.target;
-		setValues({ ...values, [name]: value });
-		console.log(values);
-	};
-
-	const handleInputChangeSimple = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const { name, value } = event.target;
-		setSimpleValues({ ...simpleValues, [name]: value });
-		console.log(simpleValues);
-	};
-	const item = {
-		hidden: {
-			scale: 1,
-			opacity: 1,
-			tansition: { duration: 1, ease: 'easeIn' }
-		}
-	};
-
 	//Check email input for '@'
 	const handleCheckEmail = () => {
 		if (email.length === 0 || !email.includes('@')) {
@@ -278,7 +190,7 @@ export const Contact = () => {
 			</div>
 
 			<motion.div className={styles.formSection}>
-				<motion.div variants={item} className={styles.wrapper}>
+				<motion.div className={styles.wrapper}>
 					<motion.div className={styles.contact}>
 						<div className={styles.intro}>
 							<strong>
@@ -350,11 +262,11 @@ export const Contact = () => {
 								onChange={(e) => setBudget(parseInt(e.target.value))}
 							/>
 							<textarea
-								name="Contact-v2-Info"
+								name="text-area"
 								placeholder="Describe your project..."
 								maxLength={5000}
 								value={description}
-								data-name="Contact v2 Info"
+								data-name="text-area"
 								className={`${styles.input2} ${styles.textArea} `}
 								onChange={(e) => setDescription(e.target.value)}
 							/>
@@ -386,3 +298,51 @@ export const Contact = () => {
 		</div>
 	);
 };
+
+/* 
+
+	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		values.budget = amount;
+		values.deadline = deadline;
+		const { name, value } = event.target;
+		setValues({ ...values, [name]: value });
+		console.log(values);
+	};
+
+	const handleInputChangeArea = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+		values.budget = amount;
+		values.deadline = deadline;
+		const { name, value } = event.target;
+		setValues({ ...values, [name]: value });
+		console.log(values);
+	};
+
+	const handleInputChangeSimple = (event: React.ChangeEvent<HTMLInputElement>) => {
+		const { name, value } = event.target;
+		setSimpleValues({ ...simpleValues, [name]: value });
+		console.log(simpleValues);
+	};
+
+  	const submittedForm = () => {
+		return (
+			<div className={styles.formSection}>
+				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
+					Thank you for submitting your proposal to us. We appreciate your interest in our company and the
+					opportunity to review your ideas. We will carefully evaluate your submission and get back to you as
+					soon as possible.
+				</p>
+			</div>
+		);
+	};
+
+	const errorForm = () => {
+		return (
+			<div className={styles.formSection}>
+				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
+					We're sorry, but there was an error submitting your proposal. Please try again later or contact our
+					support team for assistance. Thank you for your patience and understanding.
+				</p>
+			</div>
+		);
+	};
+*/
