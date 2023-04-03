@@ -29,7 +29,7 @@ export const Contact = () => {
 	const [ phone, setPhone ] = useState('');
 	const [ budget, setBudget ] = useState(0);
 	const [ description, setDescription ] = useState('');
-
+	const [ form, setForm ] = useState('');
 	const [ complete, setComplete ] = useState(false);
 	const [ error, setError ] = useState(false);
 
@@ -128,7 +128,7 @@ export const Contact = () => {
 	};
 
 	//Show Contact form based on state
-	const showForm = (form: String) => {
+	const showSubmitMessage = (form: String) => {
 		switch (form) {
 			case 'complete':
 				return (
@@ -158,8 +158,10 @@ export const Contact = () => {
 
 	const handleValidation = () => {
 		if (name === '' || email === '' || budget === 0 || phone === '' || description === '') {
+			setForm('error');
 			return false;
 		}
+		setForm('complete');
 		return true;
 	};
 
@@ -299,16 +301,7 @@ export const Contact = () => {
 								className={styles.button}
 							/>
 						</motion.form>
-						{complete === true ? (
-							<div className={styles.formSucess}>
-								<div>Thank you! Your submission has been received!</div>
-							</div>
-						) : null}
-						{error === true ? (
-							<div className={styles.formError}>
-								<div>Oops! Something went wrong while submitting the form.</div>
-							</div>
-						) : null}
+						{showSubmitMessage(form)}
 					</motion.div>
 				</motion.div>
 				<motion.div ref={ref} style={{ willChange: 'transform' }} className={styles.contact2}>
