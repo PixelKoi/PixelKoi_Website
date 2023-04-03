@@ -12,7 +12,7 @@ export const Contact = () => {
 	const [ email, setEmail ] = useState('');
 	const [ warningEmail, setWarningEmail ] = useState(false);
 	const [ phone, setPhone ] = useState('');
-	const [ budget, setBudget ] = useState(0);
+	const [ budget, setBudget ] = useState('');
 	const [ description, setDescription ] = useState('');
 	const [ form, setForm ] = useState('');
 
@@ -47,31 +47,35 @@ export const Contact = () => {
 		[ scrollYProgress ]
 	); //make sure to re-subscriobe when scrollYProgress changes
 
-	const handleSubmit = (name: string, email: string, phone: string, budget: number, description: string) => {
-		// e.preventDefault();
-		fetch('http://localhost:8000/send-email', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({
-				name,
-				email,
-				phone,
-				budget,
-				description
+	const handleSubmit = (event: any) => {
+		event.preventDefault();
+		if (handleValidation() === false) {
+			return;
+		} else {
+			setDescription('');
+			setPhone('');
+			setBudget('');
+			setName('');
+			setEmail('');
+			fetch('http://localhost:8000/send-email', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({
+					name,
+					email,
+					phone,
+					budget,
+					description
+				})
 			})
-		})
-			.then((res) => res.json())
-			.then((data) => {
-				alert(data.message);
-				setDescription('');
-				setBudget(0);
-				setName('');
-				setEmail('');
-			})
-			.catch((error) => {
-				console.error("We've run into an error: ", error);
-				setForm('error');
-			});
+				.then((res) => res.json())
+				.then((data) => {
+					alert(data.message);
+				})
+				.catch((error) => {
+					console.error("We've run into an error: ", error);
+				});
+		}
 	};
 
 	//Show Contact form based on state
@@ -103,8 +107,17 @@ export const Contact = () => {
 		}
 	};
 
+	//Check phone number
+	const handleCheckNumber = () => {
+		if (email.length === 0 || !email.includes('@')) {
+			setWarningEmail(email.length !== 0);
+		} else {
+			setWarningEmail(false);
+		}
+	};
+
 	const handleValidation = () => {
-		if (name === '' || email === '' || budget === 0 || phone === '' || description === '') {
+		if (name === '' || email === '' || budget === '' || phone === '' || description === '') {
 			setForm('error');
 			return false;
 		}
@@ -216,14 +229,14 @@ export const Contact = () => {
 								onChange={(e) => setPhone(e.target.value)}
 							/>
 							<input
-								type="number"
+								type="text"
 								className={styles.input}
 								maxLength={256}
 								name="budget"
 								data-name="user-budget"
 								placeholder="Budget"
 								value={budget}
-								onChange={(e) => setBudget(parseInt(e.target.value))}
+								onChange={(e) => setBudget(e.target.value)}
 							/>
 							<textarea
 								name="text-area"
@@ -236,13 +249,7 @@ export const Contact = () => {
 							/>
 							<input
 								type="submit"
-								onClick={() => {
-									if (handleValidation() === false) {
-										return;
-									} else {
-										handleSubmit(name, email, phone, budget, description);
-									}
-								}}
+								onClick={handleSubmit}
 								value="Submit Message"
 								data-wait="Please wait..."
 								className={styles.button}
