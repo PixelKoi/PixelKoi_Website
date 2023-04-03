@@ -1,0 +1,78 @@
+.container {
+	color: white;
+	background-color: #17212d;
+
+	// border: 1px solid green;
+}
+
+.teamContainer {
+	padding: 0 1rem;
+	width: 90%;
+	margin: 0 auto;
+	max-width: 1200px;
+	padding-bottom: 8em;
+	padding-top: 5rem;
+	border-bottom: 1px solid #fff;
+
+	p {
+		opacity: 0.8;
+	}
+}
+
+.cta {
+	color: #fff;
+	line-height: 2.3rem;
+	font-size: 1em;
+}
+.teamText {
+	margin-bottom: 10rem;
+	max-width: 600px;
+}
+.teamTitle {
+	color: #ffa500;
+	// font-size: 20px;
+	margin-bottom: 1rem;
+}
+.carousel {
+	display: flex;
+	cursor: grab;
+	overflow: hidden;
+}
+.innerCarousel {
+	display: flex;
+}
+.item {
+	filter: grayscale(80%);
+	// min-height: 40rem;
+	min-width: 40rem;
+	margin-right: -10rem;
+
+	&:hover {
+		animation: grayscale-to-color 1s ease-in-out forwards;
+	}
+}
+.item img {
+	width: 60%;
+	border-radius: 2rem;
+	pointer-events: none;
+	display: block;
+}
+
+.imageText {
+	margin-top: 2rem;
+	margin-right: 16rem;
+	text-align: center;
+}
+
+.imagep {
+	font-size: 14px;
+}
+
+@keyframes grayscale-to-color {
+	0% {
+		filter: grayscale(80%);
+	}
+	100% {
+		filter: grayscale(0%);
+	}
+}
