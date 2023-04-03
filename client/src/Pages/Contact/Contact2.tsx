@@ -4,6 +4,7 @@ import styles from './Contact2.module.scss';
 import Footer from '../../components/Footer/ContactPage/FooterContactPage';
 import { motion, useScroll } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import { AiFillWarning } from 'react-icons/ai';
 
 import Select, { StylesConfig } from 'react-select';
 import mailboxImg from '../../assets/Home/mailbox.jpg';
@@ -284,15 +285,25 @@ export const Contact = () => {
 								placeholder="Your name"
 								onChange={handleInputChange}
 							/>
-							<input
-								type="email"
-								className={styles.input}
-								maxLength={256}
-								name="Contact-v2-Email"
-								data-name="Contact v2 Email"
-								placeholder="Email address"
-								onChange={handleInputChange}
-							/>
+							<div className={styles.emailGroup}>
+								<input
+									type="email"
+									className={styles.input}
+									maxLength={256}
+									name="Contact-v2-Email"
+									data-name="Contact v2 Email"
+									placeholder="Email address"
+									onChange={handleInputChange}
+								/>
+								<div className={styles.checkEmail} style={{ display: 'none' }}>
+									<div className={styles.innerCheckEmail}>
+										<AiFillWarning className={styles.warningIcon} />
+										<p className={styles.emailWarningText}>
+											Please include '@' in your email address!
+										</p>
+									</div>
+								</div>
+							</div>
 							<input
 								type="tel"
 								className={styles.input}
