@@ -63,51 +63,12 @@ export const Contact = () => {
 		},
 		[ scrollYProgress ]
 	); //make sure to re-subscriobe when scrollYProgress changes
-	const [ deadline, setDeadline ] = useState(1);
-	const [ amount, setAmount ] = useState(20);
 
-	const [ values, setValues ] = useState<FormData>({
-		name: '',
-		company: '',
-		email: '',
-		phone: '',
-		deadline: deadline,
-		budget: amount
-	});
-
-	const [ simpleValues, setSimpleValues ] = useState<SimpleForm>({
-		name: '',
-		email: '',
-		message: ''
-	});
-
-	//Show form
-	// const [ show, setForm ] = useState('');
-	// const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
-	// 	event.preventDefault();
-	// 	fetch('http://localhost:8000/send-email', {
-	// 		method: 'POST',
-	// 		headers: { 'Content-Type': 'application/json' },
-	// 		body: JSON.stringify(values)
-	// 	})
-	// 		.then((response) => response.json())
-	// 		.then((data) => console.log(data))
-	// 		.then(() => {
-	// 			setForm('submitted');
-	// 			setComplete(true);
-	// 		})
-	// 		.catch((error) => {
-	// 			console.error("We've run into an error: ", error);
-	// 			setForm('error');
-	// 			setError(true);
-	// 		});
-	// };
-	const PostData = (name: any, email: any, phone: any, budget: any, description: any) => {
-		fetch('http://localhost:8000/send', {
-			method: 'post',
-			headers: {
-				'Content-Type': 'application/json'
-			},
+	const handleSubmit = (name: string, email: string, phone: string, budget: number, description: string) => {
+		// e.preventDefault();
+		fetch('http://localhost:8000/send-email', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({
 				name,
 				email,
@@ -124,7 +85,10 @@ export const Contact = () => {
 				setName('');
 				setEmail('');
 			})
-			.catch((err) => {}); //fix this catch later
+			.catch((error) => {
+				console.error("We've run into an error: ", error);
+				setForm('error');
+			});
 	};
 
 	//Show Contact form based on state
@@ -293,7 +257,7 @@ export const Contact = () => {
 									if (handleValidation() === false) {
 										return;
 									} else {
-										PostData(name, email, phone, budget, description);
+										handleSubmit(name, email, phone, budget, description);
 									}
 								}}
 								value="Submit Message"
