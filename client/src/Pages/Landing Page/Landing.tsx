@@ -17,13 +17,13 @@ const Landing = (props: any) => {
     // Simulate a delay in loading the page
     setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 2500);
   }, []);
   return (
-    <div className="App">
+    <div>
       {isLoading ? (
-        <div className="loading-overlay">
-          <GridLoader size={50} color="#123abc" />
+        <div className={styles.spinnerAnimation}>
+          <GridLoader size={25} color="#e8985c" />
         </div>
       ) : (
         <main className={styles.mainContainer}>
