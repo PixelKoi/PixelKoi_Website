@@ -340,21 +340,23 @@ export const Contact = () => {
 								onChange={(e) => setPhone(e.target.value)}
 							/>
 							<input
-								type="text"
+								type="number"
 								className={styles.input}
 								maxLength={256}
-								name="Contact-v2-Budget"
-								data-name="Contact v2 Budget"
+								name="budget"
+								data-name="user-budget"
 								placeholder="Budget"
-								onChange={handleInputChange}
+								value={budget}
+								onChange={(e) => setBudget(parseInt(e.target.value))}
 							/>
 							<textarea
 								name="Contact-v2-Info"
 								placeholder="Describe your project..."
 								maxLength={5000}
+								value={description}
 								data-name="Contact v2 Info"
 								className={`${styles.input2} ${styles.textArea} `}
-								onChange={handleInputChangeArea}
+								onChange={(e) => setDescription(e.target.value)}
 							/>
 							<input
 								type="submit"
