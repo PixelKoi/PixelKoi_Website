@@ -12,6 +12,7 @@ export const Contact = () => {
 	const [ email, setEmail ] = useState('');
 	const [ warningEmail, setWarningEmail ] = useState(false);
 	const [ phone, setPhone ] = useState('');
+	const [ warningPhone, setWarningPhone ] = useState(false);
 	const [ budget, setBudget ] = useState('');
 	const [ description, setDescription ] = useState('');
 	const [ form, setForm ] = useState('');
@@ -52,11 +53,6 @@ export const Contact = () => {
 		if (handleValidation() === false) {
 			return;
 		} else {
-			setDescription('');
-			setPhone('');
-			setBudget('');
-			setName('');
-			setEmail('');
 			fetch('http://localhost:8000/send-email', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
@@ -76,6 +72,11 @@ export const Contact = () => {
 					console.error("We've run into an error: ", error);
 				});
 		}
+		setDescription('');
+		setPhone('');
+		setBudget('');
+		setName('');
+		setEmail('');
 	};
 
 	//Show Contact form based on state
@@ -104,16 +105,14 @@ export const Contact = () => {
 			setWarningEmail(email.length !== 0);
 		} else {
 			setWarningEmail(false);
+			return false;
 		}
 	};
 
 	//Check phone number
 	const handleCheckNumber = () => {
-		if (email.length === 0 || !email.includes('@')) {
-			setWarningEmail(email.length !== 0);
-		} else {
-			setWarningEmail(false);
-		}
+		const phoneRegex = /^\+(?:[0-9]●?){6,14}[0-9]$/;
+		return phoneRegex.test(phone);
 	};
 
 	const handleValidation = () => {
