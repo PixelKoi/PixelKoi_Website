@@ -75,6 +75,13 @@ interface SimpleForm {
 }
 
 export const Contact = () => {
+	const [ name, setName ] = useState('');
+	const [ email, setEmail ] = useState('');
+	const [ warningEmail, setWarningEmail ] = useState(false);
+	const [ phone, setPhone ] = useState('');
+	const [ budget, setBudget ] = useState(0);
+	const [ description, setDescription ] = useState('0');
+
 	const [ complete, setComplete ] = useState(false);
 	const [ error, setError ] = useState(false);
 
@@ -151,12 +158,20 @@ export const Contact = () => {
 	//Show Contact form based on state
 	const showForm = (form: String) => {
 		switch (form) {
-			case 'submitted':
-				return submittedForm();
+			case 'complete':
+				return (
+					<div className={styles.formSucess}>
+						<div>Thank you! Your submission has been received!</div>
+					</div>
+				);
 			case 'error':
-				return errorForm();
+				return (
+					<div className={styles.formError}>
+						<div>Oops! Something went wrong while submitting the form.</div>
+					</div>
+				);
 			default:
-				return;
+				return null;
 		}
 	};
 
@@ -254,12 +269,7 @@ export const Contact = () => {
 			</div>
 
 			<motion.div className={styles.formSection}>
-				<motion.div
-					variants={item}
-					// initial={{ scale: 0, opacity: 0 }}
-					// animate={hookedYPostion > 0 ? 'hidden' : 'show'}
-					className={styles.wrapper}
-				>
+				<motion.div variants={item} className={styles.wrapper}>
 					<motion.div className={styles.contact}>
 						<div className={styles.intro}>
 							<strong>
@@ -278,12 +288,13 @@ export const Contact = () => {
 						<motion.form className={styles.form} onSubmit={handleSubmit}>
 							<input
 								type="text"
-								className={`${styles.input} `}
+								className={styles.input}
 								maxLength={256}
 								name="Contact-v2-Name"
 								data-name="Contact v2 Name"
 								placeholder="Your name"
-								onChange={handleInputChange}
+								value={name}
+								onChange={() => setName(name)}
 							/>
 							<div className={styles.emailGroup}>
 								<input
@@ -293,9 +304,22 @@ export const Contact = () => {
 									name="Contact-v2-Email"
 									data-name="Contact v2 Email"
 									placeholder="Email address"
-									onChange={handleInputChange}
+									value={email}
+									onChange={(e) => setEmail(e.target.value)}
+									onBlur={() => {
+										if (email.length === 0) {
+											setWarningEmail(false);
+										} else if (email.length > 0 && !email.includes('@')) {
+											setWarningEmail(true);
+										} else if (email.length > 0 && email.includes('@')) {
+											setWarningEmail(false);
+										}
+									}}
 								/>
-								<div className={styles.checkEmail} style={{ display: 'none' }}>
+								<div
+									className={styles.checkEmail}
+									style={{ display: warningEmail === false ? 'none' : 'block' }}
+								>
 									<div className={styles.innerCheckEmail}>
 										<AiFillWarning className={styles.warningIcon} />
 										<p className={styles.emailWarningText}>
