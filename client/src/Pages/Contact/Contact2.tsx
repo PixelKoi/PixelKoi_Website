@@ -74,6 +74,9 @@ interface SimpleForm {
 }
 
 export const Contact = () => {
+	const [ complete, setComplete ] = useState(false);
+	const [ error, setError ] = useState(false);
+
 	const ref = useRef<HTMLImageElement>(null);
 
 	useEffect(() => {
@@ -133,10 +136,14 @@ export const Contact = () => {
 		})
 			.then((response) => response.json())
 			.then((data) => console.log(data))
-			.then(() => setForm('submitted'))
+			.then(() => {
+				setForm('submitted');
+				setComplete(true);
+			})
 			.catch((error) => {
 				console.error("We've run into an error: ", error);
 				setForm('error');
+				setError(true);
 			});
 	};
 
@@ -320,12 +327,16 @@ export const Contact = () => {
 								className={styles.button}
 							/>
 						</motion.form>
-						<div className={styles.formSucess}>
-							<div>Thank you! Your submission has been received!</div>
-						</div>
-						<div className={styles.formError}>
-							<div>Oops! Something went wrong while submitting the form.</div>
-						</div>
+						{complete === true ? (
+							<div className={styles.formSucess}>
+								<div>Thank you! Your submission has been received!</div>
+							</div>
+						) : null}
+						{error === true ? (
+							<div className={styles.formError}>
+								<div>Oops! Something went wrong while submitting the form.</div>
+							</div>
+						) : null}
 					</motion.div>
 				</motion.div>
 				<motion.div ref={ref} style={{ willChange: 'transform' }} className={styles.contact2}>
