@@ -227,6 +227,15 @@ export const Contact = () => {
 		}
 	};
 
+	//Check email input for '@'
+	const handleCheckEmail = () => {
+		if (email.length === 0 || !email.includes('@')) {
+			setWarningEmail(email.length !== 0);
+		} else {
+			setWarningEmail(false);
+		}
+	};
+
 	return (
 		<div>
 			<Nav />
@@ -290,29 +299,23 @@ export const Contact = () => {
 								type="text"
 								className={styles.input}
 								maxLength={256}
-								name="Contact-v2-Name"
-								data-name="Contact v2 Name"
+								name="name"
+								data-name="user-name"
 								placeholder="Your name"
 								value={name}
-								onChange={() => setName(name)}
+								onChange={(e) => setName(e.target.value)}
 							/>
 							<div className={styles.emailGroup}>
 								<input
 									type="email"
 									className={styles.input}
 									maxLength={256}
-									name="Contact-v2-Email"
-									data-name="Contact v2 Email"
+									name="email"
+									data-name="user-email"
 									placeholder="Email address"
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
-									onBlur={() => {
-										if (email.length === 0 || !email.includes('@')) {
-											setWarningEmail(email.length !== 0);
-										} else {
-											setWarningEmail(false);
-										}
-									}}
+									onBlur={handleCheckEmail}
 								/>
 								<div
 									className={styles.checkEmail}
@@ -330,10 +333,11 @@ export const Contact = () => {
 								type="tel"
 								className={styles.input}
 								maxLength={256}
-								name="Contact-v2-Phone"
-								data-name="Contact v2 Phone"
+								name="phone"
+								value={phone}
+								data-name="user-phone"
 								placeholder="Contact Phone"
-								onChange={handleInputChange}
+								onChange={(e) => setPhone(e.target.value)}
 							/>
 							<input
 								type="text"
