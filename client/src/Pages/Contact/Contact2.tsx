@@ -307,11 +307,9 @@ export const Contact = () => {
 									value={email}
 									onChange={(e) => setEmail(e.target.value)}
 									onBlur={() => {
-										if (email.length === 0) {
-											setWarningEmail(false);
-										} else if (email.length > 0 && !email.includes('@')) {
-											setWarningEmail(true);
-										} else if (email.length > 0 && email.includes('@')) {
+										if (email.length === 0 || !email.includes('@')) {
+											setWarningEmail(email.length !== 0);
+										} else {
 											setWarningEmail(false);
 										}
 									}}
