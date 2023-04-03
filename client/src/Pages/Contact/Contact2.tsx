@@ -5,23 +5,7 @@ import Footer from '../../components/Footer/ContactPage/FooterContactPage';
 import { motion, useScroll } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { AiFillWarning } from 'react-icons/ai';
-
-import Select, { StylesConfig } from 'react-select';
 import mailboxImg from '../../assets/Home/mailbox.jpg';
-import ParticleBackground from '../../components/Particles/ParticlesBackground';
-const deadlineOptions = [
-	{ value: '1 Month', label: '1 Month' },
-	{ value: '3 Month', label: '3 Month' },
-	{ value: '6 Month', label: '6 Month' },
-	{ value: '1 Year', label: '1 Year' }
-];
-
-const costOptions = [
-	{ value: '$20,000', label: '$20,000' },
-	{ value: '$40,000', label: '$40,000' },
-	{ value: '$60,000', label: '$60,000' },
-	{ value: 'infinite', label: 'infinite' }
-];
 
 interface FormData {
 	name: string;
@@ -98,25 +82,49 @@ export const Contact = () => {
 	});
 
 	//Show form
-	const [ show, setForm ] = useState('');
-	const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
-		event.preventDefault();
-		fetch('http://localhost:8000/send-email', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(values)
-		})
-			.then((response) => response.json())
-			.then((data) => console.log(data))
-			.then(() => {
-				setForm('submitted');
-				setComplete(true);
+	// const [ show, setForm ] = useState('');
+	// const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
+	// 	event.preventDefault();
+	// 	fetch('http://localhost:8000/send-email', {
+	// 		method: 'POST',
+	// 		headers: { 'Content-Type': 'application/json' },
+	// 		body: JSON.stringify(values)
+	// 	})
+	// 		.then((response) => response.json())
+	// 		.then((data) => console.log(data))
+	// 		.then(() => {
+	// 			setForm('submitted');
+	// 			setComplete(true);
+	// 		})
+	// 		.catch((error) => {
+	// 			console.error("We've run into an error: ", error);
+	// 			setForm('error');
+	// 			setError(true);
+	// 		});
+	// };
+	const PostData = (name: any, email: any, phone: any, budget: any, description: any) => {
+		fetch('http://localhost:8000/send', {
+			method: 'post',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				name,
+				email,
+				phone,
+				budget,
+				description
 			})
-			.catch((error) => {
-				console.error("We've run into an error: ", error);
-				setForm('error');
-				setError(true);
-			});
+		})
+			.then((res) => res.json())
+			.then((data) => {
+				alert(data.message);
+				setDescription('');
+				setBudget(0);
+				setName('');
+				setEmail('');
+			})
+			.catch((err) => {}); //fix this catch later
 	};
 
 	//Show Contact form based on state
@@ -146,6 +154,13 @@ export const Contact = () => {
 		} else {
 			setWarningEmail(false);
 		}
+	};
+
+	const handleValidation = () => {
+		if (name === '' || email === '' || budget === 0 || phone === '' || description === '') {
+			return false;
+		}
+		return true;
 	};
 
 	return (
@@ -206,7 +221,7 @@ export const Contact = () => {
 								solutions.
 							</div>
 						</div>
-						<motion.form className={styles.form} onSubmit={handleSubmit}>
+						<motion.form className={styles.form}>
 							<input
 								type="text"
 								className={styles.input}
@@ -272,7 +287,13 @@ export const Contact = () => {
 							/>
 							<input
 								type="submit"
-								onClick={() => {}}
+								onClick={() => {
+									if (handleValidation() === false) {
+										return;
+									} else {
+										PostData(name, email, phone, budget, description);
+									}
+								}}
 								value="Submit Message"
 								data-wait="Please wait..."
 								className={styles.button}
