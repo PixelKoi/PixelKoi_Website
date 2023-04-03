@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
     res.send("Hello World!");
 });
 app.use(express_1.default.static("/home/almorsbd/public_html/build"));
-app.get("/contact", (req, res) => {
+app.get("/*", (req, res) => {
     res.sendFile("/home/almorsbd/public_html/build/index.html");
 });
 app.post("/send-email", (req, res) => {
