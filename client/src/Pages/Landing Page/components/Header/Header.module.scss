@@ -93,12 +93,11 @@
 		line-height: clamp(30px, 4vw, 50px);
 	}
 }
-/* Styles for smaller screens */
-	.header {
-		background-size: cover;
-		background-position: center;
 
-	}
+.header {
+	background-size: cover;
+	background-position: center;
+}
 
 @media only screen and (min-width: 720px) {
 	.modalContainer {

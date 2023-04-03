@@ -9,8 +9,7 @@ import Cube from "./components/Cube/Cube";
 import cube from "../../../../assets/Home/ph_cube.svg";
 import koi from "../../../../assets/Home/koi.svg";
 import { Link, useLocation } from "react-router-dom";
-import headerImg from "../../../../assets/Home/box.jpg";
-import headerImgSmall from "../../../../assets/Home/box_mobile.jpg";
+import headerImg from "../../../../assets/Home/box.webp";
 import ParticlesBackground from "../../../../components/Particles/ParticlesBackground";
 import Particles from "react-tsparticles";
 
