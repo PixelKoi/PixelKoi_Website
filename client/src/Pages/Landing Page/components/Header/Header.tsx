@@ -18,8 +18,8 @@ import Particles from "react-tsparticles";
 const Header = (props: any) => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
   const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
+  const [blurhash, setBlurhash] = useState("");
 
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const loadImage = async (src: string): Promise<HTMLImageElement> =>
     new Promise((resolve, reject) => {
       const img = new Image();
@@ -41,6 +41,31 @@ const Header = (props: any) => {
     const imageData = getImageData(image);
     return encode(imageData.data, imageData.width, imageData.height, 4, 4);
   };
+
+  useEffect(() => {
+    const loadImage = async (src: any) => {
+      const img = new Image();
+      img.src = src;
+      await img.decode();
+      const canvas = document.createElement("canvas");
+      const ctx: any = canvas.getContext("2d");
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+      const imageData = ctx.getImageData(0, 0, img.width, img.height);
+      const blurhash = encode(
+        imageData.data,
+        imageData.width,
+        imageData.height,
+        4,
+        4
+      );
+      setBlurhash(blurhash);
+    };
+
+    loadImage(headerImg);
+  }, [headerImg]);
+  // const blurHash = await encodeImageToBlurhash(headerImg);
   return (
     <div className={styles.header} id="header">
       {/*<Blurhash hash={blurHash} width={50} height={50} />*/}
