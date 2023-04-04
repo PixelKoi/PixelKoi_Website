@@ -64,13 +64,16 @@ const Header = (props: any) => {
 
       // Creating image url and respective blurhash objects
       const hashObjects = { url: src, blurHash: blurhash };
-      fetch("/api/images")
+      fetch("/api/images", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ images: hashObjects }),
+      })
         .then((resp) => resp.json())
-        .then((data) => {
-          data.images.push(hashObjects);
-          return data;
-        })
-        .then((data) => console.log(data.images));
+        .then((data) => console.log(data.images))
+        .catch((error) => console.error(error));
     };
 
     loadImage(headerImg);

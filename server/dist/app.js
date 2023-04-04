@@ -9,19 +9,18 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 const path = require("path");
 const fs = require("fs");
-const filePath = "./imageHash.json";
-// Check if the file exists
-const hashObjects = { url: "src", blurHash: "blurhash code here" };
-if (fs.existsSync(filePath)) {
-    // Read the file contents
-    const jsonData = fs.readFileSync(filePath);
-    const data = JSON.parse(jsonData);
-}
-else {
-    // Create a new file with the initial data
-    const data = { images: [hashObjects] };
-    fs.writeFileSync(filePath, JSON.stringify(data));
-}
+const hashJson = "./imageHash.json";
+const bodyParser = require("body-parser");
+// const hashObjects = { url: "src", blurHash: "blurhash code here" };
+// if (fs.existsSync(filePath)) {
+//   // Read the file contents
+//   const jsonData = fs.readFileSync(filePath);
+//   const data = JSON.parse(jsonData);
+// } else {
+//   // Create a new file with the initial data
+//   const data = { images: [hashObjects] };
+//   fs.writeFileSync(filePath, JSON.stringify(data));
+// }
 app.use(express_1.default.json());
 app.use(cors({
     origin: "*",
@@ -30,6 +29,7 @@ const port = 8000;
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
+//production app.use
 app.use(express_1.default.static("/home/almorsbd/public_html/build"));
 app.get("/*", (req, res) => {
     res.sendFile("/home/almorsbd/public_html/build/index.html");
@@ -70,15 +70,19 @@ app.post("/send-email", (req, res) => {
         }
     });
 });
+// Append new hashObject to imageHash
 app.post("/api/images", (req, res) => {
-    // Read the current contents of the JSON file
-    const contents = JSON.parse(fs.readFileSync("./imageHash.json", "utf8"));
-    // Append the new image object to the array
-    contents.images.push(req.body);
-    // Write the updated JSON back to the file
-    fs.writeFileSync("./imageHash.json", JSON.stringify(contents), "utf8");
-    // Send a response to the client
-    res.send("Image added to JSON file");
+    const hashObject = req.body.images;
+    try {
+        const jsonData = fs.readFileSync(hashJson);
+        const data = JSON.parse(jsonData);
+        data.images.push(hashObject);
+        res.send("Image added to imageHash.json");
+    }
+    catch (e) {
+        console.log(e);
+        res.status(500).send({ message: "Internal Server Error" });
+    }
 });
 app.listen(port, () => {
     return console.log(`Server running on port ${port}`);
