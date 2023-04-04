@@ -95,8 +95,11 @@
 }
 
 .header {
+	transform: scale(1.1);
 	background-size: cover;
 	background-position: center;
+	//image-rendering: crisp-edges;
+	image-rendering: smooth;
 }
 
 @media only screen and (min-width: 720px) {
