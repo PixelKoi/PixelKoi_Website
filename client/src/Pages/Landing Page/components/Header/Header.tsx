@@ -1,5 +1,6 @@
 // import './Header.css';
 import React, { useEffect, useRef, useState, useCallback } from "react";
+// import { Blurhash } from "react-blurhash";
 import "../../../../styles/globalStyles.css";
 import styles from "./Header.module.scss";
 import OurTech from "../OurTech/OurTech";
@@ -9,13 +10,14 @@ import Cube from "./components/Cube/Cube";
 import cube from "../../../../assets/Home/ph_cube.svg";
 import koi from "../../../../assets/Home/koi.svg";
 import { Link, useLocation } from "react-router-dom";
-import headerImg from "../../../../assets/Home/box.webp";
+import headerImg from "../../../../assets/Home/box.jpg";
 import ParticlesBackground from "../../../../components/Particles/ParticlesBackground";
 import Particles from "react-tsparticles";
 
 const Header = (props: any) => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
   const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   return (
     <div
@@ -23,6 +25,8 @@ const Header = (props: any) => {
       id="header"
       style={{ backgroundImage: `url(${headerImg})` }}
     >
+      {/*<Blurhash hash={blurHash} width={50} height={50} />*/}
+      <div></div>
       {/* <ParticlesBackground /> */}
       <div className={styles.container}>
         <div className={styles.modalContainer}>
