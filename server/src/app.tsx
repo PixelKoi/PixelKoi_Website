@@ -1,12 +1,11 @@
 import express from "express";
-
+import bodyParser from "body-parser";
+import cors from "cors";
+import nodemailer from "nodemailer";
+import path from "path";
 const app = express();
-const cors = require("cors");
-const nodemailer = require("nodemailer");
-const path = require("path");
-const fs = require("fs");
+import fs from "fs";
 const hashJson = "./imageHash.json";
-const bodyParser = require("body-parser");
 
 // const hashObjects = { url: "src", blurHash: "blurhash code here" };
 // if (fs.existsSync(filePath)) {

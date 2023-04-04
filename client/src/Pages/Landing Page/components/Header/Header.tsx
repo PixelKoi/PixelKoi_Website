@@ -81,16 +81,14 @@ const Header = (props: any) => {
   // const blurHash = await encodeImageToBlurhash(headerImg);
   // Test FETCH
   const testHash = { url: "src", blurHash: "blurhash" };
-
-  fetch("/api/images", {
+  const hashPostOptions = {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ images: testHash }),
-  })
+  };
+  fetch("/api/images", hashPostOptions)
     .then((resp) => resp.json())
-    .then((data) => console.log(data.images))
+    // .then((data) => console.log(data.images))
     .catch((error) => console.error(error));
   // TODO: Implement decoder, read imageHash and set blurHash placeholder for header
 
