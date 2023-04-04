@@ -61,6 +61,10 @@ const Header = (props: any) => {
         4
       );
       setBlurhash(blurhash);
+      console.log(blurhash);
+      fetch("./imageHash.json")
+        .then((resp) => resp.json())
+        .then((json) => console.log(json));
     };
 
     loadImage(headerImg);
