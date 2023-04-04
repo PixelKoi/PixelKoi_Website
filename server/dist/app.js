@@ -8,6 +8,20 @@ const app = (0, express_1.default)();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 const path = require("path");
+const fs = require("fs");
+const filePath = "./imageHash.json";
+// Check if the file exists
+const hashObjects = { url: "src", blurHash: "blurhash code here" };
+if (fs.existsSync(filePath)) {
+    // Read the file contents
+    const jsonData = fs.readFileSync(filePath);
+    const data = JSON.parse(jsonData);
+}
+else {
+    // Create a new file with the initial data
+    const data = { images: [hashObjects] };
+    fs.writeFileSync(filePath, JSON.stringify(data));
+}
 app.use(express_1.default.json());
 app.use(cors({
     origin: "*",
@@ -55,6 +69,16 @@ app.post("/send-email", (req, res) => {
             res.status(200).json({ message: "Email sent successfully" });
         }
     });
+});
+app.post("/api/images", (req, res) => {
+    // Read the current contents of the JSON file
+    const contents = JSON.parse(fs.readFileSync("./imageHash.json", "utf8"));
+    // Append the new image object to the array
+    contents.images.push(req.body);
+    // Write the updated JSON back to the file
+    fs.writeFileSync("./imageHash.json", JSON.stringify(contents), "utf8");
+    // Send a response to the client
+    res.send("Image added to JSON file");
 });
 app.listen(port, () => {
     return console.log(`Server running on port ${port}`);

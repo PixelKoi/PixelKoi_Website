@@ -5,7 +5,19 @@ const cors = require("cors");
 const nodemailer = require("nodemailer");
 const path = require("path");
 const fs = require("fs");
+const filePath = "./imageHash.json";
+// Check if the file exists
+const hashObjects = { url: "src", blurHash: "blurhash code here" };
 
+// if (fs.existsSync(filePath)) {
+//   // Read the file contents
+//   const jsonData = fs.readFileSync(filePath);
+//   const data = JSON.parse(jsonData);
+// } else {
+//   // Create a new file with the initial data
+//   const data = { images: [hashObjects] };
+//   fs.writeFileSync(filePath, JSON.stringify(data));
+// }
 app.use(express.json());
 
 app.use(
