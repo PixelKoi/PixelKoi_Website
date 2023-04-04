@@ -226,6 +226,7 @@ export const Contact = () => {
 								data-name="user-phone"
 								placeholder="Contact Phone"
 								onChange={(e) => setPhone(e.target.value)}
+								onBlur={handleCheckNumber}
 							/>
 							<input
 								type="text"
