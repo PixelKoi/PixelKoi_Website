@@ -39,8 +39,9 @@ app.post('/send-email', (req, res) => {
       <h2>Contact Form Submission</h2>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Company:</strong> ${phone}</p>
-      <p><strong>Phone Number:</strong> ${budget}</p>
+      <p><strong>Phone:</strong> ${phone}</p>
+      <p><strong>Budget:</strong> ${budget}</p>
+      <p><strong>Budget:</strong> ${description}</p>
     `
     };
     transporter.sendMail(mailOptions, (error, info) => {

@@ -47,7 +47,7 @@ app.post('/send-email', (req, res) => {
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Phone:</strong> ${phone}</p>
       <p><strong>Budget:</strong> ${budget}</p>
-      <p><strong>Budget:</strong> ${description}</p>
+      <p><strong>Description:</strong> ${description}</p>
     `
 	};
 
