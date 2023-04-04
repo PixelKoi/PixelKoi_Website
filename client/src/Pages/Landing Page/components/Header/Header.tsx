@@ -61,7 +61,7 @@ const Header = (props: any) => {
       );
       setBlurhash(blurhash);
       console.log(blurhash);
-
+      console.log(src);
       // Creating image url and respective blurhash objects
       const hashObjects = { url: src, blurHash: blurhash };
       fetch("/api/images", {

@@ -33,9 +33,24 @@ app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-//production app.use
-app.use(express.static("/home/almorsbd/public_html/build"));
+app.use(express.static(path.join(__dirname, "build")));
 
+app.post("/api/images", (req, res) => {
+  const hashObject = req.body.images;
+  try {
+    const jsonData = fs.readFileSync(hashJson);
+    const data = JSON.parse(jsonData);
+    data.images.push(hashObject);
+    res.send("Image added to imageHash.json");
+  } catch (e) {
+    console.log(e);
+    res.status(500).send({ message: "Internal Server Error" });
+  }
+});
+
+//production USE
+// app.use(express.static("/home/almorsbd/public_html/build"));
+// PRODUCTION USE
 app.get("/*", (req, res) => {
   res.sendFile("/home/almorsbd/public_html/build/index.html");
 });
@@ -79,18 +94,6 @@ app.post("/send-email", (req, res) => {
 });
 
 // Append new hashObject to imageHash
-app.post("/api/images", (req, res) => {
-  const hashObject = req.body.images;
-  try {
-    const jsonData = fs.readFileSync(hashJson);
-    const data = JSON.parse(jsonData);
-    data.images.push(hashObject);
-    res.send("Image added to imageHash.json");
-  } catch (e) {
-    console.log(e);
-    res.status(500).send({ message: "Internal Server Error" });
-  }
-});
 
 app.listen(port, () => {
   return console.log(`Server running on port ${port}`);
