@@ -5,6 +5,15 @@
 	width: 100vw;
 	height: 100vh;
 }
+.headerBackgroundImg {
+	width: 100vw;
+	height: 90vh;
+	transform: scale(1.1);
+	background-size: cover;
+	background-position: center;
+	//image-rendering: crisp-edges;
+	image-rendering: smooth;
+}
 
 .scrollNavigation {
 	list-style: none;
@@ -16,11 +25,11 @@
 }
 
 .container {
-	margin-top: 10rem;
+	margin-top: 20rem;
 	height: 100%;
 	align-self: center;
 	display: flex;
-	flex-direction: column;
+	flex-direction: inherit;
 	justify-content: center;
 	.textContainer {
 		display: flex;
@@ -94,13 +103,8 @@
 	}
 }
 
-.header {
-	transform: scale(1.1);
-	background-size: cover;
-	background-position: center;
-	//image-rendering: crisp-edges;
-	image-rendering: smooth;
-}
+
+
 
 @media only screen and (min-width: 720px) {
 	.modalContainer {
