@@ -1,6 +1,7 @@
 // import './Header.css';
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { encode } from "blurhash";
+import { Blurhash } from "react-blurhash";
+import { decode, encode } from "blurhash";
 import "../../../../styles/globalStyles.css";
 import styles from "./Header.module.scss";
 import OurTech from "../OurTech/OurTech";
@@ -14,14 +15,32 @@ import headerImg from "../../../../assets/Home/box.jpg";
 import ParticlesBackground from "../../../../components/Particles/ParticlesBackground";
 import Particles from "react-tsparticles";
 
-const blurhash = "LKO2?U%2Tw=w]~RBVZRi};RPxuwH";
-
 const Header = (props: any) => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
   const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const loadImage = async (src: string): Promise<HTMLImageElement> =>
+    new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img);
+      img.onerror = (...args) => reject(args);
+      img.src = src;
+    });
+  const getImageData = (image: HTMLImageElement): ImageData => {
+    const canvas = document.createElement("canvas");
+    canvas.width = image.width;
+    canvas.height = image.height;
+    const context = canvas.getContext("2d");
+    context?.drawImage(image, 0, 0);
+    return context!.getImageData(0, 0, image.width, image.height);
+  };
+
+  const encodeImageToBlurhash = async (imageUrl: string): Promise<string> => {
+    const image = await loadImage(imageUrl);
+    const imageData = getImageData(image);
+    return encode(imageData.data, imageData.width, imageData.height, 4, 4);
+  };
   return (
     <div className={styles.header} id="header">
       {/*<Blurhash hash={blurHash} width={50} height={50} />*/}
