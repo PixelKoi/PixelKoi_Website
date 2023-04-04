@@ -3,14 +3,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const cors_1 = __importDefault(require("cors"));
+const nodemailer_1 = __importDefault(require("nodemailer"));
+const path_1 = __importDefault(require("path"));
+const fs_1 = __importDefault(require("fs"));
 const express_1 = __importDefault(require("express"));
+const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
-const cors = require("cors");
-const nodemailer = require("nodemailer");
-const path = require("path");
-const fs = require("fs");
-const hashJson = "./imageHash.json";
-const bodyParser = require("body-parser");
+const hashJson = path_1.default.join(__dirname, "imageHash.json");
 // const hashObjects = { url: "src", blurHash: "blurhash code here" };
 // if (fs.existsSync(filePath)) {
 //   // Read the file contents
@@ -21,21 +21,21 @@ const bodyParser = require("body-parser");
 //   const data = { images: [hashObjects] };
 //   fs.writeFileSync(filePath, JSON.stringify(data));
 // }
-app.use(express_1.default.json());
-app.use(cors({
+app.use(body_parser_1.default.json());
+app.use((0, cors_1.default)({
     origin: "*",
 }));
 const port = 8000;
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
-app.use(express_1.default.static(path.join(__dirname, "build")));
+app.use(express_1.default.static(path_1.default.join(__dirname, "build")));
 app.post("/api/images", (req, res) => {
-    const hashObject = req.body.images;
+    const { images } = req.body;
     try {
-        const jsonData = fs.readFileSync(hashJson);
-        const data = JSON.parse(jsonData);
-        data.images.push(hashObject);
+        const jsonData = fs_1.default.readFileSync(hashJson);
+        const json = JSON.parse(jsonData);
+        json.images.push(images);
         res.send("Image added to imageHash.json");
     }
     catch (e) {
@@ -51,7 +51,7 @@ app.get("/*", (req, res) => {
 });
 app.post("/send-email", (req, res) => {
     const { name, company, email, phone } = req.body;
-    const transporter = nodemailer.createTransport({
+    const transporter = nodemailer_1.default.createTransport({
         host: "smtp.gmail.com",
         port: 465,
         secure: true,

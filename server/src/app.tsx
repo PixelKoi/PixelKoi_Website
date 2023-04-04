@@ -1,11 +1,13 @@
-import express from "express";
-import bodyParser from "body-parser";
 import cors from "cors";
 import nodemailer from "nodemailer";
 import path from "path";
-const app = express();
 import fs from "fs";
-const hashJson = "./imageHash.json";
+
+import express from "express";
+import bodyParser from "body-parser";
+const app = express();
+
+const hashJson = path.join(__dirname, "imageHash.json");
 
 // const hashObjects = { url: "src", blurHash: "blurhash code here" };
 // if (fs.existsSync(filePath)) {
@@ -18,7 +20,7 @@ const hashJson = "./imageHash.json";
 //   fs.writeFileSync(filePath, JSON.stringify(data));
 // }
 
-app.use(express.json());
+app.use(bodyParser.json());
 
 app.use(
   cors({
@@ -35,11 +37,11 @@ app.get("/", (req, res) => {
 app.use(express.static(path.join(__dirname, "build")));
 
 app.post("/api/images", (req, res) => {
-  const hashObject = req.body.images;
+  const { images } = req.body;
   try {
     const jsonData = fs.readFileSync(hashJson);
-    const data = JSON.parse(jsonData);
-    data.images.push(hashObject);
+    const json = JSON.parse(jsonData);
+    json.images.push(images);
     res.send("Image added to imageHash.json");
   } catch (e) {
     console.log(e);
