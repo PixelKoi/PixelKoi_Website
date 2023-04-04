@@ -14,7 +14,6 @@ import { Link, useLocation } from "react-router-dom";
 import headerImg from "../../../../assets/Home/box.jpg";
 import ParticlesBackground from "../../../../components/Particles/ParticlesBackground";
 import Particles from "react-tsparticles";
-
 const Header = (props: any) => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
   const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
@@ -41,7 +40,7 @@ const Header = (props: any) => {
     const imageData = getImageData(image);
     return encode(imageData.data, imageData.width, imageData.height, 4, 4);
   };
-
+  // TODO: Create encoder component that takes list of images and creates hashObjects
   useEffect(() => {
     const loadImage = async (src: any) => {
       const img = new Image();
@@ -62,14 +61,24 @@ const Header = (props: any) => {
       );
       setBlurhash(blurhash);
       console.log(blurhash);
-      fetch("./imageHash.json")
+
+      // Creating image url and respective blurhash objects
+      const hashObjects = { url: src, blurHash: blurhash };
+      fetch("/api/images")
         .then((resp) => resp.json())
-        .then((json) => console.log(json));
+        .then((data) => {
+          data.images.push(hashObjects);
+          return data;
+        })
+        .then((data) => console.log(data.images));
     };
 
     loadImage(headerImg);
-  }, [headerImg]);
+  }, []);
   // const blurHash = await encodeImageToBlurhash(headerImg);
+
+  // TODO: Implement decoder, read imageHash and set blurHash placeholder for header
+
   return (
     <div className={styles.header} id="header">
       {/*<Blurhash hash={blurHash} width={50} height={50} />*/}

@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 const path = require("path");
+const fs = require("fs");
 
 app.use(express.json());
 
@@ -61,6 +62,20 @@ app.post("/send-email", (req, res) => {
       res.status(200).json({ message: "Email sent successfully" });
     }
   });
+});
+
+app.post("/api/images", (req, res) => {
+  // Read the current contents of the JSON file
+  const contents = JSON.parse(fs.readFileSync("./imageHash.json", "utf8"));
+
+  // Append the new image object to the array
+  contents.images.push(req.body);
+
+  // Write the updated JSON back to the file
+  fs.writeFileSync("./imageHash.json", JSON.stringify(contents), "utf8");
+
+  // Send a response to the client
+  res.send("Image added to JSON file");
 });
 
 app.listen(port, () => {
