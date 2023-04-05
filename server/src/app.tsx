@@ -7,7 +7,7 @@ import express from "express";
 import bodyParser from "body-parser";
 const app = express();
 
-const hashJson = path.join(__dirname, "imageHash.json");
+const hashJson = path.join(__dirname, "./../imageHash.json");
 
 // const hashObjects = { url: "src", blurHash: "blurhash code here" };
 // if (fs.existsSync(filePath)) {
@@ -38,11 +38,13 @@ app.use(express.static(path.join(__dirname, "build")));
 
 app.post("/api/images", (req, res) => {
   const { images } = req.body;
+  console.log("image type:", typeof images);
+  console.log("Images: ", images);
   try {
     const jsonData = fs.readFileSync(hashJson);
-    const json = JSON.parse(jsonData);
+    const json = JSON.parse(jsonData.toString());
     json.images.push(images);
-    res.send("Image added to imageHash.json");
+    fs.writeFileSync(hashJson, JSON.stringify(json));
   } catch (e) {
     console.log(e);
     res.status(500).send({ message: "Internal Server Error" });

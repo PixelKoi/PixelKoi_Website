@@ -10,7 +10,7 @@ const fs_1 = __importDefault(require("fs"));
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
-const hashJson = path_1.default.join(__dirname, "imageHash.json");
+const hashJson = path_1.default.join(__dirname, "./../imageHash.json");
 // const hashObjects = { url: "src", blurHash: "blurhash code here" };
 // if (fs.existsSync(filePath)) {
 //   // Read the file contents
@@ -32,11 +32,13 @@ app.get("/", (req, res) => {
 app.use(express_1.default.static(path_1.default.join(__dirname, "build")));
 app.post("/api/images", (req, res) => {
     const { images } = req.body;
+    console.log("image type:", typeof images);
+    console.log("Images: ", images);
     try {
         const jsonData = fs_1.default.readFileSync(hashJson);
-        const json = JSON.parse(jsonData);
+        const json = JSON.parse(jsonData.toString());
         json.images.push(images);
-        res.send("Image added to imageHash.json");
+        fs_1.default.writeFileSync(hashJson, JSON.stringify(json));
     }
     catch (e) {
         console.log(e);

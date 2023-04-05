@@ -86,7 +86,7 @@ const Header = (props: any) => {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ images: testHash }),
   };
-  fetch("/api/images", hashPostOptions)
+  fetch("http://localhost:8000/api/images", hashPostOptions)
     .then((resp) => resp.json())
     // .then((data) => console.log(data.images))
     .catch((error) => console.error(error));
