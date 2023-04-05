@@ -26,7 +26,6 @@
 		"nodemailer": "^6.7.8",
 		"nodemailer-sendgrid-transport": "^0.2.0",
 		"nodemon": "^2.0.19",
-		"react-animate-on-scroll": "^2.1.5",
 		"react-webp-image": "^1.0.8"
 	}
 }
