@@ -8,6 +8,9 @@ import Header from "../../Pages/Landing Page/components/Header/Header";
 const BlurHashEncoder = (props: any) => {
   const [blurhash, setBlurhash] = useState("");
 
+  // loads an image from given source URL and returns a promise that resolves to the loaded image
+  // src attribule gives URL
+  // when image successfully loaded, priomise resolves `img` object.
   const loadImage = async (src: string): Promise<HTMLImageElement> =>
     new Promise((resolve, reject) => {
       const img = new Image();
@@ -15,6 +18,8 @@ const BlurHashEncoder = (props: any) => {
       img.onerror = (...args) => reject(args);
       img.src = src;
     });
+
+  // Creates canvas with same dimensions as input Image in loadImage
   const getImageData = (image: HTMLImageElement): ImageData => {
     const canvas = document.createElement("canvas");
     canvas.width = image.width;
@@ -23,6 +28,8 @@ const BlurHashEncoder = (props: any) => {
     context?.drawImage(image, 0, 0);
     return context!.getImageData(0, 0, image.width, image.height);
   };
+
+  // encode into a blurHash
   const encodeImageToBlurhash = async (imageUrl: string): Promise<string> => {
     const image = await loadImage(imageUrl);
     const imageData = getImageData(image);
