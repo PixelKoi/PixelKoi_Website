@@ -71,7 +71,7 @@ const BlurHashEncoder = (props: any) => {
       );
       console.log(blurhash);
       console.log(url);
-      blurHashes[name] = blurhash;
+      newBlurHashes[name] = blurhash;
       const hashPostOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -83,7 +83,6 @@ const BlurHashEncoder = (props: any) => {
         .catch((error) => console.error(error));
     }
     setBlurHashes(newBlurHashes);
-    console.log(blurHashes); // You can return this object if you want to use it elsewhere
   };
 
   useEffect(() => {
