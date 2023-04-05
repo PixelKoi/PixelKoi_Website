@@ -351,14 +351,10 @@ img {
 	text-align: center;
 }
 
-.emailGroup {
+.inputGroup {
 	overflow: hidden;
 	height: 48px;
 	margin-bottom: 0px;
-	border-style: none none solid;
-	border-width: 1px;
-	border-color: #000 #000 hsla(0, 0%, 100%, 0.3);
-	border-radius: 0px;
 	background-color: transparent;
 	transition: border-color 600ms ease, background-color 600ms ease;
 	color: #fff;
@@ -368,7 +364,7 @@ img {
 	width: 100%;
 }
 
-.checkEmail {
+.warningBox {
 	border: 1px solid #efff;
 	padding-right: 1rem;
 	margin-top: 5px;

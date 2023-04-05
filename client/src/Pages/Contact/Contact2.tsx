@@ -193,7 +193,7 @@ export const Contact = () => {
 								value={name}
 								onChange={(e) => setName(e.target.value)}
 							/>
-							<div className={styles.emailGroup}>
+							<div className={styles.inputGroup}>
 								<input
 									type="email"
 									className={styles.input}
@@ -206,7 +206,7 @@ export const Contact = () => {
 									onBlur={handleCheckEmail}
 								/>
 								<div
-									className={styles.checkEmail}
+									className={styles.warningBox}
 									style={{ display: warningEmail === false ? 'none' : 'block' }}
 								>
 									<div className={styles.innerCheckEmail}>
@@ -217,17 +217,30 @@ export const Contact = () => {
 									</div>
 								</div>
 							</div>
-							<input
-								type="tel"
-								className={styles.input}
-								maxLength={256}
-								name="phone"
-								value={phone}
-								data-name="user-phone"
-								placeholder="Contact Phone"
-								onChange={(e) => setPhone(e.target.value)}
-								onBlur={handleCheckNumber}
-							/>
+							<div className={styles.inputGroup}>
+								<input
+									type="tel"
+									className={styles.input}
+									maxLength={256}
+									name="phone"
+									value={phone}
+									data-name="user-phone"
+									placeholder="Contact Phone"
+									onChange={(e) => setPhone(e.target.value)}
+									onBlur={handleCheckNumber}
+								/>
+								<div
+									className={styles.warningBox}
+									style={{ display: warningPhone === false ? 'none' : 'block' }}
+								>
+									<div className={styles.innerCheckEmail}>
+										<AiFillWarning className={styles.warningIcon} />
+										<p className={styles.emailWarningText}>
+											Please include '@' in your email address!
+										</p>
+									</div>
+								</div>
+							</div>
 							<input
 								type="text"
 								className={styles.input}
