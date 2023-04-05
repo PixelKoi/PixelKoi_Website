@@ -51,7 +51,6 @@ const BlurHashEncoder = (props: any) => {
     return encode(imageData.data, imageData.width, imageData.height, 4, 4);
   };
 
-
   // TODO: place hashes as placeholders for images and decode on image locations only
   const encodeImage = async (imageUrls: ImageUrl[]) => {
     console.log("Encoding image..." + "");
@@ -106,8 +105,8 @@ const BlurHashEncoder = (props: any) => {
           hash={blurHashes[name]}
           width={200}
           height={200}
-          resolutionX={64}
-          resolutionY={64}
+          resolutionX={32}
+          resolutionY={32}
           punch={1}
         />
       ))}
