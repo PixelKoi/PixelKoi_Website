@@ -2,12 +2,11 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { decode, encode } from "blurhash";
 import { Blurhash } from "react-blurhash";
 
-// All Image url objects currently in use on our website
-// { name: "image1", url: "https://example.com/image1.jpg" }
 interface ImageUrl {
   name: string;
   url: string;
 }
+// All Image url objects currently in use on our website landing page
 const imageUrls: ImageUrl[] = [
   { name: "headerImg", url: "../../assets/Home/box.jpg" },
   { name: "laptop", url: "../../assets/Home/code.webp" },
@@ -48,8 +47,8 @@ const BlurHashEncoder = (props: any) => {
     return encode(imageData.data, imageData.width, imageData.height, 4, 4);
   };
 
-  const hashImages = async (imageUrls: any) => {
-    const blurhashes = {};
+  const encodeImage = async (imageUrls: ImageUrl[]) => {
+    const blurHashes = {};
     for (const { name, url } of imageUrls) {
       const img = new Image();
       img.src = url;
@@ -69,7 +68,7 @@ const BlurHashEncoder = (props: any) => {
       );
       console.log(blurhash);
       console.log(url);
-      blurhashes[name] = blurhash;
+      blurHashes[name] = blurhash;
       const hashPostOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -80,10 +79,10 @@ const BlurHashEncoder = (props: any) => {
         .then((data) => console.log(data.images))
         .catch((error) => console.error(error));
     }
-    console.log(blurhashes); // You can return this object if you want to use it elsewhere
+    console.log(blurHashes); // You can return this object if you want to use it elsewhere
   };
 
-  hashImages(imageUrls);
+  encodeImage(imageUrls);
 };
 
 export default BlurHashEncoder;
