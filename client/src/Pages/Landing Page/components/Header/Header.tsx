@@ -20,9 +20,7 @@ const Header = (props: any) => {
 
 	return (
 		<div className={styles.header} id="header" style={{ backgroundImage: `url(${headerImg})` }}>
-			<div className={styles.particle}>
-				<ParticlesBackground />
-			</div>
+			<div className={styles.particle}>{/* <ParticlesBackground /> */}</div>
 
 			<div className={styles.container}>
 				<div className={styles.modalContainer}>
