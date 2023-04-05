@@ -24,7 +24,7 @@ const ParticlesBackground = () => {
 			options={{
 				background: {
 					color: {
-						value: '#17212d'
+						value: 'transparent'
 					}
 				},
 				fpsLimit: 60,
@@ -80,7 +80,7 @@ const ParticlesBackground = () => {
 							area: 1080
 						},
 						limit: 0,
-						value: 80
+						value: 30
 					},
 					opacity: {
 						value: 0.5
