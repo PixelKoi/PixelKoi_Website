@@ -1,17 +1,20 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { decode, encode } from "blurhash";
 import { Blurhash } from "react-blurhash";
-
+import headerImage from "../../assets/Home/box.jpg";
+import laptop from "../../assets/Home/code.webp";
+import tablet from "../../assets/Home/uxdesign.webp";
+import imac from "../../assets/Home/web.webp";
 interface ImageUrl {
   name: string;
   url: string;
 }
 // All Image url objects currently in use on our website landing page
 const imageUrls: ImageUrl[] = [
-  { name: "headerImg", url: "../../assets/Home/box.jpg" },
-  { name: "laptop", url: "../../assets/Home/code.webp" },
-  { name: "tablet", url: "../../assets/Home/uxdesign.webp" },
-  { name: "imac", url: "../../assets/Home/web.webp" },
+  { name: "headerImg", url: headerImage },
+  { name: "laptop", url: laptop },
+  { name: "tablet", url: tablet },
+  { name: "imac", url: imac },
 ];
 
 // Goes through an array of image locations, creates hashObjects
@@ -42,17 +45,20 @@ const BlurHashEncoder = (props: any) => {
   };
 
   // encode into a blurHash
-  const encodeImageToBlurhash = async (imageUrl: string): Promise<string> => {
-    const image = await loadImage(imageUrl);
+  const encodeImageToBlurhash = async (url: string): Promise<string> => {
+    const image = await loadImage(url);
     const imageData = getImageData(image);
     return encode(imageData.data, imageData.width, imageData.height, 4, 4);
   };
 
   const encodeImage = async (imageUrls: ImageUrl[]) => {
+    console.log("Encoding image..." + "");
     const newBlurHashes: { [key: string]: string } = {};
     for (const { name, url } of imageUrls) {
-      const hash = await encodeImageToBlurhash(url);
-      newBlurHashes[name] = hash;
+      console.log(name, url);
+      const hash = encodeImageToBlurhash(url);
+      console.log("hash: ", hash);
+      // newBlurHashes[name] = hash;
       const img = new Image();
       img.src = url;
       await img.decode();
@@ -75,7 +81,7 @@ const BlurHashEncoder = (props: any) => {
       const hashPostOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ images: { url, blurHash: blurhash } }),
+        body: JSON.stringify({ images: { url: url, blurHash: blurhash } }),
       };
       fetch("http://localhost:8000/api/images", hashPostOptions)
         .then((resp) => resp.json())

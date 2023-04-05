@@ -2,7 +2,6 @@ import Header from "./components/Header/Header";
 import Clients from "../Landing Page/components/Clients/Clients";
 import "../../styles/globalStyles.css";
 import styles from "./Landing.module.css";
-import Nav from "../../components/Nav/Nav";
 import Offer from "./components/Offer/Offer";
 import Global from "./components/Global/Global";
 import OurTech from "./components/OurTech/OurTech";
