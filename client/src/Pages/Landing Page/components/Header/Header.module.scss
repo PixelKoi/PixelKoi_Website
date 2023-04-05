@@ -5,7 +5,6 @@
 	width: 100vw;
 	height: 100vh;
 }
-
 .scrollNavigation {
 	list-style: none;
 	position: fixed;
@@ -16,6 +15,7 @@
 }
 
 .container {
+	z-index: 1;
 	margin-top: 10rem;
 	height: 100%;
 	align-self: center;
@@ -146,4 +146,18 @@
 		margin-bottom: 0 !important;
 		text-align: center;
 	}
+}
+
+.particle {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+}
+
+.bannerText {
+	color: #cfcfcf;
+	font-size: 100px;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
+		'Helvetica Neue', sans-serif;
 }

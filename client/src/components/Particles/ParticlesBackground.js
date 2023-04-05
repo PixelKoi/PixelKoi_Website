@@ -24,10 +24,10 @@ const ParticlesBackground = () => {
 			options={{
 				background: {
 					color: {
-						value: '#0d47a1'
+						value: 'transparent'
 					}
 				},
-				fpsLimit: 120,
+				fpsLimit: 60,
 				interactivity: {
 					events: {
 						onClick: {
@@ -71,15 +71,16 @@ const ParticlesBackground = () => {
 							default: 'bounce'
 						},
 						random: false,
-						speed: 6,
+						speed: 1,
 						straight: false
 					},
 					number: {
 						density: {
 							enable: true,
-							area: 800
+							area: 1080
 						},
-						value: 80
+						limit: 0,
+						value: 5
 					},
 					opacity: {
 						value: 0.5

@@ -5,6 +5,9 @@
 ./../server/node_modules
 /.pnp
 .pnp.js
+./../server/node_modules
+
+Message #general
 
 # testing
 /coverage
