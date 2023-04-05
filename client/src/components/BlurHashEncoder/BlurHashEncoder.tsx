@@ -56,7 +56,7 @@ const BlurHashEncoder = (props: any) => {
     const newBlurHashes: { [key: string]: string } = {};
     for (const { name, url } of imageUrls) {
       console.log(name, url);
-      const hash = encodeImageToBlurhash(url);
+      const hash = await encodeImageToBlurhash(url);
       console.log("hash: ", hash);
       // newBlurHashes[name] = hash;
       const img = new Image();
