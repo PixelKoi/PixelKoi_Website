@@ -1,7 +1,13 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { decode, encode } from "blurhash";
 import { Blurhash } from "react-blurhash";
-import Header from "../../Pages/Landing Page/components/Header/Header";
+
+// All Image url objects currently in use on our website
+// { name: "image1", url: "https://example.com/image1.jpg" }
+const imageUrls = [
+  { name: "headerImg", url: "../../assets/Home/box.jpg" },
+  { name: "headerImg", url: "../../assets/Home/box.jpg" },
+];
 
 // Goes through an array of image locations, creates hashObjects
 // hashObject eg; const hashObjects = { url: src, blurHash: blurhash };
