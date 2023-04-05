@@ -80,7 +80,7 @@ const ParticlesBackground = () => {
 							area: 1080
 						},
 						limit: 0,
-						value: 30
+						value: 15
 					},
 					opacity: {
 						value: 0.5

@@ -10,6 +10,7 @@ import cube from '../../../../assets/Home/ph_cube.svg';
 import koi from '../../../../assets/Home/koi.svg';
 import { Link, useLocation } from 'react-router-dom';
 import headerImg from '../../../../assets/Home/box.webp';
+import headerImg2 from '../../../../assets/Home/bg-banner2.png';
 import ParticlesBackground from '../../../../components/Particles/ParticlesBackground';
 import Particles from 'react-tsparticles';
 
@@ -18,12 +19,12 @@ const Header = (props: any) => {
 	const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
 
 	return (
-		<div className={styles.header} id="header" style={{ backgroundImage: `url(${headerImg})` }}>
+		<div className={styles.header} id="header" style={{ backgroundImage: `url(${headerImg2})` }}>
 			<div className={styles.particle}>
 				<ParticlesBackground />
 			</div>
 
-			<div className={styles.container}>
+			{/* <div className={styles.container}>
 				<div className={styles.modalContainer}>
 					<motion.div
 						initial={{ opacity: 0 }}
@@ -60,7 +61,7 @@ const Header = (props: any) => {
 						</Link>
 					</motion.div>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };
