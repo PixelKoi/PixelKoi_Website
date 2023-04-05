@@ -19,10 +19,10 @@ const Header = (props: any) => {
 	const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
 
 	return (
-		<div className={styles.header} id="header" style={{ backgroundImage: `url(${headerImg2})` }}>
+		<div className={styles.header} id="header" style={{ backgroundImage: `url(${headerImg})` }}>
 			<div className={styles.particle}>{/* <ParticlesBackground /> */}</div>
 
-			{/* <div className={styles.container}>
+			<div className={styles.container}>
 				<div className={styles.modalContainer}>
 					<motion.div
 						initial={{ opacity: 0 }}
@@ -59,8 +59,8 @@ const Header = (props: any) => {
 						</Link>
 					</motion.div>
 				</div>
-			</div> */}
-			<div>
+			</div>
+			{/* <div>
 				<div
 					style={{
 						color: '#efff',
@@ -74,7 +74,7 @@ const Header = (props: any) => {
 					<h1 className={styles.bannerText}>Software</h1>
 					<h1 className={styles.bannerText}>Solutions</h1>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };
