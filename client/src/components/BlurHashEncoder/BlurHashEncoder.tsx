@@ -5,12 +5,11 @@ import Header from "../../Pages/Landing Page/components/Header/Header";
 
 // Goes through an array of image locations, creates hashObjects
 // hashObject eg; const hashObjects = { url: src, blurHash: blurhash };
-const BlurHashEncoder = (props: any) => {
+const BlurHashEncoder = (props: { images: Array<string> }) => {
   const [blurhash, setBlurhash] = useState("");
 
-  // loads an image from given source URL and returns a promise that resolves to the loaded image
-  // src attribule gives URL
-  // when image successfully loaded, priomise resolves `img` object.
+  /* loads an image from given source URL and returns a promise that resolves to the loaded image
+  src attribute gives URL when image successfully loaded, promise resolves `img` object. */
   const loadImage = async (src: string): Promise<HTMLImageElement> =>
     new Promise((resolve, reject) => {
       const img = new Image();

@@ -20,7 +20,6 @@ const Header = (props: any) => {
 
   return (
     <div className={styles.header} id="header">
-      {/*<Blurhash hash={blurHash} width={50} height={50} />*/}
       <div
         className={styles.headerBackgroundImg}
         style={{ backgroundImage: `url(${headerImg})` }}
