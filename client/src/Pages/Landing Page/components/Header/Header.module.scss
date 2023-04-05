@@ -16,6 +16,7 @@
 }
 
 .container {
+	z-index: 1;
 	margin-top: 10rem;
 	height: 100%;
 	align-self: center;
@@ -146,4 +147,11 @@
 		margin-bottom: 0 !important;
 		text-align: center;
 	}
+}
+
+.particle {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
 }
