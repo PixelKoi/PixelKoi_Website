@@ -91,7 +91,10 @@ export const Contact = () => {
 			case 'error':
 				return (
 					<div className={styles.formError}>
-						<div>Oops! Something went wrong while submitting the form.</div>
+						<div>
+							Oops! Something went wrong while submitting the form. Make sure all fields are filled out
+							correctly.
+						</div>
 					</div>
 				);
 			default:
