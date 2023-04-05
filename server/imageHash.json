@@ -1,1 +1,6 @@
-{"images":[{"url":"src","blurHash":"blurhash code here"},{"url":"src","blurHash":"blurhash"}]}
+{
+  "images": [
+    { "url": "src", "blurHash": "blurhash code here" },
+    { "url": "src", "blurHash": "blurhash" }
+  ]
+}
