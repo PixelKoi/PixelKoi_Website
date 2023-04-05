@@ -18,10 +18,11 @@ const imageUrls: ImageUrl[] = [
 // hashObject eg; const hashObjects = { url: src, blurHash: blurhash };
 // const BlurHashEncoder = (props: { images: Array<string> }) => {
 const BlurHashEncoder = (props: any) => {
-  const [blurhash, setBlurhash] = useState("");
-
   /* loads an image from given source URL and returns a promise that resolves to the loaded image
   src attribute gives URL when image successfully loaded, promise resolves `img` object. */
+
+  const [blurHashes, setBlurHashes] = useState<{ [key: string]: string }>({});
+
   const loadImage = async (src: string): Promise<HTMLImageElement> =>
     new Promise((resolve, reject) => {
       const img = new Image();
@@ -48,8 +49,10 @@ const BlurHashEncoder = (props: any) => {
   };
 
   const encodeImage = async (imageUrls: ImageUrl[]) => {
-    const blurHashes = {};
+    const newBlurHashes: { [key: string]: string } = {};
     for (const { name, url } of imageUrls) {
+      const hash = await encodeImageToBlurhash(url);
+      newBlurHashes[name] = hash;
       const img = new Image();
       img.src = url;
       await img.decode();
@@ -79,10 +82,29 @@ const BlurHashEncoder = (props: any) => {
         .then((data) => console.log(data.images))
         .catch((error) => console.error(error));
     }
+    setBlurHashes(newBlurHashes);
     console.log(blurHashes); // You can return this object if you want to use it elsewhere
   };
 
-  encodeImage(imageUrls);
+  useEffect(() => {
+    encodeImage(imageUrls);
+  }, []);
+
+  return (
+    <div>
+      {Object.keys(blurHashes).map((name) => (
+        <Blurhash
+          key={name}
+          hash={blurHashes[name]}
+          width={200}
+          height={200}
+          resolutionX={32}
+          resolutionY={32}
+          punch={1}
+        />
+      ))}
+    </div>
+  );
 };
 
 export default BlurHashEncoder;

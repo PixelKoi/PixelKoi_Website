@@ -10,7 +10,7 @@ import Footer from "../../components/Footer/Main/Footer";
 import NavGroup from "../../components/Nav/NavGroup";
 import React, { useState, useEffect } from "react";
 import { GridLoader } from "react-spinners";
-
+import BlurHashEncoder from "../../components/BlurHashEncoder/BlurHashEncoder";
 const Landing = (props: any) => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -28,6 +28,7 @@ const Landing = (props: any) => {
       ) : (
         <main className={styles.mainContainer}>
           {" "}
+          <BlurHashEncoder />
           <NavGroup />
           <Header />
           <OurTech />

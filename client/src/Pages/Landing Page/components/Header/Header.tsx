@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import SpinningImage from "./components/3Dsquare/SpinningImage";
 import { Link, useLocation } from "react-router-dom";
 import headerImg from "../../../../assets/Home/box.jpg";
-import BlurHashEncoder from "../../../../components/BlurHashEncoder/BlurHashEncoder";
 
 const Header = (props: any) => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
@@ -17,8 +16,6 @@ const Header = (props: any) => {
         className={styles.headerBackgroundImg}
         style={{ backgroundImage: `url(${headerImg})` }}
       >
-        {/*<BlurHashEncoder images={headerImg}*/}
-
         {/* <ParticlesBackground /> */}
         <div className={styles.container}>
           <div className={styles.modalContainer}>
