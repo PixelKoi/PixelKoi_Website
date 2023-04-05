@@ -112,7 +112,11 @@ export const Contact = () => {
 	//Check phone number
 	const handleCheckNumber = () => {
 		const phoneRegex = /^\+(?:[0-9]●?){6,14}[0-9]$/;
-		return phoneRegex.test(phone);
+		if (phoneRegex.test(phone) === false) {
+			setWarningPhone(true);
+		} else {
+			setWarningPhone(false);
+		}
 	};
 
 	const handleValidation = () => {
@@ -227,7 +231,7 @@ export const Contact = () => {
 									data-name="user-phone"
 									placeholder="Contact Phone"
 									onChange={(e) => setPhone(e.target.value)}
-									onBlur={handleCheckNumber}
+									// onBlur={handleCheckNumber}
 								/>
 								<div
 									className={styles.warningBox}
