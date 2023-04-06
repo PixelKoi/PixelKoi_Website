@@ -51,7 +51,13 @@ app.post("/api/images", (req, res) => {
   }
 });
 
-app.get("/api/images/u");
+app.get("/api/images", (req, res) => {
+  try {
+    const jsonData = fs.readFileSync(hashJson);
+  } catch (e) {
+    console.log(e);
+  }
+});
 
 //production USE
 // app.use(express.static("/home/almorsbd/public_html/build"));
