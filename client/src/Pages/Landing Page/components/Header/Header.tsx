@@ -16,7 +16,6 @@ const Header = (props: any) => {
         className={styles.headerBackgroundImg}
         style={{ backgroundImage: `url(${headerImg})` }}
       >
-        {/* <ParticlesBackground /> */}
         <div className={styles.container}>
           <div className={styles.modalContainer}>
             <motion.div

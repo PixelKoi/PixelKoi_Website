@@ -51,6 +51,8 @@ app.post("/api/images", (req, res) => {
   }
 });
 
+app.get("/api/images/u");
+
 //production USE
 // app.use(express.static("/home/almorsbd/public_html/build"));
 // PRODUCTION USE
