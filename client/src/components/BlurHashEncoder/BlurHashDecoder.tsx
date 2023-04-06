@@ -14,21 +14,25 @@ const BlurHashDecoder = (props: any) => {
   const [error, setError] = useState<any>();
   const [status, setStatus] = useState<any>();
   const [statusText, setStatusText] = useState<String>("");
-  const [loading, setLoading] = useState<boolean>(false);
 
-  const url = "http://localhost:8000/api/images";
+  const imagesURL = "http://localhost:8000/api/images";
   const getImageHash = async () => {
     try {
-      const apiResponse = await fetch(url);
+      const apiResponse = await fetch(imagesURL);
       const json = await apiResponse.json();
       setStatus(apiResponse.status);
       setStatusText(apiResponse.statusText);
       setHashData(json);
+      console.log(json);
     } catch (error) {
       setError(error);
     }
-    setLoading(false);
   };
+
+  useEffect(() => {
+    getImageHash();
+  }, []);
+  return <div>This divs</div>;
 };
 
 export default BlurHashDecoder;

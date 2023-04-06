@@ -10,6 +10,7 @@ import NavGroup from "../../components/Nav/NavGroup";
 import React, { useState, useEffect } from "react";
 import { GridLoader } from "react-spinners";
 import BlurHashEncoder from "../../components/BlurHashEncoder/BlurHashEncoder";
+import BlurHashDecoder from "../../components/BlurHashEncoder/BlurHashDecoder";
 const Landing = (props: any) => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
@@ -29,6 +30,7 @@ const Landing = (props: any) => {
           {" "}
           <NavGroup />
           {/*<BlurHashEncoder />*/}
+          <BlurHashDecoder />
           <Header />
           <OurTech />
           <Offer />

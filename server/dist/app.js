@@ -45,12 +45,21 @@ app.post("/api/images", (req, res) => {
         res.status(500).send({ message: "Internal Server Error" });
     }
 });
+app.get("/api/images", (req, res) => {
+    try {
+        const jsonData = fs_1.default.readFileSync(hashJson);
+        res.send(jsonData);
+    }
+    catch (e) {
+        console.log(e);
+    }
+});
 //production USE
 // app.use(express.static("/home/almorsbd/public_html/build"));
 // PRODUCTION USE
-app.get("/*", (req, res) => {
-    res.sendFile("/home/almorsbd/public_html/build/index.html");
-});
+// app.get("/*", (req, res) => {
+//   res.sendFile("/home/almorsbd/public_html/build/index.html");
+// });
 app.post("/send-email", (req, res) => {
     const { name, company, email, phone } = req.body;
     const transporter = nodemailer_1.default.createTransport({
