@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import SpinningImage from "./components/3Dsquare/SpinningImage";
 import { Link, useLocation } from "react-router-dom";
 import headerImg from "../../../../assets/Home/box.jpg";
+import { Blurhash } from "react-blurhash";
 
 const Header = (props: any) => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };

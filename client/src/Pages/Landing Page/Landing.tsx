@@ -12,7 +12,7 @@ import { GridLoader } from "react-spinners";
 import BlurHashEncoder from "../../components/BlurHashEncoder/BlurHashEncoder";
 import BlurHashDecoder from "../../components/BlurHashEncoder/BlurHashDecoder";
 const Landing = (props: any) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     // Simulate a delay in loading the page
     setTimeout(() => {
