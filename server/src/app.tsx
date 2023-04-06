@@ -54,6 +54,7 @@ app.post("/api/images", (req, res) => {
 app.get("/api/images", (req, res) => {
   try {
     const jsonData = fs.readFileSync(hashJson);
+    res.send(jsonData);
   } catch (e) {
     console.log(e);
   }
