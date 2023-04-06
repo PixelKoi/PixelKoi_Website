@@ -32,8 +32,8 @@ const Header = () => {
         ) : (
           <Blurhash
             hash={hash}
-            width={500}
-            height={500}
+            width={1200}
+            height={700}
             punch={1}
             className={styles.headerBackgroundImg}
           />

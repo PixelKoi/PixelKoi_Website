@@ -8,15 +8,12 @@
 
 }
 .headerBackgroundImg {
-	position: relative;
-
-	height: 400vh;
 	transform: scale(1.1);
 	background-size: cover;
 	background-position: center;
 	//image-rendering: crisp-edges;
 	image-rendering: smooth;
-	position: absolute;
+	position: absolute !important;
 	z-index: 0;
 	top: 0;
 	left: 0;
@@ -37,7 +34,7 @@
 .container {
 	z-index: 2;
 
-	margin-top: 20rem;
+	margin-top: 10rem;
 	height: 100%;
 	align-self: center;
 	display: flex;
