@@ -14,33 +14,46 @@ const Header = () => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
   const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
   const [loaded, setLoaded] = useState(false);
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
 
   const handleImageLoad = useCallback(() => {
     setLoaded(true);
   }, []);
 
+  useEffect(() => {
+    const img = new Image();
+    img.src = headerImg;
+    const width = img.naturalWidth;
+    const height = img.naturalHeight;
+    setDimensions({ width, height });
+    img.onload = () => {
+      setLoaded(true);
+    };
+  }, [headerImg]);
+
   return (
     <div className={styles.header} id="header">
       <div>
-        {loaded ? (
-          <img
-            src={headerImg}
-            alt="header"
-            onLoad={handleImageLoad}
-            className={styles.headerBackgroundImg}
-          />
-        ) : (
+        {!loaded && (
           <Blurhash
             hash={hash}
-            width={2400}
-            height={1350}
+            width={600}
+            height={600}
+            resolutionX={32}
+            resolutionY={32}
             punch={1}
             className={styles.headerBackgroundImg}
           />
         )}
+        {loaded && (
+          <img
+            onLoad={() => setLoaded(true)}
+            src={headerImg}
+            alt="Header Image"
+            className={styles.headerBackgroundImg}
+          />
+        )}
       </div>
-
-      <img style={{ backgroundImage: `url(${headerImg})` }} />
       <div className={styles.container}>
         <div className={styles.modalContainer}>
           <motion.div
