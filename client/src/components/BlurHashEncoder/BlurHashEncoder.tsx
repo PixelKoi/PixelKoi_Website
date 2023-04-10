@@ -5,17 +5,29 @@ import headerImage from "../../assets/Home/box.jpg";
 import laptop from "../../assets/Home/code.webp";
 import tablet from "../../assets/Home/uxdesign.webp";
 import imac from "../../assets/Home/web.webp";
+import creative from "./../../assets/About/creative.webp";
+import dream from "../../assets/About/dream.webp";
+import story from "../../assets/About/story.webp";
+import mailboxImg from "../../assets/Home/mailbox.jpg";
+
 interface ImageUrl {
   name: string;
   url: string;
+  hash: string;
 }
 // All Image url objects currently in use on our website landing page
 const imageUrls: ImageUrl[] = [
-  { name: "headerImg", url: headerImage },
-  { name: "laptop", url: laptop },
-  { name: "tablet", url: tablet },
-  { name: "imac", url: imac },
+  { name: "headerImg", url: headerImage, hash: "" },
+  { name: "laptop", url: laptop, hash: "" },
+  { name: "tablet", url: tablet, hash: "" },
+  { name: "imac", url: imac, hash: "" },
+  { name: "creative", url: creative, hash: "" },
+  { name: "dream", url: dream, hash: "" },
+  { name: "story", url: story, hash: "" },
+  { name: "mailboxImg", url: mailboxImg, hash: "" },
 ];
+
+let imageObject: ImageUrl[] = [];
 
 // Goes through an array of image locations, creates hashObjects
 // hashObject eg; const hashObjects = { url: src, blurHash: blurhash };
@@ -59,25 +71,24 @@ const BlurHashEncoder = (props: any) => {
       console.log(name, url);
       const hash = await encodeImageToBlurhash(url);
       console.log("hash: ", hash);
-      // newBlurHashes[name] = hash;
       const img = new Image();
       img.src = url;
       await img.decode();
       console.log(hash);
       console.log(url);
-      newBlurHashes[name] = hash;
-      const hashPostOptions = {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          images: { url: url, blurHash: hash, imageName: name },
-        }),
-      };
-      fetch("http://localhost:8000/api/images", hashPostOptions)
-        .then((resp) => resp.json())
-        .then((data) => console.log(data.images))
-        .catch((error) => console.error(error));
+      imageObject.push({ name, url, hash });
     }
+    const hashPostOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        images: imageObject,
+      }),
+    };
+    fetch("http://localhost:8000/api/images", hashPostOptions)
+      .then((resp) => resp.json())
+      .then((data) => console.log(data.images))
+      .catch((error) => console.error(error));
     setBlurHashes(newBlurHashes);
   };
 
