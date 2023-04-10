@@ -63,26 +63,13 @@ const BlurHashEncoder = (props: any) => {
       const img = new Image();
       img.src = url;
       await img.decode();
-      const canvas = document.createElement("canvas");
-      const ctx: any = canvas.getContext("2d");
-      canvas.width = img.width;
-      canvas.height = img.height;
-      ctx.drawImage(img, 0, 0);
-      const imageData = ctx.getImageData(0, 0, img.width, img.height);
-      const blurhash = encode(
-        imageData.data,
-        imageData.width,
-        imageData.height,
-        4,
-        4
-      );
-      console.log(blurhash);
+      console.log(hash);
       console.log(url);
-      newBlurHashes[name] = blurhash;
+      newBlurHashes[name] = hash;
       const hashPostOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ images: { url: url, blurHash: blurhash } }),
+        body: JSON.stringify({ images: { url: url, blurHash: hash } }),
       };
       fetch("http://localhost:8000/api/images", hashPostOptions)
         .then((resp) => resp.json())
