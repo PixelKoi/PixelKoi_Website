@@ -51,8 +51,8 @@ const Header = () => {
         <div style={{ display: loaded ? "none" : "inline" }}>
           <Blurhash
             hash={hash}
-            width={naturalWidth}
-            height={naturalHeight}
+            width="100%"
+            height="100%"
             resolutionX={64}
             resolutionY={64}
             punch={1}
