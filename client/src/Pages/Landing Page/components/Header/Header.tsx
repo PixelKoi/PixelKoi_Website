@@ -1,5 +1,11 @@
 // import './Header.css';
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+  useLayoutEffect,
+} from "react";
 import "../../../../styles/globalStyles.css";
 import styles from "./Header.module.scss";
 import { motion } from "framer-motion";
@@ -20,39 +26,46 @@ const Header = () => {
     setLoaded(true);
   }, []);
 
+  const naturalWidth = 2400;
+  const naturalHeight = 1350;
+
   useEffect(() => {
     const img = new Image();
     img.src = headerImg;
-    const width = img.naturalWidth;
-    const height = img.naturalHeight;
-    setDimensions({ width, height });
     img.onload = () => {
       setLoaded(true);
     };
   }, [headerImg]);
 
+  useLayoutEffect(() => {
+    const img = new Image();
+    img.src = headerImg;
+    const width = img.naturalWidth;
+    const height = img.naturalHeight;
+    setDimensions({ width, height });
+  }, [headerImg]);
+
   return (
     <div className={styles.header} id="header">
       <div>
-        {!loaded && (
+        <div style={{ display: loaded ? "none" : "inline" }}>
           <Blurhash
             hash={hash}
-            width={600}
-            height={600}
-            resolutionX={32}
-            resolutionY={32}
+            width={naturalWidth}
+            height={naturalHeight}
+            resolutionX={64}
+            resolutionY={64}
             punch={1}
             className={styles.headerBackgroundImg}
           />
-        )}
-        {loaded && (
-          <img
-            onLoad={() => setLoaded(true)}
-            src={headerImg}
-            alt="Header Image"
-            className={styles.headerBackgroundImg}
-          />
-        )}
+        </div>
+        <img
+          onLoad={() => setLoaded(true)}
+          src={headerImg}
+          alt="Header Image"
+          className={styles.headerBackgroundImg}
+          style={{ display: !loaded ? "none" : "inline" }}
+        />
       </div>
       <div className={styles.container}>
         <div className={styles.modalContainer}>
