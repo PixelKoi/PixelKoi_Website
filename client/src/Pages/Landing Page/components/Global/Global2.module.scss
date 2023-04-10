@@ -1,5 +1,6 @@
 .container {
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	grid-template-rows: auto auto;
 	grid-template-columns: 1fr 1fr;
 	justify-content: center;
@@ -10,6 +11,8 @@
 }
 
 .qoute {
+	font-size: 18px;
+	width: 300px;
 }
 
 .group {
@@ -17,6 +20,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	padding: 0 10px;
 }
 
 // #globe {
@@ -39,6 +43,7 @@
 	align-items: center;
 	width: 160px;
 	height: 150px;
+	margin-bottom: 20px;
 	background-color: #1e2a35;
 	box-shadow: 0 6px 18px 0 rgb(0 0 0 / 20%);
 	.img {
@@ -52,12 +57,15 @@
 	}
 }
 
-#pillar1 {
-	grid-row: 2;
-	grid-column: 1;
+.pillarContainer {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: row;
 }
 
-#pillar2 {
-	grid-row: 2;
-	grid-column: 2;
+.line {
+	background-color: #efff;
+	color: #efff !important;
+	border-top: 1px sold #efff !important;
+	width: 4rem;
 }

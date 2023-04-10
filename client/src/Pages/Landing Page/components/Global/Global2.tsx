@@ -11,32 +11,37 @@ const Global2 = () => {
 		<div className={styles.container}>
 			<div className={styles.group} id={styles.globe}>
 				<img src={globe} alt="world" className={styles.globe} />
-				<hr className={styles.line} />
+				<br />
+				<h3>Global Network</h3>
+				<hr className={styles.line} style={{ color: '#efff' }} />
 				<p className={styles.qoute}>
 					“Software development is a symphony of creativity and engineering principles.”
 				</p>
 			</div>
-			<div className={styles.group} id={styles.pillar1}>
-				<div className={styles.pillarGroup}>
-					<img src={remote} alt="world" className={styles.img} />
-					<p className={styles.imgText}>100% remote</p>
-				</div>
-				<br />
-				<div className={styles.pillarGroup}>
-					<img src={tech} alt="world" className={styles.img} />
-					<p className={styles.imgText}>Tech Stack Expertise</p>
-				</div>
-			</div>
 
-			<div className={styles.group} id={styles.pillar2}>
-				<div className={styles.pillarGroup}>
-					<img src={agile} alt="world" className={styles.img} />
-					<p className={styles.imgText}>Agile Methodology</p>
+			<div className={styles.pillarContainer}>
+				<div className={styles.group} id={styles.pillar1}>
+					<div className={styles.pillarGroup}>
+						<img src={remote} alt="world" className={styles.img} />
+						<p className={styles.imgText}>100% remote</p>
+					</div>
+
+					<div className={styles.pillarGroup}>
+						<img src={tech} alt="world" className={styles.img} />
+						<p className={styles.imgText}>Tech Stack Expertise</p>
+					</div>
 				</div>
-				<br />
-				<div className={styles.pillarGroup}>
-					<img src={support} alt="world" className={styles.img} />
-					<p className={styles.imgText}> 24/7 Tech Support</p>
+
+				<div className={styles.group} id={styles.pillar2}>
+					<div className={styles.pillarGroup}>
+						<img src={agile} alt="world" className={styles.img} />
+						<p className={styles.imgText}>Agile Methodology</p>
+					</div>
+
+					<div className={styles.pillarGroup}>
+						<img src={support} alt="world" className={styles.img} />
+						<p className={styles.imgText}> 24/7 Tech Support</p>
+					</div>
 				</div>
 			</div>
 		</div>
