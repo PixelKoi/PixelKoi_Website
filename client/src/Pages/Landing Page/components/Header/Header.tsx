@@ -20,14 +20,6 @@ const Header = () => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
   const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
   const [loaded, setLoaded] = useState(false);
-  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
-
-  const handleImageLoad = useCallback(() => {
-    setLoaded(true);
-  }, []);
-
-  const naturalWidth = 2400;
-  const naturalHeight = 1350;
 
   useEffect(() => {
     const img = new Image();
@@ -40,9 +32,6 @@ const Header = () => {
   useLayoutEffect(() => {
     const img = new Image();
     img.src = headerImg;
-    const width = img.naturalWidth;
-    const height = img.naturalHeight;
-    setDimensions({ width, height });
   }, [headerImg]);
 
   return (
