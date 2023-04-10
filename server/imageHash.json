@@ -2,19 +2,23 @@
   "images": [
     {
       "url": "/static/media/box.0100cb975c504645ee04.jpg",
-      "blurHash": "U14o1hx^0QIptPR+E4%059Rk^g%J0$t3^NIY"
+      "blurHash": "U14o1hx^0QIptPR+E4%059Rk^g%J0$t3^NIY",
+      "imageName": "headerImg"
     },
     {
       "url": "/static/media/code.8180097482e5138586fe.webp",
-      "blurHash": "UVHB_D.9?b?aIUs:RjR*~q%2M{M|xaozj[s:"
+      "blurHash": "UVHB_D.9?b?aIUs:RjR*~q%2M{M|xaozj[s:",
+      "imageName": "laptop"
     },
     {
       "url": "/static/media/uxdesign.fbedb3441f294d02b2ce.webp",
-      "blurHash": "UeMH3|x]-pjurpofWBWU~qWAM{axoeoft7oL"
+      "blurHash": "UeMH3|x]-pjurpofWBWU~qWAM{axoeoft7oL",
+      "imageName": "tablet"
     },
     {
       "url": "/static/media/web.c1cdf7aae0137e7096fc.webp",
-      "blurHash": "UaMG;t~qMv9G.TxZNGjcrrIUWGWAV@RkjZxa"
+      "blurHash": "UaMG;t~qMv9G.TxZNGjcrrIUWGWAV@RkjZxa",
+      "imageName": "imac"
     }
   ]
 }

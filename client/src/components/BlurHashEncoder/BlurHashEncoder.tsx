@@ -69,7 +69,9 @@ const BlurHashEncoder = (props: any) => {
       const hashPostOptions = {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ images: { url: url, blurHash: hash } }),
+        body: JSON.stringify({
+          images: { url: url, blurHash: hash, imageName: name },
+        }),
       };
       fetch("http://localhost:8000/api/images", hashPostOptions)
         .then((resp) => resp.json())
