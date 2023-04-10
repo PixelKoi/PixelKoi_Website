@@ -5,12 +5,20 @@ import remote from '../../../../assets/Global/remote.svg';
 import tech from '../../../../assets/Global/tech.svg';
 import agile from '../../../../assets/Global/agile.svg';
 import support from '../../../../assets/Global/support.svg';
+import { motion } from 'framer-motion';
 
 const Global2 = () => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.group} id={styles.globe}>
-				<img src={globe} alt="world" className={styles.globe} />
+			<div className={styles.group2} id={styles.globe}>
+				<motion.img
+					animate={{ rotate: 360 }}
+					transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
+					src={globe}
+					width={100}
+					alt="world"
+				/>
+				<br />
 				<br />
 				<h3>Global Network</h3>
 				<hr className={styles.line} style={{ color: '#efff' }} />
@@ -19,7 +27,12 @@ const Global2 = () => {
 				</p>
 			</div>
 
-			<div className={styles.pillarContainer}>
+			<motion.div
+				initial={{ opacity: 0, y: 20 }}
+				whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+				viewport={{ once: true }}
+				className={styles.pillarContainer}
+			>
 				<div className={styles.group} id={styles.pillar1}>
 					<div className={styles.pillarGroup}>
 						<img src={remote} alt="world" className={styles.img} />
@@ -43,7 +56,7 @@ const Global2 = () => {
 						<p className={styles.imgText}> 24/7 Tech Support</p>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 };
