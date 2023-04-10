@@ -40,10 +40,15 @@ app.post("/api/images", (req, res) => {
   const { images } = req.body;
   console.log("image type:", typeof images);
   console.log("Images: ", images);
+  console.log(images);
   try {
     const jsonData = fs.readFileSync(hashJson);
-    const json = JSON.parse(jsonData.toString());
-    json.images.push(images);
+    let json = JSON.parse(jsonData.toString());
+    if (Array.isArray(json)) {
+      json.push(images);
+    } else {
+      json = [images];
+    }
     fs.writeFileSync(hashJson, JSON.stringify(json));
   } catch (e) {
     console.log(e);
