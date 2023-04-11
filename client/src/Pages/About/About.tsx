@@ -21,7 +21,7 @@ interface ImageType {
 const About = () => {
   const [loaded, setLoaded] = useState(false);
   const hashData = useContext<ImageType>(HashContext);
-  console.log("wtf Data: ", hashData);
+  console.log("About Page Hash Data: ", hashData);
   return (
     <BlurHashDecoder>
       <motion.div

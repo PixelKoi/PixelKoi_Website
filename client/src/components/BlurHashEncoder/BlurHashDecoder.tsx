@@ -36,7 +36,6 @@ const BlurHashDecoder = (props: any) => {
       setHashData(json[0]);
       console.log(json[0]);
       console.log(typeof json[0]);
-      console.log("headerImg Hash Code:", json[0]["headerImg"].hash);
       setIsLoading(false);
     } catch (error) {
       setError(error);

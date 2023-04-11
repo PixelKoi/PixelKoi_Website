@@ -7,11 +7,13 @@ import BlurHashDecoder, {
 } from "../components/BlurHashEncoder/BlurHashDecoder";
 const AppRouter = () => {
   return (
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/contact" element={<Contact />} />
-    </Routes>
+    <BlurHashDecoder>
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+      </Routes>
+    </BlurHashDecoder>
   );
 };
 
