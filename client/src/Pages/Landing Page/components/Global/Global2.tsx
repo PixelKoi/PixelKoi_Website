@@ -26,7 +26,7 @@ const Global2 = () => {
 				<br />
 				<br />
 				<h3>Global Network</h3>
-				<hr className={styles.line} style={{ color: '#efff' }} />
+				<hr className={styles.line} style={{ color: '#e8985c' }} />
 				<p className={styles.qoute}>
 					“Software development is a symphony of creativity and engineering principles.”
 				</p>
