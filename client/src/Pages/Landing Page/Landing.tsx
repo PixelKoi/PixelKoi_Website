@@ -28,12 +28,13 @@ const Landing = (props: any) => {
       ) : (
         <main className={styles.mainContainer}>
           {" "}
-          <BlurHashDecoder />
           <NavGroup />
           {/*<BlurHashEncoder />*/}
           <Header />
           <OurTech />
-          <Offer />
+          <BlurHashDecoder>
+            <Offer />
+          </BlurHashDecoder>
           <Global />
           {/*
 			<About />
