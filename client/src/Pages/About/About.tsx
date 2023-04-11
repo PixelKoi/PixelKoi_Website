@@ -19,7 +19,6 @@ interface ImageType {
     hash: string;
   };
 }
-
 const About = () => {
   const [loaded, setLoaded] = useState(false);
   const hashData = useContext<ImageType>(HashContext);
@@ -43,7 +42,6 @@ const About = () => {
       className={styles.wrapper}
     >
       <NavGroup />
-
       <div className={styles.container}>
         <div className={styles.section}>
           <div className={styles.headerText}>
@@ -57,20 +55,46 @@ const About = () => {
             </p>
           </div>
           <div className={styles.imgContainer}>
-            <img
-              loading="lazy"
-              src={dream}
-              alt="inspirationalQuote"
-              className={styles.imgContainer}
-              id={styles.dream}
-            />
-            <img
-              loading="lazy"
-              src={creative}
-              alt="inspirationalQuote"
-              className={styles.imgContainer}
-              id={styles.creative}
-            />
+            <div>
+              <div style={{ display: loaded ? "none" : "inline" }}>
+                <Blurhash
+                  hash={dreamHash}
+                  width="100%"
+                  height="100%"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                  className={styles.headerBackgroundImg}
+                />
+              </div>
+              <img
+                onLoad={() => setLoaded(true)}
+                src={dream}
+                alt="inspirationalQuote"
+                className={styles.imgContainer}
+                id={styles.dream}
+              />
+            </div>
+            <div>
+              <div style={{ display: loaded ? "none" : "inline" }}>
+                <Blurhash
+                  hash={creativeHash}
+                  width="100%"
+                  height="100%"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                  className={styles.headerBackgroundImg}
+                />
+              </div>
+              <img
+                onLoad={() => setLoaded(true)}
+                src={creative}
+                alt="inspirationalQuote"
+                className={styles.imgContainer}
+                id={styles.creative}
+              />
+            </div>
           </div>
           <div className={styles.description}>
             <p>
@@ -140,7 +164,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
       <Team />
       <Footer />
     </motion.div>

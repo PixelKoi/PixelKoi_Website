@@ -14,7 +14,7 @@ const images: ImageType[] = [
   { src: "https://image3.jpg" },
   { src: "https://image4.jpg" },
 ];
-
+// TODO: Convert TEAM2.tsx Component Image carousel to grid
 const Team = (props: any) => {
   const [width, setWidth] = useState(0);
   const carousel: any = useRef(10);
