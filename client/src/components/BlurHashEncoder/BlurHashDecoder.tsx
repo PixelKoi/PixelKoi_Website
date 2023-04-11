@@ -7,11 +7,19 @@ interface ApiResponse {
   error: any;
   loading: Boolean;
 }
-export let HashContext = createContext<object>({});
+
+interface ImageType {
+  [name: string]: {
+    url: string;
+    hash: string;
+  };
+}
+
+export let HashContext = createContext<ImageType>({});
 
 // DOES NOT RENDER, WE'RE JUST GRABBING API DATA!
 const BlurHashDecoder = (props: any) => {
-  const [hashData, setHashData] = useState<object>({});
+  const [hashData, setHashData] = useState<ImageType>({});
   const [error, setError] = useState<any>();
   const [status, setStatus] = useState<any>();
   const [statusText, setStatusText] = useState<String>("");

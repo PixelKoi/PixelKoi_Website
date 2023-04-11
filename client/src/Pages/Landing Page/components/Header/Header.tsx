@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import SpinningImage from "./components/3Dsquare/SpinningImage";
 import { Link, useLocation } from "react-router-dom";
 import headerImg from "../../../../assets/Home/box.jpg";
-import { Blurhash, BlurhashCanvas } from "react-blurhash";
+import { Blurhash } from "react-blurhash";
 
 const hash = "U14o1hx^0QIptPR+E4%059Rk^g%J0$t3^NIY";
 

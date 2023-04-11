@@ -6,13 +6,34 @@ import uxdesign from "../../../../assets/Home/uxdesign.webp";
 import code from "../../../../assets/Home/code.webp";
 import web from "../../../../assets/Home/web.webp";
 import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
-
+import { Blurhash } from "react-blurhash";
 import { Link } from "react-router-dom";
 import OurTech from "../OurTech/OurTech";
+import headerImg from "../../../../assets/Home/box.jpg";
+
+interface ImageType {
+  [name: string]: {
+    url: string;
+    hash: string;
+  };
+}
 
 const Offer = () => {
-  const hashData = useContext(HashContext);
-  console.log("WHAT IN THE FUCL: ", hashData);
+  const [loaded, setLoaded] = useState(false);
+
+  const hashData = useContext<ImageType>(HashContext);
+  console.log("Hash Data: ", hashData);
+  const laptopHash = hashData["laptop"].hash;
+  const tablet = hashData["tablet"].hash;
+  const imac = hashData["imac"].hash;
+  useEffect(() => {
+    const img = new Image();
+    img.src = headerImg;
+    img.onload = () => {
+      setLoaded(true);
+    };
+  }, [uxdesign, code, web]);
+
   return (
     <div id="services" className={styles.mainContainer}>
       <div className={styles.container}>
