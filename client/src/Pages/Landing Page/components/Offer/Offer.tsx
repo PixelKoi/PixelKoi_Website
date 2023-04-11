@@ -98,14 +98,27 @@ const Offer = () => {
               <p style={{ margin: "auto 0", color: "#fff" }}>Learn More</p>
             </Link>
           </motion.div>
-          <motion.img
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            src={code}
-            alt="Macbook Pro image with code"
-            className={styles.cardIMG}
-          />
+          <div>
+            <div style={{ display: loaded ? "none" : "inline" }}>
+              <Blurhash
+                hash={laptopHash}
+                width="100%"
+                height="100%"
+                resolutionX={64}
+                resolutionY={64}
+                punch={1}
+              />
+            </div>
+            <motion.img
+              onLoad={() => setLoaded(true)}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}
+              src={code}
+              alt="Macbook Pro image with code"
+              className={styles.cardIMG}
+            />
+          </div>
         </div>
 
         <div className={styles.uxGroup}>
