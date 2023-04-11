@@ -1,15 +1,19 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Offer.module.scss";
 import { motion } from "framer-motion";
 import { BsArrowRightCircle } from "react-icons/bs";
 import uxdesign from "../../../../assets/Home/uxdesign.webp";
 import code from "../../../../assets/Home/code.webp";
 import web from "../../../../assets/Home/web.webp";
+import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
 
 import { Link } from "react-router-dom";
 import OurTech from "../OurTech/OurTech";
 
 const Offer = () => {
+  const hashData = useContext(HashContext);
+  console.log("WHAT IN THE FUCL: ", hashData);
+  console.log(hashData);
   return (
     <div id="services" className={styles.mainContainer}>
       <div className={styles.container}>

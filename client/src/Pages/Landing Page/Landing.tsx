@@ -28,9 +28,9 @@ const Landing = (props: any) => {
       ) : (
         <main className={styles.mainContainer}>
           {" "}
+          <BlurHashDecoder />
           <NavGroup />
           {/*<BlurHashEncoder />*/}
-          <BlurHashDecoder />
           <Header />
           <OurTech />
           <Offer />

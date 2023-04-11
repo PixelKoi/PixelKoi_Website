@@ -7,11 +7,11 @@ interface ApiResponse {
   error: any;
   loading: Boolean;
 }
-let HashContext = createContext<object>({});
+export let HashContext = createContext<object>({});
 
 // DOES NOT RENDER, WE'RE JUST GRABBING API DATA!
 const BlurHashDecoder = (props: any) => {
-  const [hashData, setHashData] = useState<object>([]);
+  const [hashData, setHashData] = useState<object>({});
   const [error, setError] = useState<any>();
   const [status, setStatus] = useState<any>();
   const [statusText, setStatusText] = useState<String>("");
@@ -36,7 +36,13 @@ const BlurHashDecoder = (props: any) => {
   useEffect(() => {
     getImageHash();
   }, []);
-  return <HashContext.Provider value={hashData}></HashContext.Provider>;
+  return (
+    <>
+      <HashContext.Provider value={hashData}>
+        {props.children}
+      </HashContext.Provider>
+    </>
+  );
 };
 
 export default BlurHashDecoder;
