@@ -1,12 +1,4 @@
-import React, { useEffect, useState, useContext, createContext } from "react";
-import { decode, encode } from "blurhash";
-interface ApiResponse {
-  status: Number;
-  statusText: String;
-  data: any;
-  error: any;
-  loading: Boolean;
-}
+import React, { useEffect, useState, createContext } from "react";
 
 interface ImageType {
   [name: string]: {

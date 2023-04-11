@@ -5,9 +5,7 @@ import Footer from "../../components/Footer/Main/Footer";
 import creative from "./../../assets/About/creative.webp";
 import dream from "../../assets/About/dream.webp";
 import story from "../../assets/About/story.webp";
-import BlurHashDecoder, {
-  HashContext,
-} from "../../components/BlurHashEncoder/BlurHashDecoder";
+import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
 import headerImg from "../../assets/Home/box.jpg";

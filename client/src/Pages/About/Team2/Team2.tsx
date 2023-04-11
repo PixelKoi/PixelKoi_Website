@@ -4,22 +4,11 @@ import styles from "./Team2Styles.module.scss";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import carousel_images from "../../../images";
 
-interface ImageType {
-  src: string;
-}
-
-const images: ImageType[] = [
-  { src: "https://image1.jpg" },
-  { src: "https://image2.jpg" },
-  { src: "https://image3.jpg" },
-  { src: "https://image4.jpg" },
-];
 // TODO: Convert TEAM2.tsx Component Image carousel to grid
 const Team = (props: any) => {
   const [width, setWidth] = useState(0);
   const carousel: any = useRef(10);
   const y = useMotionValue(0);
-  const opacity = useTransform(y, [0, 300], [1, 0]);
   useEffect(() => {
     setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
   });

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
-import { decode, encode } from "blurhash";
+import React, { useEffect, useState } from "react";
+import { encode } from "blurhash";
 import { Blurhash } from "react-blurhash";
 import headerImage from "../../assets/Home/box.jpg";
 import laptop from "../../assets/Home/code.webp";
@@ -73,7 +73,6 @@ const BlurHashEncoder = (props: any) => {
 
   // TODO: place hashes as placeholders for images and decode on image locations only
   const encodeImage = async (imageUrls: ImageUrl[]) => {
-    console.log("Encoding image..." + "");
     if (Array.isArray(imageUrls)) {
       for (const { name, url } of imageUrls) {
         console.log(name, url);

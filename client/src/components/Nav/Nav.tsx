@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Nav.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import menu from "../../assets/images/menu.svg";

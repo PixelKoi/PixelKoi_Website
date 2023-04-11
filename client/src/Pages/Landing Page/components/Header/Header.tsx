@@ -1,16 +1,8 @@
 // import './Header.css';
-import React, {
-  useEffect,
-  useRef,
-  useState,
-  useCallback,
-  useLayoutEffect,
-  useContext,
-} from "react";
+import React, { useEffect, useState, useLayoutEffect, useContext } from "react";
 import "../../../../styles/globalStyles.css";
 import styles from "./Header.module.scss";
 import { motion } from "framer-motion";
-import SpinningImage from "./components/3Dsquare/SpinningImage";
 import { Link } from "react-router-dom";
 import headerImg from "../../../../assets/Home/box.jpg";
 import { Blurhash } from "react-blurhash";

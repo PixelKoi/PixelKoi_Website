@@ -8,7 +8,6 @@ import web from "../../../../assets/Home/web.webp";
 import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
 import { Blurhash } from "react-blurhash";
 import { Link } from "react-router-dom";
-import OurTech from "../OurTech/OurTech";
 import headerImg from "../../../../assets/Home/box.jpg";
 
 interface ImageType {

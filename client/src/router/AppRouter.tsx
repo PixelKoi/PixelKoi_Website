@@ -2,9 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Landing from "../Pages/Landing Page/Landing";
 import About from "../Pages/About/About";
 import { Contact } from "../Pages/Contact/Contact2";
-import BlurHashDecoder, {
-  HashContext,
-} from "../components/BlurHashEncoder/BlurHashDecoder";
+import BlurHashDecoder from "../components/BlurHashEncoder/BlurHashDecoder";
 const AppRouter = () => {
   return (
     <BlurHashDecoder>
