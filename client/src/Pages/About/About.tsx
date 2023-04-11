@@ -62,7 +62,7 @@ const About = () => {
                   resolutionX={64}
                   resolutionY={64}
                   punch={1}
-                  className={styles.headerBackgroundImg}
+                  className={styles.imgContainer}
                 />
               </div>
               <img
@@ -82,7 +82,7 @@ const About = () => {
                   resolutionX={64}
                   resolutionY={64}
                   punch={1}
-                  className={styles.headerBackgroundImg}
+                  className={styles.imgContainer}
                 />
               </div>
               <img
@@ -136,7 +136,7 @@ const About = () => {
                   resolutionX={64}
                   resolutionY={64}
                   punch={1}
-                  className={styles.headerBackgroundImg}
+                  className={styles.imgContainer}
                 />
               </div>
               <motion.img
