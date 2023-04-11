@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useState, useContext, createContext } from "react";
 import { decode, encode } from "blurhash";
-import HashImage from "./HashImage";
 interface ApiResponse {
   status: Number;
   statusText: String;
@@ -8,8 +7,7 @@ interface ApiResponse {
   error: any;
   loading: Boolean;
 }
-
-interface ImageProps {}
+let HashContext = createContext<object>({});
 
 // DOES NOT RENDER, WE'RE JUST GRABBING API DATA!
 const BlurHashDecoder = (props: any) => {
@@ -26,8 +24,9 @@ const BlurHashDecoder = (props: any) => {
       const json = await apiResponse.json();
       setStatus(apiResponse.status);
       setStatusText(apiResponse.statusText);
-      setHashData(json);
-      console.log(json);
+      setHashData(json[0]);
+      console.log(json[0]);
+      console.log(typeof json[0]);
       console.log("headerImg Hash Code:", json[0]["headerImg"].hash);
     } catch (error) {
       setError(error);
@@ -37,11 +36,7 @@ const BlurHashDecoder = (props: any) => {
   useEffect(() => {
     getImageHash();
   }, []);
-  return (
-    <div>
-      <HashImage images={hashData} />
-    </div>
-  );
+  return <HashContext.Provider value={hashData}></HashContext.Provider>;
 };
 
 export default BlurHashDecoder;

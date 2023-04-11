@@ -11,7 +11,6 @@ import React, { useState, useEffect } from "react";
 import { GridLoader } from "react-spinners";
 import BlurHashEncoder from "../../components/BlurHashEncoder/BlurHashEncoder";
 import BlurHashDecoder from "../../components/BlurHashEncoder/BlurHashDecoder";
-import HashImage from "../../components/BlurHashEncoder/HashImage";
 const Landing = (props: any) => {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
@@ -36,7 +35,6 @@ const Landing = (props: any) => {
           <OurTech />
           <Offer />
           <Global />
-          <HashImage images={props} />
           {/*
 			<About />
 			<Team />
