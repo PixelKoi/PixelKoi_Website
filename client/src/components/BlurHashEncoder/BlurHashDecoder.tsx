@@ -15,6 +15,7 @@ const BlurHashDecoder = (props: any) => {
   const [error, setError] = useState<any>();
   const [status, setStatus] = useState<any>();
   const [statusText, setStatusText] = useState<String>("");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const imagesURL = "http://localhost:8000/api/images";
 
@@ -28,8 +29,10 @@ const BlurHashDecoder = (props: any) => {
       console.log(json[0]);
       console.log(typeof json[0]);
       console.log("headerImg Hash Code:", json[0]["headerImg"].hash);
+      setIsLoading(false);
     } catch (error) {
       setError(error);
+      setIsLoading(false);
     }
   };
 
@@ -38,9 +41,13 @@ const BlurHashDecoder = (props: any) => {
   }, []);
   return (
     <>
-      <HashContext.Provider value={hashData}>
-        {props.children}
-      </HashContext.Provider>
+      {isLoading ? (
+        <div>Loading...</div>
+      ) : (
+        <HashContext.Provider value={hashData}>
+          {props.children}
+        </HashContext.Provider>
+      )}
     </>
   );
 };

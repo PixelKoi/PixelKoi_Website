@@ -30,9 +30,9 @@ const Landing = (props: any) => {
           {" "}
           <NavGroup />
           {/*<BlurHashEncoder />*/}
-          <Header />
-          <OurTech />
           <BlurHashDecoder>
+            <Header />
+            <OurTech />
             <Offer />
           </BlurHashDecoder>
           <Global />

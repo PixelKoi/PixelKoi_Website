@@ -13,7 +13,6 @@ import OurTech from "../OurTech/OurTech";
 const Offer = () => {
   const hashData = useContext(HashContext);
   console.log("WHAT IN THE FUCL: ", hashData);
-  console.log(hashData);
   return (
     <div id="services" className={styles.mainContainer}>
       <div className={styles.container}>
