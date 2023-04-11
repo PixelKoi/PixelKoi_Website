@@ -9,7 +9,12 @@ import { motion } from 'framer-motion';
 
 const Global2 = () => {
 	return (
-		<div className={styles.container}>
+		<motion.div
+			initial={{ opacity: 0, y: 20 }}
+			whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+			viewport={{ once: true }}
+			className={styles.container}
+		>
 			<div className={styles.group2} id={styles.globe}>
 				<motion.img
 					animate={{ rotate: 360 }}
@@ -27,12 +32,7 @@ const Global2 = () => {
 				</p>
 			</div>
 
-			<motion.div
-				initial={{ opacity: 0, y: 20 }}
-				whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
-				viewport={{ once: true }}
-				className={styles.pillarContainer}
-			>
+			<motion.div className={styles.pillarContainer}>
 				<div className={styles.group} id={styles.pillar1}>
 					<div className={styles.pillarGroup}>
 						<img src={remote} alt="world" className={styles.img} />
@@ -57,7 +57,7 @@ const Global2 = () => {
 					</div>
 				</div>
 			</motion.div>
-		</div>
+		</motion.div>
 	);
 };
 
