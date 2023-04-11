@@ -2,12 +2,38 @@ import styles from "./About.module.scss";
 import NavGroup from "../../components/Nav/NavGroup";
 import Team from "./Team2/Team2";
 import Footer from "../../components/Footer/Main/Footer";
-
 import creative from "./../../assets/About/creative.webp";
 import dream from "../../assets/About/dream.webp";
 import story from "../../assets/About/story.webp";
+import BlurHashDecoder, {
+  HashContext,
+} from "../../components/BlurHashEncoder/BlurHashDecoder";
 import { motion } from "framer-motion";
+import React, { useContext, useEffect, useState } from "react";
+import headerImg from "../../assets/Home/box.jpg";
+import { Blurhash } from "react-blurhash";
+
+interface ImageType {
+  [name: string]: {
+    url: string;
+    hash: string;
+  };
+}
 const About = () => {
+  const [loaded, setLoaded] = useState(false);
+  const hashData = useContext<ImageType>(HashContext);
+  console.log("About Page Hash Data: ", hashData);
+  const creativeHash = hashData["creative"].hash;
+  const dreamHash = hashData["dream"].hash;
+  const storyHash = hashData["story"].hash;
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = headerImg;
+    img.onload = () => {
+      setLoaded(true);
+    };
+  }, [creativeHash, dreamHash, storyHash]);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -16,7 +42,6 @@ const About = () => {
       className={styles.wrapper}
     >
       <NavGroup />
-
       <div className={styles.container}>
         <div className={styles.section}>
           <div className={styles.headerText}>
@@ -30,20 +55,46 @@ const About = () => {
             </p>
           </div>
           <div className={styles.imgContainer}>
-            <img
-              loading="lazy"
-              src={dream}
-              alt="inspirationalQuote"
-              className={styles.imgContainer}
-              id={styles.dream}
-            />
-            <img
-              loading="lazy"
-              src={creative}
-              alt="inspirationalQuote"
-              className={styles.imgContainer}
-              id={styles.creative}
-            />
+            <div>
+              <div style={{ display: loaded ? "none" : "inline" }}>
+                <Blurhash
+                  hash={dreamHash}
+                  width="100%"
+                  height="100%"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                  className={styles.headerBackgroundImg}
+                />
+              </div>
+              <img
+                onLoad={() => setLoaded(true)}
+                src={dream}
+                alt="inspirationalQuote"
+                className={styles.imgContainer}
+                id={styles.dream}
+              />
+            </div>
+            <div>
+              <div style={{ display: loaded ? "none" : "inline" }}>
+                <Blurhash
+                  hash={creativeHash}
+                  width="100%"
+                  height="100%"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                  className={styles.headerBackgroundImg}
+                />
+              </div>
+              <img
+                onLoad={() => setLoaded(true)}
+                src={creative}
+                alt="inspirationalQuote"
+                className={styles.imgContainer}
+                id={styles.creative}
+              />
+            </div>
           </div>
           <div className={styles.description}>
             <p>
@@ -78,12 +129,25 @@ const About = () => {
             <h3 style={{ color: "#FFA500" }}>Our Story</h3>
           </div>
           <div className={styles.imgContainer}>
-            <motion.img
-              loading="lazy"
-              src={story}
-              alt=""
-              className={styles.imgContainer}
-            />
+            <div>
+              <div style={{ display: loaded ? "none" : "inline" }}>
+                <Blurhash
+                  hash={storyHash}
+                  width="100%"
+                  height="100%"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                  className={styles.headerBackgroundImg}
+                />
+              </div>
+              <motion.img
+                onLoad={() => setLoaded(true)}
+                src={story}
+                alt=""
+                className={styles.imgContainer}
+              />
+            </div>
             <p>
               As a team of experienced professional software engineers, we bring
               our passion for problem-solving and ingenuity to each project we
@@ -100,7 +164,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
       <Team />
       <Footer />
     </motion.div>

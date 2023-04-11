@@ -2,7 +2,6 @@ import Header from "./components/Header/Header";
 import Clients from "../Landing Page/components/Clients/Clients";
 import "../../styles/globalStyles.css";
 import styles from "./Landing.module.css";
-import Nav from "../../components/Nav/Nav";
 import Offer from "./components/Offer/Offer";
 import Global from "./components/Global/Global";
 import OurTech from "./components/OurTech/OurTech";
@@ -10,9 +9,10 @@ import Footer from "../../components/Footer/Main/Footer";
 import NavGroup from "../../components/Nav/NavGroup";
 import React, { useState, useEffect } from "react";
 import { GridLoader } from "react-spinners";
-
+import BlurHashEncoder from "../../components/BlurHashEncoder/BlurHashEncoder";
+import BlurHashDecoder from "../../components/BlurHashEncoder/BlurHashDecoder";
 const Landing = (props: any) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     // Simulate a delay in loading the page
     setTimeout(() => {
@@ -29,6 +29,7 @@ const Landing = (props: any) => {
         <main className={styles.mainContainer}>
           {" "}
           <NavGroup />
+          {/*<BlurHashEncoder />*/}
           <Header />
           <OurTech />
           <Offer />

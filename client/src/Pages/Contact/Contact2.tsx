@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, CSSProperties } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import Nav from '../../components/Nav/Nav';
 import styles from './Contact2.module.scss';
 import Footer from '../../components/Footer/ContactPage/FooterContactPage';
@@ -6,6 +6,20 @@ import { motion, useScroll } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { AiFillWarning } from 'react-icons/ai';
 import mailboxImg from '../../assets/Home/mailbox.jpg';
+import { Blurhash } from "react-blurhash";
+import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
+
+interface ImageType {
+  [name: string]: {
+    url: string;
+    hash: string;
+  };
+}
+
+// TODO: Add email and name checks / make sure the information is filled out.
+// TODO: Add Submission check, display and Animate,
+// TODO: Add functionality for
+
 
 export const Contact = () => {
 	const [ name, setName ] = useState('');
@@ -130,7 +144,17 @@ export const Contact = () => {
 		setForm('complete');
 		return true;
 	};
-
+	const [loaded, setLoaded] = useState(false);
+	const hashData = useContext<ImageType>(HashContext);
+	const mailboxHash = hashData["mailboxImg"].hash;
+	console.log(mailboxHash);
+	useEffect(() => {
+		const img = new Image();
+		img.src = mailboxHash;
+		img.onload = () => {
+			setLoaded(true);
+		};
+	}, [mailboxHash]);
 	return (
 		<div>
 			<Nav />
@@ -279,7 +303,20 @@ export const Contact = () => {
 					</motion.div>
 				</motion.div>
 				<motion.div ref={ref} style={{ willChange: 'transform' }} className={styles.contact2}>
-					<img className={styles.bgIMG} src={mailboxImg} alt="" />
+					<div>
+						<motion.div style={{ display: loaded ? "none" : "inline" }}>
+							<Blurhash
+								hash={mailboxHash}
+								width="100%"
+								height="100%"
+								resolutionX={64}
+								resolutionY={64}
+								punch={1}
+								className={styles.bgIMG}
+							/>
+						</motion.div>
+						<img className={styles.bgIMG} src={mailboxImg} alt="" />
+					</div>
 				</motion.div>
 			</motion.div>
 			<Footer />
