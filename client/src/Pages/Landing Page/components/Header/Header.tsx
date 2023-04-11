@@ -5,21 +5,29 @@ import React, {
   useState,
   useCallback,
   useLayoutEffect,
+  useContext,
 } from "react";
 import "../../../../styles/globalStyles.css";
 import styles from "./Header.module.scss";
 import { motion } from "framer-motion";
 import SpinningImage from "./components/3Dsquare/SpinningImage";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import headerImg from "../../../../assets/Home/box.jpg";
 import { Blurhash } from "react-blurhash";
+import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
 
-const hash = "U14o1hx^0QIptPR+E4%059Rk^g%J0$t3^NIY";
-
+interface ImageType {
+  [name: string]: {
+    url: string;
+    hash: string;
+  };
+}
 const Header = () => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
   const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
   const [loaded, setLoaded] = useState(false);
+  const hashData = useContext<ImageType>(HashContext);
+  const headerHash = hashData["headerImg"].hash;
 
   useEffect(() => {
     const img = new Image();
@@ -39,7 +47,7 @@ const Header = () => {
       <div>
         <div style={{ display: loaded ? "none" : "inline" }}>
           <Blurhash
-            hash={hash}
+            hash={headerHash}
             width="100%"
             height="100%"
             resolutionX={64}
