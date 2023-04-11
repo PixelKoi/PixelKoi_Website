@@ -28,6 +28,7 @@ const BlurHashDecoder = (props: any) => {
       setStatusText(apiResponse.statusText);
       setHashData(json);
       console.log(json);
+      console.log("headerImg Hash Code:", json[0]["headerImg"].hash);
     } catch (error) {
       setError(error);
     }

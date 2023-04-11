@@ -30,13 +30,13 @@ const Landing = (props: any) => {
         <main className={styles.mainContainer}>
           {" "}
           <NavGroup />
-          <BlurHashEncoder />
+          {/*<BlurHashEncoder />*/}
           <BlurHashDecoder />
           <Header />
           <OurTech />
           <Offer />
           <Global />
-          <HashImage images={props.images} />
+          <HashImage images={props} />
           {/*
 			<About />
 			<Team />
