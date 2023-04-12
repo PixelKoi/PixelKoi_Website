@@ -9,6 +9,7 @@ import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
+import headerImg from "../../assets/Home/box.jpeg";
 
 interface ImageType {
   [name: string]: {
@@ -26,24 +27,11 @@ const About = () => {
   // TODO: Discovered reason for image still loading when using setLoaded / loaded hook is because it should use different versions for each image!
 
   useEffect(() => {
-    const aboutImages = [creative, dream, story];
-    // resolves when all images are loaded successfully, and rejects if there is an error loading an image
-    Promise.all(
-      aboutImages.map((src) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = src;
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      })
-    )
-      .then(() => {
-        setLoaded(true);
-      })
-      .catch((err) => {
-        console.error("Failed to load images: ", err);
-      });
+    const img = new Image();
+    img.src = dream;
+    img.onload = () => {
+      setLoaded(true);
+    };
   }, []);
   return (
     <motion.div
@@ -127,21 +115,27 @@ const About = () => {
           <div className={styles.headerText}>
             <h3 style={{ color: "#FFA500" }}>Our Story</h3>
           </div>
+
           <div className={styles.imgContainer}>
-            <div>
-              <div style={{ display: loaded ? "none" : "inline" }}>
+            {!loaded ? (
+              <div>
+                {" "}
                 <Blurhash
                   hash={storyHash}
-                  width="100%"
-                  height="100%"
+                  width="35vw"
+                  height="23vw"
                   resolutionX={64}
                   resolutionY={64}
                   punch={1}
                   className={styles.aboutImages}
                 />
               </div>
-              <motion.img src={story} alt="" className={styles.aboutImages} />
-            </div>
+            ) : (
+              <div>
+                {" "}
+                <motion.img src={story} alt="" className={styles.aboutImages} />
+              </div>
+            )}
             <p>
               As a team of experienced professional software engineers, we bring
               our passion for problem-solving and ingenuity to each project we

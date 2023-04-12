@@ -38,7 +38,6 @@
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 40px;
 		img {
-			width: 100%;
 			filter: grayscale(0.5);
 		}
 	}
@@ -75,7 +74,10 @@
 
 		}
 	}
-	.aboutImages{}
+	.aboutImages{
+		width: 35vw;
+		height: 23vw;
+	}
 
 	.description {
 		margin-top: 4rem;
