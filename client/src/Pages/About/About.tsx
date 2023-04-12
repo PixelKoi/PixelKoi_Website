@@ -18,7 +18,6 @@ interface ImageType {
   };
 }
 const About = () => {
-  const [loaded, setLoaded] = useState(false);
   const [dreamLoaded, setDreamLoaded] = useState(false);
   const [creativeLoaded, setCreativeLoaded] = useState(false);
   const [storyLoaded, setStoryLoaded] = useState(false);
@@ -31,23 +30,28 @@ const About = () => {
   // TODO: Discovered reason for image still loading when using setLoaded / loaded hook is because it should use different versions for each image!
 
   useEffect(() => {
-    const aboutImages = [creative, dream, story];
-    // resolves when all images are loaded successfully, and rejects if there is an error loading an image
-    Promise.all(
-      aboutImages.map((src) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = src;
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      })
-    )
+    const images = [dream, creative, story];
+    const promises = images.map((image) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = image;
+        img.onload = () => {
+          resolve(img);
+        };
+        img.onerror = () => {
+          reject();
+        };
+      });
+    });
+
+    Promise.all(promises)
       .then(() => {
-        setLoaded(true);
+        setDreamLoaded(true);
+        setCreativeLoaded(true);
+        setStoryLoaded(true);
       })
-      .catch((err) => {
-        console.error("Failed to load images: ", err);
+      .catch((error) => {
+        console.error("Failed to load images:", error);
       });
   }, []);
   return (
@@ -71,36 +75,42 @@ const About = () => {
             </p>
           </div>
           <div className={styles.newAboutImageContainer}>
-            <div style={{ display: dreamLoaded ? "none" : "block" }}>
-              <Blurhash
-                hash={dreamHash}
-                width="35vw"
-                height="23vw"
-                resolutionX={64}
-                resolutionY={64}
-                punch={1}
+            {!dreamLoaded ? (
+              <div>
+                <Blurhash
+                  hash={dreamHash}
+                  width="35vw"
+                  height="23vw"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                />
+              </div>
+            ) : (
+              <img
+                src={dream}
+                alt="inspirationalQuote"
+                onLoad={() => setDreamLoaded(true)}
               />
-            </div>
-            <img
-              src={dream}
-              alt="inspirationalQuote"
-              onLoad={() => setDreamLoaded(true)}
-            />
-            <div style={{ display: creativeLoaded ? "none" : "block" }}>
-              <Blurhash
-                hash={creativeHash}
-                width="35vw"
-                height="23vw"
-                resolutionX={64}
-                resolutionY={64}
-                punch={1}
+            )}
+            {!creativeLoaded ? (
+              <div>
+                <Blurhash
+                  hash={creativeHash}
+                  width="35vw"
+                  height="23vw"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                />
+              </div>
+            ) : (
+              <img
+                src={creative}
+                alt="inspirationalQuote"
+                onLoad={() => setCreativeLoaded(true)}
               />
-            </div>
-            <img
-              src={creative}
-              alt="inspirationalQuote"
-              onLoad={() => setCreativeLoaded(true)}
-            />
+            )}
           </div>
           <div className={styles.description}>
             <p>
@@ -136,26 +146,27 @@ const About = () => {
           </div>
 
           <div className={styles.imgContainer}>
-            <div style={{ display: storyLoaded ? "none" : "inline" }}>
-              <Blurhash
-                hash={storyHash}
-                width="35vw"
-                height="23vw"
-                resolutionX={64}
-                resolutionY={64}
-                punch={1}
-                className={styles.aboutImages}
-              />
-            </div>
-            <div>
-              {" "}
+            {!storyLoaded ? (
+              <div>
+                <Blurhash
+                  hash={storyHash}
+                  width="35vw"
+                  height="23vw"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                  className={styles.aboutImages}
+                />
+              </div>
+            ) : (
               <motion.img
                 src={story}
                 alt=""
                 className={styles.aboutImages}
                 onLoad={() => setStoryLoaded(true)}
               />
-            </div>
+            )}
+
             <p>
               As a team of experienced professional software engineers, we bring
               our passion for problem-solving and ingenuity to each project we
