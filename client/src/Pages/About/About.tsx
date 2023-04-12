@@ -168,7 +168,7 @@ const About = () => {
 					</div>
 				</div>
 			</div>
-			<Team />
+			{/* <Team /> */}
 			<Team2 />
 			<Footer />
 		</motion.div>
