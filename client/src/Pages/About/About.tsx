@@ -19,6 +19,10 @@ interface ImageType {
 }
 const About = () => {
   const [loaded, setLoaded] = useState(false);
+  const [dreamLoaded, setDreamLoaded] = useState(false);
+  const [creativeLoaded, setCreativeLoaded] = useState(false);
+  const [storyLoaded, setStoryLoaded] = useState(false);
+
   const hashData = useContext<ImageType>(HashContext);
   console.log("About Page Hash Data: ", hashData);
   const creativeHash = hashData["creative"].hash;
@@ -27,11 +31,24 @@ const About = () => {
   // TODO: Discovered reason for image still loading when using setLoaded / loaded hook is because it should use different versions for each image!
 
   useEffect(() => {
-    const img = new Image();
-    img.src = dream;
-    img.onload = () => {
-      setLoaded(true);
-    };
+    const aboutImages = [creative, dream, story];
+    // resolves when all images are loaded successfully, and rejects if there is an error loading an image
+    Promise.all(
+      aboutImages.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      })
+    )
+      .then(() => {
+        setLoaded(true);
+      })
+      .catch((err) => {
+        console.error("Failed to load images: ", err);
+      });
   }, []);
   return (
     <motion.div
@@ -54,7 +71,7 @@ const About = () => {
             </p>
           </div>
           <div className={styles.newAboutImageContainer}>
-            <div style={{ display: loaded ? "none" : "inline-block" }}>
+            <div style={{ display: dreamLoaded ? "none" : "block" }}>
               <Blurhash
                 hash={dreamHash}
                 width="35vw"
@@ -67,9 +84,9 @@ const About = () => {
             <img
               src={dream}
               alt="inspirationalQuote"
-              onLoad={() => setLoaded(true)}
+              onLoad={() => setDreamLoaded(true)}
             />
-            <div style={{ display: loaded ? "none" : "inline-block" }}>
+            <div style={{ display: creativeLoaded ? "none" : "block" }}>
               <Blurhash
                 hash={creativeHash}
                 width="35vw"
@@ -82,7 +99,7 @@ const About = () => {
             <img
               src={creative}
               alt="inspirationalQuote"
-              onLoad={() => setLoaded(true)}
+              onLoad={() => setCreativeLoaded(true)}
             />
           </div>
           <div className={styles.description}>
@@ -119,7 +136,7 @@ const About = () => {
           </div>
 
           <div className={styles.imgContainer}>
-            <div style={{ display: loaded ? "none" : "inline" }}>
+            <div style={{ display: storyLoaded ? "none" : "inline" }}>
               <Blurhash
                 hash={storyHash}
                 width="35vw"
@@ -136,7 +153,7 @@ const About = () => {
                 src={story}
                 alt=""
                 className={styles.aboutImages}
-                onLoad={() => setLoaded(true)}
+                onLoad={() => setStoryLoaded(true)}
               />
             </div>
             <p>

@@ -48,7 +48,6 @@ const Header = () => {
           src={headerImg}
           alt="Header Image"
           className={styles.headerBackgroundImg}
-          style={{ display: !loaded ? "none" : "inline" }}
         />
       </div>
       <div className={styles.container}>
