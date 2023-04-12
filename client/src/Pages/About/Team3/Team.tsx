@@ -7,12 +7,12 @@ import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
 import jonny from '../../../assets/images/slider/jonny.webp';
 import garo from '../../../assets/images/slider/garo.webp';
-import robothappy from '../../../assets/images/slider/robothappy.webp';
+import ChatGPT from '../../../assets/images/slider/robothappy.webp';
 
 const images = [
 	{ src: jonny, alt: 'Jonathan Bajada', name: 'Jonathan Bajada', description: 'Full-Stack Developer/UX Director' },
 	{ src: garo, alt: 'Garo Bajada', name: 'Garo Bajada', description: 'Full-Stack Developer/Cloud Engineer' },
-	{ src: robothappy, alt: 'Jonathan Bajada', name: 'Jonathan Bajada', description: 'Full-Stack Developer' }
+	{ src: ChatGPT, alt: 'ChatGPT', name: 'ChatGPT', description: 'Full-Stack Developer' }
 ];
 
 const Team = () => {
@@ -54,6 +54,11 @@ const Team = () => {
 					</div>
 					<BsFillArrowRightCircleFill className={styles.right} size={35} onClick={handleNextClick} />
 				</div>
+			</div>
+			<div className={styles.desktopCard}>
+				<Card image={images[0].src} name={images[0].name} description={images[0].description} />
+				<Card image={images[1].src} name={images[1].name} description={images[1].description} />
+				<Card image={images[2].src} name={images[2].name} description={images[2].description} />
 			</div>
 		</div>
 	);

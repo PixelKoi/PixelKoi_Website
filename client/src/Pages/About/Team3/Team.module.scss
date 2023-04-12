@@ -52,4 +52,34 @@
 			}
 		}
 	}
+
+	.desktopCard {
+		margin-top: 5rem;
+		// max-width: 1200px;
+		justify-content: center;
+		display: flex;
+	}
+}
+
+@media only screen and (min-width: 320px) {
+	.wrapper {
+		.carouselWrapper {
+			display: flex;
+		}
+		.desktopCard {
+			display: none;
+		}
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 768px) {
+	.wrapper {
+		.carouselWrapper {
+			display: none;
+		}
+		.desktopCard {
+			display: flex;
+		}
+	}
 }
