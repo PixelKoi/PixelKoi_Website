@@ -392,7 +392,15 @@ img {
 	margin-right: 5px;
 }
 
+.title {
+	display: flex;
+	flex-direction: column;
+}
+
 @media screen and (max-width: 479px) {
+	.title {
+		margin-bottom: 4rem;
+	}
 	.contact {
 		padding: 8vw 8vw 10vw;
 	}

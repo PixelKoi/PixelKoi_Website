@@ -6,20 +6,19 @@ import { motion, useScroll } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { AiFillWarning } from 'react-icons/ai';
 import mailboxImg from '../../assets/Home/mailbox.jpg';
-import { Blurhash } from "react-blurhash";
-import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
+import { Blurhash } from 'react-blurhash';
+import { HashContext } from '../../components/BlurHashEncoder/BlurHashDecoder';
 
 interface ImageType {
-  [name: string]: {
-    url: string;
-    hash: string;
-  };
+	[name: string]: {
+		url: string;
+		hash: string;
+	};
 }
 
 // TODO: Add email and name checks / make sure the information is filled out.
 // TODO: Add Submission check, display and Animate,
 // TODO: Add functionality for
-
 
 export const Contact = () => {
 	const [ name, setName ] = useState('');
@@ -144,45 +143,50 @@ export const Contact = () => {
 		setForm('complete');
 		return true;
 	};
-	const [loaded, setLoaded] = useState(false);
+	const [ loaded, setLoaded ] = useState(false);
 	const hashData = useContext<ImageType>(HashContext);
-	const mailboxHash = hashData["mailboxImg"].hash;
+	const mailboxHash = hashData['mailboxImg'].hash;
 	console.log(mailboxHash);
-	useEffect(() => {
-		const img = new Image();
-		img.src = mailboxHash;
-		img.onload = () => {
-			setLoaded(true);
-		};
-	}, [mailboxHash]);
+	useEffect(
+		() => {
+			const img = new Image();
+			img.src = mailboxHash;
+			img.onload = () => {
+				setLoaded(true);
+			};
+		},
+		[ mailboxHash ]
+	);
 	return (
 		<div>
 			<Nav />
 			<div className={styles.headerWrapper}>
 				<div className={styles.header}>
-					<motion.h1
-						className={styles.headerText}
-						initial={{ opacity: 0, y: 80 }}
-						animate={{
-							opacity: 1,
-							y: 0,
-							transition: { delay: 0.4, duration: 0.4 }
-						}}
-					>
-						Get In Touch
-					</motion.h1>
-					<motion.div
-						initial={{ opacity: 0, y: 80 }}
-						animate={{
-							opacity: 1,
-							y: 0,
-							transition: { delay: 0.4, duration: 0.4 }
-						}}
-						className={styles.links}
-					>
-						<Link to="/">Home</Link>
-						<Link to="/#services">Services</Link>
-					</motion.div>
+					<div className={styles.title}>
+						<motion.h1
+							className={styles.headerText}
+							initial={{ opacity: 0, y: 80 }}
+							animate={{
+								opacity: 1,
+								y: 0,
+								transition: { delay: 0.4, duration: 0.4 }
+							}}
+						>
+							Get In Touch
+						</motion.h1>
+						<motion.div
+							initial={{ opacity: 0, y: 80 }}
+							animate={{
+								opacity: 1,
+								y: 0,
+								transition: { delay: 0.4, duration: 0.4 }
+							}}
+							className={styles.links}
+						>
+							<Link to="/">Home</Link>
+							<Link to="/#services">Services</Link>
+						</motion.div>
+					</div>
 					<motion.div
 						initial={{ scale: 1.2 }}
 						animate={{
@@ -304,7 +308,7 @@ export const Contact = () => {
 				</motion.div>
 				<motion.div ref={ref} style={{ willChange: 'transform' }} className={styles.contact2}>
 					<div>
-						<motion.div style={{ display: loaded ? "none" : "inline" }}>
+						<motion.div style={{ display: loaded ? 'none' : 'inline' }}>
 							<Blurhash
 								hash={mailboxHash}
 								width="100%"
