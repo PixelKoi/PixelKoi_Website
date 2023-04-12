@@ -26,9 +26,24 @@ const About = () => {
   // TODO: Discovered reason for image still loading when using setLoaded / loaded hook is because it should use different versions for each image!
 
   useEffect(() => {
-    window.onload = () => {
-      setLoaded(true);
-    };
+    const aboutImages = [creative, dream, story];
+    // resolves when all images are loaded successfully, and rejects if there is an error loading an image
+    Promise.all(
+      aboutImages.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      })
+    )
+      .then(() => {
+        setLoaded(true);
+      })
+      .catch((err) => {
+        console.error("Failed to load images: ", err);
+      });
   }, []);
   return (
     <motion.div
@@ -51,46 +66,40 @@ const About = () => {
             </p>
           </div>
           <div className={styles.imgContainer}>
-            <div>
-              <div style={{ display: loaded ? "none" : "inline" }}>
-                <Blurhash
-                  hash={dreamHash}
-                  width="100%"
-                  height="100%"
-                  resolutionX={64}
-                  resolutionY={64}
-                  punch={1}
-                  className={styles.imgContainer}
-                />
-              </div>
-              <img
-                onLoad={() => setLoaded(true)}
-                src={dream}
-                alt="inspirationalQuote"
-                className={styles.imgContainer}
-                id={styles.dream}
+            <div style={{ display: loaded ? "none" : "inline" }}>
+              <Blurhash
+                hash={dreamHash}
+                width="100%"
+                height="100%"
+                resolutionX={64}
+                resolutionY={64}
+                punch={1}
+                className={styles.aboutImages}
               />
             </div>
-            <div>
-              <div style={{ display: loaded ? "none" : "inline" }}>
-                <Blurhash
-                  hash={creativeHash}
-                  width="100%"
-                  height="100%"
-                  resolutionX={64}
-                  resolutionY={64}
-                  punch={1}
-                  className={styles.imgContainer}
-                />
-              </div>
-              <img
-                onLoad={() => setLoaded(true)}
-                src={creative}
-                alt="inspirationalQuote"
-                className={styles.imgContainer}
-                id={styles.creative}
+            <img
+              onLoad={() => setLoaded(true)}
+              src={dream}
+              alt="inspirationalQuote"
+              className={styles.aboutImages}
+            />
+            <div style={{ display: loaded ? "none" : "inline" }}>
+              <Blurhash
+                hash={creativeHash}
+                width="100%"
+                height="100%"
+                resolutionX={64}
+                resolutionY={64}
+                punch={1}
+                className={styles.aboutImages}
               />
             </div>
+            <img
+              onLoad={() => setLoaded(true)}
+              src={creative}
+              alt="inspirationalQuote"
+              className={styles.aboutImages}
+            />
           </div>
           <div className={styles.description}>
             <p>
@@ -134,15 +143,10 @@ const About = () => {
                   resolutionX={64}
                   resolutionY={64}
                   punch={1}
-                  className={styles.imgContainer}
+                  className={styles.aboutImages}
                 />
               </div>
-              <motion.img
-                onLoad={() => setLoaded(true)}
-                src={story}
-                alt=""
-                className={styles.imgContainer}
-              />
+              <motion.img src={story} alt="" className={styles.aboutImages} />
             </div>
             <p>
               As a team of experienced professional software engineers, we bring

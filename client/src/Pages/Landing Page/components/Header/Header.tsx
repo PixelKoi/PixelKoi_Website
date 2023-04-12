@@ -27,12 +27,7 @@ const Header = () => {
     img.onload = () => {
       setLoaded(true);
     };
-  }, [headerImg]);
-
-  useLayoutEffect(() => {
-    const img = new Image();
-    img.src = headerImg;
-  }, [headerImg]);
+  }, []);
 
   return (
     <div className={styles.header} id="header">
