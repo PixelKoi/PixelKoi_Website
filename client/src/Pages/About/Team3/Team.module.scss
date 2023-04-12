@@ -1,0 +1,23 @@
+.wrapper {
+	margin-top: 2rem;
+	display: flex;
+	justify-content: center;
+
+	.carousel {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		max-width: 1200px;
+
+		.card {
+			padding: 0 2rem;
+			.imageScale {
+				width: 300px;
+			}
+			.imageText {
+				margin-top: 1rem;
+				text-align: center;
+			}
+		}
+	}
+}
