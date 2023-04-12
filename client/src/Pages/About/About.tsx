@@ -65,7 +65,7 @@ const About = () => {
               applications
             </p>
           </div>
-          <div className={styles.imgContainer}>
+          <div className={styles.newAboutImageContainer}>
             <div style={{ display: loaded ? "none" : "inline" }}>
               <Blurhash
                 hash={dreamHash}
@@ -74,14 +74,13 @@ const About = () => {
                 resolutionX={64}
                 resolutionY={64}
                 punch={1}
-                className={styles.aboutImages}
+                className={styles.newAboutImages}
               />
             </div>
             <img
-              onLoad={() => setLoaded(true)}
               src={dream}
               alt="inspirationalQuote"
-              className={styles.aboutImages}
+              className={styles.newAboutImages}
             />
             <div style={{ display: loaded ? "none" : "inline" }}>
               <Blurhash
@@ -91,14 +90,14 @@ const About = () => {
                 resolutionX={64}
                 resolutionY={64}
                 punch={1}
-                className={styles.aboutImages}
+                className={styles.newAboutImages}
               />
             </div>
             <img
               onLoad={() => setLoaded(true)}
               src={creative}
               alt="inspirationalQuote"
-              className={styles.aboutImages}
+              className={styles.newAboutImages}
             />
           </div>
           <div className={styles.description}>
