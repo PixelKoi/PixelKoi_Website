@@ -52,12 +52,16 @@
 			}
 		}
 	}
-
-	.desktopCard {
-		margin-top: 5rem;
-		// max-width: 1200px;
-		justify-content: center;
+	.desktopWrapper {
 		display: flex;
+		justify-content: center;
+		.desktopCard {
+			display: flex;
+			width: 100%;
+			margin: 0 auto;
+			max-width: 1200px;
+			margin-top: 5rem;
+		}
 	}
 }
 
@@ -66,7 +70,7 @@
 		.carouselWrapper {
 			display: flex;
 		}
-		.desktopCard {
+		.desktopWrapper {
 			display: none;
 		}
 	}
@@ -78,7 +82,7 @@
 		.carouselWrapper {
 			display: none;
 		}
-		.desktopCard {
+		.desktopWrapper {
 			display: flex;
 		}
 	}

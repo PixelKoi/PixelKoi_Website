@@ -55,10 +55,12 @@ const Team = () => {
 					<BsFillArrowRightCircleFill className={styles.right} size={35} onClick={handleNextClick} />
 				</div>
 			</div>
-			<div className={styles.desktopCard}>
-				<Card image={images[0].src} name={images[0].name} description={images[0].description} />
-				<Card image={images[1].src} name={images[1].name} description={images[1].description} />
-				<Card image={images[2].src} name={images[2].name} description={images[2].description} />
+			<div className={styles.desktopWrapper}>
+				<div className={styles.desktopCard}>
+					<Card image={images[0].src} name={images[0].name} description={images[0].description} />
+					<Card image={images[1].src} name={images[1].name} description={images[1].description} />
+					<Card image={images[2].src} name={images[2].name} description={images[2].description} />
+				</div>
 			</div>
 		</div>
 	);
