@@ -46,7 +46,7 @@ const Offer = () => {
 					className={styles.cta}
 				>
 					<h3>Software Services</h3>
-					<h1>Custom Solutions to Suit You</h1>
+					<h3 style={{ color: '#efff' }}>Custom Solutions to Suit You</h3>
 					<hr className={styles.break} />
 					<br />
 					<br />
