@@ -29,7 +29,7 @@ const About = () => {
     window.onload = () => {
       setLoaded(true);
     };
-  }, [creativeHash, dreamHash, storyHash]);
+  }, []);
   return (
     <motion.div
       initial={{ opacity: 0 }}
