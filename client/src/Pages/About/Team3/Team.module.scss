@@ -4,9 +4,35 @@
 	flex-direction: column;
 	justify-content: center;
 	padding: 0 2rem;
+	padding-bottom: 8em;
+	padding-top: 5rem;
+	border-bottom: 1px solid #fff;
+	.teamContainer {
+		width: 100%;
+		margin: 0 auto;
+		max-width: 1200px;
+
+		p {
+			opacity: 0.8;
+		}
+		.cta {
+			color: #fff;
+			line-height: 2.3rem;
+			font-size: 1em;
+		}
+		.teamText {
+			max-width: 600px;
+		}
+
+		.teamTitle {
+			color: #ffa500;
+			// font-size: 20px;
+			margin-bottom: 1rem;
+		}
+	}
 
 	.carouselWrapper {
-		margin-top: 2rem;
+		margin-top: 4rem;
 		display: flex;
 		justify-content: center;
 		.carouselContainer {
@@ -25,17 +51,5 @@
 				justify-content: center;
 			}
 		}
-	}
-}
-
-@media only screen and (min-width: 320px) {
-	.carousel {
-		grid-template-columns: 1fr;
-		overflow-x: scroll;
-		scroll-snap-type: x mandatory;
-		scroll-padding: 1rem;
-	}
-	.card {
-		scroll-snap-align: center;
 	}
 }
