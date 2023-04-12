@@ -96,50 +96,55 @@ const Offer = () => {
               <p style={{ margin: "auto 0", color: "#fff" }}>Learn More</p>
             </Link>
           </motion.div>
-
-          <div style={{ display: loaded ? "none" : "inline" }}>
-            <Blurhash
-              hash={laptopHash}
-              width="100%"
-              height="100%"
-              resolutionX={64}
-              resolutionY={64}
-              punch={1}
+          {!loaded ? (
+            <div>
+              <Blurhash
+                hash={laptopHash}
+                width="100%"
+                height="100%"
+                resolutionX={64}
+                resolutionY={64}
+                punch={1}
+                className={styles.cardIMG}
+              />
+            </div>
+          ) : (
+            <motion.img
+              onLoad={() => setLoaded(true)}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}
+              src={code}
+              alt="Macbook Pro image with code"
               className={styles.cardIMG}
             />
-          </div>
-          <motion.img
-            onLoad={() => setLoaded(true)}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            src={code}
-            alt="Macbook Pro image with code"
-            className={styles.cardIMG}
-          />
+          )}
         </div>
 
         <div className={styles.uxGroup}>
-          <div style={{ display: loaded ? "none" : "inline" }}>
-            <Blurhash
-              hash={tablet}
-              width="100%"
-              height="100%"
-              resolutionX={64}
-              resolutionY={64}
-              punch={1}
+          {!loaded ? (
+            <div>
+              <Blurhash
+                hash={tablet}
+                width="100%"
+                height="100%"
+                resolutionX={64}
+                resolutionY={64}
+                punch={1}
+                className={styles.cardIMG}
+              />
+            </div>
+          ) : (
+            <motion.img
+              onLoad={() => setLoaded(true)}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}
+              src={uxdesign}
+              alt="Ipad image with website wireframe"
               className={styles.cardIMG}
             />
-          </div>
-          <motion.img
-            onLoad={() => setLoaded(true)}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            src={uxdesign}
-            alt="Ipad image with website wireframe"
-            className={styles.cardIMG}
-          />
+          )}
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -201,27 +206,29 @@ const Offer = () => {
               <p style={{ margin: "auto 0", color: "#fff" }}>Learn More</p>
             </Link>
           </motion.div>
-
-          <div style={{ display: loaded ? "none" : "inline" }}>
-            <Blurhash
-              hash={imac}
-              width="100%"
-              height="100%"
-              resolutionX={64}
-              resolutionY={64}
-              punch={1}
+          {!loaded ? (
+            <div>
+              <Blurhash
+                hash={imac}
+                width="100%"
+                height="100%"
+                resolutionX={64}
+                resolutionY={64}
+                punch={1}
+                className={styles.cardIMG}
+              />
+            </div>
+          ) : (
+            <motion.img
+              onLoad={() => setLoaded(true)}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1, transition: { duration: 1 } }}
+              viewport={{ once: true }}
+              src={web}
+              alt="Showing the development of a website with a macbook pro and imac in the background"
               className={styles.cardIMG}
             />
-          </div>
-          <motion.img
-            onLoad={() => setLoaded(true)}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1, transition: { duration: 1 } }}
-            viewport={{ once: true }}
-            src={web}
-            alt="Showing the development of a website with a macbook pro and imac in the background"
-            className={styles.cardIMG}
-          />
+          )}
         </div>
       </div>
     </div>
