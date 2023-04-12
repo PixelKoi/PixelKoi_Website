@@ -8,7 +8,6 @@ import story from "../../assets/About/story.webp";
 import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
-import headerImg from "../../assets/Home/box.jpg";
 import { Blurhash } from "react-blurhash";
 
 interface ImageType {
@@ -24,11 +23,10 @@ const About = () => {
   const creativeHash = hashData["creative"].hash;
   const dreamHash = hashData["dream"].hash;
   const storyHash = hashData["story"].hash;
+  // TODO: Discovered reason for image still loading when using setLoaded / loaded hook is because it should use different versions for each image!
 
   useEffect(() => {
-    const img = new Image();
-    img.src = headerImg;
-    img.onload = () => {
+    window.onload = () => {
       setLoaded(true);
     };
   }, [creativeHash, dreamHash, storyHash]);
