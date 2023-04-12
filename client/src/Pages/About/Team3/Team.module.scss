@@ -2,21 +2,33 @@
 	margin-top: 2rem;
 	display: flex;
 	justify-content: center;
-
-	.carousel {
+	padding: 0 1rem;
+	.carouselContainer {
 		display: flex;
-		justify-content: center;
-		width: 100%;
-		max-width: 1200px;
+		overflow: hidden;
+		.left {
+			margin-top: 5rem;
+		}
+		.right {
+			margin-top: 5rem;
+		}
+		.carousel {
+			overflow: hidden;
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			max-width: 1200px;
 
-		.card {
-			padding: 0 2rem;
-			.imageScale {
-				width: 300px;
-			}
-			.imageText {
-				margin-top: 1rem;
-				text-align: center;
+			.card {
+				padding: 0 2rem;
+				.imageScale {
+					max-width: 200px;
+				}
+				.imageText {
+					max-width: 200px;
+					margin-top: 1rem;
+					text-align: center;
+				}
 			}
 		}
 	}
