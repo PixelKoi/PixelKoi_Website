@@ -4,7 +4,7 @@ import "../../../../styles/globalStyles.css";
 import styles from "./Header.module.scss";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import headerImg from "../../../../assets/Home/box.jpg";
+import headerImg from "../../../../assets/Home/box.jpeg";
 import { Blurhash } from "react-blurhash";
 import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
 
