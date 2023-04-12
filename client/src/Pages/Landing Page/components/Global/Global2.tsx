@@ -10,8 +10,8 @@ import { motion } from 'framer-motion';
 const Global2 = () => {
 	return (
 		<motion.div
-			initial={{ opacity: 0, y: 20 }}
-			whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1, transition: { duration: 0.8 } }}
 			viewport={{ once: true }}
 			className={styles.container}
 		>
