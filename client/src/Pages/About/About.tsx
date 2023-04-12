@@ -54,34 +54,36 @@ const About = () => {
             </p>
           </div>
           <div className={styles.newAboutImageContainer}>
-            {!loaded ? (
-              <div>
-                <Blurhash
-                  hash={dreamHash}
-                  width="35vw"
-                  height="23vw"
-                  resolutionX={64}
-                  resolutionY={64}
-                  punch={1}
-                />
-              </div>
-            ) : (
-              <img src={dream} alt="inspirationalQuote" />
-            )}
-            {!loaded ? (
-              <div>
-                <Blurhash
-                  hash={creativeHash}
-                  width="35vw"
-                  height="23vw"
-                  resolutionX={64}
-                  resolutionY={64}
-                  punch={1}
-                />
-              </div>
-            ) : (
-              <img src={creative} alt="inspirationalQuote" />
-            )}
+            <div style={{ display: loaded ? "none" : "inline-block" }}>
+              <Blurhash
+                hash={dreamHash}
+                width="35vw"
+                height="23vw"
+                resolutionX={64}
+                resolutionY={64}
+                punch={1}
+              />
+            </div>
+            <img
+              src={dream}
+              alt="inspirationalQuote"
+              onLoad={() => setLoaded(true)}
+            />
+            <div style={{ display: loaded ? "none" : "inline-block" }}>
+              <Blurhash
+                hash={creativeHash}
+                width="35vw"
+                height="23vw"
+                resolutionX={64}
+                resolutionY={64}
+                punch={1}
+              />
+            </div>
+            <img
+              src={creative}
+              alt="inspirationalQuote"
+              onLoad={() => setLoaded(true)}
+            />
           </div>
           <div className={styles.description}>
             <p>
@@ -117,25 +119,26 @@ const About = () => {
           </div>
 
           <div className={styles.imgContainer}>
-            {!loaded ? (
-              <div>
-                {" "}
-                <Blurhash
-                  hash={storyHash}
-                  width="35vw"
-                  height="23vw"
-                  resolutionX={64}
-                  resolutionY={64}
-                  punch={1}
-                  className={styles.aboutImages}
-                />
-              </div>
-            ) : (
-              <div>
-                {" "}
-                <motion.img src={story} alt="" className={styles.aboutImages} />
-              </div>
-            )}
+            <div style={{ display: loaded ? "none" : "inline" }}>
+              <Blurhash
+                hash={storyHash}
+                width="35vw"
+                height="23vw"
+                resolutionX={64}
+                resolutionY={64}
+                punch={1}
+                className={styles.aboutImages}
+              />
+            </div>
+            <div>
+              {" "}
+              <motion.img
+                src={story}
+                alt=""
+                className={styles.aboutImages}
+                onLoad={() => setLoaded(true)}
+              />
+            </div>
             <p>
               As a team of experienced professional software engineers, we bring
               our passion for problem-solving and ingenuity to each project we
