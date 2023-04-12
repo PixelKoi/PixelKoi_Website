@@ -41,6 +41,23 @@ const ClientMobile = () => {
 	};
 	return (
 		<div>
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1, transition: { duration: 1 } }}
+				viewport={{ once: true }}
+				className={styles.textContainer}
+			>
+				<motion.h1 className={styles.clientTitle} style={{ color: '#efff' }}>
+					<b>Our Clients</b>
+				</motion.h1>
+				<hr className={styles.break} />
+				<br />
+				<br />
+				<p className={styles.cta}>
+					Our clients reside in various nations and use diverse languages, yet our shared aim unites us in our
+					efforts..
+				</p>
+			</motion.div>
 			<div className={styles.carousel}>
 				<BsFillArrowLeftCircleFill
 					className={styles.left}

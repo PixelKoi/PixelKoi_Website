@@ -39,3 +39,34 @@
 		filter: invert(82%) sepia(95%) saturate(0%) hue-rotate(87deg) brightness(115%) contrast(104%);
 	}
 }
+
+.clientTitle {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+.textContainer {
+	margin-top: 6rem;
+	padding: 0 1rem;
+	max-width: 600px;
+}
+
+.textContaine > * {
+	color: #fff;
+}
+
+.cta {
+	font-family: "Newslab", serif;
+	color: hsla(0, 0%, 100%, 0.5);
+	// font-size: 20px;
+	opacity: 0.8;
+	line-height: 2.2rem;
+	font-weight: 500;
+}
+
+.break {
+	border-top: 1px solid #e8985c;
+	width: 50px;
+	float: left;
+}
