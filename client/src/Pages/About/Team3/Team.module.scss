@@ -17,34 +17,23 @@
 			margin-left: 1rem;
 		}
 		.carousel {
-			overflow: hidden;
-			display: flex;
-			justify-content: center;
+			display: grid;
+			// grid-template-columns: repeat(4, 1fr);
+			gap: 1rem;
 			width: 100%;
-			max-width: 1200px;
-
-			.card {
-				padding: 0 2rem;
-				.imageScale {
-					max-width: 200px;
-				}
-				.imageText {
-					max-width: 200px;
-					margin-top: 1rem;
-					text-align: center;
-				}
-			}
+			// max-width: 1200px;
 		}
 	}
 }
 
 @media only screen and (min-width: 320px) {
 	.carousel {
-		// flex-direction: column;
+		grid-template-columns: 1fr;
+		overflow-x: scroll;
+		scroll-snap-type: x mandatory;
+		scroll-padding: 1rem;
 	}
-	// #card1,
-	// #card2,
-	// #card3 {
-	// 	display: none;
-	// }
+	.card {
+		scroll-snap-align: center;
+	}
 }
