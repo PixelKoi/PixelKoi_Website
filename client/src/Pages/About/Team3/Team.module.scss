@@ -1,27 +1,29 @@
 .wrapper {
 	margin-top: 2rem;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	padding: 0 1rem;
-	.carouselContainer {
-		display: flex;
-		overflow: hidden;
-		overflow-x: hidden;
+	padding: 0 2rem;
 
-		.left {
-			margin-top: 5rem;
-			margin-right: 1rem;
-		}
-		.right {
-			margin-top: 5rem;
-			margin-left: 1rem;
-		}
-		.carousel {
-			display: grid;
-			// grid-template-columns: repeat(4, 1fr);
-			gap: 1rem;
-			width: 100%;
-			// max-width: 1200px;
+	.carouselWrapper {
+		margin-top: 2rem;
+		display: flex;
+		justify-content: center;
+		.carouselContainer {
+			display: flex;
+
+			.left {
+				margin-top: 5rem;
+				margin-right: 1rem;
+			}
+			.right {
+				margin-top: 5rem;
+				margin-left: 1rem;
+			}
+			.carousel {
+				display: flex;
+				justify-content: center;
+			}
 		}
 	}
 }
