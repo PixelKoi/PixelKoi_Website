@@ -66,39 +66,34 @@ const About = () => {
             </p>
           </div>
           <div className={styles.newAboutImageContainer}>
-            <div style={{ display: loaded ? "none" : "inline" }}>
-              <Blurhash
-                hash={dreamHash}
-                width="100%"
-                height="100%"
-                resolutionX={64}
-                resolutionY={64}
-                punch={1}
-                className={styles.newAboutImages}
-              />
-            </div>
-            <img
-              src={dream}
-              alt="inspirationalQuote"
-              className={styles.newAboutImages}
-            />
-            <div style={{ display: loaded ? "none" : "inline" }}>
-              <Blurhash
-                hash={creativeHash}
-                width="100%"
-                height="100%"
-                resolutionX={64}
-                resolutionY={64}
-                punch={1}
-                className={styles.newAboutImages}
-              />
-            </div>
-            <img
-              onLoad={() => setLoaded(true)}
-              src={creative}
-              alt="inspirationalQuote"
-              className={styles.newAboutImages}
-            />
+            {!loaded ? (
+              <div>
+                <Blurhash
+                  hash={dreamHash}
+                  width="35vw"
+                  height="23vw"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                />
+              </div>
+            ) : (
+              <img src={dream} alt="inspirationalQuote" />
+            )}
+            {!loaded ? (
+              <div>
+                <Blurhash
+                  hash={creativeHash}
+                  width="35vw"
+                  height="23vw"
+                  resolutionX={64}
+                  resolutionY={64}
+                  punch={1}
+                />
+              </div>
+            ) : (
+              <img src={creative} alt="inspirationalQuote" />
+            )}
           </div>
           <div className={styles.description}>
             <p>

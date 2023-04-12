@@ -48,28 +48,31 @@
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
+
 	}
 
 	.newAboutImageContainer{
 		display: flex;
 		gap: 40px;
 		flex-direction: row;
-		width: 40vw;
-		height: 40vh;
+		width: 35vw;
+		height: 23vw;
 		position: relative;
 		img {
 			filter: grayscale(0.5);
 		}
 	}
 
+
 	@media screen and (max-width: 768px) {
 		.newAboutImageContainer {
-			flex-direction: column;
+			flex-direction: row;
 			height: auto;
 			width: 100%;
 			img:first-of-type {
 				display: none;
 			}
+
 		}
 	}
 	.aboutImages{}
