@@ -59,9 +59,8 @@
 		}
 	}
 	.aboutImages {
-		width: calc((100% - 40px) / 2);
-		height: auto; /* This will maintain the aspect ratio of the image */
-		max-width: 100%; /* This will ensure that the image does not exceed its intrinsic size */
+		width: 100%;
+		max-width: 550px;
 	}
 	@media screen and (max-width: 768px) {
 		.newAboutImageContainer {
@@ -70,13 +69,15 @@
 			justify-content: flex-start;
 			height: auto;
 			width: 100%;
-			.aboutImages img:first-of-type {
+			.aboutImages {
+				width: 100%;
+				max-width: 550px;
+				height: auto; /* This will maintain the aspect ratio of the image */
+			}
+			img:first-of-type {
 				display: none;
 			}
-		}
-		.aboutImages {
-			width: calc((100%));
-			height: auto; /* This will maintain the aspect ratio of the image */
+
 		}
 	}
 

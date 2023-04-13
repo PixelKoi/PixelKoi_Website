@@ -80,8 +80,8 @@ const About = () => {
               <div>
                 <Blurhash
                   hash={dreamHash}
-                  width="41vw"
-                  height="25vw"
+                  width="550px"
+                  height="400px"
                   resolutionX={64}
                   resolutionY={64}
                   punch={1}
@@ -99,8 +99,8 @@ const About = () => {
               <div>
                 <Blurhash
                   hash={creativeHash}
-                  width="41vw"
-                  height="25vw"
+                  width="550px"
+                  height="400px"
                   resolutionX={64}
                   resolutionY={64}
                   punch={1}
@@ -153,8 +153,8 @@ const About = () => {
               <div>
                 <Blurhash
                   hash={storyHash}
-                  width="100%"
-                  height="30vw"
+                  width="550px"
+                  height="400px"
                   resolutionX={64}
                   resolutionY={64}
                   punch={1}
