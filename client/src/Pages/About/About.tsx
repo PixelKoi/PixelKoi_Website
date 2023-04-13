@@ -20,6 +20,8 @@ interface ImageType {
 }
 const About = () => {
   const [dreamLoaded, setDreamLoaded] = useState(false);
+  const [shouldRenderDream, setShouldRenderDream] = useState(false);
+
   const [creativeLoaded, setCreativeLoaded] = useState(false);
   const [storyLoaded, setStoryLoaded] = useState(false);
 
@@ -32,6 +34,9 @@ const About = () => {
 
   useEffect(() => {
     const images = [dream, creative, story];
+    if (window.innerWidth >= 768) {
+      setShouldRenderDream(true);
+    }
     const promises = images.map((image) => {
       return new Promise((resolve, reject) => {
         const img = new Image();
@@ -76,25 +81,31 @@ const About = () => {
             </p>
           </div>
           <div className={styles.newAboutImageContainer}>
-            {!dreamLoaded ? (
-              <div>
-                <Blurhash
-                  hash={dreamHash}
-                  width="550px"
-                  height="400px"
-                  resolutionX={64}
-                  resolutionY={64}
-                  punch={1}
-                />
-              </div>
-            ) : (
-              <img
-                src={dream}
-                alt="inspirationalQuote"
-                onLoad={() => setDreamLoaded(true)}
-                className={styles.aboutImages}
-              />
-            )}
+            <>
+              {shouldRenderDream && (
+                <>
+                  {!dreamLoaded ? (
+                    <div>
+                      <Blurhash
+                        hash={dreamHash}
+                        width="550px"
+                        height="400px"
+                        resolutionX={64}
+                        resolutionY={64}
+                        punch={1}
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={dream}
+                      alt="inspirationalQuote"
+                      onLoad={() => setDreamLoaded(true)}
+                      className={styles.aboutImages}
+                    />
+                  )}
+                </>
+              )}
+            </>
             {!creativeLoaded ? (
               <div>
                 <Blurhash
@@ -153,8 +164,8 @@ const About = () => {
               <div>
                 <Blurhash
                   hash={storyHash}
-                  width="550px"
-                  height="400px"
+                  width="100%"
+                  height="100%"
                   resolutionX={64}
                   resolutionY={64}
                   punch={1}
