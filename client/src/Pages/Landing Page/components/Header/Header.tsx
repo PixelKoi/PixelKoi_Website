@@ -1,5 +1,5 @@
 // import './Header.css';
-import React, { useEffect, useState, useLayoutEffect, useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../../../../styles/globalStyles.css";
 import styles from "./Header.module.scss";
 import { motion } from "framer-motion";
@@ -45,6 +45,7 @@ const Header = () => {
         </div>
         <img
           onLoad={() => setLoaded(true)}
+          loading="lazy"
           src={headerImg}
           alt="Header Image"
           className={styles.headerBackgroundImg}

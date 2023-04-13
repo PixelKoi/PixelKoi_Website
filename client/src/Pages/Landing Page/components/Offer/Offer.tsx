@@ -110,6 +110,7 @@ const Offer = () => {
             </div>
           ) : (
             <motion.img
+              loading="lazy"
               onLoad={() => setLoaded(true)}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, transition: { duration: 1 } }}
@@ -136,6 +137,7 @@ const Offer = () => {
             </div>
           ) : (
             <motion.img
+              loading="lazy"
               onLoad={() => setLoaded(true)}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, transition: { duration: 1 } }}
@@ -220,6 +222,7 @@ const Offer = () => {
             </div>
           ) : (
             <motion.img
+              loading="lazy"
               onLoad={() => setLoaded(true)}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1, transition: { duration: 1 } }}

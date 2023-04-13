@@ -322,7 +322,12 @@ export const Contact = () => {
               className={styles.bgIMG}
             />
           </motion.div>
-          <img className={styles.bgIMG} src={mailboxImg} alt="" />
+          <img
+            loading="lazy"
+            className={styles.bgIMG}
+            src={mailboxImg}
+            alt=""
+          />
         </motion.div>
       </motion.div>
       <Footer />

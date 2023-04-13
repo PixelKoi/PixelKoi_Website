@@ -97,6 +97,7 @@ const About = () => {
                     </div>
                   ) : (
                     <img
+                      loading="lazy"
                       src={dream}
                       alt="inspirationalQuote"
                       onLoad={() => setDreamLoaded(true)}
@@ -119,6 +120,7 @@ const About = () => {
               </div>
             ) : (
               <img
+                loading="lazy"
                 src={creative}
                 alt="inspirationalQuote"
                 onLoad={() => setCreativeLoaded(true)}
@@ -174,6 +176,7 @@ const About = () => {
               </div>
             ) : (
               <motion.img
+                loading="lazy"
                 src={story}
                 alt=""
                 onLoad={() => setStoryLoaded(true)}
