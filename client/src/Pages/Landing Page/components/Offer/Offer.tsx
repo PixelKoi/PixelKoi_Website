@@ -5,12 +5,19 @@ import { BsArrowRightCircle } from 'react-icons/bs';
 import uxdesign from '../../../../assets/Home/uxdesign.webp';
 import code from '../../../../assets/Home/code.webp';
 import codeDesign from '../../../../assets/Home/codeDesign.png';
-
+import uxDesign from '../../../../assets/Home/uxDesign.png';
+import webDesign from '../../../../assets/Home/webDesign.png';
 import web from '../../../../assets/Home/web.webp';
 import { HashContext } from '../../../../components/BlurHashEncoder/BlurHashDecoder';
 import { Blurhash } from 'react-blurhash';
 import { Link } from 'react-router-dom';
 import ImageComponent from './components/ImageComponent';
+
+const blurhash = {
+	software: 'LVH2Zk.8?b?aIUs:RjR*~q%2M{M|',
+	ux: 'LfM7cHx]-pj[rpofWBWU~qWBM{ax',
+	web: 'LbMG-m~qMw9H.TxaNGjcr=IUWFWA'
+};
 
 interface ImageType {
 	[name: string]: {
@@ -94,33 +101,11 @@ const Offer = () => {
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
-					{/* {!loaded ? (
-						<Blurhash
-							hash={laptopHash}
-							width="100%"
-							height="100%"
-							resolutionX={64}
-							resolutionY={64}
-							punch={1}
-							className={styles.cardIMG}
-						/>
-					) : (
-						<motion.img
-							loading="lazy"
-							onLoad={() => setLoaded(true)}
-							initial={{ opacity: 0 }}
-							whileInView={{ opacity: 1, transition: { duration: 1 } }}
-							viewport={{ once: true }}
-							src={code}
-							alt="Macbook Pro image with code"
-							className={styles.cardIMG}
-						/>
-					)} */}{' '}
-					<ImageComponent src={codeDesign} />
+					<ImageComponent src={codeDesign} hashCode={'LVH2Zk.8?b?aIUs:RjR*~q%2M{M|'} />
 				</div>
 
 				<div className={styles.uxGroup}>
-					<ImageComponent src={codeDesign} />
+					<ImageComponent src={uxDesign} hashCode={'LfM7cHx]-pj[rpofWBWU~qWBM{ax'} />
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1, transition: { duration: 1 } }}
@@ -173,31 +158,7 @@ const Offer = () => {
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
-					{/* {!loaded ? (
-						<div>
-							<Blurhash
-								hash={imac}
-								width="100%"
-								height="100%"
-								resolutionX={64}
-								resolutionY={64}
-								punch={1}
-								className={styles.cardIMG}
-							/>
-						</div>
-					) : (
-						<motion.img
-							loading="lazy"
-							onLoad={() => setLoaded(true)}
-							initial={{ opacity: 0 }}
-							whileInView={{ opacity: 1, transition: { duration: 1 } }}
-							viewport={{ once: true }}
-							src={web}
-							alt="Showing the development of a website with a macbook pro and imac in the background"
-							className={styles.cardIMG}
-						/>
-					)} */}{' '}
-					<ImageComponent src={codeDesign} />
+					<ImageComponent src={webDesign} hashCode={'LbMG-m~qMw9H.TxaNGjcr=IUWFWA'} />
 				</div>
 			</div>
 		</div>
