@@ -10,7 +10,7 @@
 		p {
 			opacity: 0.8;
 			font-size: 1rem;
-			line-height: 30px;
+			line-height: 2.2rem;
 		}
 	}
 
@@ -42,15 +42,14 @@
 		}
 	}
 
-	.newAboutImages{
+	.newAboutImages {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		object-position: center;
-
 	}
 
-	.newAboutImageContainer{
+	.newAboutImageContainer {
 		display: flex;
 		gap: 40px;
 		flex-direction: row;
@@ -61,7 +60,6 @@
 		}
 	}
 
-
 	@media screen and (max-width: 768px) {
 		.newAboutImageContainer {
 			flex-direction: row;
@@ -70,10 +68,9 @@
 			img:first-of-type {
 				display: none;
 			}
-
 		}
 	}
-	.aboutImages{
+	.aboutImages {
 		width: 35vw;
 		height: 23vw;
 	}
@@ -82,7 +79,7 @@
 		margin-top: 4rem;
 
 		.hightlight {
-			color: #FFA500;
+			color: #ffa500;
 		}
 	}
 }
