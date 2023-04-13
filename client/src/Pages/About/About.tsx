@@ -165,7 +165,6 @@ const About = () => {
               <motion.img
                 src={story}
                 alt=""
-                className={styles.aboutImages}
                 onLoad={() => setStoryLoaded(true)}
               />
             )}

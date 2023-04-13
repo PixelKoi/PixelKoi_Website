@@ -59,8 +59,9 @@
 		}
 	}
 	.aboutImages {
-		width: 30vw;
-		height: 23vw;
+		width: calc((100% - 40px) / 2);
+		height: auto; /* This will maintain the aspect ratio of the image */
+		max-width: 100%; /* This will ensure that the image does not exceed its intrinsic size */
 	}
 	@media screen and (max-width: 768px) {
 		.newAboutImageContainer {
@@ -69,13 +70,13 @@
 			justify-content: flex-start;
 			height: auto;
 			width: 100%;
-			img:first-of-type {
+			.aboutImages img:first-of-type {
 				display: none;
 			}
 		}
 		.aboutImages {
-			width: 55vw;
-			height: 35vw;
+			width: calc((100%));
+			height: auto; /* This will maintain the aspect ratio of the image */
 		}
 	}
 
