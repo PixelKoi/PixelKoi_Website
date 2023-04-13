@@ -58,21 +58,27 @@
 			filter: grayscale(0.5);
 		}
 	}
-
+	.aboutImages {
+		width: 30vw;
+		height: 23vw;
+	}
 	@media screen and (max-width: 768px) {
 		.newAboutImageContainer {
+			display: flex;
 			flex-direction: row;
+			justify-content: flex-start;
 			height: auto;
 			width: 100%;
 			img:first-of-type {
 				display: none;
 			}
 		}
+		.aboutImages {
+			width: 55vw;
+			height: 35vw;
+		}
 	}
-	.aboutImages {
-		width: 35vw;
-		height: 23vw;
-	}
+
 
 	.description {
 		margin-top: 4rem;
