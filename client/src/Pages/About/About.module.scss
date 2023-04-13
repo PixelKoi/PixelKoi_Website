@@ -53,8 +53,7 @@
 		display: flex;
 		gap: 40px;
 		flex-direction: row;
-		width: 35vw;
-		height: 23vw;
+		justify-content: center;
 		img {
 			filter: grayscale(0.5);
 		}
