@@ -45,7 +45,6 @@ const Header = () => {
         </div>
         <img
           onLoad={() => setLoaded(true)}
-          loading="lazy"
           src={headerImg}
           alt="Header Image"
           className={styles.headerBackgroundImg}

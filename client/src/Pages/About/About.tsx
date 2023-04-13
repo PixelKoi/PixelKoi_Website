@@ -10,7 +10,6 @@ import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
-import headerImg from "../../assets/Home/box.jpeg";
 
 interface ImageType {
   [name: string]: {
@@ -34,9 +33,21 @@ const About = () => {
 
   useEffect(() => {
     const images = [dream, creative, story];
-    if (window.innerWidth >= 768) {
-      setShouldRenderDream(true);
-    }
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setShouldRenderDream(true);
+      } else {
+        setShouldRenderDream(false);
+      }
+    };
+
+    handleResize(); // initial call to handleResize
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
     const promises = images.map((image) => {
       return new Promise((resolve, reject) => {
         const img = new Image();
@@ -80,7 +91,7 @@ const About = () => {
               applications
             </p>
           </div>
-          <div className={styles.newAboutImageContainer}>
+          <div className={styles.imgContainer}>
             <>
               {shouldRenderDream && (
                 <>

@@ -97,17 +97,15 @@ const Offer = () => {
             </Link>
           </motion.div>
           {!loaded ? (
-            <div>
-              <Blurhash
-                hash={laptopHash}
-                width="100%"
-                height="100%"
-                resolutionX={64}
-                resolutionY={64}
-                punch={1}
-                className={styles.cardIMG}
-              />
-            </div>
+            <Blurhash
+              hash={laptopHash}
+              width="100%"
+              height="100%"
+              resolutionX={64}
+              resolutionY={64}
+              punch={1}
+              className={styles.cardIMG}
+            />
           ) : (
             <motion.img
               loading="lazy"
@@ -124,17 +122,15 @@ const Offer = () => {
 
         <div className={styles.uxGroup}>
           {!loaded ? (
-            <div>
-              <Blurhash
-                hash={tablet}
-                width="100%"
-                height="100%"
-                resolutionX={64}
-                resolutionY={64}
-                punch={1}
-                className={styles.cardIMG}
-              />
-            </div>
+            <Blurhash
+              hash={tablet}
+              width="100%"
+              height="100%"
+              resolutionX={64}
+              resolutionY={64}
+              punch={1}
+              className={styles.cardIMG}
+            />
           ) : (
             <motion.img
               loading="lazy"

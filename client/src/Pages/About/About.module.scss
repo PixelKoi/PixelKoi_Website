@@ -39,6 +39,7 @@
 		gap: 40px;
 		img {
 			filter: grayscale(0.5);
+
 		}
 	}
 
@@ -51,16 +52,17 @@
 
 	.newAboutImageContainer {
 		display: flex;
-		gap: 40px;
 		flex-direction: row;
 		justify-content: center;
+
 		img {
 			filter: grayscale(0.5);
+
 		}
 	}
 	.aboutImages {
 		width: 100%;
-		max-width: 550px;
+
 	}
 	@media screen and (max-width: 768px) {
 		.newAboutImageContainer {
