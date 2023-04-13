@@ -97,7 +97,7 @@
 		// filter: grayscale(1);
 		margin-left: auto;
 		width: 100%;
-		height: 100%;
+		max-width: 500px;
 		margin-bottom: 1rem;
 	}
 }
@@ -168,7 +168,7 @@
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 768px) {
 	.mainContainer {
-		padding: 4rem 0 4rem 0;
+		padding: 2rem 0 2rem 0;
 	}
 	.softwareGroup {
 		padding: 0 2rem;
