@@ -32,7 +32,6 @@ const About = () => {
   // TODO: Discovered reason for image still loading when using setLoaded / loaded hook is because it should use different versions for each image!
 
   useEffect(() => {
-    const images = [dream, creative, story];
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setShouldRenderDream(true);
@@ -48,6 +47,10 @@ const About = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
+  }, []);
+  useEffect(() => {
+    const images = [dream, creative, story];
+
     const promises = images.map((image) => {
       return new Promise((resolve, reject) => {
         const img = new Image();
