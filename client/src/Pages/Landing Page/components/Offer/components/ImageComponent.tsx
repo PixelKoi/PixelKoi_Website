@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Blurhash } from 'react-blurhash';
+import styles from './ImageComponent.module.scss';
 
 interface MyComponentProps {
 	src: any;
@@ -20,7 +21,7 @@ const ImageComponent: React.FC<MyComponentProps> = ({ src, hashCode }) => {
 	);
 
 	return (
-		<div>
+		<div className={styles.wrapper}>
 			<div style={{ display: imageLoaded ? 'none' : 'inline' }}>
 				<Blurhash hash={hashCode} width={500} height={330} resolutionX={64} resolutionY={64} punch={1} />
 			</div>
