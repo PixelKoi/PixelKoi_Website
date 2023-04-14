@@ -101,7 +101,9 @@ const Offer = () => {
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
-					<ImageComponent src={codeDesign} hashCode={'LVH2Zk.8?b?aIUs:RjR*~q%2M{M|'} />
+					<div className={styles.car} style={{ marginLeft: 'auto' }}>
+						<ImageComponent src={codeDesign} hashCode={'LVH2Zk.8?b?aIUs:RjR*~q%2M{M|'} />
+					</div>
 				</div>
 
 				<div className={styles.uxGroup}>
@@ -158,7 +160,9 @@ const Offer = () => {
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
-					<ImageComponent src={webDesign} hashCode={'LbMG-m~qMw9H.TxaNGjcr=IUWFWA'} />
+					<div className={styles.car} style={{ marginLeft: 'auto' }}>
+						<ImageComponent src={webDesign} hashCode={'LbMG-m~qMw9H.TxaNGjcr=IUWFWA'} />
+					</div>
 				</div>
 			</div>
 		</div>
