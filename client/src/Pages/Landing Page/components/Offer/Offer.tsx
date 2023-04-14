@@ -105,13 +105,13 @@ const Offer = () => {
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
-					<div className={styles.car} style={{ marginLeft: 'auto' }}>
+					<div className={styles.cardIMG} style={{ marginLeft: 'auto' }}>
 						<ImageComponent src={codeDesign} hashCode={softwareHash} />
 					</div>
 				</div>
 
 				<div className={styles.uxGroup}>
-					<div>
+					<div className={styles.cardIMG}>
 						<ImageComponent src={uxDesign} hashCode={uxHash} />
 					</div>
 					<motion.div
@@ -166,7 +166,7 @@ const Offer = () => {
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
-					<div className={styles.car} style={{ marginLeft: 'auto' }}>
+					<div className={styles.cardIMG} style={{ marginLeft: 'auto' }}>
 						<ImageComponent src={webDesign} hashCode={webHash} />
 					</div>
 				</div>
