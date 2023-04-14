@@ -19,6 +19,10 @@ const blurhash = {
 	web: 'LbMG-m~qMw9H.TxaNGjcr=IUWFWA'
 };
 
+const softwareHash = 'LVH2Zk.8?b?aIUs:RjR*~q%2M{M|';
+const uxHash = 'LfM7cHx]-pj[rpofWBWU~qWBM{ax';
+const webHash = 'LbMG-m~qMw9H.TxaNGjcr=IUWFWA';
+
 interface ImageType {
 	[name: string]: {
 		url: string;
@@ -102,12 +106,14 @@ const Offer = () => {
 						</Link>
 					</motion.div>
 					<div className={styles.car} style={{ marginLeft: 'auto' }}>
-						<ImageComponent src={codeDesign} hashCode={'LVH2Zk.8?b?aIUs:RjR*~q%2M{M|'} />
+						<ImageComponent src={codeDesign} hashCode={softwareHash} />
 					</div>
 				</div>
 
 				<div className={styles.uxGroup}>
-					<ImageComponent src={uxDesign} hashCode={'LfM7cHx]-pj[rpofWBWU~qWBM{ax'} />
+					<div>
+						<ImageComponent src={uxDesign} hashCode={uxHash} />
+					</div>
 					<motion.div
 						initial={{ opacity: 0 }}
 						whileInView={{ opacity: 1, transition: { duration: 1 } }}
@@ -161,7 +167,7 @@ const Offer = () => {
 						</Link>
 					</motion.div>
 					<div className={styles.car} style={{ marginLeft: 'auto' }}>
-						<ImageComponent src={webDesign} hashCode={'LbMG-m~qMw9H.TxaNGjcr=IUWFWA'} />
+						<ImageComponent src={webDesign} hashCode={webHash} />
 					</div>
 				</div>
 			</div>
