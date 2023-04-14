@@ -13,12 +13,6 @@ import { Blurhash } from 'react-blurhash';
 import { Link } from 'react-router-dom';
 import ImageComponent from './components/ImageComponent';
 
-const blurhash = {
-	software: 'LVH2Zk.8?b?aIUs:RjR*~q%2M{M|',
-	ux: 'LfM7cHx]-pj[rpofWBWU~qWBM{ax',
-	web: 'LbMG-m~qMw9H.TxaNGjcr=IUWFWA'
-};
-
 const softwareHash = 'LVH2Zk.8?b?aIUs:RjR*~q%2M{M|';
 const uxHash = 'LfM7cHx]-pj[rpofWBWU~qWBM{ax';
 const webHash = 'LbMG-m~qMw9H.TxaNGjcr=IUWFWA';

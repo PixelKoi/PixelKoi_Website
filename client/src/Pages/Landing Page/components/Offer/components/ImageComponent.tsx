@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Blurhash } from 'react-blurhash';
 
-const blurhash = {
-	software: 'LVH2Zk.8?b?aIUs:RjR*~q%2M{M|',
-	ux: 'LfM7cHx]-pj[rpofWBWU~qWBM{ax',
-	web: 'LbMG-m~qMw9H.TxaNGjcr=IUWFWA'
-};
-
 interface MyComponentProps {
 	src: any;
 	hashCode: any;
