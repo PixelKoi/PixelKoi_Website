@@ -23,16 +23,16 @@ const images = [
 		description: 'Full-Stack Developer/Cloud Engineer'
 	},
 	{
-		src: ChatGPT,
-		alt: 'ChatGPT',
-		name: 'ChatGPT',
-		description: 'Full-Stack Developer'
-	},
-	{
 		src: manny,
 		alt: 'Manny ?',
 		name: 'Manny',
 		description: 'Back-end Developer'
+	},
+	{
+		src: ChatGPT,
+		alt: 'ChatGPT',
+		name: 'ChatGPT',
+		description: 'Full-Stack Developer'
 	}
 ];
 
@@ -80,8 +80,8 @@ const Team = () => {
 				<div className={styles.desktopCard}>
 					<Card image={images[0].src} name={images[0].name} description={images[0].description} />
 					<Card image={images[1].src} name={images[1].name} description={images[1].description} />
-					<Card image={images[3].src} name={images[3].name} description={images[3].description} />
 					<Card image={images[2].src} name={images[2].name} description={images[2].description} />
+					<Card image={images[3].src} name={images[3].name} description={images[3].description} />
 				</div>
 			</div>
 		</div>
