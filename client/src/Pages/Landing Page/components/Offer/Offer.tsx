@@ -99,14 +99,14 @@ const Offer = () => {
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
 					</motion.div>
-					<div className={styles.cardIMG} style={{}}>
-						<ImageComponent src={codeDesign} hashCode={softwareHash} />
+					<div className={styles.cardIMG}>
+						<ImageComponent src={codeDesign} style={{ marginLeft: 'auto' }} hashCode={softwareHash} />
 					</div>
 				</div>
 
 				<div className={styles.uxGroup}>
 					<div className={styles.cardIMG}>
-						<ImageComponent src={uxDesign} hashCode={uxHash} />
+						<ImageComponent src={uxDesign} hashCode={uxHash} style={{ marginRight: 'auto' }} />
 					</div>
 					<motion.div
 						initial={{ opacity: 0 }}
@@ -161,7 +161,7 @@ const Offer = () => {
 						</Link>
 					</motion.div>
 					<div className={styles.cardIMG} style={{}}>
-						<ImageComponent src={webDesign} hashCode={webHash} />
+						<ImageComponent src={webDesign} style={{ marginLeft: 'auto' }} hashCode={webHash} />
 					</div>
 				</div>
 			</div>

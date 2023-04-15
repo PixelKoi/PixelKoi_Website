@@ -5,9 +5,10 @@ import styles from './ImageComponent.module.scss';
 interface MyComponentProps {
 	src: any;
 	hashCode: any;
+	style: any;
 }
 
-const ImageComponent: React.FC<MyComponentProps> = ({ src, hashCode }) => {
+const ImageComponent: React.FC<MyComponentProps> = ({ src, hashCode, style }) => {
 	const [ imageLoaded, setImageLoaded ] = useState(false);
 	useEffect(
 		() => {
@@ -21,13 +22,13 @@ const ImageComponent: React.FC<MyComponentProps> = ({ src, hashCode }) => {
 	);
 
 	return (
-		<div className={styles.wrapper}>
-			<div style={{ display: imageLoaded ? 'none' : 'inline' }}>
+		<div className={styles.wrapper} style={style}>
+			<div style={{ display: imageLoaded ? 'inline' : 'inline' }}>
 				<Blurhash hash={hashCode} width="100%" height="100%" resolutionX={64} resolutionY={64} punch={1} />
 			</div>
-			<div style={{ display: imageLoaded ? 'inline' : 'none' }}>
+			{/* <div style={{ display: imageLoaded ? 'inline' : 'none' }}>
 				<img src={src} alt="" width="100%" height="100%" />
-			</div>
+			</div> */}
 		</div>
 	);
 };
