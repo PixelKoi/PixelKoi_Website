@@ -23,10 +23,10 @@ const ImageComponent: React.FC<MyComponentProps> = ({ src, hashCode }) => {
 	return (
 		<div className={styles.wrapper}>
 			<div style={{ display: imageLoaded ? 'none' : 'inline' }}>
-				<Blurhash hash={hashCode} width={500} height={330} resolutionX={64} resolutionY={64} punch={1} />
+				<Blurhash hash={hashCode} width="100%" height="100%" resolutionX={64} resolutionY={64} punch={1} />
 			</div>
 			<div style={{ display: imageLoaded ? 'inline' : 'none' }}>
-				<img src={src} alt="" />
+				<img src={src} alt="" width="100%" height="100%" />
 			</div>
 		</div>
 	);
