@@ -1,6 +1,5 @@
 import styles from "./About.module.scss";
 import NavGroup from "../../components/Nav/NavGroup";
-import Team from "./Team2/Team2";
 import Team2 from "./Team3/Team";
 import Footer from "../../components/Footer/Main/Footer";
 import creative from "./../../assets/About/creative.webp";
@@ -9,6 +8,7 @@ import story from "../../assets/About/story.webp";
 import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
+import blurStyles from "./../Landing Page/components/Offer/components/BlurHashImages.module.scss";
 import BlurHashImages from "../Landing Page/components/Offer/components/BlurHashImages";
 
 interface ImageType {
@@ -17,7 +17,20 @@ interface ImageType {
     hash: string;
   };
 }
+
 const About = () => {
+  const imageStyles = {
+    position: "relative",
+    width: "100%",
+    height: "100%",
+    maxWidth: "580px",
+    maxHeight: "380px",
+    minHeight: "330px",
+    overflowX: "hidden",
+    overflowY: "hidden",
+    margin: "auto",
+  };
+
   const [shouldRenderDream, setShouldRenderDream] = useState(false);
 
   const hashData = useContext<ImageType>(HashContext);
@@ -69,12 +82,12 @@ const About = () => {
               <BlurHashImages
                 src={dream}
                 hashCode={dreamHash}
-                style={{ margin: "auto" }}
+                style={imageStyles}
               />
             )}
             <BlurHashImages
               src={creative}
-              style={{ margin: "auto" }}
+              style={imageStyles}
               hashCode={creativeHash}
             />
           </div>
@@ -114,7 +127,7 @@ const About = () => {
           <div className={styles.imgContainer}>
             <BlurHashImages
               src={story}
-              style={{ margin: "auto" }}
+              style={imageStyles}
               hashCode={storyHash}
             />
             <p>
