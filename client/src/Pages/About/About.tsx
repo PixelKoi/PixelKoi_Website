@@ -68,11 +68,19 @@ const About = () => {
             <>
               {shouldRenderDream && (
                 <>
-                  <BlurHashImages src={dream} hashCode={dreamHash} />
+                  <BlurHashImages
+                    src={dream}
+                    hashCode={dreamHash}
+                    style={{ margin: "auto" }}
+                  />
                 </>
               )}
             </>
-            <BlurHashImages src={creative} hashCode={creativeHash} />
+            <BlurHashImages
+              src={creative}
+              style={{ margin: "auto" }}
+              hashCode={creativeHash}
+            />
           </div>
           <div className={styles.description}>
             <p>
@@ -110,7 +118,7 @@ const About = () => {
           <div className={styles.imgContainer}>
             <BlurHashImages
               src={story}
-              style={{ marginLeft: "auto" }}
+              style={{ margin: "auto" }}
               hashCode={storyHash}
             />
             <p>
