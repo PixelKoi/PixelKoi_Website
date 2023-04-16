@@ -8,7 +8,6 @@ import story from "../../assets/About/story.webp";
 import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
-import blurStyles from "./../Landing Page/components/Offer/components/BlurHashImages.module.scss";
 import BlurHashImages from "../Landing Page/components/Offer/components/BlurHashImages";
 
 interface ImageType {
