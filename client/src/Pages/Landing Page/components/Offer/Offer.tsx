@@ -1,21 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import styles from "./Offer.module.scss";
 import { motion } from "framer-motion";
 import { BsArrowRightCircle } from "react-icons/bs";
-import uxdesign from "../../../../assets/Home/uxdesign.webp";
-import code from "../../../../assets/Home/code.webp";
 import codeDesign from "../../../../assets/Home/codeDesign.png";
 import uxDesign from "../../../../assets/Home/uxDesign.png";
 import webDesign from "../../../../assets/Home/webDesign.png";
-import web from "../../../../assets/Home/web.webp";
 import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
-import { Blurhash } from "react-blurhash";
 import { Link } from "react-router-dom";
 import BlurHashImages from "./components/BlurHashImages";
-
-const softwareHash = "LVH2Zk.8?b?aIUs:RjR*~q%2M{M|";
-const uxHash = "LfM7cHx]-pj[rpofWBWU~qWBM{ax";
-const webHash = "LbMG-m~qMw9H.TxaNGjcr=IUWFWA";
 
 interface ImageType {
   [name: string]: {
@@ -25,20 +17,11 @@ interface ImageType {
 }
 
 const Offer = () => {
-  const [loaded, setLoaded] = useState(false);
-
   const hashData = useContext<ImageType>(HashContext);
   console.log("Hash Data: ", hashData);
-  const laptopHash = hashData["laptop"].hash;
-  const tablet = hashData["tablet"].hash;
-  const imac = hashData["imac"].hash;
-  useEffect(() => {
-    const img = new Image();
-    img.src = uxdesign;
-    img.onload = () => {
-      setLoaded(true);
-    };
-  }, [uxdesign, code, web]);
+  const softwareHash = hashData["laptop"].hash;
+  const uxHash = hashData["tablet"].hash;
+  const webHash = hashData["imac"].hash;
 
   return (
     <div id="services" className={styles.mainContainer}>
