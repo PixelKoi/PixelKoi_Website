@@ -65,17 +65,13 @@ const About = () => {
             </p>
           </div>
           <div className={styles.imgContainer}>
-            <>
-              {shouldRenderDream && (
-                <>
-                  <BlurHashImages
-                    src={dream}
-                    hashCode={dreamHash}
-                    style={{ margin: "auto" }}
-                  />
-                </>
-              )}
-            </>
+            {shouldRenderDream && (
+              <BlurHashImages
+                src={dream}
+                hashCode={dreamHash}
+                style={{ margin: "auto" }}
+              />
+            )}
             <BlurHashImages
               src={creative}
               style={{ margin: "auto" }}
