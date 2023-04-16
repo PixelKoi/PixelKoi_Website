@@ -10,6 +10,8 @@ import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
 import { Blurhash } from "react-blurhash";
+import BlurHashImages from "../Landing Page/components/Offer/components/BlurHashImages";
+import codeDesign from "../../assets/Home/codeDesign.png";
 
 interface ImageType {
   [name: string]: {
@@ -29,7 +31,6 @@ const About = () => {
   const creativeHash = hashData["creative"].hash;
   const dreamHash = hashData["dream"].hash;
   const storyHash = hashData["story"].hash;
-  // TODO: Discovered reason for image still loading when using setLoaded / loaded hook is because it should use different versions for each image!
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,32 +49,7 @@ const About = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  useEffect(() => {
-    const images = [dream, creative, story];
 
-    const promises = images.map((image) => {
-      return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.src = image;
-        img.onload = () => {
-          resolve(img);
-        };
-        img.onerror = () => {
-          reject();
-        };
-      });
-    });
-
-    Promise.all(promises)
-      .then(() => {
-        setDreamLoaded(true);
-        setCreativeLoaded(true);
-        setStoryLoaded(true);
-      })
-      .catch((error) => {
-        console.error("Failed to load images:", error);
-      });
-  }, []);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -176,27 +152,11 @@ const About = () => {
           </div>
 
           <div className={styles.imgContainer}>
-            {!storyLoaded ? (
-              <div>
-                <Blurhash
-                  hash={storyHash}
-                  width="100%"
-                  height="100%"
-                  resolutionX={64}
-                  resolutionY={64}
-                  punch={1}
-                  className={styles.aboutImages}
-                />
-              </div>
-            ) : (
-              <motion.img
-                loading="lazy"
-                src={story}
-                alt=""
-                onLoad={() => setStoryLoaded(true)}
-              />
-            )}
-
+            <BlurHashImages
+              src={story}
+              style={{ marginLeft: "auto" }}
+              hashCode={storyHash}
+            />
             <p>
               As a team of experienced professional software engineers, we bring
               our passion for problem-solving and ingenuity to each project we

@@ -5,13 +5,13 @@ import styles from "./BlurHashImages.module.scss";
 interface MyComponentProps {
   src: any;
   hashCode: any;
-  style: any;
+  style?: React.CSSProperties;
 }
 
 const BlurHashImages: React.FC<MyComponentProps> = ({
   src,
   hashCode,
-  style,
+  style = {},
 }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   useEffect(() => {
