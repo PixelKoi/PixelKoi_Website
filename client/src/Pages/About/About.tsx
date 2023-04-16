@@ -9,9 +9,7 @@ import story from "../../assets/About/story.webp";
 import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
 import { motion } from "framer-motion";
 import React, { useContext, useEffect, useState } from "react";
-import { Blurhash } from "react-blurhash";
 import BlurHashImages from "../Landing Page/components/Offer/components/BlurHashImages";
-import codeDesign from "../../assets/Home/codeDesign.png";
 
 interface ImageType {
   [name: string]: {
@@ -20,11 +18,7 @@ interface ImageType {
   };
 }
 const About = () => {
-  const [dreamLoaded, setDreamLoaded] = useState(false);
   const [shouldRenderDream, setShouldRenderDream] = useState(false);
-
-  const [creativeLoaded, setCreativeLoaded] = useState(false);
-  const [storyLoaded, setStoryLoaded] = useState(false);
 
   const hashData = useContext<ImageType>(HashContext);
   console.log("About Page Hash Data: ", hashData);
@@ -74,49 +68,19 @@ const About = () => {
             <>
               {shouldRenderDream && (
                 <>
-                  {!dreamLoaded ? (
-                    <div>
-                      <Blurhash
-                        hash={dreamHash}
-                        width="550px"
-                        height="400px"
-                        resolutionX={64}
-                        resolutionY={64}
-                        punch={1}
-                      />
-                    </div>
-                  ) : (
-                    <img
-                      loading="lazy"
-                      src={dream}
-                      alt="inspirationalQuote"
-                      onLoad={() => setDreamLoaded(true)}
-                      className={styles.aboutImages}
-                    />
-                  )}
+                  <BlurHashImages
+                    src={dream}
+                    style={{ marginLeft: "auto" }}
+                    hashCode={dreamHash}
+                  />
                 </>
               )}
             </>
-            {!creativeLoaded ? (
-              <div>
-                <Blurhash
-                  hash={creativeHash}
-                  width="550px"
-                  height="400px"
-                  resolutionX={64}
-                  resolutionY={64}
-                  punch={1}
-                />
-              </div>
-            ) : (
-              <img
-                loading="lazy"
-                src={creative}
-                alt="inspirationalQuote"
-                onLoad={() => setCreativeLoaded(true)}
-                className={styles.aboutImages}
-              />
-            )}
+            <BlurHashImages
+              src={creative}
+              style={{ marginLeft: "auto" }}
+              hashCode={creativeHash}
+            />
           </div>
           <div className={styles.description}>
             <p>
@@ -173,7 +137,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      {/* <Team /> */}
       <Team2 />
       <Footer />
     </motion.div>
