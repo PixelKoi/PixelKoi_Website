@@ -71,6 +71,9 @@ app.get("/api/images", (req, res) => {
 app.get("/about", (req, res) => {
   res.sendFile("/home/almorsbd/public_html/build/index.html");
 });
+app.get("/contact", (req, res) => {
+  res.sendFile("/home/almorsbd/public_html/build/index.html");
+});
 
 app.post("/send-email", (req, res) => {
   const { name, company, email, phone } = req.body;
