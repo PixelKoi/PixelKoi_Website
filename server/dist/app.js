@@ -66,8 +66,11 @@ app.get("/api/images", (req, res) => {
 app.get("/about", (req, res) => {
     res.sendFile("/home/almorsbd/public_html/build/index.html");
 });
+app.get("/contact", (req, res) => {
+    res.sendFile("/home/almorsbd/public_html/build/index.html");
+});
 app.post("/send-email", (req, res) => {
-    const { name, company, email, phone } = req.body;
+    const { name, description, email, phone, budget } = req.body;
     const transporter = nodemailer_1.default.createTransport({
         host: "smtp.gmail.com",
         port: 465,
@@ -85,8 +88,9 @@ app.post("/send-email", (req, res) => {
       <h2>Contact Form Submission</h2>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Company:</strong> ${company}</p>
+      <p><strong>budget:</strong> ${budget}</p>
       <p><strong>Phone Number:</strong> ${phone}</p>
+      <p><strong>Description:</strong> ${description}</p>
     `,
     };
     transporter.sendMail(mailOptions, (error, info) => {

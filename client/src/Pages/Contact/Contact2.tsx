@@ -4,7 +4,6 @@ import styles from "./Contact2.module.scss";
 import Footer from "../../components/Footer/ContactPage/FooterContactPage";
 import { motion, useScroll } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import { AiFillWarning } from "react-icons/ai";
 import mailboxImg from "../../assets/Home/mailbox.jpg";
 import { Blurhash } from "react-blurhash";
 import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
@@ -16,21 +15,113 @@ interface ImageType {
   };
 }
 
-// TODO: Add email and name checks / make sure the information is filled out.
-// TODO: Add Submission check, display and Animate,
-// TODO: Add functionality for
+interface FormData {
+  name: string;
+  email: string;
+  budget: string;
+  phone: string;
+  description: string;
+}
 
 export const Contact = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [warningEmail, setWarningEmail] = useState(false);
-  const [phone, setPhone] = useState("");
-  const [warningPhone, setWarningPhone] = useState(false);
-  const [budget, setBudget] = useState("");
-  const [description, setDescription] = useState("");
-  const [form, setForm] = useState("");
-
+  const hashData = useContext<ImageType>(HashContext);
+  const mailboxHash = hashData["mailboxImg"].hash;
   const ref = useRef<HTMLImageElement>(null);
+  const [form, setForm] = useState("default");
+  const [emptyFieldHook, setEmptyFieldHook] = useState<string>("");
+  const [validateField, setValidateField] = useState<string>("");
+  const initialContactInformation = {
+    name: "",
+    email: "",
+    phone: "",
+    budget: "",
+    description: "",
+  };
+  const [contactInformation, setContactInformation] = useState<FormData>(
+    initialContactInformation
+  );
+
+  const resetContactInformation = () =>
+    setContactInformation(initialContactInformation);
+  const emptyField = Object.entries(contactInformation).find(
+    ([key, value]) => !value
+  );
+
+  const validateInput = (value: string, pattern: RegExp): boolean => {
+    console.log(value);
+    return pattern.test(value);
+  };
+  const validateContactInformation = (
+    contactInformation: FormData
+  ): boolean => {
+    const patterns = {
+      name: /^[A-Za-z\s]+$/,
+      email: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/,
+      phone: /^\d+$/,
+      budget: /^\d+$/,
+      description: /^[a-zA-Z0-9@#$%^&+=*()\[\]\\\',.?":{}|<>\/\s]+$/,
+    };
+
+    for (const [key, value] of Object.entries(contactInformation)) {
+      const pattern = patterns[key as keyof typeof patterns];
+      if (!validateInput(value, pattern)) {
+        getErrorMessage(key);
+        setForm("validationError");
+        return true;
+      }
+    }
+    setForm("complete");
+    return false;
+  };
+
+  const getErrorMessage = (key: string) => {
+    switch (key) {
+      case "name":
+        setValidateField(
+          '"Please enter a valid name with only letters and spaces.";'
+        );
+        setForm("validationError");
+        return true;
+      case "email":
+        setValidateField("Please enter a valid email address.");
+        setForm("validationError");
+
+        return true;
+      case "phone":
+        setValidateField("Please enter a valid phone number with only digits.");
+        setForm("validationError");
+
+        return true;
+      case "budget":
+        setValidateField(
+          "Please enter a valid budget amount with only digits."
+        );
+        setForm("validationError");
+
+        return true;
+      case "description":
+        setValidateField(
+          "Only alphanumeric characters and select special characters are allowed. Special characters include: @#$%^&+=*()[]\\',.?\":{}|<>/ and whitespace."
+        );
+        setForm("validationError");
+
+        return true;
+
+      default:
+        setValidateField(
+          "There was an error with your submission. Please try again later."
+        );
+        setForm("complete");
+        return false;
+    }
+  };
+
+  const email_url = "http://localhost:8000/send-email";
+  const emailPostOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(contactInformation),
+  };
 
   useEffect(() => {
     function handleScroll() {
@@ -50,45 +141,25 @@ export const Contact = () => {
   }, []);
   const { scrollYProgress } = useScroll();
   const [hookedYPostion, setHookedYPosition] = React.useState(0);
-  //smooth transition for scrolling through divs on landing page
   const location = useLocation();
 
   useEffect(() => {
-    // hook into the onChange, store the current value as state.
     scrollYProgress.onChange((v) => setHookedYPosition(v));
-  }, [scrollYProgress]); //make sure to re-subscriobe when scrollYProgress changes
+  }, [scrollYProgress]);
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit: React.FormEventHandler<HTMLInputElement> = (event) => {
     event.preventDefault();
     if (handleValidation() === false) {
       return;
-    } else {
-      fetch("http://localhost:8000/send-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          budget,
-          description,
-        }),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          alert(data.message);
-        })
-        .catch((error) => {
-          console.error("We've run into an error: ", error);
-        });
     }
-    setDescription("");
-    setPhone("");
-    setBudget("");
-    setName("");
-    setEmail("");
+    fetch(email_url, emailPostOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data.message))
+      .catch((error) => {
+        console.error("We've run into an error: ", error);
+      });
+    resetContactInformation();
   };
-
   //Show Contact form based on state
   const showSubmitMessage = (form: String) => {
     switch (form) {
@@ -98,12 +169,47 @@ export const Contact = () => {
             <div>Thank you! Your submission has been received!</div>
           </div>
         );
-      case "error":
+      case "emptyError":
         return (
           <div className={styles.formError}>
-            <div>
-              Oops! Something went wrong while submitting the form. Make sure
-              all fields are filled out correctly.
+            <div style={{ fontWeight: "bold" }}>
+              {emptyField ? (
+                <span>
+                  The field{" "}
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      textTransform: "uppercase",
+                      fontSize: "1.2em",
+                    }}
+                  >
+                    {emptyFieldHook}
+                  </span>{" "}
+                  cannot be empty. Please fill it out and try again.
+                </span>
+              ) : (
+                "We're sorry, but there was an error submitting your proposal. Please try again later or contact our support team: info@pixelkoi.com for assistance."
+              )}
+            </div>
+          </div>
+        );
+      case "validationError":
+        return (
+          <div className={styles.formError}>
+            <div style={{ fontWeight: "bold" }}>
+              {validateField ? (
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    textTransform: "uppercase",
+                    fontSize: "1.2em",
+                  }}
+                >
+                  {validateField}
+                </span>
+              ) : (
+                "We're sorry, but there was an error submitting your proposal. Please try again later or contact our support team: info@pixelkoi.com for assistance."
+              )}
             </div>
           </div>
         );
@@ -112,44 +218,28 @@ export const Contact = () => {
     }
   };
 
-  //Check email input for '@'
-  const handleCheckEmail = () => {
-    if (email.length === 0 || !email.includes("@")) {
-      setWarningEmail(email.length !== 0);
-    } else {
-      setWarningEmail(false);
-      return false;
-    }
-  };
-
   //Check phone number
-  const handleCheckNumber = () => {
-    const phoneRegex = /^\+(?:[0-9]●?){6,14}[0-9]$/;
-    if (phoneRegex.test(phone) === false) {
-      setWarningPhone(true);
-    } else {
-      setWarningPhone(false);
-    }
-  };
-
   const handleValidation = () => {
-    if (
-      name === "" ||
-      email === "" ||
-      budget === "" ||
-      phone === "" ||
-      description === ""
-    ) {
-      setForm("error");
+    if (emptyField) {
+      console.log("Empty field here god damn it", emptyField[0]);
+      setEmptyFieldHook(emptyField[0]);
+      setForm("emptyError");
+      return false;
+    } else if (validateContactInformation(contactInformation)) {
       return false;
     }
     setForm("complete");
     return true;
   };
   const [loaded, setLoaded] = useState(false);
-  const hashData = useContext<ImageType>(HashContext);
-  const mailboxHash = hashData["mailboxImg"].hash;
-  console.log(mailboxHash);
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    const { name, value } = event.target;
+    setContactInformation({ ...contactInformation, [name]: value });
+    console.log(contactInformation);
+  };
   useEffect(() => {
     const img = new Image();
     img.src = mailboxHash;
@@ -225,8 +315,9 @@ export const Contact = () => {
                 name="name"
                 data-name="user-name"
                 placeholder="Your name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={contactInformation.name}
+                onChange={handleInputChange}
+                required
               />
               <div className={styles.inputGroup}>
                 <input
@@ -236,21 +327,10 @@ export const Contact = () => {
                   name="email"
                   data-name="user-email"
                   placeholder="Email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onBlur={handleCheckEmail}
+                  value={contactInformation.email}
+                  onChange={handleInputChange}
+                  required
                 />
-                <div
-                  className={styles.warningBox}
-                  style={{ display: warningEmail === false ? "none" : "block" }}
-                >
-                  <div className={styles.innerCheckEmail}>
-                    <AiFillWarning className={styles.warningIcon} />
-                    <p className={styles.emailWarningText}>
-                      Please include '@' in your email address!
-                    </p>
-                  </div>
-                </div>
               </div>
               <div className={styles.inputGroup}>
                 <input
@@ -258,23 +338,15 @@ export const Contact = () => {
                   className={styles.input}
                   maxLength={256}
                   name="phone"
-                  value={phone}
+                  value={contactInformation.phone}
                   data-name="user-phone"
                   placeholder="Contact Phone"
-                  onChange={(e) => setPhone(e.target.value)}
+                  onChange={handleInputChange}
+                  pattern="[0-9]*"
+                  title="Please enter only numbers"
+                  required
                   // onBlur={handleCheckNumber}
                 />
-                <div
-                  className={styles.warningBox}
-                  style={{ display: warningPhone === false ? "none" : "block" }}
-                >
-                  <div className={styles.innerCheckEmail}>
-                    <AiFillWarning className={styles.warningIcon} />
-                    <p className={styles.emailWarningText}>
-                      Please include '@' in your email address!
-                    </p>
-                  </div>
-                </div>
               </div>
               <input
                 type="text"
@@ -283,17 +355,18 @@ export const Contact = () => {
                 name="budget"
                 data-name="user-budget"
                 placeholder="Budget"
-                value={budget}
-                onChange={(e) => setBudget(e.target.value)}
+                value={contactInformation.budget}
+                onChange={handleInputChange}
+                required
               />
               <textarea
-                name="text-area"
+                name="description"
                 placeholder="Describe your project..."
                 maxLength={5000}
-                value={description}
+                value={contactInformation.description}
                 data-name="text-area"
                 className={`${styles.input2} ${styles.textArea} `}
-                onChange={(e) => setDescription(e.target.value)}
+                onChange={handleInputChange}
               />
               <input
                 type="submit"
