@@ -72,8 +72,7 @@ const ClientMobile = () => {
 					<b>Our Clients</b>
 				</motion.h1>
 				<hr className={styles.break} />
-				<br />
-				<br />
+				{/* <br /> */}
 				<p className={styles.cta}>
 					Our clients reside in various nations and use diverse languages, yet our shared aim unites us in our
 					efforts..
