@@ -38,9 +38,9 @@ const Offer = () => {
 					<br />
 					<br />
 					<p className={styles.paragraph}>
-						Finding the right service to meet your business needs can be challenging. That’s why we work
-						closely with you to understand your specific requirements and offer you a service that will make
-						an impact on your product.
+						Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward.
 					</p>
 
 					<Link

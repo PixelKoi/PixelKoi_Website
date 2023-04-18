@@ -64,7 +64,7 @@
 
 .softwareGroup {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(2, 1fr);
 	margin-top: 10rem;
 	gap: 20px;
 	padding: 0 1rem;
@@ -99,7 +99,7 @@
 
 .uxGroup {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(2, 1fr);
 	margin-top: 10rem;
 	gap: 20px;
 	padding: 0 1rem;
@@ -149,33 +149,71 @@
 	.mainContainer {
 		padding: 0;
 	}
-	.softwareGroup {
-		padding: 0 1rem;
-	}
+
 	.cta {
 		padding: 0 1rem;
+		max-width: 412px;
+		margin: 0 auto;
 	}
 	.uxGroup {
+		max-width: 412px;
+		// padding: 4rem 1rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 1fr);
+		margin: 0 auto;
+		padding: 2rem 1rem 0 1rem;
+		.cardIMG {
+			margin-top: auto;
+		}
+	}
+	.softwareGroup {
+		max-width: 412px;
+		// padding: 4rem 1rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 1fr);
+		margin: 0 auto;
 		padding: 0 1rem;
+		.cardIMG {
+			margin-top: auto;
+		}
 	}
 }
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 768px) {
-	.mainContainer {
-		padding: 2rem 0 2rem 0;
+	.cta {
+		padding: 0 2rem;
+		max-width: 600px;
+		margin: 0;
+	}
+	.uxGroup {
+		max-width: 1200px;
+		margin: 0;
+		margin-top: 10rem;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
+		padding: 0 2rem;
+		.cardIMG {
+			margin-top: 0;
+		}
 	}
 	.softwareGroup {
+		max-width: 1200px;
+		margin: 0;
+		margin-top: 10rem;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr;
 		padding: 0 2rem;
 		.cardIMG {
 			order: 1;
+			margin-top: 0;
 		}
 	}
-	.cta {
-		padding: 0 2rem;
+	.mainContainer {
+		padding: 2rem 0 2rem 0;
 	}
 
-	.uxGroup {
+	.cta {
 		padding: 0 2rem;
 	}
 }
