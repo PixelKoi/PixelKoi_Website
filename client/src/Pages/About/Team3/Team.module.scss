@@ -1,4 +1,5 @@
 .wrapper {
+	overflow: hidden;
 	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
@@ -53,10 +54,10 @@
 		}
 	}
 	.desktopWrapper {
-		display: flex;
-		justify-content: center;
 		.desktopCard {
 			display: flex;
+			flex-direction: row wrap;
+			flex-wrap: wrap;
 			width: 100%;
 			margin: 0 auto;
 			max-width: 1200px;
