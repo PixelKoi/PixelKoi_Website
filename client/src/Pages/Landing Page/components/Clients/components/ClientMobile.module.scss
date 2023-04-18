@@ -1,72 +1,211 @@
 //carousel
-.carousel {
-	display: flex;
-	flex-direction: row;
-	width: 100%;
-	height: 300px;
-	margin: 0 auto;
-	padding: 0 1rem;
 
-	.left {
-		color: #eff;
-		cursor: pointer;
-		margin-right: auto;
-		align-self: center;
-		&:hover {
-			color: #e8985c;
-		}
-	}
-	.right {
-		color: #eff;
-		cursor: pointer;
-		margin-left: auto;
-		align-self: center;
-		&:hover {
-			color: #e8985c;
-		}
-	}
-}
-.iconContainer {
-	height: 300px;
+.container {
+	overflow: hidden;
+	margin-top: 2rem;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-	.logoIMG {
-		margin-top: auto;
-		align-self: center;
+	padding: 0 1rem;
+	padding-bottom: 6rem;
+	padding-top: 5rem;
 
-		max-width: 200px;
-		filter: invert(82%) sepia(95%) saturate(0%) hue-rotate(87deg) brightness(115%) contrast(104%);
+	.textContainer {
+		margin-top: 6rem;
+		max-width: 600px;
+		.clientTitle {
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 1rem;
+		}
+		.cta {
+			font-family: "Newslab", serif;
+			color: hsla(0, 0%, 100%, 0.5);
+			// font-size: 20px;
+			opacity: 0.8;
+			line-height: 2.2rem;
+			font-weight: 500;
+		}
+		.break {
+			border-top: 1px solid #e8985c;
+			width: 50px;
+			float: left;
+		}
+	}
+	.textContainer > * {
+		color: #fff;
+	}
+	.carousel {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 2rem;
+		width: 100%;
+		.left {
+			color: #efff;
+			align-self: center;
+			margin-right: 1.5rem;
+			cursor: pointer;
+			&:hover {
+				color: #e8985c;
+			}
+		}
+		.iconContainer {
+			width: 100%;
+			max-width: 220px;
+		}
+		.right {
+			color: #efff;
+			align-self: center;
+			margin-left: 1.5rem;
+			cursor: pointer;
+
+			&:hover {
+				color: #e8985c;
+			}
+		}
 	}
 }
 
-.clientTitle {
-	font-size: 24px;
-	font-weight: bold;
-	margin-bottom: 1rem;
-}
+// .carousel {
+// 	display: flex;
+// 	flex-direction: row;
+// 	// width: 100%;
+// 	height: 300px;
+// 	margin: 0 auto;
+// 	// padding: 0 1rem;
 
-.textContainer {
-	margin-top: 6rem;
-	padding: 0 1rem;
-	max-width: 600px;
-}
+// 	// overflow: hidden;
+// 	// margin-top: 2rem;
+// 	// display: flex;
+// 	// flex-direction: column;
+// 	// justify-content: center;
+// 	// padding: 0 2rem;
+// 	// padding-bottom: 6rem;
+// 	// padding-top: 5rem;
+// 	// border-bottom: 1px solid #fff;
+// 	.left {
+// 		color: #eff;
+// 		cursor: pointer;
+// 		margin-right: auto;
+// 		align-self: center;
+// 		&:hover {
+// 			color: #e8985c;
+// 		}
+// 	}
+// 	.right {
+// 		color: #eff;
+// 		cursor: pointer;
+// 		margin-left: auto;
+// 		align-self: center;
+// 		&:hover {
+// 			color: #e8985c;
+// 		}
+// 	}
+// }
+// .iconContainer {
+// 	height: 300px;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	.logoIMG {
+// 		margin-top: auto;
+// 		align-self: center;
 
-.textContaine > * {
-	color: #fff;
-}
+// 		max-width: 200px;
+// 		filter: invert(82%) sepia(95%) saturate(0%) hue-rotate(87deg) brightness(115%) contrast(104%);
+// 	}
+// }
 
-.cta {
-	font-family: "Newslab", serif;
-	color: hsla(0, 0%, 100%, 0.5);
-	// font-size: 20px;
-	opacity: 0.8;
-	line-height: 2.2rem;
-	font-weight: 500;
-}
+// .clientTitle {
+// 	font-size: 24px;
+// 	font-weight: bold;
+// 	margin-bottom: 1rem;
+// }
 
-.break {
-	border-top: 1px solid #e8985c;
-	width: 50px;
-	float: left;
-}
+// .textContaine > * {
+// 	color: #fff;
+// }
+
+// .cta {
+// 	font-family: "Newslab", serif;
+// 	color: hsla(0, 0%, 100%, 0.5);
+// 	// font-size: 20px;
+// 	opacity: 0.8;
+// 	line-height: 2.2rem;
+// 	font-weight: 500;
+// }
+
+// .break {
+// 	border-top: 1px solid #e8985c;
+// 	width: 50px;
+// 	float: left;
+// }
+
+// .wrapper {
+// 	overflow: hidden;
+// 	margin-top: 2rem;
+// 	display: flex;
+// 	flex-direction: column;
+// 	justify-content: center;
+// 	padding: 0 2rem;
+// 	padding-bottom: 6rem;
+// 	padding-top: 5rem;
+// 	border-bottom: 1px solid #fff;
+// 	.teamContainer {
+// 		width: 100%;
+// 		margin: 0 auto;
+// 		max-width: 1200px;
+
+// 		p {
+// 			opacity: 0.8;
+// 		}
+// 		.cta {
+// 			color: #fff;
+
+// 			line-height: 2.2rem;
+// 		}
+// 		.teamText {
+// 			max-width: 600px;
+// 		}
+
+// 		.teamTitle {
+// 			color: #ffa500;
+// 			// font-size: 20px;
+// 			margin-bottom: 1rem;
+// 		}
+// 	}
+
+// 	.carouselWrapper {
+// 		margin-top: 6rem;
+// 		display: flex;
+// 		justify-content: center;
+// 		.carouselContainer {
+// 			display: flex;
+
+// 			.left {
+// 				margin-top: 5rem;
+// 				margin-right: 1rem;
+// 			}
+// 			.right {
+// 				margin-top: 5rem;
+// 				margin-left: 1rem;
+// 			}
+// 			.carousel {
+// 				display: flex;
+// 				justify-content: center;
+// 			}
+// 		}
+// 	}
+// 	.desktopWrapper {
+// 		display: flex;
+// 		justify-content: center;
+// 		.desktopCard {
+// 			display: flex;
+// 			width: 100%;
+// 			margin: 0 auto;
+// 			max-width: 1200px;
+// 			margin-top: 5rem;
+// 		}
+// 	}
+// }
