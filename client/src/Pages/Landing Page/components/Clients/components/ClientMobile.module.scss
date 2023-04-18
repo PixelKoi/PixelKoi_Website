@@ -12,8 +12,13 @@
 
 	.textContainer {
 		// margin-top: 6rem;
-		max-width: 600px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 auto;
+		max-width: 450px;
 		.clientTitle {
+			text-align: center;
 			font-size: 24px;
 			font-weight: bold;
 			margin-bottom: 1rem;
@@ -22,6 +27,7 @@
 			font-family: "Newslab", serif;
 			color: hsla(0, 0%, 100%, 0.5);
 			// font-size: 20px;
+			text-align: center;
 			opacity: 0.8;
 			line-height: 2.2rem;
 			font-weight: 500;
@@ -29,7 +35,8 @@
 		.break {
 			border-top: 1px solid #e8985c;
 			width: 50px;
-			float: left;
+			// justify-self: start;
+			// float: left;
 		}
 	}
 	.textContainer > * {
