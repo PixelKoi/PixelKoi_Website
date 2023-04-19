@@ -9,8 +9,7 @@ import { HashContext } from '../../components/BlurHashEncoder/BlurHashDecoder';
 import { motion } from 'framer-motion';
 import React, { useContext, useEffect, useState } from 'react';
 import BlurHashImages from '../Landing Page/components/Offer/components/BlurHashImages';
-import BlurHashImages2 from './BlurHashImages';
-
+import BlurHashImages2 from './components/BlurHashImages';
 interface ImageType {
 	[name: string]: {
 		url: string;
@@ -25,7 +24,7 @@ const About = () => {
 		height: '100%',
 		maxWidth: '580px',
 		maxHeight: '380px',
-		minHeight: '330px',
+		minHeight: '240px',
 		overflowX: 'hidden',
 		overflowY: 'hidden',
 		margin: 'auto'
@@ -77,8 +76,8 @@ const About = () => {
 						</p>
 					</div>
 					<div className={styles.imgContainer}>
-						{shouldRenderDream && <BlurHashImages src={dream} hashCode={dreamHash} style={imageStyles} />}
-						<BlurHashImages src={creative} style={imageStyles} hashCode={creativeHash} />
+						{shouldRenderDream && <BlurHashImages2 src={dream} hashCode={dreamHash} />}
+						<BlurHashImages2 src={creative} hashCode={creativeHash} />
 					</div>
 					<div className={styles.description}>
 						<p>
@@ -106,11 +105,11 @@ const About = () => {
 
 				<div className={styles.section} id={styles.ourStory}>
 					<div className={styles.headerText}>
-						<h3 style={{ color: '#FFA500' }}>Our Story</h3>
+						<h3 style={{ color: '#e8985c' }}>Our Story</h3>
 					</div>
 
 					<div className={styles.imgContainer}>
-						<BlurHashImages src={story} style={imageStyles} hashCode={storyHash} />
+						<BlurHashImages2 src={story} hashCode={storyHash} />
 						<p>
 							As a team of experienced professional software engineers, we bring our passion for
 							problem-solving and ingenuity to each project we decide to undertake. With a keen attention

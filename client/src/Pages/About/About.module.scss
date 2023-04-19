@@ -39,7 +39,6 @@
 		gap: 40px;
 		img {
 			filter: grayscale(0.5);
-
 		}
 	}
 
@@ -57,12 +56,10 @@
 
 		img {
 			filter: grayscale(0.5);
-
 		}
 	}
 	.aboutImages {
 		width: 100%;
-
 	}
 	@media screen and (max-width: 768px) {
 		.newAboutImageContainer {
@@ -76,22 +73,17 @@
 				max-width: 550px;
 				height: auto; /* This will maintain the aspect ratio of the image */
 			}
-
-
 		}
 	}
-
 
 	.description {
 		margin-top: 4rem;
 
 		.hightlight {
-			color: #ffa500;
+			color: #e8985c;
 		}
 	}
 }
-
-
 
 #dream {
 	border-radius: 20px 0px;
