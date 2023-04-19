@@ -9,6 +9,7 @@ import { HashContext } from '../../components/BlurHashEncoder/BlurHashDecoder';
 import { motion } from 'framer-motion';
 import React, { useContext, useEffect, useState } from 'react';
 import BlurHashImages from '../Landing Page/components/Offer/components/BlurHashImages';
+import BlurHashImages2 from './BlurHashImages';
 
 interface ImageType {
 	[name: string]: {
