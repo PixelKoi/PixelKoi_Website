@@ -152,11 +152,45 @@
 
 	.cta {
 		padding: 0 1rem;
-		max-width: 412px;
+		max-width: 500px;
 		margin: 0 auto;
 	}
 	.uxGroup {
-		max-width: 412px;
+		max-width: 500px;
+		// padding: 4rem 1rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 1fr);
+		margin: 0 auto;
+		padding: 1rem 1rem 0 1rem;
+		.cardIMG {
+			margin-top: auto;
+		}
+	}
+	.softwareGroup {
+		max-width: 500px;
+		// padding: 4rem 1rem;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(2, 1fr);
+		margin: 0 auto;
+		padding: 2rem 1rem;
+		.cardIMG {
+			margin-top: auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 500px) {
+	.mainContainer {
+		padding: 0;
+	}
+
+	.cta {
+		padding: 0 1rem;
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	.uxGroup {
+		max-width: 500px;
 		// padding: 4rem 1rem;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(2, 1fr);
@@ -167,12 +201,12 @@
 		}
 	}
 	.softwareGroup {
-		max-width: 412px;
+		max-width: 500px;
 		// padding: 4rem 1rem;
 		grid-template-columns: 1fr;
 		grid-template-rows: repeat(2, 1fr);
 		margin: 0 auto;
-		padding: 0 1rem;
+		padding: 4rem 1rem;
 		.cardIMG {
 			margin-top: auto;
 		}
