@@ -53,13 +53,13 @@ const Offer = () => {
 					</Link>
 				</motion.div>
 
-				<div className={styles.softwareGroup}>
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1 } }}
-						viewport={{ once: true }}
-						className={styles.catDescription}
-					>
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, transition: { duration: 1 } }}
+					viewport={{ once: true }}
+					className={styles.softwareGroup}
+				>
+					<div className={styles.catDescription}>
 						<h3 style={{ color: '#efff' }}>Software Engineering</h3>
 						<hr className={styles.break} />
 						<br />
@@ -78,22 +78,22 @@ const Offer = () => {
 							<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
-					</motion.div>
+					</div>
 					<div className={styles.cardIMG}>
 						<BlurHashImages src={codeDesign} style={{ marginLeft: 'auto' }} hashCode={softwareHash} />
 					</div>
-				</div>
+				</motion.div>
 
-				<div className={styles.uxGroup}>
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, transition: { duration: 1 } }}
+					viewport={{ once: true }}
+					className={styles.uxGroup}
+				>
 					<div className={styles.cardIMG}>
 						<BlurHashImages src={uxDesign} hashCode={uxHash} style={{ marginRight: 'auto' }} />
 					</div>
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1 } }}
-						viewport={{ once: true }}
-						className={styles.catDescription}
-					>
+					<div className={styles.catDescription}>
 						<h3 style={{ color: '#efff' }}>UX Design</h3>
 						<hr className={styles.break} />
 						<br />
@@ -111,16 +111,16 @@ const Offer = () => {
 							<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
-					</motion.div>
-				</div>
+					</div>
+				</motion.div>
 
-				<div className={styles.softwareGroup}>
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1 } }}
-						viewport={{ once: true }}
-						className={styles.catDescription}
-					>
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, transition: { duration: 1 } }}
+					viewport={{ once: true }}
+					className={styles.softwareGroup}
+				>
+					<div className={styles.catDescription}>
 						<h3 style={{ color: '#efff' }}>Website Development</h3>
 						<hr className={styles.break} />
 						<br />
@@ -139,11 +139,11 @@ const Offer = () => {
 							<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
-					</motion.div>
+					</div>
 					<div className={styles.cardIMG} style={{}}>
 						<BlurHashImages src={webDesign} style={{ marginLeft: 'auto' }} hashCode={webHash} />
 					</div>
-				</div>
+				</motion.div>
 			</div>
 		</div>
 	);
