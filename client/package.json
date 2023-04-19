@@ -55,8 +55,9 @@
 		"web-vitals": "^2.1.4"
 	},
 	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
+		"start": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject"
 	},
@@ -84,7 +85,9 @@
 		"@types/react-burger-menu": "^2.8.3",
 		"@types/react-modal": "^3.13.1",
 		"@types/react-scroll": "^1.8.4",
+		"@vitejs/plugin-react": "^3.1.0",
 		"lato-font": "^3.0.0",
-		"typescript": "^4.7.4"
+		"typescript": "^4.7.4",
+		"vite": "^4.2.2"
 	}
 }
