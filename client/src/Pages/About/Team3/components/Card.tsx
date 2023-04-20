@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from './Card.module.scss';
-import jonny from '../../../../assets/images/slider/jonny.webp';
 import BlurHashImages from '../../../Landing Page/components/Offer/components/BlurHashImages';
 
 const Card = (props: any) => {
 	const jonny = 'LJLzBPPC.S%1~Vof%Ma}0LV?DjWC';
+	const manny = 'LdH_utoL?bt7~qayt7WBM{a{M{of';
+	const garo = 'L584DC%300E1iboKyFX80fR*}@xG';
+	const chatgpt = 'LcRD1Wof~WayM{fkxuay%Mj@Rjay';
 
 	const photoStyle = {
 		position: 'relative',
