@@ -22,7 +22,7 @@ const Card = (props: any) => {
 	};
 	return (
 		<div className={styles.card}>
-			<BlurHashImages src={props.image} style={photoStyle} hashCode={'LJLzBPPC.S%1~Vof%Ma}0LV?DjWC'} />
+			<BlurHashImages src={props.image} style={photoStyle} hashCode={props.hash} />
 			<div className={styles.imageText}>
 				<h6>
 					<b>{props.name}</b>

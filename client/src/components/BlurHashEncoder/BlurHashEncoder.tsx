@@ -9,6 +9,11 @@ import creative from "./../../assets/About/creative.webp";
 import dream from "../../assets/About/dream.webp";
 import story from "../../assets/About/story.webp";
 import mailboxImg from "../../assets/Home/mailbox.jpg";
+import jonny from "../../assets/images/slider/jonny.webp";
+import garo from "../../assets/images/slider/garo.webp";
+import manny from "../../assets/images/slider/manny.webp";
+import robot from "../../assets/images/slider/robothappy.webp";
+
 interface ImageType {
   [name: string]: {
     url: string;
@@ -32,6 +37,10 @@ const imageUrls = [
   { name: "dream", url: dream, hash: "" },
   { name: "story", url: story, hash: "" },
   { name: "mailboxImg", url: mailboxImg, hash: "" },
+  { name: "jonny", url: jonny, hash: "" },
+  { name: "garo", url: garo, hash: "" },
+  { name: "manny", url: manny, hash: "" },
+  { name: "robot", url: robot, hash: "" },
 ];
 
 // All Image url objects currently in use on our website landing page
