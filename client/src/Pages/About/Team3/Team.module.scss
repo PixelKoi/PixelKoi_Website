@@ -4,12 +4,12 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	padding: 0 2rem;
 	padding-bottom: 6rem;
 	padding-top: 5rem;
 	border-bottom: 1px solid #fff;
+
 	.teamContainer {
-		width: 100%;
+		width: 90%;
 		margin: 0 auto;
 		max-width: 1200px;
 
@@ -54,6 +54,9 @@
 		}
 	}
 	.desktopWrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		.desktopCard {
 			display: flex;
 			flex-direction: row wrap;

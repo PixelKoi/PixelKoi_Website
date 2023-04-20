@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Blurhash } from 'react-blurhash';
-import styles from './BlurHashImages.module.scss';
+import styles from './BlurHashImages2.module.scss';
 
 interface MyComponentProps {
 	src: any;

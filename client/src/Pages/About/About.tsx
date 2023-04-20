@@ -8,8 +8,9 @@ import story from '../../assets/About/story.webp';
 import { HashContext } from '../../components/BlurHashEncoder/BlurHashDecoder';
 import { motion } from 'framer-motion';
 import React, { useContext, useEffect, useState } from 'react';
-import BlurHashImages from '../Landing Page/components/Offer/components/BlurHashImages';
-import BlurHashImages2 from './components/BlurHashImages';
+import BlurHashImages from './components/BlurHashImages';
+import BlurHashImages2 from './components/BlurHashImages2';
+
 interface ImageType {
 	[name: string]: {
 		url: string;
@@ -77,7 +78,7 @@ const About = () => {
 					</div>
 					<div className={styles.imgContainer}>
 						{shouldRenderDream && <BlurHashImages2 src={dream} hashCode={dreamHash} />}
-						<BlurHashImages2 src={creative} hashCode={creativeHash} />
+						<BlurHashImages src={creative} hashCode={creativeHash} />
 					</div>
 					<div className={styles.description}>
 						<p>
@@ -108,7 +109,7 @@ const About = () => {
 						<h3 style={{ color: '#e8985c' }}>Our Story</h3>
 					</div>
 
-					<div className={styles.imgContainer}>
+					<div className={styles.imgContainer2}>
 						<BlurHashImages2 src={story} hashCode={storyHash} />
 						<p>
 							As a team of experienced professional software engineers, we bring our passion for
