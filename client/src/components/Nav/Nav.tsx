@@ -210,16 +210,16 @@ const Nav = () => {
 					animate={{ opacity: 1, transition: { duration: 1 } }}
 					className={styles.container3}
 				>
-					<div className={styles.contactInfo}>
-						<p style={{ display: hide === true ? 'none' : 'inline' }}>
+					<motion.div className={styles.contactInfo}>
+						<motion.p style={{ display: hide === true ? 'none' : 'inline' }}>
 							Email: info@pixelkoi.com <br />
 							Phone: (647)-838-1705
-						</p>
-					</div>
+						</motion.p>
+					</motion.div>
 					<Link
 						id={styles.link4}
-						style={{ display: hide === true ? 'none' : 'inline' }}
 						className={`${styles.link} `}
+						style={{ display: hide === true ? 'none' : 'inline' }}
 						to="/contact"
 					>
 						<motion.p>Hire Us</motion.p>
@@ -238,7 +238,9 @@ const Nav = () => {
 										setHide(true);
 									} else {
 										closeMenu();
-										setHide(false);
+										setTimeout(() => {
+											setHide(false);
+										}, 1000);
 									}
 								}}
 								height={28}
