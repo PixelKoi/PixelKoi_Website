@@ -7,7 +7,8 @@ export default defineConfig(() => {
   return {
     build: {
       outDir: "dist",
+      assetsInclude: ["registerSW.js"],
     },
-    plugins: [react()],
+    plugins: [react(), VitePWA({})],
   };
 });
