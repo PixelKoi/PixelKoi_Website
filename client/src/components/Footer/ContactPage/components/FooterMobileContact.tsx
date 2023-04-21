@@ -66,6 +66,11 @@ const FooterMobileContact = () => {
 					{showInfo === true ? (
 						<div className={styles.linksWrapper} id={styles.links}>
 							<div>
+								<Link to="/" title="Description page for Pixel Koi Company">
+									Home
+								</Link>
+							</div>
+							<div>
 								<Link to="/about" title="Description page for Pixel Koi Company">
 									About
 								</Link>

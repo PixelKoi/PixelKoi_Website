@@ -217,6 +217,7 @@ img {
 	grid-template-rows: auto auto;
 }
 .input {
+	width: 100%;
 	overflow: hidden;
 	height: 48px;
 	margin-bottom: 0px;
@@ -350,7 +351,44 @@ img {
 	text-align: center;
 }
 
+.inputGroup {
+	overflow: hidden;
+	height: 48px;
+	margin-bottom: 0px;
+	background-color: transparent;
+	transition: border-color 600ms ease, background-color 600ms ease;
+	color: #fff;
+	font-size: 15px;
+	line-height: 24px;
+
+	width: 100%;
+}
+
+.warningBox {
+	border: 1px solid #efff;
+	padding-right: 1rem;
+	margin-top: 5px;
+	position: absolute;
+	font-size: 12px;
+	color: black;
+	background-color: #efff;
+	border-radius: 2px;
+}
+
+.innerCheckEmail {
+	display: flex;
+	margin-right: auto;
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+}
+
 @media screen and (max-width: 479px) {
+	.title {
+		margin-bottom: 4rem;
+	}
 	.contact {
 		padding: 8vw 8vw 10vw;
 	}

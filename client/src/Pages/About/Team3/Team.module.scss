@@ -1,0 +1,96 @@
+.wrapper {
+	overflow: hidden;
+	margin-top: 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-bottom: 6rem;
+	// padding-top: 3.5rem;
+	border-bottom: 1px solid #fff;
+
+	.teamContainer {
+		width: 90%;
+		margin: 0 auto;
+		max-width: 1200px;
+
+		p {
+			opacity: 0.8;
+		}
+		.cta {
+			color: #fff;
+
+			line-height: 2.2rem;
+		}
+		.teamText {
+			max-width: 600px;
+		}
+
+		.teamTitle {
+			color: #e8985c;
+			// font-size: 20px;
+			margin-bottom: 1rem;
+		}
+	}
+
+	.carouselWrapper {
+		margin-top: 6rem;
+		display: flex;
+		justify-content: center;
+		.carouselContainer {
+			display: flex;
+
+			.left {
+				margin-top: 5rem;
+				// margin-right: 1rem;
+			}
+			.right {
+				margin-top: 5rem;
+				// margin-left: 1rem;
+			}
+			.carousel {
+				display: flex;
+				justify-content: center;
+			}
+		}
+	}
+	.desktopWrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin: 0 auto;
+		.desktopCard {
+			display: flex;
+			flex-direction: row wrap;
+			justify-content: center;
+			flex-wrap: wrap;
+			width: 100%;
+			padding: 0 2rem;
+			max-width: 1200px;
+			margin-top: 5rem;
+			// gap: 20px;
+		}
+	}
+}
+
+@media only screen and (min-width: 320px) {
+	.wrapper {
+		.carouselWrapper {
+			display: flex;
+		}
+		.desktopWrapper {
+			display: none;
+		}
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width: 768px) {
+	.wrapper {
+		.carouselWrapper {
+			display: none;
+		}
+		.desktopWrapper {
+			display: flex;
+		}
+	}
+}

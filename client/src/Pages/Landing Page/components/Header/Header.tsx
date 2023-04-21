@@ -1,29 +1,55 @@
 // import './Header.css';
-import React, { useEffect, useRef, useState, useCallback } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "../../../../styles/globalStyles.css";
 import styles from "./Header.module.scss";
-import OurTech from "../OurTech/OurTech";
 import { motion } from "framer-motion";
-import SpinningImage from "./components/3Dsquare/SpinningImage";
-import Cube from "./components/Cube/Cube";
-import cube from "../../../../assets/Home/ph_cube.svg";
-import koi from "../../../../assets/Home/koi.svg";
-import { Link, useLocation } from "react-router-dom";
-import headerImg from "../../../../assets/Home/box.webp";
-import ParticlesBackground from "../../../../components/Particles/ParticlesBackground";
-import Particles from "react-tsparticles";
+import { Link } from "react-router-dom";
+import headerImg from "../../../../assets/Home/box.jpeg";
+import { Blurhash } from "react-blurhash";
+import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
 
-const Header = (props: any) => {
+interface ImageType {
+  [name: string]: {
+    url: string;
+    hash: string;
+  };
+}
+const Header = () => {
   const list = { show: { opacity: 1, transition: { staggerChildren: 0.09 } } };
   const item = { show: { y: 0, opacity: 1, transition: { duration: 0.5 } } };
+  const [loaded, setLoaded] = useState(false);
+  const hashData = useContext<ImageType>(HashContext);
+  const headerHash = hashData["headerImg"].hash;
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = headerImg;
+    img.onload = () => {
+      setLoaded(true);
+    };
+  }, []);
 
   return (
-    <div
-      className={styles.header}
-      id="header"
-      style={{ backgroundImage: `url(${headerImg})` }}
-    >
-      {/* <ParticlesBackground /> */}
+    <div className={styles.header} id="header">
+      <div>
+        <div style={{ display: loaded ? "none" : "inline" }}>
+          <Blurhash
+            hash={headerHash}
+            width="100%"
+            height="100%"
+            resolutionX={64}
+            resolutionY={64}
+            punch={1}
+            className={styles.headerBackgroundImg}
+          />
+        </div>
+        <img
+          onLoad={() => setLoaded(true)}
+          src={headerImg}
+          alt="Header Image"
+          className={styles.headerBackgroundImg}
+        />
+      </div>
       <div className={styles.container}>
         <div className={styles.modalContainer}>
           <motion.div

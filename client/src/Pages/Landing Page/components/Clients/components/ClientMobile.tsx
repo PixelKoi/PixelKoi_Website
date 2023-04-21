@@ -8,8 +8,29 @@ import hype from '../../../../../assets/Clients/hype.webp';
 import goodcompany from '../../../../../assets/Clients/goodcompany.webp';
 import developpa from '../../../../../assets/Clients/developpa.webp';
 
+const images = [
+	{
+		src: hype
+	},
+	{
+		src: goodcompany
+	},
+	{
+		src: developpa
+	}
+];
+
 const ClientMobile = () => {
 	const [ count, setCount ] = useState(0);
+	const [ currentIndex, setCurrentIndex ] = useState(0);
+
+	const handlePrevClick = () => {
+		setCurrentIndex(currentIndex === 0 ? images.length - 1 : currentIndex - 1);
+	};
+
+	const handleNextClick = () => {
+		setCurrentIndex(currentIndex === images.length - 1 ? 0 : currentIndex + 1);
+	};
 
 	const handleIMG = () => {
 		switch (count) {
@@ -40,7 +61,23 @@ const ClientMobile = () => {
 		}
 	};
 	return (
-		<div>
+		<div className={styles.container}>
+			<motion.div
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1, transition: { duration: 1 } }}
+				viewport={{ once: true }}
+				className={styles.textContainer}
+			>
+				<motion.h1 className={styles.clientTitle} style={{ color: '#efff' }}>
+					<b>Our Clients</b>
+				</motion.h1>
+				<hr className={styles.break} />
+				{/* <br /> */}
+				<p className={styles.cta}>
+					Our clients reside in various nations and use diverse languages, yet our shared aim unites us in our
+					efforts..
+				</p>
+			</motion.div>
 			<div className={styles.carousel}>
 				<BsFillArrowLeftCircleFill
 					className={styles.left}

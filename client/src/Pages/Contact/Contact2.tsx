@@ -1,349 +1,409 @@
-import React, { useState, useEffect, useRef, CSSProperties } from 'react';
-import Nav from '../../components/Nav/Nav';
-import styles from './Contact2.module.scss';
-import Footer from '../../components/Footer/ContactPage/FooterContactPage';
-import { motion, useScroll } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useContext } from "react";
+import Nav from "../../components/Nav/Nav";
+import styles from "./Contact2.module.scss";
+import Footer from "../../components/Footer/ContactPage/FooterContactPage";
+import { motion, useScroll } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+import mailboxImg from "../../assets/Home/mailbox.jpg";
+import { Blurhash } from "react-blurhash";
+import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
 
-import Select, { StylesConfig } from 'react-select';
-import mailboxImg from '../../assets/Home/mailbox.jpg';
-import ParticleBackground from '../../components/Particles/ParticlesBackground';
-const deadlineOptions = [
-	{ value: '1 Month', label: '1 Month' },
-	{ value: '3 Month', label: '3 Month' },
-	{ value: '6 Month', label: '6 Month' },
-	{ value: '1 Year', label: '1 Year' }
-];
-
-const costOptions = [
-	{ value: '$20,000', label: '$20,000' },
-	{ value: '$40,000', label: '$40,000' },
-	{ value: '$60,000', label: '$60,000' },
-	{ value: 'infinite', label: 'infinite' }
-];
-
-// TODO: Add email and name checks / make sure the information is filled out.
-// TODO: Add Submission check, display and Animate,
-// TODO: Add functionality for
-const customStyles = {
-	control: (baseStyles: any, state: any) => ({
-		...baseStyles,
-		backgroundColor: 'transparent',
-		borderColor: state.isFocused ? '#fff' : '#595959',
-		height: '60px',
-		boxShadow: 'none',
-		'&:hover': {
-			boxShadow: '#fff'
-		}
-	}),
-	option: (styles: any, state: any) => {
-		return {
-			...styles
-			// borderColor: state.isSelected ? '#fff' : '#595959'
-		};
-	},
-	singleValue: (base: any) => ({ ...base, color: '#fff' }),
-	menu: (base: any) => ({
-		...base,
-		// override border radius to match the box
-		backgroundColor: '#fff',
-		// kill the gap
-		marginTop: 0
-	}),
-	menuList: (base: any) => ({
-		...base,
-		// kill the white space on first and last option
-		padding: 0,
-		color: '#595959'
-	})
-};
-
-interface FormData {
-	name: string;
-	company: string;
-	email: string;
-	phone: string;
-	deadline: number;
-	budget: number;
+interface ImageType {
+  [name: string]: {
+    url: string;
+    hash: string;
+  };
 }
 
-interface SimpleForm {
-	name: string;
-	email: string;
-	message: string;
+interface FormData {
+  name: string;
+  email: string;
+  budget: string;
+  phone: string;
+  description: string;
 }
 
 export const Contact = () => {
-	const [ complete, setComplete ] = useState(false);
-	const [ error, setError ] = useState(false);
+  const hashData = useContext<ImageType>(HashContext);
+  const mailboxHash = hashData["mailboxImg"].hash;
+  const ref = useRef<HTMLImageElement>(null);
+  const [form, setForm] = useState("default");
+  const [emptyFieldHook, setEmptyFieldHook] = useState<string>("");
+  const [validateField, setValidateField] = useState<string>("");
+  const initialContactInformation = {
+    name: "",
+    email: "",
+    phone: "",
+    budget: "",
+    description: "",
+  };
+  const [contactInformation, setContactInformation] = useState<FormData>(
+    initialContactInformation
+  );
 
-	const ref = useRef<HTMLImageElement>(null);
+  const resetContactInformation = () =>
+    setContactInformation(initialContactInformation);
+  const emptyField = Object.entries(contactInformation).find(
+    ([key, value]) => !value
+  );
 
-	useEffect(() => {
-		function handleScroll() {
-			if (ref.current) {
-				const { top, height } = ref.current.getBoundingClientRect();
-				const percentVisible = (window.innerHeight - top) / height;
-				const translateY = (1 - percentVisible) * -20;
-				ref.current.style.transform = `translateY(${translateY}%)`;
-			}
-		}
+  const validateInput = (value: string, pattern: RegExp): boolean => {
+    console.log(value);
+    return pattern.test(value);
+  };
+  const validateContactInformation = (
+    contactInformation: FormData
+  ): boolean => {
+    const patterns = {
+      name: /^[A-Za-z\s]+$/,
+      email: /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,})+$/,
+      phone: /^\d+$/,
+      budget: /^\d+$/,
+      description: /^[a-zA-Z0-9@#$%^&+=*()\[\]\\\',.?":{}|<>\/\s]+$/,
+    };
 
-		window.addEventListener('scroll', handleScroll);
+    for (const [key, value] of Object.entries(contactInformation)) {
+      const pattern = patterns[key as keyof typeof patterns];
+      if (!validateInput(value, pattern)) {
+        getErrorMessage(key);
+        setForm("validationError");
+        return true;
+      }
+    }
+    setForm("complete");
+    return false;
+  };
 
-		return () => {
-			window.removeEventListener('scroll', handleScroll);
-		};
-	}, []);
-	const { scrollYProgress } = useScroll();
-	const [ hookedYPostion, setHookedYPosition ] = React.useState(0);
-	//smooth transition for scrolling through divs on landing page
-	const location = useLocation();
+  const getErrorMessage = (key: string) => {
+    switch (key) {
+      case "name":
+        setValidateField(
+          '"Please enter a valid name with only letters and spaces.";'
+        );
+        setForm("validationError");
+        return true;
+      case "email":
+        setValidateField("Please enter a valid email address.");
+        setForm("validationError");
 
-	useEffect(
-		() => {
-			// hook into the onChange, store the current value as state.
-			scrollYProgress.onChange((v) => setHookedYPosition(v));
-		},
-		[ scrollYProgress ]
-	); //make sure to re-subscriobe when scrollYProgress changes
-	const [ deadline, setDeadline ] = useState(1);
-	const [ amount, setAmount ] = useState(20);
+        return true;
+      case "phone":
+        setValidateField("Please enter a valid phone number with only digits.");
+        setForm("validationError");
 
-	const [ values, setValues ] = useState<FormData>({
-		name: '',
-		company: '',
-		email: '',
-		phone: '',
-		deadline: deadline,
-		budget: amount
-	});
+        return true;
+      case "budget":
+        setValidateField(
+          "Please enter a valid budget amount with only digits."
+        );
+        setForm("validationError");
 
-	const [ simpleValues, setSimpleValues ] = useState<SimpleForm>({
-		name: '',
-		email: '',
-		message: ''
-	});
+        return true;
+      case "description":
+        setValidateField(
+          "Only alphanumeric characters and select special characters are allowed. Special characters include: @#$%^&+=*()[]\\',.?\":{}|<>/ and whitespace."
+        );
+        setForm("validationError");
 
-	//Show form
-	const [ show, setForm ] = useState('');
-	const handleSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
-		event.preventDefault();
-		fetch('http://localhost:8000/send-email', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(values)
-		})
-			.then((response) => response.json())
-			.then((data) => console.log(data))
-			.then(() => {
-				setForm('submitted');
-				setComplete(true);
-			})
-			.catch((error) => {
-				console.error("We've run into an error: ", error);
-				setForm('error');
-				setError(true);
-			});
-	};
+        return true;
 
-	//Show Contact form based on state
-	const showForm = (form: String) => {
-		switch (form) {
-			case 'submitted':
-				return submittedForm();
-			case 'error':
-				return errorForm();
-			default:
-				return;
-		}
-	};
+      default:
+        setValidateField(
+          "There was an error with your submission. Please try again later."
+        );
+        setForm("complete");
+        return false;
+    }
+  };
 
-	const submittedForm = () => {
-		return (
-			<div className={styles.formSection}>
-				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
-					Thank you for submitting your proposal to us. We appreciate your interest in our company and the
-					opportunity to review your ideas. We will carefully evaluate your submission and get back to you as
-					soon as possible.
-				</p>
-			</div>
-		);
-	};
+  const email_url = "http://localhost:8000/send-email";
+  const emailPostOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(contactInformation),
+  };
 
-	const errorForm = () => {
-		return (
-			<div className={styles.formSection}>
-				<p style={{ color: 'white', textAlign: 'center', padding: '10rem' }}>
-					We're sorry, but there was an error submitting your proposal. Please try again later or contact our
-					support team for assistance. Thank you for your patience and understanding.
-				</p>
-			</div>
-		);
-	};
+  useEffect(() => {
+    function handleScroll() {
+      if (ref.current) {
+        const { top, height } = ref.current.getBoundingClientRect();
+        const percentVisible = (window.innerHeight - top) / height;
+        const translateY = (1 - percentVisible) * -20;
+        ref.current.style.transform = `translateY(${translateY}%)`;
+      }
+    }
 
-	const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		values.budget = amount;
-		values.deadline = deadline;
-		const { name, value } = event.target;
-		setValues({ ...values, [name]: value });
-		console.log(values);
-	};
+    window.addEventListener("scroll", handleScroll);
 
-	const handleInputChangeArea = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-		values.budget = amount;
-		values.deadline = deadline;
-		const { name, value } = event.target;
-		setValues({ ...values, [name]: value });
-		console.log(values);
-	};
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const { scrollYProgress } = useScroll();
+  const [hookedYPostion, setHookedYPosition] = React.useState(0);
+  const location = useLocation();
 
-	const handleInputChangeSimple = (event: React.ChangeEvent<HTMLInputElement>) => {
-		const { name, value } = event.target;
-		setSimpleValues({ ...simpleValues, [name]: value });
-		console.log(simpleValues);
-	};
-	const item = {
-		hidden: {
-			scale: 1,
-			opacity: 1,
-			tansition: { duration: 1, ease: 'easeIn' }
-		}
-	};
+  useEffect(() => {
+    scrollYProgress.onChange((v) => setHookedYPosition(v));
+  }, [scrollYProgress]);
 
-	return (
-		<div>
-			<Nav />
-			<div className={styles.headerWrapper}>
-				<div className={styles.header}>
-					<motion.h1
-						className={styles.headerText}
-						initial={{ opacity: 0, y: 80 }}
-						animate={{
-							opacity: 1,
-							y: 0,
-							transition: { delay: 0.4, duration: 0.4 }
-						}}
-					>
-						Get In Touch
-					</motion.h1>
-					<motion.div
-						initial={{ opacity: 0, y: 80 }}
-						animate={{
-							opacity: 1,
-							y: 0,
-							transition: { delay: 0.4, duration: 0.4 }
-						}}
-						className={styles.links}
-					>
-						<Link to="/">Home</Link>
-						<Link to="/#services">Services</Link>
-					</motion.div>
-					<motion.div
-						initial={{ scale: 1.2 }}
-						animate={{
-							scale: 1,
-							transition: { ease: 'easeIn', duration: 0.4 }
-						}}
-						className={styles.backgroundText}
-					>
-						CONTACTS
-					</motion.div>
-				</div>
-			</div>
+  const handleSubmit: React.FormEventHandler<HTMLInputElement> = (event) => {
+    event.preventDefault();
+    if (handleValidation() === false) {
+      return;
+    }
+    fetch(email_url, emailPostOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data.message))
+      .catch((error) => {
+        console.error("We've run into an error: ", error);
+      });
+    resetContactInformation();
+  };
+  //Show Contact form based on state
+  const showSubmitMessage = (form: String) => {
+    switch (form) {
+      case "complete":
+        return (
+          <div className={styles.formSucess}>
+            <div>Thank you! Your submission has been received!</div>
+          </div>
+        );
+      case "emptyError":
+        return (
+          <div className={styles.formError}>
+            <div style={{ fontWeight: "bold" }}>
+              {emptyField ? (
+                <span>
+                  The field{" "}
+                  <span
+                    style={{
+                      fontWeight: "bold",
+                      textTransform: "uppercase",
+                      fontSize: "1.2em",
+                    }}
+                  >
+                    {emptyFieldHook}
+                  </span>{" "}
+                  cannot be empty. Please fill it out and try again.
+                </span>
+              ) : (
+                "We're sorry, but there was an error submitting your proposal. Please try again later or contact our support team: info@pixelkoi.com for assistance."
+              )}
+            </div>
+          </div>
+        );
+      case "validationError":
+        return (
+          <div className={styles.formError}>
+            <div style={{ fontWeight: "bold" }}>
+              {validateField ? (
+                <span
+                  style={{
+                    fontWeight: "bold",
+                    textTransform: "uppercase",
+                    fontSize: "1.2em",
+                  }}
+                >
+                  {validateField}
+                </span>
+              ) : (
+                "We're sorry, but there was an error submitting your proposal. Please try again later or contact our support team: info@pixelkoi.com for assistance."
+              )}
+            </div>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
 
-			<motion.div className={styles.formSection}>
-				<motion.div
-					variants={item}
-					// initial={{ scale: 0, opacity: 0 }}
-					// animate={hookedYPostion > 0 ? 'hidden' : 'show'}
-					className={styles.wrapper}
-				>
-					<motion.div className={styles.contact}>
-						<div className={styles.intro}>
-							<strong>
-								<em />
-							</strong>
-							<strong>
-								<em />
-							</strong>
-							<h2>Let's Work Together</h2>
-							<div className={styles.divider} />
-							<div>
-								Send us a message today to start transforming your ideas into innovative software
-								solutions.
-							</div>
-						</div>
-						<motion.form className={styles.form} onSubmit={handleSubmit}>
-							<input
-								type="text"
-								className={`${styles.input} `}
-								maxLength={256}
-								name="Contact-v2-Name"
-								data-name="Contact v2 Name"
-								placeholder="Your name"
-								onChange={handleInputChange}
-							/>
-							<input
-								type="email"
-								className={styles.input}
-								maxLength={256}
-								name="Contact-v2-Email"
-								data-name="Contact v2 Email"
-								placeholder="Email address"
-								onChange={handleInputChange}
-							/>
-							<input
-								type="tel"
-								className={styles.input}
-								maxLength={256}
-								name="Contact-v2-Phone"
-								data-name="Contact v2 Phone"
-								placeholder="Contact Phone"
-								onChange={handleInputChange}
-							/>
-							<input
-								type="text"
-								className={styles.input}
-								maxLength={256}
-								name="Contact-v2-Budget"
-								data-name="Contact v2 Budget"
-								placeholder="Budget"
-								onChange={handleInputChange}
-							/>
-							<textarea
-								name="Contact-v2-Info"
-								placeholder="Describe your project..."
-								maxLength={5000}
-								data-name="Contact v2 Info"
-								className={`${styles.input2} ${styles.textArea} `}
-								onChange={handleInputChangeArea}
-							/>
-							<input
-								type="submit"
-								onClick={() => {}}
-								value="Submit Message"
-								data-wait="Please wait..."
-								className={styles.button}
-							/>
-						</motion.form>
-						{complete === true ? (
-							<div className={styles.formSucess}>
-								<div>Thank you! Your submission has been received!</div>
-							</div>
-						) : null}
-						{error === true ? (
-							<div className={styles.formError}>
-								<div>Oops! Something went wrong while submitting the form.</div>
-							</div>
-						) : null}
-					</motion.div>
-				</motion.div>
-				<motion.div ref={ref} style={{ willChange: 'transform' }} className={styles.contact2}>
-					<img className={styles.bgIMG} src={mailboxImg} alt="" />
-				</motion.div>
-			</motion.div>
-			<Footer />
-		</div>
-	);
+  //Check phone number
+  const handleValidation = () => {
+    if (emptyField) {
+      console.log("Empty field here god damn it", emptyField[0]);
+      setEmptyFieldHook(emptyField[0]);
+      setForm("emptyError");
+      return false;
+    } else if (validateContactInformation(contactInformation)) {
+      return false;
+    }
+    setForm("complete");
+    return true;
+  };
+  const [loaded, setLoaded] = useState(false);
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    const { name, value } = event.target;
+    setContactInformation({ ...contactInformation, [name]: value });
+    console.log(contactInformation);
+  };
+  useEffect(() => {
+    const img = new Image();
+    img.src = mailboxHash;
+    img.onload = () => {
+      setLoaded(true);
+    };
+  }, [mailboxHash]);
+  return (
+    <div>
+      <Nav />
+      <div className={styles.headerWrapper}>
+        <div className={styles.header}>
+          <div className={styles.title}>
+            <motion.h1
+              className={styles.headerText}
+              initial={{ opacity: 0, y: 80 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.4, duration: 0.4 },
+              }}
+            >
+              Get In Touch
+            </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 80 }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.4, duration: 0.4 },
+              }}
+              className={styles.links}
+            >
+              <Link to="/">Home</Link>
+              <Link to="/#services">Services</Link>
+            </motion.div>
+          </div>
+          <motion.div
+            initial={{ scale: 1.2 }}
+            animate={{
+              scale: 1,
+              transition: { ease: "easeIn", duration: 0.4 },
+            }}
+            className={styles.backgroundText}
+          >
+            CONTACTS
+          </motion.div>
+        </div>
+      </div>
+
+      <motion.div className={styles.formSection}>
+        <motion.div className={styles.wrapper}>
+          <motion.div className={styles.contact}>
+            <div className={styles.intro}>
+              <strong>
+                <em />
+              </strong>
+              <strong>
+                <em />
+              </strong>
+              <h2>Let's Work Together</h2>
+              <div className={styles.divider} />
+              <div>
+                Send us a message today to start transforming your ideas into
+                innovative software solutions.
+              </div>
+            </div>
+            <motion.form className={styles.form}>
+              <input
+                type="text"
+                className={styles.input}
+                maxLength={256}
+                name="name"
+                data-name="user-name"
+                placeholder="Your name"
+                value={contactInformation.name}
+                onChange={handleInputChange}
+                required
+              />
+              <div className={styles.inputGroup}>
+                <input
+                  type="email"
+                  className={styles.input}
+                  maxLength={256}
+                  name="email"
+                  data-name="user-email"
+                  placeholder="Email address"
+                  value={contactInformation.email}
+                  onChange={handleInputChange}
+                  required
+                />
+              </div>
+              <div className={styles.inputGroup}>
+                <input
+                  type="tel"
+                  className={styles.input}
+                  maxLength={256}
+                  name="phone"
+                  value={contactInformation.phone}
+                  data-name="user-phone"
+                  placeholder="Contact Phone"
+                  onChange={handleInputChange}
+                  pattern="[0-9]*"
+                  title="Please enter only numbers"
+                  required
+                  // onBlur={handleCheckNumber}
+                />
+              </div>
+              <input
+                type="text"
+                className={styles.input}
+                maxLength={256}
+                name="budget"
+                data-name="user-budget"
+                placeholder="Budget"
+                value={contactInformation.budget}
+                onChange={handleInputChange}
+                required
+              />
+              <textarea
+                name="description"
+                placeholder="Describe your project..."
+                maxLength={5000}
+                value={contactInformation.description}
+                data-name="text-area"
+                className={`${styles.input2} ${styles.textArea} `}
+                onChange={handleInputChange}
+              />
+              <input
+                type="submit"
+                onClick={handleSubmit}
+                value="Submit Message"
+                data-wait="Please wait..."
+                className={styles.button}
+              />
+            </motion.form>
+            {showSubmitMessage(form)}
+          </motion.div>
+        </motion.div>
+        <motion.div
+          ref={ref}
+          style={{ willChange: "transform" }}
+          className={styles.contact2}
+        >
+          <motion.div style={{ display: loaded ? "none" : "inline" }}>
+            <Blurhash
+              hash={mailboxHash}
+              width="100%"
+              height="100%"
+              resolutionX={64}
+              resolutionY={64}
+              punch={1}
+              className={styles.bgIMG}
+            />
+          </motion.div>
+          <img
+            loading="lazy"
+            className={styles.bgIMG}
+            src={mailboxImg}
+            alt=""
+          />
+        </motion.div>
+      </motion.div>
+      <Footer />
+    </div>
+  );
 };

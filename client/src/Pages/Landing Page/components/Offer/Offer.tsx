@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './Offer.module.scss';
 import { motion } from 'framer-motion';
 import { BsArrowRightCircle } from 'react-icons/bs';
-import uxdesign from '../../../../assets/Home/uxdesign.jpg';
-import code from '../../../../assets/Home/code.jpg';
-import web from '../../../../assets/Home/web.jpg';
-
+import codeDesign from '../../../../assets/Home/codeDesign.webp';
+import uxDesign from '../../../../assets/Home/uxDesign.webp';
+import webDesign from '../../../../assets/Home/webDesign.webp';
+import { HashContext } from '../../../../components/BlurHashEncoder/BlurHashDecoder';
 import { Link } from 'react-router-dom';
-import OurTech from '../OurTech/OurTech';
+import BlurHashImages from './components/BlurHashImages';
+
+interface ImageType {
+	[name: string]: {
+		url: string;
+		hash: string;
+	};
+}
 
 const Offer = () => {
+	const hashData = useContext<ImageType>(HashContext);
+	console.log('Hash Data: ', hashData);
+	const softwareHash = hashData['laptop'].hash;
+	const uxHash = hashData['tablet'].hash;
+	const webHash = hashData['imac'].hash;
+
 	return (
 		<div id="services" className={styles.mainContainer}>
 			<div className={styles.container}>
@@ -20,7 +33,7 @@ const Offer = () => {
 					className={styles.cta}
 				>
 					<h3>Software Services</h3>
-					<h1>Custom Solutions to Suit You</h1>
+					<h3 style={{ color: '#efff' }}>Custom Solutions to Suit You</h3>
 					<hr className={styles.break} />
 					<br />
 					<br />
@@ -40,13 +53,13 @@ const Offer = () => {
 					</Link>
 				</motion.div>
 
-				<div className={styles.softwareGroup}>
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1 } }}
-						viewport={{ once: true }}
-						className={styles.catDescription}
-					>
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, transition: { duration: 1 } }}
+					viewport={{ once: true }}
+					className={styles.softwareGroup}
+				>
+					<div className={styles.catDescription}>
 						<h3 style={{ color: '#efff' }}>Software Engineering</h3>
 						<hr className={styles.break} />
 						<br />
@@ -65,32 +78,22 @@ const Offer = () => {
 							<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
-					</motion.div>
-					<motion.img
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1 } }}
-						viewport={{ once: true }}
-						src={code}
-						alt="Macbook Pro image with code"
-						className={styles.cardIMG}
-					/>
-				</div>
+					</div>
+					<div className={styles.cardIMG}>
+						<BlurHashImages src={codeDesign} style={{ marginLeft: 'auto' }} hashCode={softwareHash} />
+					</div>
+				</motion.div>
 
-				<div className={styles.uxGroup}>
-					<motion.img
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1 } }}
-						viewport={{ once: true }}
-						src={uxdesign}
-						alt="Ipad image with website wireframe"
-						className={styles.cardIMG}
-					/>
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1 } }}
-						viewport={{ once: true }}
-						className={styles.catDescription}
-					>
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, transition: { duration: 1 } }}
+					viewport={{ once: true }}
+					className={styles.uxGroup}
+				>
+					<div className={styles.cardIMG}>
+						<BlurHashImages src={uxDesign} hashCode={uxHash} style={{ marginRight: 'auto' }} />
+					</div>
+					<div className={styles.catDescription}>
 						<h3 style={{ color: '#efff' }}>UX Design</h3>
 						<hr className={styles.break} />
 						<br />
@@ -108,16 +111,16 @@ const Offer = () => {
 							<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
-					</motion.div>
-				</div>
+					</div>
+				</motion.div>
 
-				<div className={styles.softwareGroup}>
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1 } }}
-						viewport={{ once: true }}
-						className={styles.catDescription}
-					>
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1, transition: { duration: 1 } }}
+					viewport={{ once: true }}
+					className={styles.softwareGroup}
+				>
+					<div className={styles.catDescription}>
 						<h3 style={{ color: '#efff' }}>Website Development</h3>
 						<hr className={styles.break} />
 						<br />
@@ -136,16 +139,11 @@ const Offer = () => {
 							<BsArrowRightCircle style={{ color: '#e8985c', alignSelf: 'center' }} size={30} />
 							<p style={{ margin: 'auto 0', color: '#fff' }}>Learn More</p>
 						</Link>
-					</motion.div>
-					<motion.img
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, transition: { duration: 1 } }}
-						viewport={{ once: true }}
-						src={web}
-						alt="Showing the development of a website with a macbook pro and imac in the background"
-						className={styles.cardIMG}
-					/>
-				</div>
+					</div>
+					<div className={styles.cardIMG} style={{}}>
+						<BlurHashImages src={webDesign} style={{ marginLeft: 'auto' }} hashCode={webHash} />
+					</div>
+				</motion.div>
 			</div>
 		</div>
 	);

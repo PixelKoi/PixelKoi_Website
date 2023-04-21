@@ -1,13 +1,62 @@
 import styles from './About.module.scss';
 import NavGroup from '../../components/Nav/NavGroup';
-import Team from './Team/Team';
+import Team2 from './Team3/Team';
 import Footer from '../../components/Footer/Main/Footer';
-
-import creative from './../../assets/About/creative.webp';
+import creative from '../../assets/About/creative.png';
 import dream from '../../assets/About/dream.webp';
 import story from '../../assets/About/story.webp';
+import { HashContext } from '../../components/BlurHashEncoder/BlurHashDecoder';
 import { motion } from 'framer-motion';
+import React, { useContext, useEffect, useState } from 'react';
+import BlurHashImages from './components/BlurHashImages';
+import BlurHashImages2 from './components/BlurHashImages2';
+
+interface ImageType {
+	[name: string]: {
+		url: string;
+		hash: string;
+	};
+}
+
 const About = () => {
+	const imageStyles = {
+		position: 'relative',
+		width: '100%',
+		height: '100%',
+		maxWidth: '580px',
+		maxHeight: '380px',
+		minHeight: '240px',
+		overflowX: 'hidden',
+		overflowY: 'hidden',
+		margin: 'auto'
+	};
+
+	const [ shouldRenderDream, setShouldRenderDream ] = useState(false);
+
+	const hashData = useContext<ImageType>(HashContext);
+	console.log('About Page Hash Data: ', hashData);
+	const creativeHash = hashData['creative'].hash;
+	const dreamHash = hashData['dream'].hash;
+	const storyHash = hashData['story'].hash;
+
+	useEffect(() => {
+		const handleResize = () => {
+			if (window.innerWidth >= 768) {
+				setShouldRenderDream(true);
+			} else {
+				setShouldRenderDream(false);
+			}
+		};
+
+		handleResize(); // initial call to handleResize
+
+		window.addEventListener('resize', handleResize);
+
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
+
 	return (
 		<motion.div
 			initial={{ opacity: 0 }}
@@ -16,7 +65,6 @@ const About = () => {
 			className={styles.wrapper}
 		>
 			<NavGroup />
-
 			<div className={styles.container}>
 				<div className={styles.section}>
 					<div className={styles.headerText}>
@@ -29,20 +77,8 @@ const About = () => {
 						</p>
 					</div>
 					<div className={styles.imgContainer}>
-						<img
-							loading="lazy"
-							src={dream}
-							alt="inspirationalQuote"
-							className={styles.imgContainer}
-							id={styles.dream}
-						/>
-						<img
-							loading="lazy"
-							src={creative}
-							alt="inspirationalQuote"
-							className={styles.imgContainer}
-							id={styles.creative}
-						/>
+						{shouldRenderDream && <BlurHashImages2 src={dream} hashCode={dreamHash} />}
+						<BlurHashImages src={creative} hashCode={creativeHash} />
 					</div>
 					<div className={styles.description}>
 						<p>
@@ -70,10 +106,11 @@ const About = () => {
 
 				<div className={styles.section} id={styles.ourStory}>
 					<div className={styles.headerText}>
-						<h3 style={{ color: '#FFA500' }}>Our Story</h3>
+						<h3 style={{ color: '#e8985c' }}>Our Story</h3>
 					</div>
-					<div className={styles.imgContainer}>
-						<motion.img loading="lazy" src={story} alt="" className={styles.imgContainer} />
+
+					<div className={styles.imgContainer2}>
+						<BlurHashImages2 src={story} hashCode={storyHash} />
 						<p>
 							As a team of experienced professional software engineers, we bring our passion for
 							problem-solving and ingenuity to each project we decide to undertake. With a keen attention
@@ -87,8 +124,7 @@ const About = () => {
 					</div>
 				</div>
 			</div>
-
-			<Team />
+			<Team2 />
 			<Footer />
 		</motion.div>
 	);

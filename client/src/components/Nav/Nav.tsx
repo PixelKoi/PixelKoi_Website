@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Nav.module.scss';
 import { Link, useLocation } from 'react-router-dom';
 import menu from '../../assets/images/menu.svg';
 import { motion, useScroll, AnimatePresence } from 'framer-motion';
-// import AnimateOnScroll from 'react-animate-on-scroll';
 
 const Nav = () => {
+	const [ hide, setHide ] = useState(false);
 	const [ open, setOpen ] = useState(false);
 	const openMenu = () => {
 		setOpen(true);
@@ -61,7 +61,11 @@ const Nav = () => {
 								initial={{ y: 100, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ delay: 0.3 }}
-								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.7 } }}
+								exit={{
+									opacity: 0,
+									y: 90,
+									transition: { ease: 'easeInOut', delay: 0.7 }
+								}}
 								whileHover={{ textShadow: '0px 0px 2px rgb(255,255,255)' }}
 							>
 								<Link
@@ -79,7 +83,11 @@ const Nav = () => {
 								initial={{ y: 100, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ delay: 0.4 }}
-								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.6 } }}
+								exit={{
+									opacity: 0,
+									y: 90,
+									transition: { ease: 'easeInOut', delay: 0.6 }
+								}}
 								whileHover={{ textShadow: '0px 0px 2px rgb(255,255,255)' }}
 							>
 								<Link
@@ -97,7 +105,11 @@ const Nav = () => {
 								initial={{ y: 100, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ delay: 0.7 }}
-								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.5 } }}
+								exit={{
+									opacity: 0,
+									y: 90,
+									transition: { ease: 'easeInOut', delay: 0.5 }
+								}}
 								whileHover={{ textShadow: '0px 0px 2px rgb(255,255,255)' }}
 							>
 								<Link
@@ -116,7 +128,11 @@ const Nav = () => {
 								initial={{ y: 100, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ delay: 0.9 }}
-								exit={{ opacity: 0, y: 90, transition: { ease: 'easeInOut', delay: 0.3 } }}
+								exit={{
+									opacity: 0,
+									y: 90,
+									transition: { ease: 'easeInOut', delay: 0.3 }
+								}}
 								whileHover={{ textShadow: '0px 0px 2px rgb(255,255,255)' }}
 							>
 								<Link
@@ -194,47 +210,45 @@ const Nav = () => {
 					animate={{ opacity: 1, transition: { duration: 1 } }}
 					className={styles.container3}
 				>
-					<div className={styles.contactInfo}>
-						<p>
-							Email: info@pixelkoi.com <br />Phone: (647)-838-1705
-						</p>
-					</div>
+					<motion.div className={styles.contactInfo}>
+						<motion.p style={{ display: hide === true ? 'none' : 'inline' }}>
+							Email: info@pixelkoi.com <br />
+							Phone: (647)-838-1705
+						</motion.p>
+					</motion.div>
 					<Link
 						id={styles.link4}
-						// style={{ marginRight: '110px' }}
 						className={`${styles.link} `}
+						style={{ display: hide === true ? 'none' : 'inline' }}
 						to="/contact"
 					>
 						<motion.p>Hire Us</motion.p>
 					</Link>
-				</motion.div>
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1, transition: { duration: 1 } }}
-					className={styles.container2}
-				>
-					{/* <div className={styles.contactInfo}>
-						<p>
-							Email: info@pixelkoi.com <br />Phone: (647)-838-1705
-						</p>
-					</div>
-					<Link
-						id={styles.link4}
-						// style={{ marginRight: '110px' }}
-						className={`${styles.link} `}
-						to="/contact"
+					<motion.div
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1, transition: { duration: 1 } }}
+						className={styles.menuContainer}
 					>
-						<motion.p>Hire Us</motion.p>
-					</Link> */}
-					<button className={styles.menuIMG}>
-						<motion.img
-							src={menu}
-							onClick={open === false ? openMenu : closeMenu}
-							height={28}
-							width={28}
-							alt="menu"
-						/>
-					</button>
+						<button className={styles.menuIMG}>
+							<motion.img
+								src={menu}
+								onClick={() => {
+									if (open === false) {
+										openMenu();
+										setHide(true);
+									} else {
+										closeMenu();
+										setTimeout(() => {
+											setHide(false);
+										}, 1000);
+									}
+								}}
+								height={28}
+								width={28}
+								alt="menu"
+							/>
+						</button>
+					</motion.div>
 				</motion.div>
 			</div>
 		</div>

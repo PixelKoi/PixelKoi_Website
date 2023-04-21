@@ -33,6 +33,11 @@ const FooterDesktop = () => {
 					<h4>INFORMATION</h4>
 					<div className={styles.linksWrapper} id={styles.links}>
 						<motion.div>
+							<Link to="/" title="Description page for Pixel Koi Company">
+								Home
+							</Link>
+						</motion.div>
+						<motion.div>
 							<Link to="/about" title="Description page for Pixel Koi Company">
 								About
 							</Link>

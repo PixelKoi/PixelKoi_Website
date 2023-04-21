@@ -4,6 +4,18 @@
 	justify-content: center;
 	width: 100vw;
 	height: 100vh;
+	position: relative;
+}
+
+.headerBackgroundImg {
+	position: absolute !important;
+	z-index: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 
 .scrollNavigation {
@@ -16,11 +28,13 @@
 }
 
 .container {
+	z-index: 2;
+
 	margin-top: 10rem;
 	height: 100%;
 	align-self: center;
 	display: flex;
-	flex-direction: column;
+	flex-direction: inherit;
 	justify-content: center;
 	.textContainer {
 		display: flex;
@@ -53,7 +67,7 @@
 		flex-direction: column; /* set the flex direction to row */
 		flex-wrap: nowrap; /* prevent the items from wrapping onto multiple lines */
 		/* add any other styles you need */
-		background-colomobr: #1e2a35;
+		background-color: #1e2a35;
 		width: 350px;
 		height: 300px;
 		padding: 3rem 2rem;
@@ -75,14 +89,14 @@
 		.button {
 			font-weight: 600;
 			border: none;
-			background-color: #ffa500;
+			background-color: #e8985c;
 			outline: none;
 			height: 50px;
 			width: 110px;
 			font-weight: 600;
 			color: white;
 			&:hover {
-				background-color: #ffa500;
+				background-color: #e8985c;
 			}
 		}
 		#buttonContact {
@@ -92,11 +106,6 @@
 	.text {
 		line-height: clamp(30px, 4vw, 50px);
 	}
-}
-
-.header {
-	background-size: cover;
-	background-position: center;
 }
 
 @media only screen and (min-width: 720px) {
