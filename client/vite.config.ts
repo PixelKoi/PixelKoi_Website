@@ -7,6 +7,14 @@ export default defineConfig(() => {
   return {
     base: "./",
     build: {
+      rollupOptions: {
+        input: {
+          main: "./index.html",
+        },
+        output: {
+          dir: "dist",
+        },
+      },
       outDir: "dist",
       assetsInclude: ["registerSW.js"],
     },
@@ -37,6 +45,7 @@ export default defineConfig(() => {
           background_color: "#ffffff",
           theme_color: "#2196f3",
         },
+        outDir: "dist",
       }),
     ],
   };

@@ -18,15 +18,14 @@
     <script>
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
-                navigator.serviceWorker.register("service-worker.js").then((reg) => {
-                    console.log("Service worker registered", reg);
-                });
+                navigator.serviceWorker.register("./sw.js", { scope: "./" });
             });
         }
+
     </script>
 
     <title>PixelKoi.com: Web Development, Mobile Development, UX/UI Design</title>
-  <script type="module" crossorigin src="./assets/index-b89e2ffa.js"></script>
+  <script type="module" crossorigin src="./assets/main-b89e2ffa.js"></script>
   <link rel="stylesheet" href="./assets/index-dea70555.css">
 <link rel="manifest" href="./manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="./registerSW.js"></script></head>
 <body>
