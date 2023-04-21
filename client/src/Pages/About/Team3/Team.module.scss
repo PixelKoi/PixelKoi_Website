@@ -57,14 +57,17 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		margin: 0 auto;
 		.desktopCard {
 			display: flex;
 			flex-direction: row wrap;
+			justify-content: center;
 			flex-wrap: wrap;
-			width: 90%;
-			margin: 0 auto;
+			width: 100%;
+			padding: 0 2rem;
 			max-width: 1200px;
 			margin-top: 5rem;
+			// gap: 20px;
 		}
 	}
 }
