@@ -4,13 +4,13 @@
   "description": "PixelKoi.com: Web Development, Mobile Development, UX/UI Design",
   "icons": [
     {
-      "src": "/assets/pixelKoi.png",
+      "src": "/pixelKoi.png",
       "type": "image/png",
       "sizes": "192x192",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/pixelKoiLarge.png",
+      "src": "/pixelKoiLarge.png",
       "type": "image/png",
       "sizes": "520x520",
       "purpose": "any maskable"
