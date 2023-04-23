@@ -116,7 +116,7 @@ export const Contact = () => {
     }
   };
 
-  const email_url = "http://localhost:8000/send-email";
+  const email_url = "send-email";
   const emailPostOptions = {
     method: "POST",
     headers: { "Content-Type": "application/json" },
