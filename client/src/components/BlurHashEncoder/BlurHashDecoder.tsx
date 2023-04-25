@@ -17,7 +17,7 @@ const BlurHashDecoder = (props: any) => {
   const [statusText, setStatusText] = useState<String>("");
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
-  const imagesURL = "/api/images";
+  const imagesURL = "http://localhost:8000/api/images";
 
   const getImageHash = async () => {
     try {
