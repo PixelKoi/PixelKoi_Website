@@ -8,6 +8,7 @@ import webDesign from '../../../../assets/Home/webDesign.webp';
 import { HashContext } from '../../../../components/BlurHashEncoder/BlurHashDecoder';
 import { Link } from 'react-router-dom';
 import BlurHashImages from './components/BlurHashImages';
+import { Helmet } from 'react-helmet';
 
 interface ImageType {
 	[name: string]: {
@@ -25,6 +26,16 @@ const Offer = () => {
 
 	return (
 		<div id="services" className={styles.mainContainer}>
+			<Helmet>
+      <title>Home Page</title>
+        <meta name="description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward." />
+        <meta property="og:title" content="Home Page" />
+        <meta property="og:description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward." />
+			</Helmet>
 			<div className={styles.container}>
 				<motion.div
 					initial={{ opacity: 0 }}

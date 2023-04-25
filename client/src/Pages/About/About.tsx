@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import React, { useContext, useEffect, useState } from 'react';
 import BlurHashImages from './components/BlurHashImages';
 import BlurHashImages2 from './components/BlurHashImages2';
+import { Helmet } from 'react-helmet';
 
 interface ImageType {
 	[name: string]: {
@@ -64,6 +65,16 @@ const About = () => {
 			viewport={{ once: true }}
 			className={styles.wrapper}
 		>
+      <Helmet>
+     		<title>About Page</title>
+        	<meta name="description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward." />
+        	<meta property="og:title" content="About Page" />
+        	<meta property="og:description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward." />
+		  </Helmet>
 			<NavGroup />
 			<div className={styles.container}>
 				<div className={styles.section}>

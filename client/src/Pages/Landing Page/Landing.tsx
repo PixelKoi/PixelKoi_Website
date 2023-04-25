@@ -10,6 +10,7 @@ import Footer from "../../components/Footer/Main/Footer";
 import NavGroup from "../../components/Nav/NavGroup";
 import React, { useState, useEffect } from "react";
 import { GridLoader } from "react-spinners";
+import { Helmet } from 'react-helmet';
 
 const Landing = (props: any) => {
   const [isLoading, setIsLoading] = useState(false);
@@ -21,6 +22,16 @@ const Landing = (props: any) => {
   }, []);
   return (
     <div>
+      <Helmet>
+      <title>Home Page</title>
+        <meta name="description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward." />
+        <meta property="og:title" content="Home Page" />
+        <meta property="og:description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward." />
+			</Helmet>
       {isLoading ? (
         <div className={styles.spinnerAnimation}>
           <GridLoader size={25} color="#e8985c" />
