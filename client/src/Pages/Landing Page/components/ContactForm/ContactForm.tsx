@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './ContactForm.module.css';
 import emailSend from '../../../../assets/images/contact_form/emailSend.svg';
 import emailSent from '../../../../assets/images/contact_form/emailSent.svg';
+import { Helmet } from 'react-helmet';
 
 export const ContactForm = () => {
 	const [ name, setName ] = useState('');
@@ -54,6 +55,16 @@ export const ContactForm = () => {
 
 	return (
 		<div className={styles.mainContainer} id="contact" >
+     	<Helmet>
+     		<title>Contact Page</title>
+        	<meta name="description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward." />
+        	<meta property="og:title" content="Home Page" />
+        	<meta property="og:description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						Project Managers collaborate seamlessly to transform your vision into reality and propel your
+						business objectives forward." />
+		</Helmet>
 			<div className={styles.contactBoard}>
 				<div className={styles.formBoard}>
 					{showForm === true ? (
