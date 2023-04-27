@@ -192,7 +192,13 @@ const Nav = () => {
 						>
 							<motion.div>Clients</motion.div>
 						</Link>
-
+						<Link
+							id={styles.link3}
+							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
+							to="/blog"
+						>
+							<motion.div>Clients</motion.div>
+						</Link>
 						{/* <button className={styles.menuIMG}>
 						<motion.img
 							whileHover={{ rotate: 90 }}
