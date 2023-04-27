@@ -197,7 +197,7 @@ const Nav = () => {
 							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
 							to="/blog"
 						>
-							<motion.div>Clients</motion.div>
+							<motion.div>Blog</motion.div>
 						</Link>
 						{/* <button className={styles.menuIMG}>
 						<motion.img
