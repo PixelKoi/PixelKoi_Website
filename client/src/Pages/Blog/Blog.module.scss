@@ -1,0 +1,24 @@
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	.cardWrapper {
+	}
+	.cardContainer {
+		margin: 4rem 0;
+		width: 1200px;
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		// grid-gap: 20px;
+
+		.gridItem:nth-child(2) {
+			margin: 0 auto;
+		}
+
+		.gridItem:last-child {
+			// margin-right: 0;
+		}
+	}
+}
