@@ -13,13 +13,31 @@ const Blog = () => {
 			<div className={styles.cardWrapper}>
 				<div className={styles.cardContainer}>
 					<div className={styles.gridItem}>
-						<Card />
+						<Card
+							title={'AI will kill all'}
+							date={'May 16th, 1991'}
+							description={
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+							}
+						/>
 					</div>
 					<div className={styles.gridItem}>
-						<Card />
+						<Card
+							title={'AI will kill all'}
+							date={'May 16th, 1991'}
+							description={
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+							}
+						/>
 					</div>
 					<div className={styles.gridItem}>
-						<Card />
+						<Card
+							title={'AI will kill all'}
+							date={'May 16th, 1991'}
+							description={
+								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
+							}
+						/>
 					</div>
 				</div>
 			</div>

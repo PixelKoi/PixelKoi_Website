@@ -1,4 +1,11 @@
 .container {
-	max-width: 360px;
+	max-width: 370px;
 	// padding: 0 2rem;
+
+	.infoContainer {
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+		color: #efff;
+	}
 }
