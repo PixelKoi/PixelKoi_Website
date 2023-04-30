@@ -5,6 +5,12 @@ import Footer from '../../components/Footer/Main/Footer';
 import Card from './component/Card';
 import HeaderCard from './component/HeaderCard';
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+
+//Todo
+/* 
+   Onclick update global variables to be shown on blog page using redux
+*/
 
 const tags = [ 'UX Design', 'AI', 'Art' ];
 const Blog = () => {
@@ -23,7 +29,7 @@ const Blog = () => {
 				/>
 				<div className={styles.cardWrapper}>
 					<div className={styles.cardContainer}>
-						<div className={styles.gridItem}>
+						<Link to="/bpage" className={styles.gridItem}>
 							<Card
 								title={'AI will kill all'}
 								date={'May 16th, 1991'}
@@ -32,8 +38,8 @@ const Blog = () => {
 								}
 								tags={tags}
 							/>
-						</div>
-						<div className={styles.gridItem}>
+						</Link>
+						<Link to="/bpage" className={styles.gridItem}>
 							<Card
 								title={'AI will kill all'}
 								date={'May 16th, 1991'}
@@ -42,8 +48,8 @@ const Blog = () => {
 								}
 								tags={tags}
 							/>
-						</div>
-						<div className={styles.gridItem}>
+						</Link>
+						<Link to="/bpage" className={styles.gridItem}>
 							<Card
 								title={'AI will kill all'}
 								date={'May 16th, 1991'}
@@ -52,7 +58,7 @@ const Blog = () => {
 								}
 								tags={tags}
 							/>
-						</div>
+						</Link>
 					</div>
 				</div>
 				<div className={styles.pageContainer}>

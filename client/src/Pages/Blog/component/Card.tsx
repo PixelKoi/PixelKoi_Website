@@ -6,7 +6,7 @@ const Card = (props) => {
 	const tags = props.tags;
 
 	return (
-		<div className={styles.container} onClick={{}}>
+		<div className={styles.container}>
 			<div style={{ width: '100%' }}>
 				<img src={img} alt="" />
 				<div className={styles.infoContainer}>
