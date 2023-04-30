@@ -7,5 +7,28 @@
 		display: flex;
 		flex-direction: column;
 		color: #efff;
+
+		.author {
+			font-size: 14px;
+		}
+		.description {
+			font-size: 16px;
+		}
+	}
+
+	.tagWrapper {
+		margin-top: 1rem;
+		color: #efff;
+		display: flex;
+		gap: 10px;
+		.tagContainer {
+			display: inline-block;
+			border-radius: 5px;
+			border: 1px solid #efff;
+			.tagName {
+				font-size: 14px;
+				margin: 0 5px;
+			}
+		}
 	}
 }
