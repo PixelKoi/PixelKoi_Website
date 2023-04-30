@@ -3,12 +3,11 @@
 	justify-content: center;
 	flex-direction: column;
 	background-color: #efff;
-	padding: 0 1rem;
+	margin: 0 2rem;
 }
 
 .wrapper {
 	padding-top: 10rem;
-	margin: 0 2rem;
 	padding-bottom: 4rem;
 	display: flex;
 	justify-content: center;
@@ -34,5 +33,21 @@
 
 	.cardContainer .gridItem:last-child {
 		margin-left: auto;
+	}
+
+	.pageContainer {
+		margin-top: 4rem;
+		max-width: 1200px;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+
+		.leftArrow {
+			margin-right: auto;
+		}
+		.rightArrow {
+			margin-left: auto;
+		}
 	}
 }

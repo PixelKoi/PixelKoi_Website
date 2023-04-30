@@ -4,6 +4,7 @@ import Nav from '../../components/Nav/Nav';
 import Footer from '../../components/Footer/Main/Footer';
 import Card from './component/Card';
 import HeaderCard from './component/HeaderCard';
+import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
 
 const tags = [ 'UX Design', 'AI', 'Art' ];
 const Blog = () => {
@@ -54,7 +55,18 @@ const Blog = () => {
 						</div>
 					</div>
 				</div>
+				<div className={styles.pageContainer}>
+					<div className={styles.leftArrow}>
+						<FaLongArrowAltLeft size={40} />
+						Previous
+					</div>
+					<div className={styles.rightArrow}>
+						Next
+						<FaLongArrowAltRight size={40} />
+					</div>
+				</div>
 			</div>
+
 			<Footer />
 		</div>
 	);
