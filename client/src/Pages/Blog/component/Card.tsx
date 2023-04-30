@@ -8,7 +8,7 @@ const Card = (props) => {
 	return (
 		<div className={styles.container}>
 			<div style={{ width: '100%' }}>
-				<img src={img} alt="" />
+				<img src={props.img} alt="" />
 				<div className={styles.infoContainer}>
 					<b>
 						<p className={styles.author}>Jonathan Bajada &#x2022; {props.date}</p>

@@ -6,12 +6,13 @@ import Card from './component/Card';
 import HeaderCard from './component/HeaderCard';
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-
+import img from '../../assets/Home/web.jpg';
+import img2 from '../../assets/Home/box.jpg';
 //Todo
 /*
    Onclick update global variables to be shown on blog page using redux
    Query blog table to get, img, author + date, description, tag, place latest 3 on buttom, top always shows latest entry
-   Add pagenation 
+   Add pagenation
 */
 
 const tags = [ 'UX Design', 'AI', 'Art' ];
@@ -28,6 +29,7 @@ const Blog = () => {
 					date={'May 16th, 1991'}
 					description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'}
 					tags={tags}
+					img={img2}
 				/>
 				<div className={styles.cardWrapper}>
 					<div className={styles.cardContainer}>
@@ -39,6 +41,7 @@ const Blog = () => {
 									'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
 								}
 								tags={tags}
+								img={img}
 							/>
 						</Link>
 						<Link to="/bpage" className={styles.gridItem}>
@@ -49,6 +52,7 @@ const Blog = () => {
 									'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
 								}
 								tags={tags}
+								img={img}
 							/>
 						</Link>
 						<Link to="/bpage" className={styles.gridItem}>
@@ -59,10 +63,12 @@ const Blog = () => {
 									'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'
 								}
 								tags={tags}
+								img={img}
 							/>
 						</Link>
 					</div>
 				</div>
+				{/* Add Pagenation */}
 				<div className={styles.pageContainer}>
 					<div className={styles.leftArrow}>
 						<div className={styles.icon}>

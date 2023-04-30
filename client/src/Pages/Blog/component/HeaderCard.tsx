@@ -8,7 +8,7 @@ const HeaderCard = (props) => {
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles.container}>
-				<img src={img} />
+				<img src={props.img} />
 				<div className={styles.infoContainer}>
 					<b>
 						<p className={styles.author}>Jonathan Bajada &#x2022; {props.date}</p>
