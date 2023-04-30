@@ -8,9 +8,10 @@ import { FaLongArrowAltLeft, FaLongArrowAltRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 //Todo
-/* 
+/*
    Onclick update global variables to be shown on blog page using redux
    Query blog table to get, img, author + date, description, tag, place latest 3 on buttom, top always shows latest entry
+   Add pagenation 
 */
 
 const tags = [ 'UX Design', 'AI', 'Art' ];
