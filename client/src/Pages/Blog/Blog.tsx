@@ -57,12 +57,16 @@ const Blog = () => {
 				</div>
 				<div className={styles.pageContainer}>
 					<div className={styles.leftArrow}>
-						<FaLongArrowAltLeft size={40} />
-						Previous
+						<div className={styles.icon}>
+							<FaLongArrowAltLeft size={35} />
+						</div>
+						<p>Previous</p>
 					</div>
 					<div className={styles.rightArrow}>
-						Next
-						<FaLongArrowAltRight size={40} />
+						<p>Next</p>
+						<div className={styles.icon}>
+							<FaLongArrowAltRight size={35} />
+						</div>
 					</div>
 				</div>
 			</div>

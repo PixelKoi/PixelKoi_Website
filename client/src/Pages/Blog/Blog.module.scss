@@ -3,10 +3,10 @@
 	justify-content: center;
 	flex-direction: column;
 	background-color: #efff;
-	margin: 0 2rem;
 }
 
 .wrapper {
+	margin: 0 2rem;
 	padding-top: 10rem;
 	padding-bottom: 4rem;
 	display: flex;
@@ -36,7 +36,7 @@
 	}
 
 	.pageContainer {
-		margin-top: 4rem;
+		margin-top: 6rem;
 		max-width: 1200px;
 		width: 100%;
 		display: flex;
@@ -44,10 +44,26 @@
 		justify-content: center;
 
 		.leftArrow {
+			display: flex;
+
 			margin-right: auto;
+			.icon {
+			}
+			p {
+				padding-left: 10px;
+				margin: auto 0;
+			}
 		}
 		.rightArrow {
+			display: flex;
 			margin-left: auto;
+
+			.icon {
+			}
+			p {
+				margin: auto 0;
+				padding-right: 10px;
+			}
 		}
 	}
 }
