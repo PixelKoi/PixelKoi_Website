@@ -1,16 +1,15 @@
 .wrapper {
-	border: 1px solid green;
 	display: flex;
 	justify-content: center;
 	margin-top: 10rem;
-	width: 1200px;
+	max-width: 1200px;
 
 	.container {
 		// max-width: 1200px;
 		width: 100%;
 		// margin: 0 2rem;
 		img {
-			width: 100%;
+			width: 1200px;
 			height: 500px;
 		}
 	}
