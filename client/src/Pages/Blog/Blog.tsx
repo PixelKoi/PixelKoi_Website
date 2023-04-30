@@ -11,7 +11,15 @@ const Blog = () => {
 		<div className={styles.mainWrapper}>
 			<Nav />
 			<div className={styles.wrapper}>
-				<HeaderCard />
+				<h1>Musings from our collective</h1>
+				<br />
+				<h6>The latest industry news, interviews, technologies, and resources</h6>
+				<HeaderCard
+					title={'AI will kill all'}
+					date={'May 16th, 1991'}
+					description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor'}
+					tags={tags}
+				/>
 				<div className={styles.cardWrapper}>
 					<div className={styles.cardContainer}>
 						<div className={styles.gridItem}>
