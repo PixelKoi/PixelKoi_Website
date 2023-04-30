@@ -9,7 +9,7 @@ const tags = [ 'UX Design', 'AI', 'Art' ];
 const Blog = () => {
 	return (
 		<div className={styles.mainWrapper}>
-			{/* <Nav /> */}
+			<Nav />
 			<div className={styles.wrapper}>
 				<HeaderCard />
 				<div className={styles.cardWrapper}>
@@ -47,7 +47,7 @@ const Blog = () => {
 					</div>
 				</div>
 			</div>
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 };

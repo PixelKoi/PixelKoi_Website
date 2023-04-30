@@ -1,6 +1,5 @@
 .mainWrapper {
 	display: flex;
-	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	background-color: #efff;
@@ -8,15 +7,15 @@
 }
 
 .wrapper {
-	// margin: 0 auto;
 	margin: 0 2rem;
+	padding-bottom: 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 
 	.cardWrapper {
-		margin-top: 2rem;
+		margin-top: 4rem;
 		max-width: 1200px;
 		width: 100%;
 	}
