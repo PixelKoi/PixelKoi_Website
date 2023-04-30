@@ -5,6 +5,7 @@ import Card from './component/Card';
 import HeaderCard from './component/HeaderCard';
 import img from '../../assets/Home/web.jpg';
 
+const tags = [ 'UX Design', 'AI', 'Art' ];
 const Blog = () => {
 	return (
 		<div className={styles.wrapper}>
@@ -19,6 +20,7 @@ const Blog = () => {
 							description={
 								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
 							}
+							tags={tags}
 						/>
 					</div>
 					<div className={styles.gridItem}>
@@ -28,6 +30,7 @@ const Blog = () => {
 							description={
 								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
 							}
+							tags={tags}
 						/>
 					</div>
 					<div className={styles.gridItem}>
@@ -37,6 +40,7 @@ const Blog = () => {
 							description={
 								'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua'
 							}
+							tags={tags}
 						/>
 					</div>
 				</div>

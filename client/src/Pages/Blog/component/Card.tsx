@@ -3,7 +3,7 @@ import styles from './Card.module.scss';
 import img from '../../../assets/Home/web.jpg';
 
 const Card = (props) => {
-	const tags = [ 'UX Design', 'AI', 'Art' ];
+	const tags = props.tags;
 
 	return (
 		<div className={styles.container}>
