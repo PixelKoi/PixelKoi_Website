@@ -9,7 +9,8 @@ Message #general
 
 # testing
 /coverage
-
+config.ts
+./config.ts
 # production
 /build
 
