@@ -2,26 +2,13 @@ import cors from "cors";
 import nodemailer from "nodemailer";
 import path from "path";
 import fs from "fs";
-
 import express from "express";
 import bodyParser from "body-parser";
 const app = express();
 
 const hashJson = path.join(__dirname, "./../imageHash.json");
 
-// const hashObjects = { url: "src", blurHash: "blurhash code here" };
-// if (fs.existsSync(filePath)) {
-//   // Read the file contents
-//   const jsonData = fs.readFileSync(filePath);
-//   const data = JSON.parse(jsonData);
-// } else {
-//   // Create a new file with the initial data
-//   const data = { images: [hashObjects] };
-//   fs.writeFileSync(filePath, JSON.stringify(data));
-// }
-
 app.use(bodyParser.json());
-
 app.use(
   cors({
     origin: "*",
@@ -33,8 +20,8 @@ const port = 8000;
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
-
-app.use(express.static(path.join(__dirname, "build")));
+console.log("__dirname", __dirname);
+// app.use(express.static(path.join(__dirname, "build")));
 
 app.post("/api/images", (req, res) => {
   const { images } = req.body;
@@ -120,3 +107,14 @@ app.post("/send-email", (req, res) => {
 app.listen(port, () => {
   return console.log(`Server running on port ${port}`);
 });
+
+// const hashObjects = { url: "src", blurHash: "blurhash code here" };
+// if (fs.existsSync(filePath)) {
+//   // Read the file contents
+//   const jsonData = fs.readFileSync(filePath);
+//   const data = JSON.parse(jsonData);
+// } else {
+//   // Create a new file with the initial data
+//   const data = { images: [hashObjects] };
+//   fs.writeFileSync(filePath, JSON.stringify(data));
+// }

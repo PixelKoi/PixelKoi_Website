@@ -11,16 +11,6 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
 const hashJson = path_1.default.join(__dirname, "./../imageHash.json");
-// const hashObjects = { url: "src", blurHash: "blurhash code here" };
-// if (fs.existsSync(filePath)) {
-//   // Read the file contents
-//   const jsonData = fs.readFileSync(filePath);
-//   const data = JSON.parse(jsonData);
-// } else {
-//   // Create a new file with the initial data
-//   const data = { images: [hashObjects] };
-//   fs.writeFileSync(filePath, JSON.stringify(data));
-// }
 app.use(body_parser_1.default.json());
 app.use((0, cors_1.default)({
     origin: "*",
@@ -29,7 +19,8 @@ const port = 8000;
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
-app.use(express_1.default.static(path_1.default.join(__dirname, "build")));
+console.log("__dirname", __dirname);
+// app.use(express.static(path.join(__dirname, "build")));
 app.post("/api/images", (req, res) => {
     const { images } = req.body;
     console.log("image type:", typeof images);
@@ -110,4 +101,14 @@ app.post("/send-email", (req, res) => {
 app.listen(port, () => {
     return console.log(`Server running on port ${port}`);
 });
+// const hashObjects = { url: "src", blurHash: "blurhash code here" };
+// if (fs.existsSync(filePath)) {
+//   // Read the file contents
+//   const jsonData = fs.readFileSync(filePath);
+//   const data = JSON.parse(jsonData);
+// } else {
+//   // Create a new file with the initial data
+//   const data = { images: [hashObjects] };
+//   fs.writeFileSync(filePath, JSON.stringify(data));
+// }
 //# sourceMappingURL=app.js.map
