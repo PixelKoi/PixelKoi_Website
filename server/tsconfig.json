@@ -7,5 +7,12 @@
     "sourceMap": true,
     "outDir": "dist"
   },
-  "lib": ["es2015"]
+  "lib": ["es2015"],
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.d.ts" // Add the declaration file here
+  ],
+  "exclude": ["node_modules"]
 }

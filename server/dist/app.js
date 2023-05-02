@@ -10,7 +10,7 @@ const fs_1 = __importDefault(require("fs"));
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
-const hashJson = path_1.default.join(__dirname, "./../imageHash.json");
+const hashJson = path_1.default.join(__dirname, "./imageHash.json");
 app.use(body_parser_1.default.json());
 app.use((0, cors_1.default)({
     origin: "*",

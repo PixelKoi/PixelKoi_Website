@@ -5,9 +5,9 @@ import fs from "fs";
 import express from "express";
 import bodyParser from "body-parser";
 const app = express();
+declare function require(name: string);
 
-const hashJson = path.join(__dirname, "./../imageHash.json");
-
+const hashJson = path.join(__dirname, "./imageHash.json");
 app.use(bodyParser.json());
 app.use(
   cors({
