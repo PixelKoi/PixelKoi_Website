@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./Blog.module.scss";
 import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Main/Footer";
@@ -19,23 +19,45 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
    Query blog table to get, img, author + date, description, tag, place latest 3 on buttom, top always shows latest entry
    Add pagenation
 */
-
+interface BlogData {
+  title: string;
+  content: string;
+  author: string;
+}
 const tags = ["UX Design", "AI", "Art"];
 const Blog = () => {
-  // function
-  async function blogData() {
-    const { data, error } = await supabase.from("Blog").select("*");
-    try {
-      console.log("what the fuck is this", data);
-    } catch (e) {
-      console.error(e);
-    }
-  }
+  const [blogData, setBlogData] = useState<BlogData[] | null>(null);
+  const [blogError, setBlogError] = useState<string | null>(null);
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      const { data, error } = await supabase.from("Blog").select();
+      if (error) {
+        setBlogData(null);
+        setBlogError("Couldn't get Blog Data, sorry try again later.");
+        console.log(error);
+      }
+      if (data) {
+        // @ts-ignore
+        setBlogData(data);
+        setBlogError(null);
+      }
+    };
+    fetchBlogData();
+  }, []);
 
   return (
     <div className={styles.mainWrapper}>
       <Nav />
       <div className={styles.wrapper}>
+        {blogError && <p>{blogError}</p>}
+        {blogData && (
+          <ul>
+            {blogData.map((blog) => (
+              <li key={blog.author}>{blog.author}</li>
+            ))}
+          </ul>
+        )}
+
         <h1>Musings from our collective</h1>
         <br />
         <h6>
