@@ -11,9 +11,11 @@ const Card = (props) => {
 				<img src={props.img} alt="" />
 				<div className={styles.infoContainer}>
 					<b>
-						<p className={styles.author}>Jonathan Bajada &#x2022; {props.date}</p>
+						<p className={styles.author}>
+							{props.author} &#x2022; {props.date}
+						</p>
 					</b>
-					<h4>{props.title}</h4>
+					<h4 className={styles.title}>{props.title}</h4>
 					<p className={styles.description}>{props.description}</p>
 				</div>
 				<div className={styles.tagWrapper}>
