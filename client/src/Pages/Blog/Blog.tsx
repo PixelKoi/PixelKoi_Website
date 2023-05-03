@@ -78,7 +78,15 @@ const Blog = () => {
                       image.image_url && (
                         <li key={image.image_id}>
                           {image.image_url}
-                          <img src={image.image_url} alt="Blog post" />
+                          <img
+                            src={image.image_url}
+                            alt="Blog post"
+                            style={{
+                              maxWidth: "250px",
+                              maxHeight: "500px",
+                              padding: "1rem",
+                            }}
+                          />
                         </li>
                       )
                   )}
