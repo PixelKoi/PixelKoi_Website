@@ -73,9 +73,12 @@ const Blog = () => {
                   {blog.title} by {blog.author}
                 </li>
                 <ul>
-                  {blog.Images.map((image) => (
-                    <li key={image.image_id}>{image.image_url}</li>
-                  ))}
+                  {blog.Images.map(
+                    (image) =>
+                      image.image_url && (
+                        <li key={image.image_id}>{image.image_url}</li>
+                      )
+                  )}
                 </ul>
               </div>
             ))}
