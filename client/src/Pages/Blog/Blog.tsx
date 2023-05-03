@@ -23,6 +23,8 @@ interface BlogData {
   title: string;
   content: string;
   author: string;
+  image_id: Number;
+  Images: Any;
 }
 const tags = ["UX Design", "AI", "Art"];
 const Blog = () => {
@@ -40,13 +42,16 @@ const Blog = () => {
   }
   useEffect(() => {
     const fetchBlogData = async () => {
-      const { data, error } = await supabase.from("Blog").select();
+      const { data, error } = await supabase
+        .from("Blog")
+        .select(`*, Images(image_url, image_id)`);
       if (error) {
         setBlogData(null);
         setBlogError("Couldn't get Blog Data, sorry try again later.");
         console.log(error);
       }
       if (data) {
+        console.log("THIIS IS DATA:", data);
         // @ts-ignore
         setBlogData(data);
         setBlogError(null);
@@ -63,7 +68,16 @@ const Blog = () => {
         {blogData && (
           <ul>
             {blogData.map((blog) => (
-              <li key={blog.author}>{blog.author}</li>
+              <div key={blog.blog_post_id}>
+                <li>
+                  {blog.title} by {blog.author}
+                </li>
+                <ul>
+                  {blog.Images.map((image) => (
+                    <li key={image.image_id}>{image.image_url}</li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </ul>
         )}
