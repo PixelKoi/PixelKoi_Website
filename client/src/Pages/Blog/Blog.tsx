@@ -90,7 +90,7 @@ const Blog = () => {
             description={blog.content}
             tags={tags}
             img={imageUrl}
-            imgStyle={{ maxWidth: "500px", maxHeight: "500px" }}
+            // imgStyle={{ maxWidth: "500px", maxHeight: "500px" }}
           />
         </Link>
       );
