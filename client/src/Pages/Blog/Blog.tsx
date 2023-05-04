@@ -10,6 +10,7 @@ import img from "../../assets/Home/web.jpg";
 import img2 from "../../assets/Home/box.jpg";
 import { createClient } from "@supabase/supabase-js";
 import { SUPABASE_URL, SUPABASE_API_KEY } from "../../../config";
+import { motion, useScroll } from "framer-motion";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
 
@@ -100,16 +101,24 @@ const Blog = () => {
     <div className={styles.mainWrapper}>
       <Nav />
       <div className={styles.wrapper}>
-        <h1>Musings from our collective</h1>
-        <br />
-        <h6>
-          The latest industry news, interviews, technologies, and resources
-        </h6>
+        <motion.div
+          initial={{ scale: 8 }}
+          animate={{
+            scale: 7,
+            transition: { ease: "easeIn", duration: 0.4 },
+          }}
+          className={styles.backgroundText}
+        >
+          BLOG
+        </motion.div>{" "}
         <HeaderCard
-          title={"AI will kill all"}
-          date={"May 16th, 1991"}
+          title={
+            "PixelKoi V2 Blogs and our commitment to improving SEO and Marketing"
+          }
+          date={"May 10th, 2023"}
           description={
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor"
+            "PixelKoi V2 includes several new features and optimizations designed to improve search engine " +
+            "optimization (SEO), such as streamlined code, improved page loading speeds, and enhanced meta tags."
           }
           tags={tags}
           img={img2}

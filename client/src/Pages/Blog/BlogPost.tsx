@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const BlogPost = () => {
   const styles = {
+    mainContainer: {},
     container: {
       maxWidth: "800px",
       margin: "10rem auto",
@@ -44,6 +45,7 @@ const BlogPost = () => {
     imageContainer: {
       display: "flex",
       justifyContent: "center",
+      alignItems: "center", // add this line to center vertically
     },
     image: {
       padding: "1rem",
@@ -80,15 +82,20 @@ const BlogPost = () => {
   }
   console.log("imageUrl: ", imageUrl);
   return (
-    <div style={styles.container}>
-      <button style={styles.button} onClick={() => navigate(-1)}>
-        Back to All Blogs
-      </button>
-      {imageUrl && <img src={imageUrl} alt="blog post" style={styles.image} />}
-      <h1 style={styles.title}>{data.title}</h1>
-      <h3 style={styles.author}>By {data.author}</h3>
-      <h3 style={styles.date}>{data.date}</h3>
-      <p style={styles.content}>{data.content}</p>
+    <div style={styles.mainContainer}>
+      <Nav />
+      <div style={styles.container}>
+        <button style={styles.button} onClick={() => navigate(-1)}>
+          Back to All Blogs
+        </button>
+        {imageUrl && (
+          <img src={imageUrl} alt="blog post" style={styles.image} />
+        )}
+        <h1 style={styles.title}>{data.title}</h1>
+        <h3 style={styles.author}>By {data.author}</h3>
+        <h3 style={styles.date}>{data.date}</h3>
+        <p style={styles.content}>{data.content}</p>
+      </div>
     </div>
   );
 };
