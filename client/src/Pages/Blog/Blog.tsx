@@ -5,7 +5,7 @@ import Footer from "../../components/Footer/Main/Footer";
 import Card from "./component/Card";
 import HeaderCard from "./component/HeaderCard";
 import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/Home/web.jpg";
 import img2 from "../../assets/Home/box.jpg";
 import { createClient } from "@supabase/supabase-js";
@@ -26,20 +26,21 @@ interface BlogData {
   image_id: Number;
   Images: Any;
 }
+{
+  /*
+      Blog Columns:  author, title, content, date, blog_post_id
+      Images Foreign Key: blog_post_id, image_url, image_id
+      Each Blog post can have many Images: Blog to Images, One-To-Many Relationship
+      TODO: set image_url in supabase, populate /client/src/assets/Blog and properly route
+      TODO: react-html-parser to dynamically insert images in random locations within your blog post content
+      TODO: Blog Posts mapped to each card dynamically
+    */
+}
 const tags = ["UX Design", "AI", "Art"];
 const Blog = () => {
   const [blogData, setBlogData] = useState<BlogData[] | null>(null);
   const [blogError, setBlogError] = useState<string | null>(null);
-  {
-    /*
-        Blog Columns:  author, title, content, date, blog_post_id
-        Images Foreign Key: blog_post_id, image_url, image_id
-        Each Blog post can have many Images: Blog to Images, One-To-Many Relationship
-        TODO: set image_url in supabase, populate /client/src/assets/Blog and properly route
-        TODO: react-html-parser to dynamically insert images in random locations within your blog post content
-        TODO: Blog Posts mapped to each card dynamically
-      */
-  }
+
   useEffect(() => {
     const fetchBlogData = async () => {
       const { data, error } = await supabase
@@ -59,6 +60,7 @@ const Blog = () => {
     };
     fetchBlogData();
   }, []);
+  const navigate = useNavigate();
 
   //need to save blog_post_id when clicking link so that we can grab the correct blog from the supabase db
   const loadBlogColumns = () => {
@@ -78,6 +80,7 @@ const Blog = () => {
           to={`/blog/${blog.blog_post_id}`}
           className={styles.gridItem}
           key={blog.blog_post_id}
+          state={{ data: blog }}
         >
           <Card
             author={blog.author}
