@@ -42,9 +42,17 @@ const BlogPost = () => {
   // @ts-ignore
   const { state } = useLocation<{ data: BlogData }>();
   const { data } = state;
-
+  let imageUrl = "";
+  for (let i = 0; i < data.Images.length; i++) {
+    if (data.Images[i].image_url) {
+      imageUrl = `/${data.Images[i].image_url}`;
+      break;
+    }
+  }
+  console.log("imageUrl: ", imageUrl);
   return (
     <div style={styles.container}>
+      <img src={imageUrl} alt="Blog post header image" />
       <h1 style={styles.title}>{data.title}</h1>
       <h3 style={styles.author}>By {data.author}</h3>
       <h3 style={styles.date}>{data.date}</h3>
