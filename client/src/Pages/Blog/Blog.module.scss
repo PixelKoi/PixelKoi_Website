@@ -2,7 +2,7 @@
 	display: flex;
 	justify-content: center;
 	flex-direction: column;
-	background-color: whitesmoke;
+	//background-color: whitesmoke;
 
 	a {
 		color: black;
@@ -36,10 +36,19 @@
 	.cardContainer .gridItem:first-child {
 		margin-right: auto;
 	}
-
+	.cardContainer .gridItem:nth-last-child(2) {
+		margin-right: 0;
+	}
 	.cardContainer .gridItem:last-child {
 		margin-left: auto;
 	}
+
+	.cardContainer .gridItem{
+		background-color: white;
+		padding: 1rem;
+		border-radius: 1%;
+	}
+
 
 	.pageContainer {
 		margin-top: 6rem;
@@ -51,6 +60,7 @@
 
 		.leftArrow {
 			display: flex;
+			color: white;
 
 			margin-right: auto;
 			.icon {
@@ -63,6 +73,7 @@
 		.rightArrow {
 			display: flex;
 			margin-left: auto;
+			color: white;
 
 			.icon {
 			}
