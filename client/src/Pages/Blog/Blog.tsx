@@ -102,9 +102,9 @@ const Blog = () => {
       <Nav />
       <div className={styles.wrapper}>
         <motion.div
-          initial={{ scale: 8 }}
+          initial={{ scale: 10 }}
           animate={{
-            scale: 7,
+            scale: 9,
             transition: { ease: "easeIn", duration: 0.4 },
           }}
           className={styles.backgroundText}

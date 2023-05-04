@@ -67,6 +67,17 @@ const BlogPost = () => {
       transition: "all 0.15s ease-in-out",
       marginTop: "1rem",
     },
+    pre: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#f5f5f5",
+      borderRadius: "4px",
+      boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+      padding: "1rem",
+      overflow: "auto",
+      whiteSpace: "pre-wrap",
+    },
   };
 
   // @ts-ignore
@@ -95,6 +106,12 @@ const BlogPost = () => {
         <h3 style={styles.author}>By {data.author}</h3>
         <h3 style={styles.date}>{data.date}</h3>
         <p style={styles.content}>{data.content}</p>
+        <pre style={styles.pre}>
+          <code>
+            This is what code will look like x=x+1*2 with with multiple lines
+            thank you and if we keep going this is what it will look like
+          </code>
+        </pre>
       </div>
     </div>
   );
