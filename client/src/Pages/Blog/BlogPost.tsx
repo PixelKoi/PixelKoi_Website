@@ -15,27 +15,42 @@ const BlogPost = () => {
       fontFamily: "Arial, sans-serif",
     },
     title: {
+      padding: "0 1rem",
       fontSize: "32px",
       fontWeight: "bold",
       marginBottom: "10px",
       color: "#333",
     },
     author: {
+      padding: "0 1rem",
       fontSize: "18px",
       fontWeight: "bold",
       marginBottom: "5px",
       color: "#666",
     },
     date: {
+      padding: "0 1rem",
       fontSize: "16px",
       fontWeight: "normal",
       marginBottom: "20px",
       color: "#999",
     },
     content: {
+      padding: "0 1rem",
       fontSize: "18px",
       lineHeight: "28px",
       color: "#333",
+    },
+    imageContainer: {
+      display: "flex",
+      justifyContent: "center",
+    },
+    image: {
+      padding: "1rem",
+      maxWidth: "100%",
+      height: "auto",
+      width: "750px",
+      maxHeight: "500px",
     },
   };
 
@@ -52,7 +67,7 @@ const BlogPost = () => {
   console.log("imageUrl: ", imageUrl);
   return (
     <div style={styles.container}>
-      <img src={imageUrl} alt="Blog post header image" />
+      {imageUrl && <img src={imageUrl} alt="blog post" style={styles.image} />}
       <h1 style={styles.title}>{data.title}</h1>
       <h3 style={styles.author}>By {data.author}</h3>
       <h3 style={styles.date}>{data.date}</h3>
