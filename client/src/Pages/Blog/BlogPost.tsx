@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./BlogPage.module.scss";
 import Nav from "../../components/Nav/Nav";
 import { useLocation, useNavigate } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
 
 const BlogPost = () => {
   const styles = {
@@ -78,6 +79,12 @@ const BlogPost = () => {
       overflow: "auto",
       whiteSpace: "pre-wrap",
     },
+    code: {
+      fontFamily: "Fira Code, monospace",
+      fontSize: "1rem",
+      lineHeight: 1.5,
+      color: "#333",
+    },
   };
 
   // @ts-ignore
@@ -105,13 +112,7 @@ const BlogPost = () => {
         <h1 style={styles.title}>{data.title}</h1>
         <h3 style={styles.author}>By {data.author}</h3>
         <h3 style={styles.date}>{data.date}</h3>
-        <p style={styles.content}>{data.content}</p>
-        <pre style={styles.pre}>
-          <code>
-            This is what code will look like x=x+1*2 with with multiple lines
-            thank you and if we keep going this is what it will look like
-          </code>
-        </pre>
+        <p style={styles.content}>{ReactHtmlParser(data.content)}</p>
       </div>
     </div>
   );
