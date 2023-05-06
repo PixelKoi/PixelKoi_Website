@@ -42,6 +42,7 @@ const tags = ["UX Design", "AI", "Art"];
 const Blog = () => {
 	const [blogData, setBlogData] = useState<BlogData[] | null>(null);
 	const [blogError, setBlogError] = useState<string | null>(null);
+	const [currentPage, setCurrentPage] = useState(0);
 
 	useEffect(() => {
 		const fetchBlogData = async () => {
@@ -65,7 +66,7 @@ const Blog = () => {
 	const navigate = useNavigate();
 
 	const handlePageClick = (data) => {
-		console.log(data.selected);
+		setCurrentPage(data.selected);
 	};
 
 	//need to save blog_post_id when clicking link so that we can grab the correct blog from the supabase db
@@ -73,7 +74,9 @@ const Blog = () => {
 		if (blogData === null) {
 			return null;
 		}
-		return blogData.slice(0, 3).map((blog) => {
+		const startIndex = currentPage * 3;
+		const endIndex = startIndex + 3;
+		return blogData.slice(startIndex, endIndex).map((blog) => {
 			let imageUrl = "";
 			for (let i = 0; i < blog.Images.length; i++) {
 				if (blog.Images[i].image_url) {
@@ -128,30 +131,14 @@ const Blog = () => {
 				<div className={styles.cardWrapper}>
 					<div className={styles.cardContainer}>{loadBlogColumns()}</div>
 				</div>
-				{/* Add Pagenation */}
-				{/* <div className={styles.pageContainer}>
-					<div className={styles.leftArrow}>
-						<div className={styles.icon}>
-							<FaLongArrowAltLeft size={35} />
-						</div>
-						<p>Previous</p>
-					</div>
-
-					<div className={styles.rightArrow}>
-						<p>Next</p>
-						<div className={styles.icon}>
-							<FaLongArrowAltRight size={35} />
-						</div>
-					</div>
-				</div> */}
 				<div style={{ marginTop: "4rem" }}>
 					<ReactPaginate
 						previousLabel={"previous"}
 						nextLabel={"next"}
 						breakLabel="..."
-						pageCount={5}
+						pageCount={2}
 						marginPagesDisplayed={2}
-						pageRangeDisplayed={3}
+						pageRangeDisplayed={2}
 						onPageChange={handlePageClick}
 						containerClassName={styles.paginateContainer}
 						pageClassName={styles.pageItem}
