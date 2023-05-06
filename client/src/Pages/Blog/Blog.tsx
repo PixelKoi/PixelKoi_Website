@@ -11,6 +11,7 @@ import img2 from "../../assets/Home/box.jpg";
 import { createClient } from "@supabase/supabase-js";
 import { SUPABASE_URL, SUPABASE_API_KEY } from "../../../config";
 import { motion, useScroll } from "framer-motion";
+import ReactPaginate from "react-paginate";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
 
@@ -21,14 +22,14 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
    Add pagenation
 */
 interface BlogData {
-  title: string;
-  content: string;
-  author: string;
-  image_id: Number;
-  Images: Any;
+	title: string;
+	content: string;
+	author: string;
+	image_id: Number;
+	Images: Any;
 }
 {
-  /*
+	/*
       Blog Columns:  author, title, content, date, blog_post_id
       Images Foreign Key: blog_post_id, image_url, image_id
       Each Blog post can have many Images: Blog to Images, One-To-Many Relationship
@@ -39,113 +40,131 @@ interface BlogData {
 }
 const tags = ["UX Design", "AI", "Art"];
 const Blog = () => {
-  const [blogData, setBlogData] = useState<BlogData[] | null>(null);
-  const [blogError, setBlogError] = useState<string | null>(null);
+	const [blogData, setBlogData] = useState<BlogData[] | null>(null);
+	const [blogError, setBlogError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const fetchBlogData = async () => {
-      const { data, error } = await supabase
-        .from("Blog")
-        .select(`*, Images(image_url, image_id)`);
-      if (error) {
-        setBlogData(null);
-        setBlogError("Couldn't get Blog Data, sorry try again later.");
-        console.log(error);
-      }
-      if (data) {
-        console.log("THIIS IS DATA:", data);
-        // @ts-ignore
-        setBlogData(data);
-        setBlogError(null);
-      }
-    };
-    fetchBlogData();
-  }, []);
-  const navigate = useNavigate();
+	useEffect(() => {
+		const fetchBlogData = async () => {
+			const { data, error } = await supabase
+				.from("Blog")
+				.select(`*, Images(image_url, image_id)`);
+			if (error) {
+				setBlogData(null);
+				setBlogError("Couldn't get Blog Data, sorry try again later.");
+				console.log(error);
+			}
+			if (data) {
+				console.log("THIIS IS DATA:", data);
+				// @ts-ignore
+				setBlogData(data);
+				setBlogError(null);
+			}
+		};
+		fetchBlogData();
+	}, []);
+	const navigate = useNavigate();
 
-  //need to save blog_post_id when clicking link so that we can grab the correct blog from the supabase db
-  const loadBlogColumns = () => {
-    if (blogData === null) {
-      return null;
-    }
-    return blogData.map((blog) => {
-      let imageUrl = "";
-      for (let i = 0; i < blog.Images.length; i++) {
-        if (blog.Images[i].image_url) {
-          imageUrl = blog.Images[i].image_url;
-          break;
-        }
-      }
-      return (
-        <Link
-          to={`/blog/${blog.blog_post_id}`}
-          className={styles.gridItem}
-          key={blog.blog_post_id}
-          state={{ data: blog }}
-        >
-          <Card
-            author={blog.author}
-            date={blog.date}
-            title={blog.title}
-            description={blog.content}
-            tags={tags}
-            img={imageUrl}
-            // imgStyle={{ maxWidth: "500px", maxHeight: "500px" }}
-          />
-        </Link>
-      );
-    });
-  };
+	const handlePageClick = (data) => {
+		console.log(data.selected);
+	};
 
-  return (
-    <div className={styles.mainWrapper}>
-      <Nav />
-      <div className={styles.wrapper}>
-        <motion.div
-          initial={{ scale: 10 }}
-          animate={{
-            scale: 9,
-            transition: { ease: "easeIn", duration: 0.4 },
-          }}
-          className={styles.backgroundText}
-        >
-          BLOG
-        </motion.div>{" "}
-        <HeaderCard
-          title={
-            "PixelKoi V2 Blogs and our commitment to improving SEO and Marketing"
-          }
-          date={"May 10th, 2023"}
-          description={
-            "PixelKoi V2 includes several new features and optimizations designed to improve search engine " +
-            "optimization (SEO), such as streamlined code, improved page loading speeds, and enhanced meta tags."
-          }
-          tags={tags}
-          img={img2}
-        />
-        <div className={styles.cardWrapper}>
-          <div className={styles.cardContainer}>{loadBlogColumns()}</div>
-        </div>
-        {/* Add Pagenation */}
-        <div className={styles.pageContainer}>
-          <div className={styles.leftArrow}>
-            <div className={styles.icon}>
-              <FaLongArrowAltLeft size={35} />
-            </div>
-            <p>Previous</p>
-          </div>
-          <div className={styles.rightArrow}>
-            <p>Next</p>
-            <div className={styles.icon}>
-              <FaLongArrowAltRight size={35} />
-            </div>
-          </div>
-        </div>
-      </div>
+	//need to save blog_post_id when clicking link so that we can grab the correct blog from the supabase db
+	const loadBlogColumns = () => {
+		if (blogData === null) {
+			return null;
+		}
+		return blogData.slice(0, 3).map((blog) => {
+			let imageUrl = "";
+			for (let i = 0; i < blog.Images.length; i++) {
+				if (blog.Images[i].image_url) {
+					imageUrl = blog.Images[i].image_url;
+					break;
+				}
+			}
+			return (
+				<Link
+					to={`/blog/${blog.blog_post_id}`}
+					className={styles.gridItem}
+					key={blog.blog_post_id}
+					state={{ data: blog }}>
+					<Card
+						author={blog.author}
+						date={blog.date}
+						title={blog.title}
+						description={blog.content}
+						tags={tags}
+						img={imageUrl}
+					/>
+				</Link>
+			);
+		});
+	};
 
-      <Footer />
-    </div>
-  );
+	return (
+		<div className={styles.mainWrapper}>
+			<Nav />
+			<div className={styles.wrapper}>
+				<motion.div
+					initial={{ scale: 10 }}
+					animate={{
+						scale: 9,
+						transition: { ease: "easeIn", duration: 0.4 },
+					}}
+					className={styles.backgroundText}>
+					BLOG
+				</motion.div>{" "}
+				<HeaderCard
+					title={
+						"PixelKoi V2 Blogs and our commitment to improving SEO and Marketing"
+					}
+					date={"May 10th, 2023"}
+					description={
+						"PixelKoi V2 includes several new features and optimizations designed to improve search engine " +
+						"optimization (SEO), such as streamlined code, improved page loading speeds, and enhanced meta tags."
+					}
+					tags={tags}
+					img={img2}
+				/>
+				<div className={styles.cardWrapper}>
+					<div className={styles.cardContainer}>{loadBlogColumns()}</div>
+				</div>
+				{/* Add Pagenation */}
+				{/* <div className={styles.pageContainer}>
+					<div className={styles.leftArrow}>
+						<div className={styles.icon}>
+							<FaLongArrowAltLeft size={35} />
+						</div>
+						<p>Previous</p>
+					</div>
+
+					<div className={styles.rightArrow}>
+						<p>Next</p>
+						<div className={styles.icon}>
+							<FaLongArrowAltRight size={35} />
+						</div>
+					</div>
+				</div> */}
+				<div style={{ marginTop: "4rem" }}>
+					<ReactPaginate
+						previousLabel={"previous"}
+						nextLabel={"next"}
+						breakLabel="..."
+						pageCount={35}
+						marginPagesDisplayed={2}
+						pageRangeDisplayed={6}
+						onPageChange={handlePageClick}
+						containerClassName={styles.paginateContainer}
+						pageClassName={styles.pageItem}
+						pageLinkClassName={styles.pageLink}
+						previousClassName={styles.previous}
+						nextClassName={styles.next}
+					/>
+				</div>
+			</div>
+
+			<Footer />
+		</div>
+	);
 };
 
 export default Blog;

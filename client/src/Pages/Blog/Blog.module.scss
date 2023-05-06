@@ -43,12 +43,11 @@
 		margin-left: auto;
 	}
 
-	.cardContainer .gridItem{
+	.cardContainer .gridItem {
 		background-color: white;
 		padding: 1rem;
 		border-radius: 1%;
 	}
-
 
 	.pageContainer {
 		margin-top: 6rem;
@@ -82,6 +81,39 @@
 				padding-right: 10px;
 			}
 		}
+	}
+}
+
+.paginateContainer {
+	display: flex;
+	justify-content: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	.pageItem {
+		margin: 0 5px;
+	}
+	.pageLink {
+		color: #007bff;
+		text-decoration: none;
+		border: 1px solid #007bff;
+		padding: 5px 10px;
+		border-radius: 5px;
+		&:hover {
+			background-color: #f2f2f2;
+		}
+
+		&.active {
+			background-color: #007bff;
+			color: #fff;
+			border-color: #007bff;
+		}
+	}
+
+	.previous {
+	}
+	.next {
 	}
 }
 
