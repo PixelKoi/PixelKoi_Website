@@ -149,9 +149,9 @@ const Blog = () => {
 						previousLabel={"previous"}
 						nextLabel={"next"}
 						breakLabel="..."
-						pageCount={35}
+						pageCount={5}
 						marginPagesDisplayed={2}
-						pageRangeDisplayed={6}
+						pageRangeDisplayed={3}
 						onPageChange={handlePageClick}
 						containerClassName={styles.paginateContainer}
 						pageClassName={styles.pageItem}
