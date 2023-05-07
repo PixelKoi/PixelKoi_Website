@@ -3,6 +3,13 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+
+	p {
+		text-transform: capitalize;
+		font-size: 11px;
+		letter-spacing: 1px;
+		color: hsla(0, 0%, 100%, 0.5);
+	}
 }
 
 .headerContainer {
@@ -49,13 +56,10 @@
 				margin-top: 15px;
 				width: 100%;
 				p {
-					opacity: 0.7;
 					text-align: center;
 				}
 			}
-			p {
-				font-size: 14px;
-			}
+
 			.catGroup {
 				display: flex;
 				flex-direction: row;
@@ -67,11 +71,11 @@
 
 .catBorder {
 	display: flex;
-	border: 1px solid #fff;
+	border: 1px solid hsla(0, 0%, 100%, 0.5);
 	padding: 2px 6px;
 	margin: 0 5px;
 	p {
-		font-size: 14px;
+		text-transform: uppercase;
 		margin: 0 auto;
 	}
 }
@@ -85,7 +89,6 @@
 	align-items: center;
 
 	h1 {
-		margin-top: 1rem;
 	}
 	.line {
 		border: 1px solid orange;
