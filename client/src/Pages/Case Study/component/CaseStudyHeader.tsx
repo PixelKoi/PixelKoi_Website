@@ -1,6 +1,13 @@
-import styles from "./CaseStudyLayout.module.scss";
+import styles from "./CaseStudyHeader.module.scss";
 
-const CaseStudyHeader = (props: any) => {
+interface CaseStudyHeaderProps {
+	catArray: string[];
+	img: string;
+	client: string;
+	releaseDate: string;
+}
+
+const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 	const catArray = props.catArray;
 	const returnCat = () => {
 		return catArray.map((item) => {
