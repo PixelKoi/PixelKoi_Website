@@ -12,7 +12,7 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 	const returnCat = () => {
 		return catArray.map((item) => {
 			return (
-				<div className={styles.catBorder}>
+				<div className={styles.catBorder} key={item}>
 					<p>{item}</p>
 				</div>
 			);
