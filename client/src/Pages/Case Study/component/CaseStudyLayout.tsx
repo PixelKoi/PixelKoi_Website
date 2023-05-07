@@ -20,6 +20,12 @@ const CaseStudyLayout = (props: any) => {
 						</div>
 					</div>
 				</div>
+
+				<div className={styles.caseTitleContainer}>
+					<h6>CASE STUDY</h6>
+					<h1>HYPE OVER NIGHT</h1>
+					<hr className={styles.line} />
+				</div>
 			</div>
 		</div>
 	);
