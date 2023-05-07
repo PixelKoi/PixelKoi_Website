@@ -4,10 +4,16 @@ import Nav from "../../components/Nav/Nav";
 import shopify from "../../assets/CaseStudy/shopify.png";
 
 const CaseStudy = () => {
+	const categories = ["liquid", "shopify"];
 	return (
 		<div>
 			<Nav />
-			<CaseStudyLayout img={shopify} />
+			<CaseStudyLayout
+				img={shopify}
+				client={"Hype Over Night"}
+				catArray={categories}
+				releaseDate={"02-03-2023"}
+			/>
 		</div>
 	);
 };
