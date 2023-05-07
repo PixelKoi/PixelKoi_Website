@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import styles from './Nav.module.scss';
-import { Link, useLocation } from 'react-router-dom';
-import menu from '../../assets/images/menu.svg';
-import { motion, useScroll, AnimatePresence } from 'framer-motion';
+import React, { useEffect, useState } from "react";
+import styles from "./Nav.module.scss";
+import { Link, useLocation } from "react-router-dom";
+import menu from "../../assets/images/menu.svg";
+import { motion, useScroll, AnimatePresence } from "framer-motion";
 
 const Nav = () => {
-	const [ hide, setHide ] = useState(false);
-	const [ open, setOpen ] = useState(false);
+	const [hide, setHide] = useState(false);
+	const [open, setOpen] = useState(false);
 	const openMenu = () => {
 		setOpen(true);
 	};
@@ -15,43 +15,36 @@ const Nav = () => {
 	};
 
 	const { scrollYProgress } = useScroll();
-	const [ hookedYPostion, setHookedYPosition ] = React.useState(0);
+	const [hookedYPostion, setHookedYPosition] = React.useState(0);
 	//smooth transition for scrolling through divs on landing page
 	const location = useLocation();
 
-	useEffect(
-		() => {
-			// hook into the onChange, store the current value as state.
-			scrollYProgress.onChange((v) => setHookedYPosition(v));
-		},
-		[ scrollYProgress ]
-	); //make sure to re-subscriobe when scrollYProgress changes
+	useEffect(() => {
+		// hook into the onChange, store the current value as state.
+		scrollYProgress.onChange((v) => setHookedYPosition(v));
+	}, [scrollYProgress]); //make sure to re-subscriobe when scrollYProgress changes
 
-	useEffect(
-		() => {
-			if (location.hash) {
-				let element = document.getElementById(location.hash.slice(1));
-				if (element) {
-					element.scrollIntoView({ behavior: 'smooth' });
-				} else {
-					window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-				}
+	useEffect(() => {
+		if (location.hash) {
+			let element = document.getElementById(location.hash.slice(1));
+			if (element) {
+				element.scrollIntoView({ behavior: "smooth" });
+			} else {
+				window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 			}
-		},
-		[ location ]
-	);
+		}
+	}, [location]);
 	return (
 		<div>
 			<AnimatePresence>
 				{open && (
-					<div style={{ display: 'flex', justifyContent: 'center' }}>
+					<div style={{ display: "flex", justifyContent: "center" }}>
 						<motion.div
 							className={styles.menu_container}
 							initial={{ height: 0, opacity: 0 }}
-							animate={{ height: '100vh', opacity: 1 }}
+							animate={{ height: "100vh", opacity: 1 }}
 							transition={{ duration: 0.5 }}
-							exit="exit"
-						>
+							exit="exit">
 							{/* <div className={styles.btn_close} onClick={closeMenu}>
 								X
 							</div> */}
@@ -64,16 +57,14 @@ const Nav = () => {
 								exit={{
 									opacity: 0,
 									y: 90,
-									transition: { ease: 'easeInOut', delay: 0.7 }
+									transition: { ease: "easeInOut", delay: 0.7 },
 								}}
-								whileHover={{ textShadow: '0px 0px 2px rgb(255,255,255)' }}
-							>
+								whileHover={{ textShadow: "0px 0px 2px rgb(255,255,255)" }}>
 								<Link
 									onClick={closeMenu}
 									id={styles.link1}
 									className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-									to="/about"
-								>
+									to="/about">
 									<motion.div>About</motion.div>
 								</Link>
 							</motion.a>
@@ -86,16 +77,14 @@ const Nav = () => {
 								exit={{
 									opacity: 0,
 									y: 90,
-									transition: { ease: 'easeInOut', delay: 0.6 }
+									transition: { ease: "easeInOut", delay: 0.6 },
 								}}
-								whileHover={{ textShadow: '0px 0px 2px rgb(255,255,255)' }}
-							>
+								whileHover={{ textShadow: "0px 0px 2px rgb(255,255,255)" }}>
 								<Link
 									onClick={closeMenu}
 									id={styles.link3}
 									className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-									to="/#services"
-								>
+									to="/#services">
 									<motion.div>Services</motion.div>
 								</Link>
 							</motion.a>
@@ -108,16 +97,14 @@ const Nav = () => {
 								exit={{
 									opacity: 0,
 									y: 90,
-									transition: { ease: 'easeInOut', delay: 0.5 }
+									transition: { ease: "easeInOut", delay: 0.5 },
 								}}
-								whileHover={{ textShadow: '0px 0px 2px rgb(255,255,255)' }}
-							>
+								whileHover={{ textShadow: "0px 0px 2px rgb(255,255,255)" }}>
 								<Link
 									onClick={closeMenu}
 									id={styles.link2}
 									className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-									to="/#work"
-								>
+									to="/#work">
 									<motion.div>Clients</motion.div>
 								</Link>
 							</motion.a>
@@ -131,16 +118,14 @@ const Nav = () => {
 								exit={{
 									opacity: 0,
 									y: 90,
-									transition: { ease: 'easeInOut', delay: 0.3 }
+									transition: { ease: "easeInOut", delay: 0.3 },
 								}}
-								whileHover={{ textShadow: '0px 0px 2px rgb(255,255,255)' }}
-							>
+								whileHover={{ textShadow: "0px 0px 2px rgb(255,255,255)" }}>
 								<Link
 									onClick={closeMenu}
 									id={styles.link3}
 									className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-									to="/contact"
-								>
+									to="/contact">
 									<motion.div>Contact</motion.div>
 								</Link>
 							</motion.a>
@@ -149,24 +134,31 @@ const Nav = () => {
 				)}
 			</AnimatePresence>
 
-			<div style={{ display: 'flex', flexDirection: 'row' }}>
-				<div style={{ display: 'flex', flexDirection: 'row', marginRight: 'auto' }}>
+			<div style={{ display: "flex", flexDirection: "row" }}>
+				<div
+					style={{
+						display: "flex",
+						flexDirection: "row",
+						marginRight: "auto",
+					}}>
 					<motion.div
 						initial={{
 							opacity: 0,
-							boxShadow: 'none',
-							borderBottom: '1px solid hsla(0, 0%, 100%, 0.12)',
-							backgroundColor: 'transparent'
+							boxShadow: "none",
+							borderBottom: "1px solid hsla(0, 0%, 100%, 0.12)",
+							backgroundColor: "transparent",
 						}}
 						animate={{
-							backgroundColor: hookedYPostion > 0 ? '#17212d' : 'transparent',
-							borderBottom: hookedYPostion > 0 ? '1px solid hsla(0, 0%, 100%, 0.12)' : 'none',
+							backgroundColor: hookedYPostion > 0 ? "#17212d" : "transparent",
+							borderBottom:
+								hookedYPostion > 0
+									? "1px solid hsla(0, 0%, 100%, 0.12)"
+									: "none",
 							// boxShadow: hookedYPostion > 0 ? '0px 0px 7px 0px rgba(255, 255, 255, 0.1)' : 'none',
 							opacity: 1,
-							transition: { duration: 1 }
+							transition: { duration: 1 },
 						}}
-						className={styles.container}
-					>
+						className={styles.container}>
 						<Link to="/#header" className={styles.logo}>
 							Pixel Kōi
 						</Link>
@@ -174,30 +166,32 @@ const Nav = () => {
 						<Link
 							id={styles.link1}
 							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-							to="/about"
-						>
+							to="/about">
 							<motion.div>About </motion.div>
 						</Link>
 						<Link
 							id={styles.link2}
 							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-							to="/#services"
-						>
+							to="/#services">
 							<motion.div>Services</motion.div>
 						</Link>
 						<Link
 							id={styles.link3}
 							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-							to="/#work"
-						>
+							to="/#work">
 							<motion.div>Clients</motion.div>
 						</Link>
 						<Link
 							id={styles.link3}
 							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
-							to="/blog"
-						>
+							to="/blog">
 							<motion.div>Blog</motion.div>
+						</Link>
+						<Link
+							id={styles.link3}
+							className={`${styles.link} ${styles.hoverUnderlineAnimation}`}
+							to="/casestudy">
+							<motion.div>Case Study</motion.div>
 						</Link>
 						{/* <button className={styles.menuIMG}>
 						<motion.img
@@ -214,10 +208,9 @@ const Nav = () => {
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1, transition: { duration: 1 } }}
-					className={styles.container3}
-				>
+					className={styles.container3}>
 					<motion.div className={styles.contactInfo}>
-						<motion.p style={{ display: hide === true ? 'none' : 'inline' }}>
+						<motion.p style={{ display: hide === true ? "none" : "inline" }}>
 							Email: info@pixelkoi.com <br />
 							Phone: (647)-838-1705
 						</motion.p>
@@ -225,16 +218,14 @@ const Nav = () => {
 					<Link
 						id={styles.link4}
 						className={`${styles.link} `}
-						style={{ display: hide === true ? 'none' : 'inline' }}
-						to="/contact"
-					>
+						style={{ display: hide === true ? "none" : "inline" }}
+						to="/contact">
 						<motion.p>Hire Us</motion.p>
 					</Link>
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1, transition: { duration: 1 } }}
-						className={styles.menuContainer}
-					>
+						className={styles.menuContainer}>
 						<button className={styles.menuIMG}>
 							<motion.img
 								src={menu}
