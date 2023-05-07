@@ -12,7 +12,7 @@ const CaseStudy = () => {
 				img={shopify}
 				client={"Hype Over Night"}
 				catArray={categories}
-				releaseDate={"02-03-2023"}
+				releaseDate={"March 2023"}
 			/>
 		</div>
 	);

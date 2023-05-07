@@ -39,18 +39,40 @@
 			color: #fff;
 			display: flex;
 			flex-direction: column;
-			justify-content: center;
+			// justify-content: center;
 			align-items: center;
 			width: 100%;
 			height: 7rem;
 			border: 1px solid #fff;
 
+			.colTitle {
+				margin-top: 15px;
+				width: 100%;
+				p {
+					opacity: 0.7;
+					text-align: center;
+				}
+			}
+			p {
+				font-size: 14px;
+			}
 			.catGroup {
 				display: flex;
 				flex-direction: row;
 				flex-wrap: wrap;
 			}
 		}
+	}
+}
+
+.catBorder {
+	display: flex;
+	border: 1px solid #fff;
+	padding: 2px 6px;
+	margin: 0 5px;
+	p {
+		font-size: 14px;
+		margin: 0 auto;
 	}
 }
 
