@@ -1,6 +1,6 @@
 import styles from "./CaseStudyLayout.module.scss";
 
-const CaseStudyLayout = (props: any) => {
+const CaseStudyHeader = (props: any) => {
 	const catArray = props.catArray;
 	const returnCat = () => {
 		return catArray.map((item) => {
@@ -48,4 +48,4 @@ const CaseStudyLayout = (props: any) => {
 	);
 };
 
-export default CaseStudyLayout;
+export default CaseStudyHeader;

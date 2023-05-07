@@ -1,5 +1,5 @@
 import React from "react";
-import CaseStudyLayout from "./component/CaseStudyLayout";
+import CaseStudyHeader from "./component/CaseStudyHeader";
 import Nav from "../../components/Nav/Nav";
 import shopify from "../../assets/CaseStudy/shopify.png";
 
@@ -8,7 +8,7 @@ const CaseStudy = () => {
 	return (
 		<div>
 			<Nav />
-			<CaseStudyLayout
+			<CaseStudyHeader
 				img={shopify}
 				client={"Hype Over Night"}
 				catArray={categories}
