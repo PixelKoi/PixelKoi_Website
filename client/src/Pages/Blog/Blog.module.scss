@@ -120,6 +120,26 @@
 		background-color: #17212d;
 	}
 }
+@media (min-width: 501px) and (max-width: 1024px) {
+	.wrapper {
+		.cardContainer {
+			flex-direction: column;
+		}
+		.cardContainer .gridItem:first-child {
+			margin-right: 0;
+			margin-bottom: 2rem;
+		}
+		.cardContainer .gridItem:nth-child(2) {
+			margin-right: 0;
+			margin-bottom: 2rem;
+		}
+
+		.cardContainer .gridItem:last-child {
+			margin-left: 0;
+			margin-bottom: 2rem;
+		}
+	}
+}
 
 @media (max-width: 500px) {
 	.wrapper {
