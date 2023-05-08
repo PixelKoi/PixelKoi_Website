@@ -23,7 +23,9 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.headerContainer}>
-				<img src={props.img} alt="" className={styles.headerIMG} />
+				<div className={styles.imgWrapper}>
+					<img src={props.img} alt="" className={styles.headerIMG} />
+				</div>
 				<div className={styles.headerDescriptionContainer}>
 					<div className={styles.innerHeaderDescriptionContainer}>
 						<div className={styles.divideColumns}>
