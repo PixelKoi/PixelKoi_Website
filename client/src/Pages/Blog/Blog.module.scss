@@ -56,31 +56,6 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-
-		.leftArrow {
-			display: flex;
-			color: white;
-
-			margin-right: auto;
-			.icon {
-			}
-			p {
-				padding-left: 10px;
-				margin: auto 0;
-			}
-		}
-		.rightArrow {
-			display: flex;
-			margin-left: auto;
-			color: white;
-
-			.icon {
-			}
-			p {
-				margin: auto 0;
-				padding-right: 10px;
-			}
-		}
 	}
 }
 
@@ -88,6 +63,7 @@
 	display: flex;
 	font-family: Arial, sans-serif;
 	list-style: none;
+	justify-items: center;
 }
 
 .pageItem {
@@ -128,10 +104,8 @@
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
 	background-color: white;
-	margin: 5px 5px 5px 0; /* Add this line to match the margin of the pageItem buttons */
+	margin: 5px; /* Add this line to match the margin of the pageItem buttons */
 	box-sizing: border-box; /* Ensure padding doesn't affect size */
-
-
 	&:hover {
 		background-color: #f5f5f5;
 		color: #333;
