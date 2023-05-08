@@ -10,9 +10,9 @@ interface CaseStudyHeaderProps {
 }
 
 const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
-	const catArray = props.catArray;
-	const returnCat = () => {
-		return catArray.map((item) => {
+	const categoryArray = props.catArray;
+	const returnCategories = () => {
+		return categoryArray.map((item) => {
 			return (
 				<div className={styles.catBorder} key={item}>
 					<p style={{ color: "#fff" }}>{item}</p>
@@ -38,7 +38,7 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 							<div className={styles.colTitle}>
 								<p>CATEGORY</p>
 							</div>
-							<div className={styles.catGroup}>{returnCat()}</div>
+							<div className={styles.catGroup}>{returnCategories()}</div>
 						</div>
 						<div className={styles.divideColumns}>
 							<div className={styles.colTitle}>
