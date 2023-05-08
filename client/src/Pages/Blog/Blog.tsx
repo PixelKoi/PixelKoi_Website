@@ -133,7 +133,7 @@ const Blog = () => {
         <div className={styles.cardWrapper}>
           <div className={styles.cardContainer}>{loadBlogColumns()}</div>
         </div>
-        <div style={{ marginTop: "4rem" }}>
+        <div style={{ marginTop: "2rem" }}>
           <ReactPaginate
             previousLabel={"previous"}
             nextLabel={"next"}
