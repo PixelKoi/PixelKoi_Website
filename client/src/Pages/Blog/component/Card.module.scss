@@ -43,10 +43,12 @@
 			}
 		}
 	}
+
+	@media (max-width: 500px) {
+		.container {
+			max-width: 500px;
+		}
+	}
+
 }
 
-@media (max-width: 500px) {
-	.container {
-		max-width: 500px;
-	}
-}
