@@ -41,7 +41,10 @@
 			background-color: #1e2a35;
 			box-shadow: 0 6px 18px 0 rgb(0 0 0 / 20%);
 		}
-
+		.divideColumns:nth-child(2) {
+			border-left: 1px solid hsla(0, 0%, 100%, 0.5);
+			border-right: 1px solid hsla(0, 0%, 100%, 0.5);
+		}
 		.divideColumns {
 			color: #fff;
 			display: flex;
@@ -49,11 +52,10 @@
 			// justify-content: center;
 			align-items: center;
 			width: 100%;
-			height: 7rem;
-			border: 1px solid #fff;
+			height: 5.5rem;
 
 			.colTitle {
-				margin-top: 1.5rem;
+				margin-top: 1rem;
 				width: 100%;
 				p {
 					text-align: center;
@@ -82,7 +84,7 @@
 
 .caseTitleContainer {
 	color: #fff;
-	margin-top: 4rem;
+	margin: 4rem 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
