@@ -6,6 +6,7 @@ interface CaseStudyHeaderProps {
 	client: string;
 	releaseDate: string;
 	caseStudy: string;
+	overview: string;
 }
 
 const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
@@ -50,6 +51,13 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 					<p>CASE STUDY</p>
 					<h1>{props.client}</h1>
 					<hr className={styles.line} />
+				</div>
+
+				<div className={styles.overviewContainer}>
+					<div className={styles.innerOverview}>
+						<h2>Overview</h2>
+						<p>{props.overview}</p>
+					</div>
 				</div>
 			</div>
 		</div>
