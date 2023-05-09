@@ -4,7 +4,7 @@ import Nav from "../../components/Nav/Nav";
 import Footer from "../../components/Footer/Main/Footer";
 import Card from "./component/Card";
 import HeaderCard from "./component/HeaderCard";
-import { FaLongArrowAltLeft, FaLongArrowAltRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/Home/web.jpg";
 import img2 from "../../assets/Home/box.jpg";
@@ -133,8 +133,8 @@ const Blog = () => {
 				</div>
 				<div style={{ marginTop: "2rem" }}>
 					<ReactPaginate
-						previousLabel={"<"}
-						nextLabel={">"}
+						previousLabel={<FaArrowLeft />}
+						nextLabel={<FaArrowRight />}
 						breakLabel="..."
 						pageCount={2}
 						marginPagesDisplayed={2}
@@ -146,6 +146,9 @@ const Blog = () => {
 						previousClassName={
 							currentPage === 0 ? styles.buttonDisabled : styles.previous
 						}
+						previousLinkClassName={styles.linkA}
+						nextLinkClassName={styles.linkA}
+						activeClassName={styles.pageItemSelected}
 						nextClassName={
 							currentPage === 0 ? styles.next : styles.buttonDisabled
 						}
