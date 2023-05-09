@@ -144,10 +144,10 @@ const Blog = () => {
 						pageClassName={styles.pageItem}
 						pageLinkClassName={styles.pageLink}
 						previousClassName={
-							currentPage === 0 ? styles.previousDisabled : styles.previous
+							currentPage === 0 ? styles.buttonDisabled : styles.previous
 						}
 						nextClassName={
-							currentPage === 0 ? styles.next : styles.previousDisabled
+							currentPage === 0 ? styles.next : styles.buttonDisabled
 						}
 					/>
 				</div>
