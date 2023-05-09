@@ -89,13 +89,11 @@
 	}
 }
 
-
 .pageLink {
 	display: inline-block;
 	color: #333;
 	text-decoration: none;
 	outline: none;
-
 }
 .previous,
 .next {
@@ -120,6 +118,19 @@
 		background-color: #17212d;
 	}
 }
+
+.previousDisabled {
+	opacity: 0.5;
+	border-radius: 5px;
+	padding: 5px 10px;
+	color: #333;
+	cursor: default;
+	transition: all 0.2s ease-in-out;
+	background-color: white;
+	margin: 5px; /* Add this line to match the margin of the pageItem buttons */
+	box-sizing: border-box; /* Ensure padding doesn't affect size */
+}
+
 @media (min-width: 501px) and (max-width: 1024px) {
 	.wrapper {
 		.cardContainer {
