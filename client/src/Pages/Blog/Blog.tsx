@@ -7,6 +7,9 @@ import HeaderCard from "./component/HeaderCard";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/Home/web.jpg";
+import viteSplit from "../../assets/Blog/viteSplitting.png";
+import vs from "../../assets/Blog/vs.png";
+import vss from "../../assets/Blog/vss.png";
 import img2 from "../../assets/Home/box.jpg";
 import { createClient } from "@supabase/supabase-js";
 import { SUPABASE_URL, SUPABASE_API_KEY } from "../../../config";
@@ -22,14 +25,14 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
    Add pagenation
 */
 interface BlogData {
-	title: string;
-	content: string;
-	author: string;
-	image_id: Number;
-	Images: Any;
+  title: string;
+  content: string;
+  author: string;
+  image_id: Number;
+  Images: Any;
 }
 {
-	/*
+  /*
       Blog Columns:  author, title, content, date, blog_post_id
       Images Foreign Key: blog_post_id, image_url, image_id
       Each Blog post can have many Images: Blog to Images, One-To-Many Relationship
@@ -39,126 +42,128 @@ interface BlogData {
     */
 }
 const tags = ["UX Design", "AI", "Art"];
+const titleTags = ["Code Splitting", "Performance", "Vite"];
 const Blog = () => {
-	const [blogData, setBlogData] = useState<BlogData[] | null>(null);
-	const [blogError, setBlogError] = useState<string | null>(null);
-	const [currentPage, setCurrentPage] = useState(0);
+  const [blogData, setBlogData] = useState<BlogData[] | null>(null);
+  const [blogError, setBlogError] = useState<string | null>(null);
+  const [currentPage, setCurrentPage] = useState(0);
 
-	useEffect(() => {
-		const fetchBlogData = async () => {
-			const { data, error } = await supabase
-				.from("Blog")
-				.select(`*, Images(image_url, image_id)`);
-			if (error) {
-				setBlogData(null);
-				setBlogError("Couldn't get Blog Data, sorry try again later.");
-				console.log(error);
-			}
-			if (data) {
-				console.log("THIIS IS DATA:", data);
-				// @ts-ignore
-				setBlogData(data);
-				setBlogError(null);
-			}
-		};
-		fetchBlogData();
-	}, []);
-	const navigate = useNavigate();
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      const { data, error } = await supabase
+        .from("Blog")
+        .select(`*, Images(image_url, image_id)`);
+      if (error) {
+        setBlogData(null);
+        setBlogError("Couldn't get Blog Data, sorry try again later.");
+        console.log(error);
+      }
+      if (data) {
+        console.log("THIIS IS DATA:", data);
+        // @ts-ignore
+        setBlogData(data);
+        setBlogError(null);
+      }
+    };
+    fetchBlogData();
+  }, []);
+  const navigate = useNavigate();
 
-	const handlePageClick = (data) => {
-		setCurrentPage(data.selected);
-	};
+  const handlePageClick = (data) => {
+    setCurrentPage(data.selected);
+  };
 
-	//need to save blog_post_id when clicking link so that we can grab the correct blog from the supabase db
-	const loadBlogColumns = () => {
-		if (blogData === null) {
-			return null;
-		}
-		const startIndex = currentPage * 3;
-		const endIndex = startIndex + 3;
-		return blogData.slice(startIndex, endIndex).map((blog) => {
-			let imageUrl = "";
-			for (let i = 0; i < blog.Images.length; i++) {
-				if (blog.Images[i].image_url) {
-					imageUrl = blog.Images[i].image_url;
-					break;
-				}
-			}
-			return (
-				<Link
-					to={`/blog/${blog.blog_post_id}`}
-					className={styles.gridItem}
-					key={blog.blog_post_id}
-					state={{ data: blog }}>
-					<Card
-						author={blog.author}
-						date={blog.date}
-						title={blog.title}
-						description={blog.content}
-						tags={tags}
-						img={imageUrl}
-					/>
-				</Link>
-			);
-		});
-	};
+  //need to save blog_post_id when clicking link so that we can grab the correct blog from the supabase db
+  const loadBlogColumns = () => {
+    if (blogData === null) {
+      return null;
+    }
+    const startIndex = currentPage * 3;
+    const endIndex = startIndex + 3;
+    return blogData.slice(startIndex, endIndex).map((blog) => {
+      let imageUrl = "";
+      for (let i = 0; i < blog.Images.length; i++) {
+        if (blog.Images[i].image_url) {
+          imageUrl = blog.Images[i].image_url;
+          break;
+        }
+      }
+      return (
+        <Link
+          to={`/blog/${blog.blog_post_id}`}
+          className={styles.gridItem}
+          key={blog.blog_post_id}
+          state={{ data: blog }}
+        >
+          <Card
+            author={blog.author}
+            date={blog.date}
+            title={blog.title}
+            description={blog.content}
+            tags={tags}
+            img={imageUrl}
+          />
+        </Link>
+      );
+    });
+  };
 
-	return (
-		<div className={styles.mainWrapper}>
-			<Nav />
-			<div className={styles.wrapper}>
-				<motion.div
-					initial={{ scale: 10 }}
-					animate={{
-						scale: 9,
-						transition: { ease: "easeIn", duration: 0.4 },
-					}}
-					className={styles.backgroundText}>
-					BLOG
-				</motion.div>{" "}
-				<HeaderCard
-					title={
-						"PixelKoi V2 Blogs and our commitment to improving SEO and Marketing"
-					}
-					date={"May 10th, 2023"}
-					description={
-						"PixelKoi V2 includes several new features and optimizations designed to improve search engine " +
-						"optimization (SEO), such as streamlined code, improved page loading speeds, and enhanced meta tags."
-					}
-					tags={tags}
-					img={img2}
-				/>
-				<div className={styles.cardWrapper}>
-					<div className={styles.cardContainer}>{loadBlogColumns()}</div>
-				</div>
-				<div style={{ marginTop: "2rem" }}>
-					<ReactPaginate
-						previousLabel={<FaArrowLeft />}
-						nextLabel={<FaArrowRight />}
-						breakLabel="..."
-						pageCount={2}
-						marginPagesDisplayed={2}
-						pageRangeDisplayed={2}
-						onPageChange={handlePageClick}
-						containerClassName={styles.paginateContainer}
-						pageClassName={styles.pageItem}
-						pageLinkClassName={styles.pageLink}
-						previousClassName={
-							currentPage === 0 ? styles.buttonDisabled : styles.previous
-						}
-						previousLinkClassName={styles.linkA}
-						nextLinkClassName={styles.linkA}
-						activeClassName={styles.pageItemSelected}
-						nextClassName={
-							currentPage === 0 ? styles.next : styles.buttonDisabled
-						}
-					/>
-				</div>
-			</div>
+  return (
+    <div className={styles.mainWrapper}>
+      <Nav />
+      <div className={styles.wrapper}>
+        <motion.div
+          initial={{ scale: 10 }}
+          animate={{
+            scale: 9,
+            transition: { ease: "easeIn", duration: 0.4 },
+          }}
+          className={styles.backgroundText}
+        >
+          BLOG
+        </motion.div>{" "}
+        <HeaderCard
+          title={
+            "Boosting Your Web App's Performance with Vite and Code Splitting"
+          }
+          date={"May 11th, 2023"}
+          description={
+            "Upgrading Your Web Development Workflow with Vite and Code Splitting"
+          }
+          tags={titleTags}
+          img={vss}
+        />
+        <div className={styles.cardWrapper}>
+          <div className={styles.cardContainer}>{loadBlogColumns()}</div>
+        </div>
+        <div style={{ marginTop: "2rem" }}>
+          <ReactPaginate
+            previousLabel={<FaArrowLeft />}
+            nextLabel={<FaArrowRight />}
+            breakLabel="..."
+            pageCount={2}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={2}
+            onPageChange={handlePageClick}
+            containerClassName={styles.paginateContainer}
+            pageClassName={styles.pageItem}
+            pageLinkClassName={styles.pageLink}
+            previousClassName={
+              currentPage === 0 ? styles.buttonDisabled : styles.previous
+            }
+            previousLinkClassName={styles.linkA}
+            nextLinkClassName={styles.linkA}
+            activeClassName={styles.pageItemSelected}
+            nextClassName={
+              currentPage === 0 ? styles.next : styles.buttonDisabled
+            }
+          />
+        </div>
+      </div>
 
-			<Footer />
-		</div>
-	);
+      <Footer />
+    </div>
+  );
 };
 
 export default Blog;

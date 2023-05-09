@@ -3,6 +3,7 @@ import styles from "./BlogPage.module.scss";
 import Nav from "../../components/Nav/Nav";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
+import { grey } from "@mui/material/colors";
 
 const BlogPost = () => {
   const styles = {
