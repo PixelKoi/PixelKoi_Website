@@ -10,12 +10,13 @@ const HeaderCard = (props) => {
       <div className={styles.container}>
         <img src={props.img} />
         <div className={styles.infoContainer}>
+          <h4>{props.title}</h4>
+          <p className={styles.description}>{props.description}</p>
           <b>
             <p className={styles.author}>Garo Nazarian &#x2022; {props.date}</p>
           </b>
-          <h4>{props.title}</h4>
-          <p className={styles.description}>{props.description}</p>
         </div>
+
         <div className={styles.tagWrapper}>
           {tags.map((tag, index) => (
             <div className={styles.tagContainer} key={index}>
