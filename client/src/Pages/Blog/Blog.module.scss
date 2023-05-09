@@ -97,14 +97,20 @@
 }
 .previous,
 .next {
-	border-radius: 5px;
+	min-width: 40px;
+	min-height: 40px;
+	border-radius: 50%;
 	padding: 5px 10px;
 	color: #333;
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
 	background-color: white;
-	margin: 5px; /* Add this line to match the margin of the pageItem buttons */
-	box-sizing: border-box; /* Ensure padding doesn't affect size */
+	margin: 5px;
+	font-size: 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	&:hover {
 		background-color: antiquewhite;
 		color: #17212d;
@@ -121,14 +127,19 @@
 
 .buttonDisabled {
 	opacity: 0.5;
-	border-radius: 5px;
+	min-width: 40px;
+	min-height: 40px;
+	border-radius: 50%;
 	padding: 5px 10px;
 	color: #333;
 	cursor: default;
 	transition: all 0.2s ease-in-out;
 	background-color: white;
-	margin: 5px; /* Add this line to match the margin of the pageItem buttons */
-	box-sizing: border-box; /* Ensure padding doesn't affect size */
+	margin: 5px;
+	font-size: 1.2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 @media (min-width: 501px) and (max-width: 1024px) {
