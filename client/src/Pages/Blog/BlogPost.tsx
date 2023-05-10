@@ -2,8 +2,7 @@ import React from "react";
 import styles from "./BlogPage.module.scss";
 import Nav from "../../components/Nav/Nav";
 import { useLocation, useNavigate } from "react-router-dom";
-import ReactHtmlParser from "react-html-parser";
-import { grey } from "@mui/material/colors";
+import parse from "html-react-parser";
 
 const BlogPost = () => {
   const styles = {
@@ -70,21 +69,18 @@ const BlogPost = () => {
       marginTop: "1rem",
     },
     pre: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      backgroundColor: "#f5f5f5",
+      backgroundColor: "#000",
+      padding: "16px",
       borderRadius: "4px",
-      boxShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
-      padding: "1rem",
-      overflow: "auto",
-      whiteSpace: "pre-wrap",
+      margin: "0",
     },
     code: {
-      fontFamily: "Fira Code, monospace",
-      fontSize: "1rem",
-      lineHeight: 1.5,
-      color: "#333",
+      display: "block",
+      whiteSpace: "pre-wrap",
+      fontFamily: "monospace",
+      fontSize: "14px",
+      lineHeight: "1.5",
+      color: "#fff",
     },
   };
 
@@ -113,7 +109,7 @@ const BlogPost = () => {
         <h1 style={styles.title}>{data.title}</h1>
         <h3 style={styles.author}>By {data.author}</h3>
         <h3 style={styles.date}>{data.date}</h3>
-        <p style={styles.content}>{ReactHtmlParser(data.content)}</p>
+        <p style={styles.content}>{parse(data.content)}</p>
       </div>
     </div>
   );

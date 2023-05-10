@@ -31,16 +31,6 @@ interface BlogData {
   image_id: Number;
   Images: Any;
 }
-{
-  /*
-      Blog Columns:  author, title, content, date, blog_post_id
-      Images Foreign Key: blog_post_id, image_url, image_id
-      Each Blog post can have many Images: Blog to Images, One-To-Many Relationship
-      TODO: set image_url in supabase, populate /client/src/assets/Blog and properly route
-      TODO: react-html-parser to dynamically insert images in random locations within your blog post content
-      TODO: Blog Posts mapped to each card dynamically
-    */
-}
 const tags = ["UX Design", "AI", "Art"];
 const titleTags = ["Code Splitting", "Performance", "Vite"];
 const Blog = () => {
