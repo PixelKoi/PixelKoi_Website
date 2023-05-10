@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./BlogPage.module.scss";
 import Nav from "../../components/Nav/Nav";
 import { useLocation, useNavigate } from "react-router-dom";
 import parse from "html-react-parser";
@@ -41,7 +40,6 @@ const BlogPost = () => {
       padding: "0 1rem",
       fontSize: "18px",
       lineHeight: "28px",
-      color: "#333",
     },
     imageContainer: {
       display: "flex",

@@ -1,0 +1,65 @@
+blog_post_id,publish_date,date,author,title,content
+3,2023-05-08 11:22:40+00,2023-05-08,Jonny Jonny Yes Papa,How to implement BlurHash with Reactjs,"To implement Blurhash in your React project, you can use a library such as react-blurhash. Here are the steps to get started:
+
+Install the library by running the following command in your project directory:
+<br/>
+<code>npm install react-blurhash</code> 
+<br/><br/>
+
+Import the Blurhash component from the library into the file where you want to use it:
+<br/><br/>
+
+
+<code>
+import { Blurhash } from 'react-blurhash';
+</code>
+<br/>
+<br/>
+
+In your component's render method, add a Blurhash component with the hash and width and height props set:
+<br/>
+<br/>
+
+  <code>&lt;Blurhash
+  hash=""LEHV6nWB2yk8pyo0adR*.7kCMdnj""
+  width={200}
+  height={200}
+/&gt;</code>
+<br/>
+<br/>
+
+The hash prop is a string representation of the Blurhash for the image you want to display. You can generate a Blurhash for an image using a tool like blurhash-cli or an online generator.
+
+You can also customize the placeholder image that is displayed while the Blurhash is being decoded by passing a placeholder prop:
+
+<br/>
+<br/>
+<code>
+&lt;Blurhash
+  hash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+  width={200}
+  height={200}
+  placeholder="https://example.com/placeholder.png"
+&gt;
+</code>
+<br/>
+<br/>
+
+The placeholder prop can be a local image file or a remote URL.
+
+Finally, you can add any additional styles to the Blurhash component that you would like:
+<br/>
+<br/>
+
+<code>
+&lt;Blurhash
+  hash="LEHV6nWB2yk8pyo0adR*.7kCMdnj"
+  width={200}
+  height={200}
+  style={{ borderRadius: 10 }}
+&gt;
+</code>
+<br/>
+<br/>
+
+And that's it! With these steps, you can easily add a Blurhash placeholder for your images in your React project."
