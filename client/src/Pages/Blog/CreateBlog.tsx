@@ -1,27 +1,33 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
 function CreateBlog() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [editorState, setEditorState] = useState("");
 
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
-  };
-
-  const handleContentChange = (event) => {
-    setContent(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Here you can add code to submit the blog post to your backend or save it to state
   };
-
+  const styles = {};
+  const modules = {
+    toolbar: [
+      ["font", "header"],
+      ["bold", "underline"],
+    ],
+  };
   return (
-    <div className="p-5">
+    <div className="p-5 bg-white m-5">
       <h1>Create a Blog Post</h1>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="p-3">
           <label htmlFor="title">Title:</label>
           <input
             type="text"
@@ -30,15 +36,12 @@ function CreateBlog() {
             onChange={handleTitleChange}
           />
         </div>
-        <div>
-          <label htmlFor="content">Content:</label>
-          <textarea
-            id="content"
-            value={content}
-            onChange={handleContentChange}
-          />
-        </div>
-        <button type="submit">Submit</button>
+
+        <ReactQuill modules={modules} theme="snow" className="p-5" />
+
+        <button className="m-5" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
