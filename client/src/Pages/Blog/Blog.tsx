@@ -5,7 +5,7 @@ import Footer from "../../components/Footer/Main/Footer";
 import Card from "./component/Card";
 import HeaderCard from "./component/HeaderCard";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import img from "../../assets/Home/web.jpg";
 import viteSplit from "../../assets/Blog/viteSplitting.png";
 import vs from "../../assets/Blog/vs.png";
@@ -75,22 +75,23 @@ const Blog = () => {
     }
     if (data) {
       console.log("THIS IS BLOG DATA:", data);
+      setBlogData(data);
     }
   }, [data, error]);
-  const navigate = useNavigate();
 
-  const handlePageClick = (data) => {
+  const handlePageClick = () => {
     setCurrentPage(data.selected);
   };
 
   //need to save blog_post_id when clicking link so that we can grab the correct blog from the supabase db
   const loadBlogColumns = () => {
     if (blogData === null) {
+      console.log(typeof data, "type");
       return null;
     }
     const startIndex = currentPage * 3;
     const endIndex = startIndex + 3;
-    return blogData.slice(startIndex, endIndex).map((blog) => {
+    return data.slice(startIndex, endIndex).map((blog) => {
       let imageUrl = "";
       for (let i = 0; i < blog.Images.length; i++) {
         if (blog.Images[i].image_url) {
