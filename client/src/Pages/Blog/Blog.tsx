@@ -16,6 +16,7 @@ import { SUPABASE_URL, SUPABASE_API_KEY } from "../../../config";
 import { motion, useScroll } from "framer-motion";
 import ReactPaginate from "react-paginate";
 import useSWR from "swr";
+import axios from "axios";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
 
