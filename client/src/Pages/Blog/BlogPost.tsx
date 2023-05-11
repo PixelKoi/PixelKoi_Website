@@ -1,7 +1,9 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Nav from "../../components/Nav/Nav";
 import { useLocation, useNavigate } from "react-router-dom";
 import parse from "html-react-parser";
+import { useParams } from "react-router-dom";
+
 import { createClient } from "@supabase/supabase-js";
 import { SUPABASE_API_KEY, SUPABASE_URL } from "../../../config";
 const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
@@ -86,20 +88,35 @@ const BlogPost = () => {
   };
   // @ts-ignore
 
-  const { state } = useLocation<{ data: BlogData }>();
-  console.log("THIS IS THE STATE", state);
-  const data = state.data;
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const cacheKey = state && state.data ? `/blog/${state.data.slug}` : null;
+  const { slug } = useParams<{ slug: string }>();
+  const [blog, setBlog] = useState<Object | null>(null);
 
-  const navigate = useNavigate();
+  useEffect(() => {
+    console.log("SLUG", slug);
+    const fetchData = async () => {
+      const { data, error } = await supabase
+        .from("Blog")
+        .select(`*, Images(image_url, image_id)`)
+        .eq("slug", slug);
+      if (error) {
+        console.log("Error fetching blog post:", error.message);
+      } else {
+        console.log("DAT", data);
+        setBlog(data);
+      }
+    };
+    fetchData();
+  }, [slug]);
 
-  let imageUrl = "";
-  for (let i = 0; i < data.Images.length; i++) {
-    if (data.Images[i].image_url) {
-      imageUrl = `/${data.Images[i].image_url}`;
-      break;
-    }
+  // let imageUrl = "";
+  // for (let i = 0; i < blog.Images.length; i++) {
+  //   if (blog.Images[i].image_url) {
+  //     imageUrl = `/${blog.Images[i].image_url}`;
+  //     break;
+  //   }
+  // }
+  if (!blog) {
+    return <div>Loading...</div>;
   }
 
   console.log("imageUrl: ", imageUrl);

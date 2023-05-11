@@ -48,36 +48,20 @@ const Blog = () => {
   const [blogError, setBlogError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
 
-  // useEffect(() => {
-  //   const fetchBlogData = async () => {
-  //     const { data, error } = await supabase
-  //       .from("Blog")
-  //       .select(`*, Images(image_url, image_id)`);
-  //     if (error) {
-  //       setBlogData(null);
-  //       setBlogError("Couldn't get Blog Data, sorry try again later.");
-  //       console.log(error);
-  //     }
-  //     if (data) {
-  //       console.log("THIIS IS DATA:", data);
-  //       // @ts-ignore
-  //       setBlogData(data);
-  //       setBlogError(null);
-  //     }
-  //   };
-  //   fetchBlogData();
-  // }, []);
-
-  const { data, error } = useSWR("Blog", async () => {
-    const { data, error } = await supabase
-      .from("Blog")
-      .select(`*, Images(image_url, image_id)`);
-    if (error) {
-      throw new Error("Couldn't get Blog Data, sorry try again later.");
-    }
-    console.log("DATA:", data);
-    return data;
-  });
+  const { data, error } = useSWR(
+    "Blog",
+    async () => {
+      const { data, error } = await supabase
+        .from("Blog")
+        .select(`*, Images(image_url, image_id)`);
+      if (error) {
+        throw new Error("Couldn't get Blog Data, sorry try again later.");
+      }
+      console.log("DATA:", data);
+      return data;
+    },
+    { revalidateOnMount: true }
+  );
   useEffect(() => {
     if (error) {
       console.log(error);
