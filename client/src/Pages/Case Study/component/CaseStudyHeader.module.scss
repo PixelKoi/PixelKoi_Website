@@ -1,4 +1,4 @@
-.container {
+.mainContainer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -147,16 +147,12 @@
 	}
 }
 
-.challengeContainer {
-	margin-top: 5rem;
-	margin-bottom: 1rem;
+.contentContainer {
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	padding: 0 1rem;
-
-	.innerChallenge {
+	.innerContentContainer {
 		max-width: 870px;
 		width: 100%;
 	}

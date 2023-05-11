@@ -5,6 +5,8 @@ import hon from "../../../assets/CaseStudy/hon_press.mp4";
 interface CaseStudyHeaderProps {
 	catArray: string[];
 	img: string;
+	outroIMG: string;
+	video: string;
 	client: string;
 	releaseDate: string;
 	caseStudy: string;
@@ -26,7 +28,7 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 		});
 	};
 	return (
-		<div className={styles.container}>
+		<div className={styles.mainContainer}>
 			{/* {Header} */}
 			<div className={styles.headerContainer}>
 				<div className={styles.imgWrapper}>
@@ -76,8 +78,10 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 				</div>
 
 				{/* {Challenge} */}
-				<div className={styles.challengeContainer}>
-					<div className={styles.innerChallenge}>
+				<div
+					style={{ marginTop: "5rem", marginBottom: "1rem" }}
+					className={styles.contentContainer}>
+					<div className={styles.innerContentContainer}>
 						<h2>Challenge</h2>
 						<p>{props.challenge}</p>
 					</div>
@@ -85,17 +89,16 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 				</div>
 
 				{/* {Solution} */}
-				<div className={styles.overviewContainer}>
-					<div className={styles.innerOverview}>
+				<div className={styles.contentContainer}>
+					<div className={styles.innerContentContainer}>
 						<h2>Solution</h2>
 						<p>{props.solution}</p>
 					</div>
-					<div className={styles.overviewIMGContainer}>
-						<img
-							src={props.overviewIMG}
-							alt=""
-							className={styles.overviewIMG}
-						/>
+				</div>
+
+				<div style={{ margin: "4rem 0" }} className={styles.contentContainer}>
+					<div className={styles.innerContentContainer}>
+						<img src={props.outroIMG} alt="" className={styles.overviewIMG} />
 					</div>
 				</div>
 			</div>

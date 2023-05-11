@@ -2,6 +2,7 @@ import React from "react";
 import CaseStudyHeader from "./component/CaseStudyHeader";
 import Nav from "../../components/Nav/Nav";
 import shopify from "../../assets/CaseStudy/shopify.png";
+import hon from "../../assets/CaseStudy/HypeOverNight.png";
 
 const CaseStudy = () => {
 	const categories = ["liquid", "shopify"];
@@ -40,6 +41,7 @@ const CaseStudy = () => {
 						e-commerce success.
 					</React.Fragment>
 				}
+				outroIMG={hon}
 			/>
 		</div>
 	);
