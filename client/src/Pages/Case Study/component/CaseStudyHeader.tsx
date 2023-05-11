@@ -7,6 +7,9 @@ interface CaseStudyHeaderProps {
 	releaseDate: string;
 	caseStudy: string;
 	overview: string;
+	overviewIMG: string;
+	challenge: string;
+	solution: string;
 }
 
 const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
@@ -22,6 +25,7 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 	};
 	return (
 		<div className={styles.container}>
+			{/* {Header} */}
 			<div className={styles.headerContainer}>
 				<div className={styles.imgWrapper}>
 					<img src={props.img} alt="" className={styles.headerIMG} />
@@ -55,10 +59,42 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 					<hr className={styles.line} />
 				</div>
 
+				{/* {Overview} */}
 				<div className={styles.overviewContainer}>
 					<div className={styles.innerOverview}>
 						<h2>Overview</h2>
 						<p>{props.overview}</p>
+					</div>
+					<div className={styles.overviewIMGContainer}>
+						<img
+							src={props.overviewIMG}
+							alt=""
+							className={styles.overviewIMG}
+						/>
+					</div>
+				</div>
+				{/* {Challenge} */}
+				<div className={styles.overviewContainer}>
+					<div className={styles.innerOverview}>
+						<h2>Challenge</h2>
+						<p>{props.challenge}</p>
+					</div>
+
+					<div></div>
+				</div>
+
+				{/* {Solution} */}
+				<div className={styles.overviewContainer}>
+					<div className={styles.innerOverview}>
+						<h2>Solution</h2>
+						<p>{props.solution}</p>
+					</div>
+					<div className={styles.overviewIMGContainer}>
+						<img
+							src={props.overviewIMG}
+							alt=""
+							className={styles.overviewIMG}
+						/>
 					</div>
 				</div>
 			</div>
