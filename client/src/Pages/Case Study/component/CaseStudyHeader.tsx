@@ -1,8 +1,12 @@
 import styles from "./CaseStudyHeader.module.scss";
+import ReactPlayer from "react-player";
+import hon from "../../../assets/CaseStudy/hon_press.mp4";
 
 interface CaseStudyHeaderProps {
 	catArray: string[];
 	img: string;
+	outroIMG: string;
+	video: string;
 	client: string;
 	releaseDate: string;
 	caseStudy: string;
@@ -24,7 +28,7 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 		});
 	};
 	return (
-		<div className={styles.container}>
+		<div className={styles.mainContainer}>
 			{/* {Header} */}
 			<div className={styles.headerContainer}>
 				<div className={styles.imgWrapper}>
@@ -65,36 +69,36 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 						<h2>Overview</h2>
 						<p>{props.overview}</p>
 					</div>
-					<div className={styles.overviewIMGContainer}>
-						<img
-							src={props.overviewIMG}
-							alt=""
-							className={styles.overviewIMG}
-						/>
+				</div>
+
+				<div className={styles.videoContainer}>
+					<div className={styles.videoWrapper}>
+						<ReactPlayer url={hon} controls height="100%" width="100%" />
 					</div>
 				</div>
+
 				{/* {Challenge} */}
-				<div className={styles.overviewContainer}>
-					<div className={styles.innerOverview}>
+				<div
+					style={{ marginTop: "5rem", marginBottom: "1rem" }}
+					className={styles.contentContainer}>
+					<div className={styles.innerContentContainer}>
 						<h2>Challenge</h2>
 						<p>{props.challenge}</p>
 					</div>
-
 					<div></div>
 				</div>
 
 				{/* {Solution} */}
-				<div className={styles.overviewContainer}>
-					<div className={styles.innerOverview}>
+				<div className={styles.contentContainer}>
+					<div className={styles.innerContentContainer}>
 						<h2>Solution</h2>
 						<p>{props.solution}</p>
 					</div>
-					<div className={styles.overviewIMGContainer}>
-						<img
-							src={props.overviewIMG}
-							alt=""
-							className={styles.overviewIMG}
-						/>
+				</div>
+
+				<div style={{ margin: "4rem 0" }} className={styles.contentContainer}>
+					<div className={styles.innerContentContainer}>
+						<img src={props.outroIMG} alt="" className={styles.overviewIMG} />
 					</div>
 				</div>
 			</div>
