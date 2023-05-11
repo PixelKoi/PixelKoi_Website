@@ -2,6 +2,10 @@ import React from "react";
 import Nav from "../../components/Nav/Nav";
 import { useLocation, useNavigate } from "react-router-dom";
 import parse from "html-react-parser";
+import { createClient } from "@supabase/supabase-js";
+import { SUPABASE_API_KEY, SUPABASE_URL } from "../../../config";
+import useSWR from "swr";
+const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
 
 const BlogPost = () => {
   const styles = {
@@ -81,11 +85,24 @@ const BlogPost = () => {
       color: "#fff",
     },
   };
-
   // @ts-ignore
+
   const { state } = useLocation<{ data: BlogData }>();
-  const { data } = state;
+  console.log("THIS IS THE STATE", state);
+  const data = state.data;
+  const fetcher = (url: string) => fetch(url).then((res) => res.json());
+  const cacheKey = state && state.data ? `/blog/${state.data.slug}` : null;
+
+  // const { data, error } = useSWR(cacheKey, fetcher, {
+  //   initialData: state.data,
+  // });
+  //
+  // if (error) {
+  //   console.error("Failed to fetch blog data:", error);
+  // }
+
   const navigate = useNavigate();
+
   let imageUrl = "";
   for (let i = 0; i < data.Images.length; i++) {
     if (data.Images[i].image_url) {
@@ -93,6 +110,7 @@ const BlogPost = () => {
       break;
     }
   }
+
   console.log("imageUrl: ", imageUrl);
   return (
     <div style={styles.mainContainer}>

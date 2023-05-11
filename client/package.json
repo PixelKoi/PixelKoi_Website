@@ -52,6 +52,7 @@
 		"react-tsparticles": "^2.9.3",
 		"sass": "^1.57.1",
 		"split-type": "^0.3.3",
+		"swr": "^2.1.5",
 		"three": "^0.149.0",
 		"tsparticles": "^2.9.3",
 		"tsparticles-engine": "^2.9.3",
