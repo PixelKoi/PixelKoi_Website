@@ -13,6 +13,7 @@ config.ts
 ./config.ts
 # production
 /build
+/src/assets/CaseStudy/hon_press.mp4
 
 # misc
 .DS_Store
