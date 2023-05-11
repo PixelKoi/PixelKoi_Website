@@ -25,17 +25,25 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
    Query blog table to get, img, author + date, description, tag, place latest 3 on buttom, top always shows latest entry
    Add pagenation
 */
-interface BlogData {
+interface BlogPost {
+  blog_post_id: number;
+  publish_date: string;
+  date: string;
+  author: string;
   title: string;
   content: string;
-  author: string;
-  image_id: Number;
-  Images: Any;
+  slug: string;
+  images: Image[];
+}
+
+interface Image {
+  image_url: string;
+  image_id: number;
 }
 const tags = ["UX Design", "AI", "Art"];
 const titleTags = ["Code Splitting", "Performance", "Vite"];
 const Blog = () => {
-  const [blogData, setBlogData] = useState<BlogData[] | null>(null);
+  const [blogData, setBlogData] = useState<BlogPost[] | null>(null);
   const [blogError, setBlogError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -79,7 +87,7 @@ const Blog = () => {
     }
   }, [data, error]);
 
-  const handlePageClick = () => {
+  const handlePageClick = (data) => {
     setCurrentPage(data.selected);
   };
 
@@ -91,7 +99,9 @@ const Blog = () => {
     }
     const startIndex = currentPage * 3;
     const endIndex = startIndex + 3;
-    return data.slice(startIndex, endIndex).map((blog) => {
+    const blogDataArray = Object.values(blogData);
+    console.log(blogDataArray, "BLOGARRAY");
+    return blogDataArray.slice(startIndex, endIndex).map((blog) => {
       let imageUrl = "";
       for (let i = 0; i < blog.Images.length; i++) {
         if (blog.Images[i].image_url) {
