@@ -1,4 +1,6 @@
 import styles from "./CaseStudyHeader.module.scss";
+import ReactPlayer from "react-player";
+import hon from "../../../assets/CaseStudy/hon_press.mp4";
 
 interface CaseStudyHeaderProps {
 	catArray: string[];
@@ -65,21 +67,20 @@ const CaseStudyHeader = (props: CaseStudyHeaderProps) => {
 						<h2>Overview</h2>
 						<p>{props.overview}</p>
 					</div>
-					<div className={styles.overviewIMGContainer}>
-						<img
-							src={props.overviewIMG}
-							alt=""
-							className={styles.overviewIMG}
-						/>
+				</div>
+
+				<div className={styles.videoContainer}>
+					<div className={styles.videoWrapper}>
+						<ReactPlayer url={hon} controls height="100%" width="100%" />
 					</div>
 				</div>
+
 				{/* {Challenge} */}
-				<div className={styles.overviewContainer}>
-					<div className={styles.innerOverview}>
+				<div className={styles.challengeContainer}>
+					<div className={styles.innerChallenge}>
 						<h2>Challenge</h2>
 						<p>{props.challenge}</p>
 					</div>
-
 					<div></div>
 				</div>
 
