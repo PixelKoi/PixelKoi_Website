@@ -80,9 +80,9 @@ const Blog = () => {
       }
       return (
         <Link
-          to={`/blog/${blog.blog_post_id}`}
+          to={`/blog/${blog.slug}`}
           className={styles.gridItem}
-          key={blog.blog_post_id}
+          key={blog.slug}
           state={{ data: blog }}
         >
           <Card
