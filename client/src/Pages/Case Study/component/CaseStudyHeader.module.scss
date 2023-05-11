@@ -1,4 +1,4 @@
-.container {
+.mainContainer {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -144,6 +144,37 @@
 			height: 100%;
 			margin: 0 auto;
 		}
+	}
+}
+
+.contentContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0 1rem;
+	.innerContentContainer {
+		max-width: 870px;
+		width: 100%;
+	}
+	p {
+		font-size: 16px;
+		line-height: 32px;
+	}
+	h2 {
+		color: #fff;
+	}
+}
+
+.videoContainer {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 1rem;
+	.videoWrapper {
+		max-width: 1000px;
+		max-height: 1000px;
+		// margin: 0 auto;
 	}
 }
 

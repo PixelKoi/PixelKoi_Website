@@ -1,7 +1,7 @@
 import React from "react";
 import CaseStudyHeader from "./component/CaseStudyHeader";
 import Nav from "../../components/Nav/Nav";
-import shopify from "../../assets/CaseStudy/shopify.png";
+import shopify from "../../assets/CaseStudy/shopify.webp";
 
 const CaseStudy = () => {
 	const categories = ["liquid", "shopify"];
