@@ -1,6 +1,6 @@
 import styles from "./CaseStudyHeader.module.scss";
 import ReactPlayer from "react-player";
-// import hon from "../../../assets/CaseStudy/hon_press.mp4";
+import hon from "../../../assets/CaseStudy/hon_press.mp4";
 
 interface CaseStudyHeaderProps {
   catArray: string[];
