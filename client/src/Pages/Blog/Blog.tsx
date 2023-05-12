@@ -16,16 +16,11 @@ import { SUPABASE_URL, SUPABASE_API_KEY } from "../../../config";
 import { motion, useScroll } from "framer-motion";
 import ReactPaginate from "react-paginate";
 import useSWR from "swr";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
 
-//Todo
-/*
-   Onclick update global variables to be shown on blog page using redux
-   Query blog table to get, img, author + date, description, tag, place latest 3 on buttom, top always shows latest entry
-   Add pagenation
-*/
+//TODO: Add React-router-dom loader such that the fetch happens before the page loads for UX
 interface BlogPost {
   blog_post_id: number;
   publish_date: string;
@@ -47,6 +42,7 @@ const Blog = () => {
   const [blogData, setBlogData] = useState<BlogPost[] | null>(null);
   const [blogError, setBlogError] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState(0);
+  let navigate = useNavigate();
 
   const { data, error } = useSWR(
     "Blog",
