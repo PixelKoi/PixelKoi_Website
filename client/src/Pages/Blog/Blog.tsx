@@ -96,7 +96,7 @@ const Blog = () => {
       }
       return (
         <Link
-          to={`/blog/${blog.slug}`}
+          to={`/blogs/${blog.slug}`}
           className={styles.gridItem}
           key={blog.slug}
           state={{ data: blog }}

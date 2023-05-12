@@ -89,9 +89,7 @@ const BlogPost = () => {
   const { state } = useLocation<{ data: BlogData }>();
   console.log("THIS IS THE STATE", state);
   const data = state.data;
-  const fetcher = (url: string) => fetch(url).then((res) => res.json());
-  const cacheKey = state && state.data ? `/blog/${state.data.slug}` : null;
-
+  console.log("DATA", data);
   const navigate = useNavigate();
 
   let imageUrl = "";
