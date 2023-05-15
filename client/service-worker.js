@@ -36,7 +36,7 @@ self.addEventListener("fetch", (event) => {
         console.log("Serving from cache", event.request.url);
         return response;
       }
-      // console.log("Fetching from network", event.request.url);
+      console.log("Fetching from network", event.request.url);
       return fetch(event.request);
     })
   );

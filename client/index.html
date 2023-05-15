@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="/">
     <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme-color" content="#317EFB"/>
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
     <meta content="Web site created by Pixel Koi" name="description"/>
     <!-- Updated to use a relative path to the favicon -->
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-    <link rel="mask-icon" href="./maskable-icon.png" color="#FFFFFF" type="image/png">
-    <link rel="manifest" href="./manifest.json">
+    <link rel="icon" href="/img/icons/favicon.ico" type="image/x-icon" />
+    <!--    <link rel="icon" type="image/png" sizes="32x32" href="./pixelKoi.png" />-->
+    <!--    <link rel="icon" type="image/png" sizes="16x16" href="./pixelKoiLarge.png" />-->
+    <!--    ios support-->
+    <link rel="apple-touch-icon" href="/img/icons/favicon.png">
+    <meta name="apple-mobile-web-app-status-bar" content="#7b68ee">
+    <meta name="theme-color" content="#7b68ee">
+    <link rel="icon" href="img/icons/pixelKoiLarge.png" color="#FFFFFF">
+
+    <link rel="mask-icon" href="img/icons/maskable-icon.png" color="#FFFFFF">
+
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,11 +28,10 @@
     <script>
         if ("serviceWorker" in navigator) {
             window.addEventListener("load", () => {
-                navigator.serviceWorker.register("service-worker.js").then((reg) => {
-                    console.log("Service worker registered", reg);
-                });
+                navigator.serviceWorker.register("./sw.js", { scope: "./" });
             });
         }
+
     </script>
 
     <title>PixelKoi.com: Web Development, Mobile Development, UX/UI Design</title>

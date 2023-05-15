@@ -19,9 +19,8 @@ const AppRouter = () => {
           <Route path="/" element={<Landing />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          // NESTED ROUTE
           <Route path="/blogs" element={<Blog />} />
-          <Route path=":slug" element={<BlogPost />} />
+          <Route path="/blogs/:slug" element={<BlogPost />} />
           <Route path="/casestudy" element={<CaseStudy />} />
           <Route path="/createblog" element={<CreateBlog />} />
         </Routes>

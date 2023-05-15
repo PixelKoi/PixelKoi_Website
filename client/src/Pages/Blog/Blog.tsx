@@ -95,7 +95,7 @@ const Blog = () => {
           to={`/blogs/${blog.slug}`}
           className={styles.gridItem}
           key={blog.slug}
-          state={{ data: blog }}
+          state={{ blog: blog }}
         >
           <Card
             author={blog.author}

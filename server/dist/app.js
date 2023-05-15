@@ -11,6 +11,7 @@ const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const app = (0, express_1.default)();
 const hashJson = path_1.default.join(__dirname, "./imageHash.json");
+console.log("HASH LOCATION:", hashJson);
 app.use(body_parser_1.default.json());
 app.use((0, cors_1.default)({
     origin: "*",
@@ -19,8 +20,7 @@ const port = 8000;
 app.get("/", (req, res) => {
     res.send("Hello World!");
 });
-console.log("__dirname", __dirname);
-// app.use(express.static(path.join(__dirname, "build")));
+app.use(express_1.default.static(path_1.default.join(__dirname, "build")));
 app.post("/api/images", (req, res) => {
     const { images } = req.body;
     console.log("image type:", typeof images);
