@@ -1,0 +1,53 @@
+.container {
+	max-width: 280px;
+	width: 100%;
+	cursor: pointer;
+
+	.infoContainer {
+		margin-top: 2rem;
+		display: flex;
+		flex-direction: column;
+
+		.author {
+			font-size: 14px;
+		}
+		.title {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.description {
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			font-size: 16px;
+			opacity: 0.6;
+		}
+	}
+
+	.tagWrapper {
+		margin-top: 1rem;
+		display: flex;
+		gap: 10px;
+		.tagContainer {
+			display: inline-block;
+			border-radius: 5px;
+			border: 1px solid black;
+			.tagName {
+				font-size: 14px;
+				margin: 0 5px;
+			}
+		}
+	}
+
+	@media (max-width: 500px) {
+		.container {
+			max-width: 500px;
+		}
+	}
+}
+
