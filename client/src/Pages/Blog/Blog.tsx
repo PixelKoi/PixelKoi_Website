@@ -132,6 +132,11 @@ const Blog = () => {
           tags={titleTags}
           img={vss}
         />
+        <div>
+          <button className="flex mt-5" style={styles.createButton}>
+            Create Post
+          </button>
+        </div>
         <div className={styles.cardWrapper}>
           <div className={styles.cardContainer}>{loadBlogColumns()}</div>
         </div>

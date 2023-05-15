@@ -61,9 +61,6 @@ const BlogPost = () => {
           >
             Back to All Blogs
           </button>
-          <button className="flex" style={styles.button}>
-            Sign in
-          </button>
         </div>
 
         {imageUrl && (

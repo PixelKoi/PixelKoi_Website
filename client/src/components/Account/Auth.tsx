@@ -20,16 +20,16 @@ export default function Auth() {
   };
 
   return (
-    <div className="row flex flex-center">
-      <div className="col-6 form-widget">
-        <h1 className="header">Supabase + React</h1>
-        <p className="description">
+    <div className="flex justify-center items-center h-screen m-5">
+      <div className="bg-white rounded-lg shadow-lg p-3">
+        <h1 className="text-2xl font-bold mb-4">Supabase + React</h1>
+        <p className="text-gray-600 mb-4">
           Sign in via magic link with your email below
         </p>
-        <form className="form-widget" onSubmit={handleLogin}>
-          <div>
+        <form onSubmit={handleLogin}>
+          <div className="mb-4">
             <input
-              className="inputField"
+              className="border border-gray-300 rounded px-4 py-2 w-full"
               type="email"
               placeholder="Your email"
               value={email}
@@ -38,7 +38,10 @@ export default function Auth() {
             />
           </div>
           <div>
-            <button className={"button block"} disabled={loading}>
+            <button
+              className="bg-blue-500 text-white rounded px-4 py-2 w-full"
+              disabled={loading}
+            >
               {loading ? <span>Loading</span> : <span>Send magic link</span>}
             </button>
           </div>

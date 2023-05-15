@@ -7,6 +7,7 @@ import { Contact } from "../Pages/Contact/Contact2";
 import BlurHashDecoder from "../components/BlurHashEncoder/BlurHashDecoder";
 import CaseStudy from "../Pages/Case Study/CaseStudy";
 import CreateBlog from "../Pages/Blog/CreateBlog";
+import Auth from "../components/Account/Auth";
 import { SWRConfig } from "swr/_internal";
 import axios from "axios";
 const AppRouter = () => {
@@ -21,6 +22,7 @@ const AppRouter = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/blogs" element={<Blog />} />
           <Route path="/blogs/:slug" element={<BlogPost />} />
+          <Route path="/auth" element={<Auth />} />
           <Route path="/casestudy" element={<CaseStudy />} />
           <Route path="/createblog" element={<CreateBlog />} />
         </Routes>

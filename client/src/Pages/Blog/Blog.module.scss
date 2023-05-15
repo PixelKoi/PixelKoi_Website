@@ -122,6 +122,15 @@
 	align-items: center;
 }
 
+button {
+	padding: 0.75rem 1.55rem;
+	border-radius: 0.15rem;
+	background-color: #007bff;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.15s ease-in-out;
+}
+
 .pageActive {
 	border-bottom: 1px solid #fff;
 }
