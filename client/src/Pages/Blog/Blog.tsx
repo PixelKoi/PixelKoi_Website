@@ -11,14 +11,11 @@ import viteSplit from "../../assets/Blog/viteSplitting.png";
 import vs from "../../assets/Blog/vs.png";
 import vss from "../../assets/Blog/vss.png";
 import img2 from "../../assets/Home/box.jpg";
-import { createClient } from "@supabase/supabase-js";
-import { SUPABASE_URL, SUPABASE_API_KEY } from "../../../config";
 import { motion, useScroll } from "framer-motion";
 import ReactPaginate from "react-paginate";
 import useSWR from "swr";
 import { useNavigate } from "react-router-dom";
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
+import { supabase } from "../../../config";
 
 //TODO: Add React-router-dom loader such that the fetch happens before the page loads for UX
 interface BlogPost {

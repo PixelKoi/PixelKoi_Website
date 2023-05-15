@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { createClient } from "@supabase/supabase-js";
-import { SUPABASE_API_KEY, SUPABASE_URL } from "../../../config";
 import { useNavigate } from "react-router-dom";
+import Nav from "../../components/Nav/Nav";
 
-const supabase = createClient(SUPABASE_URL, SUPABASE_API_KEY);
+import { supabase } from "../../../config";
 
 // Rest of the imports
 
@@ -52,10 +51,21 @@ const BlogPost = () => {
 
   return (
     <div style={styles.mainContainer}>
+      <Nav />
       <div style={styles.container}>
-        <button style={styles.button} onClick={() => navigate(-1)}>
-          Back to All Blogs
-        </button>
+        <div className="flex justify-end">
+          <button
+            className="flex"
+            style={styles.button}
+            onClick={() => navigate(-1)}
+          >
+            Back to All Blogs
+          </button>
+          <button className="flex" style={styles.button}>
+            Sign in
+          </button>
+        </div>
+
         {imageUrl && (
           <img src={imageUrl} alt="blog post" style={styles.image} />
         )}
@@ -123,16 +133,13 @@ const styles = {
   },
   button: {
     padding: "0.75rem 1.25rem",
-    fontSize: "1rem",
-    lineHeight: "1.5",
     borderRadius: "0.25rem",
     backgroundColor: "#007bff",
     color: "#fff",
-    border: "none",
     boxShadow: "0 0.5rem 1rem rgba(0, 0, 0, 0.15)",
     cursor: "pointer",
     transition: "all 0.15s ease-in-out",
-    marginTop: "1rem",
+    margin: "1rem",
   },
   pre: {
     backgroundColor: "#000",
