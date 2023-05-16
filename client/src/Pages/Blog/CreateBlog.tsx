@@ -58,7 +58,7 @@ function CreateBlog() {
     <div className="p-5 bg-white m-5">
       <h1>Create a Blog Post</h1>
       <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-5 gap-4">
+        <div className="grid grid-cols-5 gap-4 m-5 p-1">
           <div className="col-span-1">
             <label htmlFor="title">Title:</label>
             <input
@@ -111,7 +111,11 @@ function CreateBlog() {
           </div>
         </div>
 
-        <ReactQuill modules={modules} theme="snow" className="p-5 text-black" />
+        <ReactQuill
+          modules={modules}
+          theme="snow"
+          className="p-5 text-black vh-100"
+        />
 
         <button className="m-5" type="submit">
           Submit
