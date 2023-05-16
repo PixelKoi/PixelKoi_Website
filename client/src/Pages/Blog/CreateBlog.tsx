@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import { supabase } from "../../../config";
 
-function CreateBlog() {
+export default function CreateBlog({ session }) {
+  const [loading, setLoading] = useState(true);
   const [title, setTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -11,7 +13,33 @@ function CreateBlog() {
   const [content, setContent] = useState("");
   const [editorState, setEditorState] = useState("");
   // TODO connect createBlog with supabase to pass blogs to dB
+
+  // TODO Only allow Blog Posts from ALLOWED users
   // https://blog.logrocket.com/build-a-wysiwyg-text-editor-using-quill/
+
+  async function updateProfile(event) {
+    event.preventDefault();
+
+    setLoading(true);
+    const { user } = session;
+
+    const updates = {
+      id: user.id,
+      title,
+      subtitle,
+      author,
+      date,
+      content,
+    };
+
+    let { error } = await supabase.from("Blog").upsert(updates);
+
+    if (error) {
+      alert(error.message);
+    }
+    setLoading(false);
+  }
+
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
     console.log(title);
@@ -61,7 +89,7 @@ function CreateBlog() {
   return (
     <div className="p-5 bg-white m-5">
       <h1>Create a Blog Post</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={updateProfile}>
         <div className="grid grid-cols-5 gap-4 m-5 p-1">
           <div className="col-span-1">
             <label htmlFor="title">Title:</label>
@@ -121,12 +149,10 @@ function CreateBlog() {
           className="p-5 text-black vh-100"
         />
 
-        <button className="m-5" type="submit">
+        <button className="m-5" type="submit" disabled={loading}>
           Submit
         </button>
       </form>
     </div>
   );
 }
-
-export default CreateBlog;
