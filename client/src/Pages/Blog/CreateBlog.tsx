@@ -14,18 +14,22 @@ function CreateBlog() {
   // https://blog.logrocket.com/build-a-wysiwyg-text-editor-using-quill/
   const handleTitleChange = (event) => {
     setTitle(event.target.value);
+    console.log(title);
   };
 
   const handleSubtitleChange = (event) => {
     setSubtitle(event.target.value);
+    console.log(subtitle);
   };
 
   const handleAuthorChange = (event) => {
     setAuthor(event.target.value);
+    console.log(author);
   };
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
+    console.log(date);
   };
 
   const handleTagsChange = (event) => {
@@ -93,7 +97,7 @@ function CreateBlog() {
             <label htmlFor="date">Date:</label>
             <input
               className="rounded text-pink-500"
-              type="text"
+              type="date"
               id="date"
               value={date}
               onChange={handleDateChange}
