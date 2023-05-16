@@ -134,7 +134,7 @@ const Blog = () => {
         />
         <div>
           <button className="flex mt-5" style={styles.createButton}>
-            Create Post
+            <Link to="/createblog"> Create Post</Link>
           </button>
         </div>
         <div className={styles.cardWrapper}>
