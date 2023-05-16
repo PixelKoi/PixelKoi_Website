@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { supabase } from "../../../config";
-
 const Auth = () => {
   //hooks
   const [email, setEmail] = useState("");
@@ -32,7 +31,10 @@ const Auth = () => {
     setLoading(false);
   }
   return (
-    <div className="mt-4 p-5 bg-white">
+    <div className="mt-4 p-5 ">
+      <div className="">
+        <h1>Login</h1>
+      </div>
       <div>
         <input
           type="email"
