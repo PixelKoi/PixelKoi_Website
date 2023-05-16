@@ -58,54 +58,57 @@ function CreateBlog() {
     <div className="p-5 bg-white m-5">
       <h1>Create a Blog Post</h1>
       <form onSubmit={handleSubmit}>
-        <div className="py-3">
-          <label htmlFor="title">Title:</label>
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={handleTitleChange}
-          />
-        </div>
-
-        <div className="py-3">
-          <label htmlFor="subtitle">Subtitle:</label>
-          <input
-            type="text"
-            id="subtitle"
-            value={subtitle}
-            onChange={handleSubtitleChange}
-          />
-        </div>
-
-        <div className="py-3">
-          <label htmlFor="author">Author:</label>
-          <input
-            type="text"
-            id="author"
-            value={author}
-            onChange={handleAuthorChange}
-          />
-        </div>
-
-        <div className="py-3">
-          <label htmlFor="date">Date:</label>
-          <input
-            type="text"
-            id="date"
-            value={date}
-            onChange={handleDateChange}
-          />
-        </div>
-
-        <div className="py-3">
-          <label htmlFor="tags">Tags:</label>
-          <input
-            type="text"
-            id="tags"
-            value={tags.join(",")}
-            onChange={handleTagsChange}
-          />
+        <div className="grid grid-cols-5 gap-4">
+          <div className="col-span-1">
+            <label htmlFor="title">Title:</label>
+            <input
+              className="rounded text-pink-500"
+              type="text"
+              id="title"
+              value={title}
+              onChange={handleTitleChange}
+            />
+          </div>
+          <div className="col-span-1">
+            <label htmlFor="subtitle">Subtitle:</label>
+            <input
+              className="rounded text-pink-500"
+              type="text"
+              id="subtitle"
+              value={subtitle}
+              onChange={handleSubtitleChange}
+            />
+          </div>
+          <div className="col-span-1">
+            <label htmlFor="author">Author:</label>
+            <input
+              className="rounded text-pink-500"
+              type="text"
+              id="author"
+              value={author}
+              onChange={handleAuthorChange}
+            />
+          </div>
+          <div className="col-span-1">
+            <label htmlFor="date">Date:</label>
+            <input
+              className="rounded text-pink-500"
+              type="text"
+              id="date"
+              value={date}
+              onChange={handleDateChange}
+            />
+          </div>
+          <div className="col-span-1">
+            <label htmlFor="tags">Tags:</label>
+            <input
+              className="rounded text-pink-500"
+              type="text"
+              id="tags"
+              value={tags.join(",")}
+              onChange={handleTagsChange}
+            />
+          </div>
         </div>
 
         <ReactQuill modules={modules} theme="snow" className="p-5 text-black" />
