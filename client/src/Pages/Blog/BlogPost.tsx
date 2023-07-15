@@ -56,17 +56,22 @@ const BlogPost = () => {
         {imageUrl && (
             <>
               <h1 className="text-center" style={styles.title}>{blog.title}</h1>
-              <h3 className="text-center" style={styles.author}>By {blog.author}</h3>
-              <div className="flexRow"> {/* Apply flexRow class here */}
-                <h3 className="text-center flex" style={styles.date}>
+              <div style={{ display: "flex", justifyContent: "center", paddingTop: "0.5rem" }}>
+                <h3 className="text-center" style={styles.author}> {blog.author}</h3>
+              </div>
+              <div style={{ display: "flex", justifyContent: "center", paddingTop: "0.5rem" }}>
+                <div style={{...styles.date, }}>
                   {new Date(blog.date).toLocaleDateString(undefined, {
                     year: "numeric",
                     month: "long",
                     day: "numeric"
                   })}
-                </h3>
-                <div className="text-center op">5 minute read</div>
+                </div>
+                <div className="" style={{ display: "flex", alignItems: "center" }}>
+                  <span style={{ marginRight: "0.5rem" }}>&#8226;</span> 5 minute read
+                </div>
               </div>
+
               <div className="py-5" style={styles.imageContainer}>
                 <img  src={imageUrl} alt="blog post" style={styles.image} />
               </div>
@@ -80,7 +85,7 @@ const BlogPost = () => {
             <p style={styles.content}>{blog.content}</p>{" "}
           </>
         )}
-        <div className="flex text-center rounded my-4">
+        <div className="flex text-center rounded my-5">
           <a
               className="flex items-center"
               style={{ ...styles.button, textDecoration: "none" }}
@@ -121,12 +126,12 @@ const styles = {
     color: "#FFFFFFl",
   },
   date: {
-    padding: "0 1rem",
+    padding: "0 0.5rem",
     fontSize: "16px",
     fontWeight: "normal",
-    marginBottom: "20px",
     color: "#FFFFFF",
     opacity: 0.6,
+    alignItems: "center"
   },
   content: {
     padding: "0 1rem",

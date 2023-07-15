@@ -227,10 +227,7 @@ const Nav = () => {
           className={styles.container3}
         >
           <motion.div className={styles.contactInfo}>
-            <motion.p style={{ display: hide === true ? "none" : "inline" }}>
-              Email: info@pixelkoi.com <br />
-              Phone: (647)-838-1705
-            </motion.p>
+              info@pixelkoi.com
           </motion.div>
           <Link
             id={styles.link4}
