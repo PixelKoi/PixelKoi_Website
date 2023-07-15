@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../../components/Nav/Nav";
 
 import { supabase } from "../../../config";
+import Footer from "../../components/Footer/Main/Footer";
 
 // Rest of the imports
 
@@ -96,6 +97,7 @@ const BlogPost = () => {
           </a>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
@@ -106,7 +108,7 @@ const styles = {
   },
   container: {
     maxWidth: "1000px",
-    margin: "10rem auto",
+    margin: "10rem auto 0",
     padding: "20px",
     // backgroundColor: "#f9f9f9",
     // boxShadow: "0px 0px 10px 0px rgba(0, 0, 0, 0.1)",
