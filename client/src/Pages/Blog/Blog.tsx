@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Blog.module.scss";
 import Nav from "../../components/Nav/Nav";
-import Footer from "../../components/Footer/Main/Footer";
+import Footer from "../../components/Footer/Footer";
 import Card from "./component/Card";
 import HeaderCard from "./component/HeaderCard";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";

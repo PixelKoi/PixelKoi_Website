@@ -226,9 +226,6 @@ const Nav = () => {
           animate={{ opacity: 1, transition: { duration: 1 } }}
           className={styles.container3}
         >
-          <motion.div className={styles.contactInfo}>
-              info@pixelkoi.com
-          </motion.div>
           <Link
             id={styles.link4}
             className={`${styles.link} `}

@@ -23,6 +23,29 @@ const FooterDesktop = () => {
           className={styles.consultation}
         >
           <h4>GOT A PROJECT IN MIND?</h4>
+          <motion.div className={styles.contactInfo}>
+            CONTACT: info@pixelkoi.com
+          </motion.div>
+          <div className={styles.location}>
+            <div className={styles.locationGroup}>
+              <div>
+                <i
+                  style={{ color: "#e8985c" }}
+                  className="fa-solid fa-location-dot fa-xl"
+                />
+              </div>
+              <h4 className={styles.locationText}>Chiang Mai</h4>
+            </div>
+            <div className={styles.locationGroup}>
+              <div>
+                <i
+                  style={{ color: "#e8985c" }}
+                  className="fa-solid fa-location-dot fa-xl"
+                />
+              </div>
+              <h4 className={styles.locationText}>Toronto</h4>
+            </div>
+          </div>
           <motion.div>
             <a
               target="_blank"
@@ -74,25 +97,26 @@ const FooterDesktop = () => {
           viewport={{ once: true }}
           className={styles.linksContainer}
         >
-          <h4>SOCIALS</h4>
+          <div className={styles.logo}>Pixel Kōi</div>
+
           <div className={`${styles.linksWrapper}`} id={styles.socials}>
             <motion.div>
               <a
-                href="https://www.linkedin.com/company/pixelkoi/"
+                href="src/components/Footer/components/FooterDesktop"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <AiFillLinkedin size={25} />
               </a>
               <a
-                href="https://www.linkedin.com/company/pixelkoi/"
+                href="src/components/Footer/components/FooterDesktop"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <AiFillYoutube size={30} />
               </a>
               <a
-                href="https://www.instagram.com/pixelkoiagency/"
+                href="src/components/Footer/components/FooterDesktop"
                 target="_blank"
                 rel="noopener noreferrer"
               >

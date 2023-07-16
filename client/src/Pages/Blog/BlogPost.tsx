@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Nav from "../../components/Nav/Nav";
 
 import { supabase } from "../../../config";
-import Footer from "../../components/Footer/Main/Footer";
+import Footer from "../../components/Footer/Footer";
 
 // Rest of the imports
 
@@ -55,42 +55,60 @@ const BlogPost = () => {
       <Nav />
       <div style={styles.container}>
         {imageUrl && (
-            <>
-              <h1 className="text-center" style={styles.title}>{blog.title}</h1>
-              <div style={{ display: "flex", justifyContent: "center", paddingTop: "0.5rem" }}>
-                <h3 className="text-center" style={styles.author}> {blog.author}</h3>
+          <>
+            <h1 className="text-center" style={styles.title}>
+              {blog.title}
+            </h1>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingTop: "0.5rem",
+              }}
+            >
+              <h3 className="text-center" style={styles.author}>
+                {" "}
+                {blog.author}
+              </h3>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                paddingTop: "0.5rem",
+              }}
+            >
+              <div style={{ ...styles.date }}>
+                {new Date(blog.date).toLocaleDateString(undefined, {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                })}
               </div>
-              <div style={{ display: "flex", justifyContent: "center", paddingTop: "0.5rem" }}>
-                <div style={{...styles.date, }}>
-                  {new Date(blog.date).toLocaleDateString(undefined, {
-                    year: "numeric",
-                    month: "long",
-                    day: "numeric"
-                  })}
-                </div>
-                <div className="" style={{ display: "flex", alignItems: "center" }}>
-                  <span style={{ marginRight: "0.5rem" }}>&#8226;</span> 5 minute read
-                </div>
+              <div
+                className=""
+                style={{ display: "flex", alignItems: "center" }}
+              >
+                <span style={{ marginRight: "0.5rem" }}>&#8226;</span> 5 minute
+                read
               </div>
+            </div>
 
-              <div className="py-5" style={styles.imageContainer}>
-                <img  src={imageUrl} alt="blog post" style={styles.image} />
-              </div>
-
-            </>
-
+            <div className="py-5" style={styles.imageContainer}>
+              <img src={imageUrl} alt="blog post" style={styles.image} />
+            </div>
+          </>
         )}
         {blog && (
           <>
-
             <p style={styles.content}>{blog.content}</p>{" "}
           </>
         )}
         <div className="flex text-center rounded my-5">
           <a
-              className="flex items-center"
-              style={{ ...styles.button, textDecoration: "none" }}
-              onClick={() => navigate(-1)}
+            className="flex items-center"
+            style={{ ...styles.button }}
+            onClick={() => navigate(-1)}
           >
             <span className="mr-2">&#8592;</span>
             View all posts
@@ -104,7 +122,7 @@ const BlogPost = () => {
 
 const styles = {
   mainContainer: {
-    height: "120vw"
+    height: "120vw",
   },
   container: {
     maxWidth: "1000px",
@@ -133,7 +151,7 @@ const styles = {
     fontWeight: "normal",
     color: "#FFFFFF",
     opacity: 0.6,
-    alignItems: "center"
+    alignItems: "center",
   },
   content: {
     padding: "0 1rem",
@@ -158,6 +176,13 @@ const styles = {
     cursor: "pointer",
     transition: "all 0.15s ease-in-out",
     margin: "1rem",
+    color: "white",
+    textDecoration: "none",
+
+    height: "48px",
+    fontSize: "17px",
+    border: "1px solid",
+    padding: "1rem",
   },
   pre: {
     backgroundColor: "#000",

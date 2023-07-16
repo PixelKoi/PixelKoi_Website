@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import Nav from "../../components/Nav/Nav";
 import styles from "./Contact2.module.scss";
-import Footer from "../../components/Footer/Main/Footer";
+import Footer from "../../components/Footer/Footer";
 import { motion, useScroll } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import mailboxImg from "../../assets/Home/mailbox.jpg";

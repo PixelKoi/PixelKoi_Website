@@ -37,6 +37,24 @@
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	}
 }
+.contactInfo {
+	display: flex;
+	align-items: center;
+	font-size: 14px;
+	margin-right: 2rem;
+	padding: 0.5rem 0;
+	p {
+		margin: 0 auto;
+	}
+}
+.logo {
+	color: #fff;
+	margin-right: 5rem;
+	font-size: 24px;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
 
 .linksContainer {
 	h4 {
