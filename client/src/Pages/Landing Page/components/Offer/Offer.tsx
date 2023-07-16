@@ -5,6 +5,7 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import codeDesign from "../../../../assets/Home/codeDesign.webp";
 import uxDesign from "../../../../assets/Home/uxDesign.webp";
 import webDesign from "../../../../assets/Home/webDesign.webp";
+import iOSDev from "../../../../assets/Home/ios.png";
 import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
 import { Link } from "react-router-dom";
 import BlurHashImages from "./components/BlurHashImages";
@@ -232,6 +233,48 @@ const Offer = () => {
               style={{ marginLeft: "auto" }}
               hashCode={webHash}
             />
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 1 } }}
+          viewport={{ once: true }}
+          className={styles.uxGroup}
+        >
+          <div className={styles.cardIMG}>
+            <BlurHashImages
+              src={iOSDev}
+              hashCode={uxHash}
+              style={{ marginRight: "auto" }}
+            />
+          </div>
+          <div className={styles.catDescription}>
+            <h3 style={{ color: "#efff" }}>iOS Development</h3>
+            <hr className={styles.break} />
+            <br />
+            <br />
+            <p>
+              Take the leap into the mobile world with our speciality iOS
+              development services. At Pixel Kōi, we have a proven track record,
+              bring your vision to life and create an engaging, seamless user
+              experience for your audience on the go. Don't leave your customers
+              waiting - connect with us today and let's create an app that
+              stands out on the App Store.
+            </p>
+            <Link
+              to={"/contact"}
+              className={styles.link}
+              title="Takes customer to the contact form allowing communication with Pixel Koi Company"
+            >
+              <p style={{ margin: "auto 0.5rem auto auto", color: "#fff" }}>
+                Case Study
+              </p>
+              <BsFillArrowRightSquareFill
+                style={{ color: "#e8985c", margin: "auto 1.5rem auto 0.5rem" }}
+                size={30}
+              />
+            </Link>
           </div>
         </motion.div>
       </div>
