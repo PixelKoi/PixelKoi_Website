@@ -6,6 +6,7 @@ import codeDesign from "../../../../assets/Home/codeDesign.webp";
 import uxDesign from "../../../../assets/Home/uxDesign.webp";
 import webDesign from "../../../../assets/Home/webDesign.webp";
 import iOSDev from "../../../../assets/Home/ios.png";
+import bgCode from "../../../../assets/Home/0101.png";
 import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
 import { Link } from "react-router-dom";
 import BlurHashImages from "./components/BlurHashImages";
@@ -52,6 +53,13 @@ const Offer = () => {
           whileInView={{ opacity: 1, transition: { duration: 1 } }}
           viewport={{ once: true }}
           className={styles.cta}
+          style={{
+            backgroundImage: `url(${bgCode})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            width: "100%", // Optional, sets the width to 100% of the parent element, often useful alongside 'height: 100vh'
+          }}
         >
           <h3>Software Services</h3>
           <hr className={styles.titleBreak} />
