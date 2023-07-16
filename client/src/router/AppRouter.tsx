@@ -3,7 +3,7 @@ import Landing from "../Pages/Landing Page/Landing";
 import About from "../Pages/About/About";
 import Blog from "../Pages/Blog/Blog";
 import BlogPost from "../Pages/Blog/BlogPost";
-import { Contact } from "../Pages/Contact/Contact2";
+import { Contact } from "../Pages/Contact/Contact";
 import BlurHashDecoder from "../components/BlurHashEncoder/BlurHashDecoder";
 import CaseStudy from "../Pages/Case Study/CaseStudy";
 import CreateBlog from "../Pages/Blog/CreateBlog";

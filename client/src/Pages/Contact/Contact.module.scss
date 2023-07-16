@@ -1,339 +1,469 @@
-$background: #191718;
-$primary: #fff;
-$secondary: #595959;
-
-@mixin centerDiv {
+//new contact
+.headerWrapper {
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	padding-top: 100px;
+	padding-bottom: 80px;
+	background-color: #17212d;
+	color: #fff;
+}
+.header {
+	position: relative;
+	z-index: 1;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
+	max-width: 800px;
+	min-height: 240px;
+	margin: 0px auto;
+	padding-right: 15px;
+	padding-left: 15px;
+
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
 	justify-content: center;
-	align-self: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: center;
+
+	.links {
+		position: relative;
+		z-index: 2;
+		display: flex;
+		margin: 0 auto;
+		a {
+			color: #efff;
+			padding: 0 10px;
+			opacity: 0.5;
+			text-decoration: none;
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+}
+.headerText {
+	color: #efff;
+	position: relative;
+	z-index: 2;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 64px;
+	line-height: 72px;
+	text-transform: capitalize;
+}
+.backgroundText {
+	position: absolute;
+	top: 21%;
+	padding-left: 16px;
+	color: #23242a;
+	font-size: 200px;
+	line-height: 170px;
+	font-weight: 700;
+	text-align: center;
+	letter-spacing: 18px;
+	text-transform: uppercase;
 }
 
-@mixin inputBorderBottom {
-	border-bottom: 1px solid $secondary !important;
+.formSection {
+	position: relative;
+	z-index: 1;
+	padding-top: 128px;
+	padding-bottom: 128px;
+	h2 {
+		margin-top: 0px;
+		margin-bottom: 16px;
+		font-size: 34px;
+		line-height: 44px;
+		font-weight: 500;
+	}
+	.wrapper {
+		position: relative;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		max-width: 1200px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-right: 40px;
+		padding-left: 40px;
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		background-color: transparent;
+
+		.intro {
+			color: #efff;
+			position: relative;
+			z-index: 1;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			max-width: 580px;
+			margin-right: auto;
+			margin-bottom: 72px;
+			margin-left: auto;
+			padding-right: 5px;
+			padding-left: 5px;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			-webkit-box-pack: center;
+			-webkit-justify-content: center;
+			-ms-flex-pack: center;
+			justify-content: center;
+			-webkit-box-align: center;
+			-webkit-align-items: center;
+			-ms-flex-align: start;
+			align-items: flex-start;
+			text-align: left;
+
+			.divider {
+				width: 100px;
+				height: 1px;
+				margin-top: 4px;
+				margin-bottom: 24px;
+				background-color: #e8985c;
+			}
+		}
+	}
 }
-// ::selection {
-// 	background: #95ecc6;
-// }
-.buttonText:active {
-	color: #86d4b2;
+
+.contact {
+	max-width: 970px;
+	margin: 12vw auto 0px;
+	padding: 104px 12%;
+	padding: 104px 12%;
+	z-index: 2;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
+	background-color: #1e2a35;
+	box-shadow: 0 8px 24px 0 rgb(0 0 0 / 20%);
 }
 
+.contact2 {
+	display: block;
+	position: absolute;
+	left: 0%;
+	top: 0%;
+	right: 0%;
+	bottom: auto;
+	overflow: hidden;
+	height: 43%;
+	background-color: #000;
+	// opacity: 0.5;
+}
 
+.bgIMG {
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	opacity: 0.5;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
 
-.container {
+img {
+	max-width: 100%;
+	vertical-align: middle;
+	display: inline-block;
+	border: 0;
+	overflow-clip-margin: content-box;
+	overflow: clip;
+}
+
+.form {
+	display: grid;
+	width: 100%;
+	max-width: 800px;
+	margin-right: auto;
+	margin-left: auto;
+	grid-auto-columns: 1fr;
+	grid-column-gap: 32px;
+	grid-row-gap: 40px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto;
+}
+.input {
+	width: 100%;
+	overflow: hidden;
+	height: 48px;
+	margin-bottom: 0px;
+	padding: 0px;
+	border-style: none none solid;
+	border-width: 1px;
+	border-color: #000 #000 hsla(0, 0%, 100%, 0.3);
+	border-radius: 0px;
+	background-color: transparent;
+	transition: border-color 600ms ease, background-color 600ms ease;
+	color: #fff;
+	font-size: 15px;
+	line-height: 24px;
+	outline: none;
+	&:hover {
+		border-color: #000 #000 #efff;
+	}
+}
+.input:focus {
+	border-color: #000 #000 #e8985c;
+}
+
+.input2 {
+	grid-column-start: span 2;
+	grid-row-start: span 1;
+	grid-row-end: span 1;
+	overflow: hidden;
+	height: 48px;
+	margin-bottom: 0px;
+	padding: 0px;
+	border-style: none none solid;
+	border-width: 1px;
+	border-color: #000 #000 hsla(0, 0%, 100%, 0.3);
+	border-radius: 0px;
+	background-color: transparent;
+	-webkit-transition: border-color 600ms ease, background-color 600ms ease;
+	transition: border-color 600ms ease, background-color 600ms ease;
+	color: #fff;
+	font-size: 15px;
+	line-height: 24px;
+	outline: none;
+	&:hover {
+		border-color: #000 #000 #efff;
+	}
+}
+
+.input2:focus {
+	border-color: #000 #000 #e8985c;
+}
+.textArea {
+	min-height: 200px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+}
+
+.wInput {
+	display: block;
+	width: 100%;
+	height: 38px;
+	padding: 8px 12px;
+	margin-bottom: 10px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: #333333;
+	vertical-align: middle;
+	background-color: #ffffff;
+	border: 1px solid #cccccc;
+}
+
+.button {
+	display: flex;
+	margin-top: 2rem;
+	height: 48px;
+	padding: 14px 20px 10px;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border-style: none;
+	border-radius: 2px;
+	background-color: #efff;
+
+	background-image: none;
+	-webkit-transition: box-shadow 600ms ease, border-color 600ms ease, color 600ms ease, background-color 600ms ease;
+	transition: box-shadow 600ms ease, border-color 600ms ease, color 600ms ease, background-color 600ms ease;
+	color: #fff;
+	font-size: 17px;
+	line-height: 20px;
+	font-weight: 600;
+	text-align: left;
+	text-decoration: none;
+
+	grid-column-start: span 2;
+	-ms-grid-column-span: 2;
+	grid-column-end: span 2;
+	-ms-grid-row: span 1;
+	grid-row-start: span 1;
+	-ms-grid-row-span: 1;
+	grid-row-end: span 1;
+	-ms-grid-column-align: center;
+	justify-self: left;
+	&:hover {
+		background-color: #e8985c;
+	}
+}
+
+.formSucess {
+	margin-top: 4rem;
+	padding: 12px 16px 10px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #e8985c;
+	background-color: rgba(232, 152, 92, 0.04);
+	color: #e8985c;
+	font-size: 15px;
+	line-height: 24px;
+	text-align: center;
+}
+
+.formError {
+	margin-top: 4rem;
+	padding: 12px 16px 10px;
+	border-style: solid;
+
+	border-width: 1px;
+	border-color: #f02b41;
+	background-color: rgba(240, 43, 65, 0.06);
+	color: #f02b41;
+	font-size: 15px;
+	line-height: 24px;
+	text-align: center;
+}
+
+.inputGroup {
+	overflow: hidden;
+	height: 48px;
+	margin-bottom: 0px;
+	background-color: transparent;
+	transition: border-color 600ms ease, background-color 600ms ease;
+	color: #fff;
+	font-size: 15px;
+	line-height: 24px;
+
+	width: 100%;
+}
+
+.warningBox {
+	border: 1px solid #efff;
+	padding-right: 1rem;
+	margin-top: 5px;
+	position: absolute;
+	font-size: 12px;
+	color: black;
+	background-color: #efff;
+	border-radius: 2px;
+}
+
+.innerCheckEmail {
+	display: flex;
+	margin-right: auto;
+}
+
+.title {
 	display: flex;
 	flex-direction: column;
-	overflow-x: hidden;
-
-	h3,
-	h4 {
-		color: $primary;
-	}
-	label {
-		color: $primary;
-		font-size: 24px;
-	}
-	//TOP PART
-	.innerContainer {
-		@include centerDiv;
-		.sectionHeader {
-			color: #999999;
-			margin-top: 2rem;
-
-		}
-		.formSelection {
-			margin-top: 2rem;
-			ul {
-				display: flex;
-				padding: 0;
-			}
-		}
-		background-color: rgb(29, 37, 48);
-
-
-	}
-
-	.buttonGroup {
-		list-style-type: none;
-		.buttonLink {
-			.navLink {
-				background-color: transparent !important;
-				&:before {
-					content: '';
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					top: 6px;
-					left: -6px;
-					border: 1px solid;
-					border-top: none;
-					border-right: none;
-					border-color: #ffb26b;
-				}
-				&:hover:before {
-					border: 6px solid;
-					border-color: #ffb26b;
-					border-top: none;
-					border-right: none;
-				}
-				border: none;
-
-				font-size: 14px;
-				cursor: pointer;
-				position: relative;
-				display: inline-block;
-				font-weight: 700;
-				text-transform: uppercase;
-				white-space: nowrap;
-				text-decoration: none !important;
-				outline: none;
-				border: none;
-				padding: 0;
-				line-height: 1;
-				.buttonText {
-					color: #ffb26b;
-					text-align: center;
-					min-width: 200px;
-					position: relative;
-					display: inline-block;
-					padding: 0.8em 2em;
-					border: 1px solid;
-					border-color: #ffb26b;
-				}
-			}
-		}
-	}
-
-	.formSection {
-		background-color: rgb(29, 37, 48);
-		@include centerDiv;
-		flex-direction: column;
-		margin-bottom: 8rem;
-		// bottom part
-		.formContainer {
-			display: grid;
-			margin: 4rem;
-			.formLabel {
-				margin: 0;
-				padding: 0;
-				font-size: 24px;
-			}
-			.formInput {
-				color: $secondary;
-				background-color: transparent;
-				font-size: 24px;
-				border-style: none;
-				outline: none;
-			}
-		}
-		.deadlineWrapper {
-			position: relative;
-			padding-bottom: 2rem;
-			display: flex;
-			@include inputBorderBottom;
-
-			.deadlineContainer {
-			}
-			.unitContainer {
-				color: $primary;
-				display: flex;
-				flex-direction: column;
-				cursor: pointer;
-				.circle {
-					cursor: pointer;
-					position: absolute;
-					bottom: -10px;
-					width: 20px;
-					height: 20px;
-					border-radius: 50%;
-					background-color: teal;
-				}
-			}
-		}
-	}
 }
 
-@media only screen and (min-width: 320px) {
-	.container {
-		padding: 0 1rem;
-
-		.innerContainer {
-			.formSelection {
-				margin-left: 0;
-			}
-		}
+@media screen and (max-width: 479px) {
+	.title {
+		margin-bottom: 4rem;
 	}
-
-	.formSection {
+	.contact {
+		padding: 8vw 8vw 10vw;
+	}
+	.form {
 		width: 100%;
-		.formContainer {
-			grid-template-columns: 1fr;
+		max-width: none;
+	}
+}
 
-			.formLabel {
-				border-style: none;
-			}
-			.formInput {
-				text-indent: 0;
-				margin-bottom: 2rem;
-				@include inputBorderBottom;
-			}
+@media screen and (max-width: 767px) {
+	.contact {
+		padding: 10vw 12vw;
+	}
+	.formSection {
+		.wrapper {
+			padding-right: 8px;
+			padding-left: 8px;
+		}
+		h2 {
+			font-size: 24px;
+			line-height: 32px;
 		}
 	}
-	.sendButton {
-		margin-top: 4rem;
-		// margin-bottom: -2rem;
-		margin-left: auto;
-		margin-right: auto;
-		align-self: center;
-	}
+	.form {
+		grid-row-gap: 32px;
 
-	.innerContainer {
-		margin-top: 10rem;
+		grid-template-columns: 1fr;
 	}
+	.headerText {
+		font-size: 40px;
+		line-height: 48px;
+	}
+	.input2 {
+		grid-column-start: span 1;
+	}
+	.button {
+		grid-column-start: span 1;
 
-	.sectionHeader {
-		//background-color: #1c1d22;
-		flex-direction: column;
-
-	}
-	.formSelection ul {
-		flex-direction: column;
-	}
-	.buttonLink {
-		margin-bottom: 2rem;
-		align-self: center;
-	}
-	.selectorContainer {
-		display: block;
-		margin: 0 4rem 4rem 4rem;
-	}
-	.sliderContainer {
-		display: none;
+		grid-column-end: span 1;
 	}
 }
 
-/* Extra Small Devices, Phones */
-@media only screen and (min-width: 480px) {
-	.selectorContainer {
-		display: block;
+@media screen and (max-width: 991px) {
+	.contact {
+		margin-right: 8px;
+		margin-left: 8px;
+		padding: 8vw;
 	}
-	.sliderContainer {
-		display: none;
-	}
-}
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width: 768px) {
-	.container {
-		padding: 0 2rem;
-	}
-	.sendButton{
-		padding-right: 4rem;
-	}
-	.sliderContainer{
-		margin: 2rem 4rem;
+	.wrapper {
+		padding-right: 8px;
+		padding-left: 8px;
 	}
 
 	.formSection {
-		width: 100%;
-		.formContainer {
-			grid-template-columns: 1fr 2fr;
-			row-gap: 4rem;
-			.formLabel {
-				@include inputBorderBottom;
-			}
-			.formInput {
-				text-indent: 2rem;
-				margin-bottom: 0;
-				@include inputBorderBottom;
-			}
+		.wrapper {
+			padding-right: 8px;
+			padding-left: 8px;
+		}
+		h2 {
+			font-size: 28px;
+			line-height: 36px;
 		}
 	}
-
-	.innerContainer {
-		width: 100%;
-		margin-top: 15rem;
+	.backgroundText {
+		top: 7%;
+		font-size: 18vw;
+		line-height: 20vw;
+		letter-spacing: 1.5vw;
 	}
-	.topFormContainer {
-		float: left;
-
-	}
-
-	.buttonLink {
-		margin-top: 0;
-		margin-right: 4rem;
-	}
-	.formSelection ul {
-		flex-direction: row;
-	}
-
-	.selectorContainer {
-		display: none;
-	}
-	.sliderContainer {
-		display: block;
-	}
-}
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width: 1024px) {
-	.container {
-		padding: 0;
-	}
-
-	.formSection {
-		width: 50%;
-		.formContainer {
-			grid-template-columns: 1fr 2fr;
-			row-gap: 4rem;
-			.formLabel {
-				@include inputBorderBottom;
-			}
-			.formInput {
-				text-indent: 2rem;
-				margin-bottom: 0;
-				@include inputBorderBottom;
-			}
-		}
-	}
-
-	.innerContainer {
-		padding: 1rem;
-		width: 50%;
-		// margin-left: 34.7rem;
-		// margin-right: auto;
-	}
-
-	.imRetarded{
-		display: flex;
-		flex-direction: column;
-		align-content: center;
-		align-items: center;
-		border: 10px solid green;
-	}
-
-	.sectionHeader {
-		flex-direction: row;
-
-		.location {
-		}
-	}
-	.buttonLink {
-		margin-top: 0;
-		margin-right: 4rem;
-	}
-	.formSelection ul {
-		flex-direction: row;
-	}
-	.sendButton {
-		margin-top: 4rem;
-		margin-right: -4rem;
-		margin-left: auto;
-	}
-	.selectorContainer {
-		display: none;
-	}
-	.sliderContainer {
-		display: block;
+	.headerText {
+		font-size: 48px;
+		line-height: 56px;
 	}
 }
