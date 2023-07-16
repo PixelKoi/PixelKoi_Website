@@ -322,14 +322,15 @@ export const Contact = () => {
               <div
                 style={{
                   textAlign: "left",
-                  width: "600px",
-                  margin: "0 auto",
+                  width: "100%", // make this a percentage
+                  margin: "0 auto 0 0", // set left margin to 0
+                  wordWrap: "break-word",
                 }}
               >
                 <div className="my-4">
                   At Pixel Kōi , we are deeply dedicated to delivering our
-                  clients superior custom software solutions and a stellar
-                  customer journey.
+                  clients custom software solutions and an impactful customer
+                  journey.
                 </div>
                 <div className="mb-4">
                   If you have any queries about our services, a project idea

@@ -116,30 +116,19 @@
 			color: #efff;
 			position: relative;
 			z-index: 1;
-			display: -webkit-box;
-			display: -webkit-flex;
-			display: -ms-flexbox;
 			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			align-items: flex-start;
 			max-width: 580px;
-			margin-right: auto;
+			margin-right: 0;
 			margin-bottom: 72px;
-			margin-left: auto;
+			margin-left: 0;
 			padding-right: 5px;
 			padding-left: 5px;
-			-webkit-box-orient: vertical;
-			-webkit-box-direction: normal;
-			-webkit-flex-direction: column;
-			-ms-flex-direction: column;
-			flex-direction: column;
-			-webkit-box-pack: center;
-			-webkit-justify-content: center;
-			-ms-flex-pack: center;
-			justify-content: center;
-			-webkit-box-align: center;
-			-webkit-align-items: center;
-			-ms-flex-align: start;
-			align-items: flex-start;
 			text-align: left;
+			overflow-wrap: break-word;
+
 
 			.divider {
 				width: 100px;
@@ -233,7 +222,7 @@ img {
 	line-height: 24px;
 	outline: none;
 	&:hover {
-		border-color: #000 #000 #efff;
+		border-color: #214741;
 	}
 }
 .input:focus {
@@ -260,7 +249,7 @@ img {
 	line-height: 24px;
 	outline: none;
 	&:hover {
-		border-color: #000 #000 #efff;
+		border-color: #214741;
 	}
 }
 
@@ -302,7 +291,7 @@ img {
 	align-items: center;
 	border-style: none;
 	border-radius: 2px;
-	background-color: #efff;
+	background-color: #214741;
 
 	background-image: none;
 	-webkit-transition: box-shadow 600ms ease, border-color 600ms ease, color 600ms ease, background-color 600ms ease;

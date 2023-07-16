@@ -135,11 +135,10 @@ const FooterDesktop = () => {
               <input className={styles.input} placeholder="Enter email" />
               <button
                 style={{
-                  backgroundColor: "#e8985c",
                   height: "41px",
                   borderStyle: "none",
                   borderRadius: "0",
-                  color: "#fff",
+                  backgroundColor: "#214741",
                   fontWeight: "600",
                   textAlign: "center",
                   textDecoration: "none",
