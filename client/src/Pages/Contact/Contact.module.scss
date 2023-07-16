@@ -57,7 +57,7 @@
 	position: relative;
 	z-index: 2;
 	margin-top: 0px;
-	margin-bottom: 0px;
+	padding-bottom: 1rem;
 	font-size: 64px;
 	line-height: 72px;
 	text-transform: capitalize;
@@ -69,7 +69,7 @@
 	color: #23242a;
 	font-size: 200px;
 	line-height: 170px;
-	font-weight: 700;
+	font-weight: 900;
 	text-align: center;
 	letter-spacing: 18px;
 	text-transform: uppercase;
@@ -292,7 +292,6 @@ img {
 	border-style: none;
 	border-radius: 2px;
 	background-color: #214741;
-
 	background-image: none;
 	-webkit-transition: box-shadow 600ms ease, border-color 600ms ease, color 600ms ease, background-color 600ms ease;
 	transition: box-shadow 600ms ease, border-color 600ms ease, color 600ms ease, background-color 600ms ease;

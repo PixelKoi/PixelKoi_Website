@@ -298,6 +298,7 @@ export const Contact = () => {
             initial={{ scale: 1.2 }}
             animate={{
               scale: 1,
+              opacity: 0.15,
               transition: { ease: "easeIn", duration: 0.4 },
             }}
             className={styles.backgroundText}

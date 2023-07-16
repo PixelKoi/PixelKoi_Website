@@ -9,6 +9,7 @@ import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDeco
 import { Link } from "react-router-dom";
 import BlurHashImages from "./components/BlurHashImages";
 import { Helmet } from "react-helmet";
+import { BsFillArrowRightSquareFill } from "react-icons/bs";
 
 interface ImageType {
   [name: string]: {
@@ -52,8 +53,9 @@ const Offer = () => {
           className={styles.cta}
         >
           <h3>Software Services</h3>
+          <hr className={styles.titleBreak} />
+
           <h3 style={{ color: "#efff" }}>Custom Solutions to Suit You</h3>
-          <hr className={styles.break} />
           <br />
           <br />
           <p className={styles.paragraph}>
@@ -69,11 +71,37 @@ const Offer = () => {
             className={styles.link}
             title="Takes customer to the contact form allowing communication with Pixel Koi Company"
           >
-            <BsArrowRightCircle
-              style={{ color: "#e8985c", alignSelf: "center" }}
-              size={30}
-            />
-            <p style={{ margin: "auto 0", color: "#fff" }}>Let's Talk</p>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                margin: "0 auto",
+              }}
+            >
+              {/*<p style={{ margin: "0", color: "#fff", marginRight: "0.5rem" }}>*/}
+              {/*  Share your project vision*/}
+              {/*</p>*/}
+              {/*<BsFillArrowRightSquareFill*/}
+              {/*  style={{ color: "#e8985c", margin: "0" }}*/}
+              {/*  size={30}*/}
+              {/*/>*/}
+              <button
+                style={{
+                  height: "41px",
+                  borderStyle: "none",
+                  borderRadius: "2px",
+                  backgroundColor: "#e8985c",
+                  fontWeight: "600",
+                  textAlign: "center",
+                  textDecoration: "none",
+                  lineHeight: "20px",
+                }}
+              >
+                Share your project vision
+              </button>
+            </div>
           </Link>
         </motion.div>
 
@@ -105,11 +133,13 @@ const Offer = () => {
               className={styles.link}
               title="Takes customer to the contact form allowing communication with Pixel Koi Company"
             >
-              <BsArrowRightCircle
-                style={{ color: "#e8985c", alignSelf: "center" }}
+              <p style={{ margin: "auto 0.5rem auto auto", color: "#fff" }}>
+                Learn More
+              </p>
+              <BsFillArrowRightSquareFill
+                style={{ color: "#e8985c", margin: "auto 1.5rem auto 0.5rem" }}
                 size={30}
               />
-              <p style={{ margin: "auto 0", color: "#fff" }}>Learn More</p>
             </Link>
           </div>
           <div className={styles.cardIMG}>
@@ -152,11 +182,13 @@ const Offer = () => {
               className={styles.link}
               title="Takes customer to the contact form allowing communication with Pixel Koi Company"
             >
-              <BsArrowRightCircle
-                style={{ color: "#e8985c", alignSelf: "center" }}
+              <p style={{ margin: "auto 0.5rem auto auto", color: "#fff" }}>
+                Learn More
+              </p>
+              <BsFillArrowRightSquareFill
+                style={{ color: "#e8985c", margin: "auto 1.5rem auto 0.5rem" }}
                 size={30}
               />
-              <p style={{ margin: "auto 0", color: "#fff" }}>Learn More</p>
             </Link>
           </div>
         </motion.div>
@@ -185,11 +217,13 @@ const Offer = () => {
               className={styles.link}
               title="Takes customer to the contact form allowing communication with Pixel Koi Company"
             >
-              <BsArrowRightCircle
-                style={{ color: "#e8985c", alignSelf: "center" }}
+              <p style={{ margin: "auto 0.5rem auto auto", color: "#fff" }}>
+                Learn More
+              </p>
+              <BsFillArrowRightSquareFill
+                style={{ color: "#e8985c", margin: "auto 1.5rem auto 0.5rem" }}
                 size={30}
               />
-              <p style={{ margin: "auto 0", color: "#fff" }}>Learn More</p>
             </Link>
           </div>
           <div className={styles.cardIMG} style={{}}>

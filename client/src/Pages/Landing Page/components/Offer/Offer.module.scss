@@ -17,7 +17,7 @@
 	width: 100%;
 	max-width: 1200px;
 	align-self: center;
-	margin: 6rem auto;
+	margin: 9rem auto;
 	h1 {
 		font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
 		font-size: 30px;
@@ -27,13 +27,18 @@
 		line-height: 2rem;
 		font-size: 24px;
 	}
+
+	.cta {
+		padding: 0 1rem;
+		max-width: 600px;
+		text-align: center;
+	 	margin: 0 auto;
+		place-items: center;
+		text-align: center;
+	}
 }
 
-.cta {
-	padding: 0 1rem;
-	max-width: 600px;
-	// margin: 0 auto;
-}
+
 
 .pillerContainer {
 	display: grid;
@@ -41,9 +46,18 @@
 	gap: 3rem;
 }
 
+.titleBreak {
+	border-top: 1.5px solid #e8985c;
+	width: 160px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
+}
+
 .break {
 	border-top: 1px solid #e8985c;
-	width: 50px;
+	width: 120px;
 	float: left;
 }
 

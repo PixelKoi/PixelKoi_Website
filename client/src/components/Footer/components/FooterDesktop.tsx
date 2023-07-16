@@ -30,7 +30,7 @@ const FooterDesktop = () => {
             <div className={styles.locationGroup}>
               <div>
                 <i
-                  style={{ color: "#e8985c" }}
+                  style={{ color: "#FC2947" }}
                   className="fa-solid fa-location-dot fa-xl"
                 />
               </div>
@@ -39,7 +39,7 @@ const FooterDesktop = () => {
             <div className={styles.locationGroup}>
               <div>
                 <i
-                  style={{ color: "#e8985c" }}
+                  style={{ color: "#FC2947" }}
                   className="fa-solid fa-location-dot fa-xl"
                 />
               </div>
@@ -137,7 +137,7 @@ const FooterDesktop = () => {
                 style={{
                   height: "41px",
                   borderStyle: "none",
-                  borderRadius: "0",
+                  borderRadius: "2px",
                   backgroundColor: "#214741",
                   fontWeight: "600",
                   textAlign: "center",
