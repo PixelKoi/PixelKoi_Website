@@ -89,11 +89,16 @@ const Offer = () => {
             <br />
             <br />
             <p>
-              Our custom software development solutions meet your specific needs
-              and goals, giving you a competitive advantage. Our comprehensive
-              end-to-end software development services cover everything from
-              planning, designing and developing to testing to launching,
-              relieving you from the burden of managing intricate SDLCs.
+              Our software development solutions are custom-tailored to meet
+              your specific needs and goals, providing you with a competitive
+              edge. We specialize in iOS development, custom website creation,
+              and Web Design. Our comprehensive end-to-end services encompass
+              every aspect of the software development lifecycle: from initial
+              planning and design, through development and testing, to launch,
+              maintenance, and iterative improvements. We're not just about
+              creating a product that aligns with your vision; we're committed
+              to managing the intricacies of SDLCs and ensuring ongoing success
+              through continual enhancements.
             </p>
             <Link
               to={"/contact"}
@@ -168,11 +173,12 @@ const Offer = () => {
             <br />
             <br />
             <p>
-              Pixel Koi is dedicated to offering all-encompassing website
-              development and ecommerce solutions to businesses of all sizes.
-              Our professional team of developers, designers, and project
-              managers collaborate closely to design custom solutions that cater
-              to the unique needs of each client.
+              Pixel Koi is committed to providing comprehensive custom website
+              development for businesses across the spectrum. We specialize in
+              custom-designed digital platforms that cater to the unique needs
+              of each client, large or small. By focusing on creating robust and
+              effective interfaces, we facilitate meaningful connections
+              enabling businesses to thrive in the digital marketplace.
             </p>
             <Link
               to={"/contact"}
