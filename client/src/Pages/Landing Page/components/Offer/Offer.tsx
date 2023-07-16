@@ -293,7 +293,7 @@ const Offer = () => {
             <BlurHashImages
               src={mail}
               hashCode={uxHash}
-              style={{ marginRight: "auto" }}
+              style={{ marginRight: "auto", width: "250px" }} // replace with your desired method
             />
           </div>
           <div className={styles.catDescription}>
