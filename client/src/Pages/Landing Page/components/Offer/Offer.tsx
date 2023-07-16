@@ -6,6 +6,8 @@ import codeDesign from "../../../../assets/Home/codeDesign.webp";
 import uxDesign from "../../../../assets/Home/uxDesign.webp";
 import webDesign from "../../../../assets/Home/webDesign.webp";
 import iOSDev from "../../../../assets/Home/ios.png";
+import mail from "../../../../assets/Home/mail.png";
+import email from "../../../../assets/Home/email.png";
 import bgCode from "../../../../assets/Home/0101.png";
 import { HashContext } from "../../../../components/BlurHashEncoder/BlurHashDecoder";
 import { Link } from "react-router-dom";
@@ -113,7 +115,6 @@ const Offer = () => {
             </div>
           </Link>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transition: { duration: 1 } }}
@@ -159,7 +160,6 @@ const Offer = () => {
             />
           </div>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transition: { duration: 1 } }}
@@ -201,7 +201,6 @@ const Offer = () => {
             </Link>
           </div>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transition: { duration: 1 } }}
@@ -243,7 +242,6 @@ const Offer = () => {
             />
           </div>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, transition: { duration: 1 } }}
@@ -283,6 +281,81 @@ const Offer = () => {
                 size={30}
               />
             </Link>
+          </div>
+        </motion.div>{" "}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1, transition: { duration: 1 } }}
+          viewport={{ once: true }}
+          className={styles.uxGroup}
+        >
+          <div className={styles.cardIMG}>
+            <BlurHashImages
+              src={mail}
+              hashCode={uxHash}
+              style={{ marginRight: "auto" }}
+            />
+          </div>
+          <div className={styles.catDescription}>
+            <h3 style={{ color: "#e8985c" }}>Sign Up to our Newsletter</h3>
+            <br />
+            <br />
+            <p>
+              Latest trends and insights in Web & Mobile development. Sign up
+              now to receive free cutting-edge tutorials and updates on the
+              newest advancements.
+            </p>
+            <Link
+              to={"/contact"}
+              className={styles.link}
+              title="Takes customer to the contact form allowing communication with Pixel Koi Company"
+            ></Link>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+                margin: "0 auto",
+              }}
+            >
+              {/*<p style={{ margin: "0", color: "#fff", marginRight: "0.5rem" }}>*/}
+              {/*  Share your project vision*/}
+              {/*</p>*/}
+              {/*<BsFillArrowRightSquareFill*/}
+              {/*  style={{ color: "#e8985c", margin: "0" }}*/}
+              {/*  size={30}*/}
+              {/*/>*/}
+              <motion.div className="mt-4">
+                <div
+                  style={{
+                    position: "relative",
+                    display: "inline-block",
+                  }}
+                >
+                  <input
+                    className={styles.input}
+                    placeholder="Your email"
+                    style={{ paddingRight: "50px" }} // Add right padding to prevent text from being hidden by the image
+                  />
+                  <img
+                    src={email}
+                    alt="Submit"
+                    style={{
+                      height: "34px",
+                      cursor: "pointer",
+                      position: "absolute",
+                      right: "10px",
+                      top: "50%",
+                      transform: "translateY(-50%)", // Center the image vertically
+                    }}
+                    onClick={() => {
+                      // Your submit logic here
+                    }}
+                  />
+                </div>
+              </motion.div>
+            </div>
           </div>
         </motion.div>
       </div>

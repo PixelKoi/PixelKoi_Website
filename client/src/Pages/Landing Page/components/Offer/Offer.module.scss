@@ -76,6 +76,29 @@
 	}
 }
 
+.input {
+	overflow: hidden;
+	height: 38px;
+	margin-bottom: 0px;
+	padding: 0px;
+	border-style: none none solid;
+	border-width: 1px;
+	border-color: #ffffff;
+	border-radius: 0px;
+	background-color: transparent;
+	transition: border-color 600ms ease, background-color 600ms ease;
+	color: #fff;
+	font-size: 15px;
+	line-height: 24px;
+	outline: none;
+	&:hover {
+		border-color: #000 #000 #efff;
+	}
+}
+.input:focus {
+	border-color: #000 #000 #e8985c;
+}
+
 .softwareGroup {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
