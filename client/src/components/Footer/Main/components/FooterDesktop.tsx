@@ -89,7 +89,7 @@ const FooterDesktop = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <AiFillYoutube size={25} />
+                <AiFillYoutube size={30} />
               </a>
               <a
                 href="https://www.instagram.com/pixelkoiagency/"

@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef, useContext } from "react";
 import Nav from "../../components/Nav/Nav";
 import styles from "./Contact2.module.scss";
-import Footer from "../../components/Footer/ContactPage/FooterContactPage";
+import Footer from "../../components/Footer/Main/Footer";
 import { motion, useScroll } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import mailboxImg from "../../assets/Home/mailbox.jpg";
 import { Blurhash } from "react-blurhash";
 import { HashContext } from "../../components/BlurHashEncoder/BlurHashDecoder";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 interface ImageType {
   [name: string]: {
@@ -250,16 +250,22 @@ export const Contact = () => {
   }, [mailboxHash]);
   return (
     <div>
-		<Helmet>
-     		<title>Contact Page</title>
-        	<meta name="description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+      <Helmet>
+        <title>Contact Page</title>
+        <meta
+          name="description"
+          content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
 						Project Managers collaborate seamlessly to transform your vision into reality and propel your
-						business objectives forward." />
-        	<meta property="og:title" content="Contact Page" />
-        	<meta property="og:description" content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
+						business objectives forward."
+        />
+        <meta property="og:title" content="Contact Page" />
+        <meta
+          property="og:description"
+          content="Unlock Your Business Potential: Our versatile team of Software Developers, UX Designers, and
 						Project Managers collaborate seamlessly to transform your vision into reality and propel your
-						business objectives forward." />
-		</Helmet>
+						business objectives forward."
+        />
+      </Helmet>
       <Nav />
       <div className={styles.headerWrapper}>
         <div className={styles.header}>
