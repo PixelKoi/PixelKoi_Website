@@ -50,6 +50,7 @@
 			font-family: "Noto Sans Georgian";
 			font-size: 14px;
 			line-height: 30px;
+			padding-right: 5px;
 			color: inherit;
 			text-decoration: none;
 			cursor: pointer;
@@ -113,3 +114,28 @@
 		padding: 0 2rem;
 	}
 }
+
+
+.input {
+	overflow: hidden;
+	height: 38px;
+	margin-bottom: 0px;
+	padding: 0px;
+	border-style: none none solid;
+	border-width: 1px;
+	border-color: #000 #000 hsla(0, 0%, 100%, 0.3);
+	border-radius: 0px;
+	background-color: transparent;
+	transition: border-color 600ms ease, background-color 600ms ease;
+	color: #fff;
+	font-size: 15px;
+	line-height: 24px;
+	outline: none;
+	&:hover {
+		border-color: #000 #000 #efff;
+	}
+}
+.input:focus {
+	border-color: #000 #000 #e8985c;
+}
+

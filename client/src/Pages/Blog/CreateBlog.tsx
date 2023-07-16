@@ -17,6 +17,9 @@ export default function CreateBlog({ session }) {
   // TODO Only allow Blog Posts from ALLOWED users
   // https://blog.logrocket.com/build-a-wysiwyg-text-editor-using-quill/
 
+
+  // Inspiration https://stablo-template.vercel.app/post/14-architectural-design-ideas-for-spacious-interior
+
   async function updateProfile(event) {
     event.preventDefault();
 
@@ -144,9 +147,11 @@ export default function CreateBlog({ session }) {
         </div>
 
         <ReactQuill
-          modules={modules}
-          theme="snow"
-          className="p-5 text-black vh-100"
+            value={content}
+            onChange={setContent}
+            modules={modules}
+            theme="snow"
+            className="p-5 text-black vh-100"
         />
 
         <button className="m-5" type="submit" disabled={loading}>
